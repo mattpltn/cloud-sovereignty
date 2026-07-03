@@ -1,0 +1,67 @@
+# Golden persona P8 — DRAFT, awaiting project-owner review.
+# See P1 for the persona ownership workflow note.
+#
+# Design intent: exercises classification tiering (design principle 6 —
+# "one government = several assessments = a tiered posture map") within a
+# single persona file. The same government runs its lowest-sensitivity
+# workloads on a foreign hyperscaler (A4 SaaS, public tier) while keeping
+# its most sensitive workloads fully self-hosted (A1 vanilla OSS, restricted
+# tier) — a realistic risk-tiered estate per the World Bank/Singapore
+# reference pattern in CLAUDE.md. Tests that scoring and recommendations are
+# computed independently per tier rather than blended into a single number.
+
+persona_id: mixed-tier-estate
+name: "P8 — Mixed-tier estate: public on hyperscaler, restricted on gov datacenter"
+summary: >
+  One government running two tiers on two different deployment models:
+  public-tier workloads on a foreign hyperscaler SaaS offering (A4,
+  standard terms), restricted-tier workloads on a self-hosted, vanilla-OSS
+  government datacenter (A1, in-house ops). Exercises the tiered posture
+  map — per-tier scoring/ceilings/recommendations must be computed and
+  reported independently, not averaged across tiers.
+status: draft
+
+priorities:
+  - protection_from_foreign_legal_access
+  - continuity_under_disconnection
+  - cost_efficiency
+  - local_capacity_building
+  - lock_in_avoidance
+
+classification_scheme: default_4_tier
+
+tiers:
+  # Low-sensitivity tier: cost/convenience-driven choice of a foreign SaaS
+  # provider with standard terms — deliberately mirrors P6's deployment
+  # model so cross-persona comparison is possible.
+  - tier_id: public
+    axis_a: A4
+    modifiers:
+      ops_outsourced:
+        outsourced: true
+        to_whom: "Hyperscaler"
+        jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      service_model: SaaS
+      provider_jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      facility_jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      extraterritorial_law_exposure: true
+      key_custody: provider_held
+      contract_terms:
+        audit_rights: false
+        exit_reversibility: false
+        residency_commitment: false
+        escrow: false
+
+  # High-sensitivity tier: self-hosted, in-house — deliberately mirrors
+  # P1's deployment model so cross-persona comparison is possible.
+  - tier_id: restricted
+    axis_a: A1
+    axis_b: vanilla_oss
+    modifiers:
+      ops_outsourced:
+        outsourced: false
+      service_model: IaaS
+      provider_jurisdiction: "{NATION}"
+      facility_jurisdiction: "{NATION}"
+      extraterritorial_law_exposure: false
+      key_custody: external_hsm   # see P1 note: editorial interpretation for the A1 self-operated case

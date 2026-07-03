@@ -1,0 +1,56 @@
+# Golden persona P7 — DRAFT, awaiting project-owner review.
+# See P1 for the persona ownership workflow note.
+#
+# Design intent: Axis A5 — a local partner entity legally operates a
+# "sovereign region" of an international provider's technology stack. This
+# is the most nuanced case: the operating/legal entity is domestic, but the
+# underlying technology, patches, and much of the support chain still trace
+# back to the foreign parent. The persona is built to probe whether the
+# disposition engine can tell "locally operated" apart from "locally
+# controlled" instead of treating A5 as equivalent to A3 (genuine local CSP).
+
+persona_id: sovereign-region-partner
+name: "P7 — Partner-operated sovereign region of an international provider"
+summary: >
+  A5: a domestic partner entity operates a "sovereign region" built on a
+  foreign hyperscaler's technology, under license/franchise from that
+  hyperscaler. Legal operating entity is local; underlying stack and much
+  of the support chain trace to the foreign parent. Tests that A5 is NOT
+  scored identically to A3 (genuine independent local CSP) despite both
+  having a domestic operating entity.
+status: draft
+
+priorities:
+  - protection_from_foreign_legal_access
+  - lock_in_avoidance
+  - continuity_under_disconnection
+  - local_capacity_building
+  - cost_efficiency
+
+classification_scheme: default_4_tier
+
+tiers:
+  - tier_id: restricted
+    axis_a: A5
+    modifiers:
+      ops_outsourced:
+        outsourced: true
+        # The operating entity is local, but the technology and much of the
+        # support/patch chain is licensed from — and remains dependent on —
+        # the foreign parent hyperscaler.
+        to_whom: "Local partner entity, operating under license from a foreign hyperscaler"
+        jurisdiction: "{NATION}"
+      service_model: IaaS
+      # provider_jurisdiction is modeled as the licensed local operating
+      # entity (domestic) — the nuance is captured instead in
+      # extraterritorial_law_exposure, since the underlying technology stack
+      # and escalation/support chain still reach back to the foreign parent.
+      provider_jurisdiction: "{NATION}"
+      facility_jurisdiction: "{NATION}"
+      extraterritorial_law_exposure: true
+      key_custody: hyok   # typical of "sovereign region" partner offerings
+      contract_terms:
+        audit_rights: true
+        exit_reversibility: false   # exit from the underlying foreign technology stack remains constrained
+        residency_commitment: true
+        escrow: false

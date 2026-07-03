@@ -1,0 +1,53 @@
+# Golden persona P5 — DRAFT, awaiting project-owner review.
+# See P1 for the persona ownership workflow note.
+#
+# Design intent: Axis A4 — a foreign hyperscaler, but with the strongest
+# contractual and technical mitigations available: hold-your-own-key (HYOK),
+# audit rights, and residency commitments. This persona is the intended
+# counterpart to P6 (same A4/IaaS-vs-SaaS-adjacent deployment, standard
+# terms) for Layer 5 differential-pair testing: strengthening modifiers
+# (HYOK, audit rights) should raise ceilings/scores relative to P6 without
+# changing Axis A itself (invariant I6 — monotonicity).
+
+persona_id: hyperscaler-iaas-strong-contract
+name: "P5 — Foreign hyperscaler, IaaS, HYOK + audit + residency clauses"
+summary: >
+  A4 (IaaS from an international hyperscaler), with hold-your-own-key
+  custody, audit rights, exit/reversibility and residency clauses in the
+  contract. Tests that strong contractual mitigations measurably raise
+  achieved score/ceiling relative to standard-terms hyperscaler personas
+  (P6), even though the underlying provider and jurisdiction are unchanged.
+status: draft
+
+priorities:
+  - protection_from_foreign_legal_access
+  - lock_in_avoidance
+  - continuity_under_disconnection
+  - cost_efficiency
+  - local_capacity_building
+
+classification_scheme: default_4_tier
+
+tiers:
+  - tier_id: restricted
+    axis_a: A4   # international hyperscaler — no Axis B, no gov-operated platform layer
+    modifiers:
+      ops_outsourced:
+        outsourced: true
+        to_whom: "Hyperscaler"
+        jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      service_model: IaaS
+      provider_jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      facility_jurisdiction: "{TRUSTED_REGION}"   # hyperscaler region physically sits within the trusted bloc
+      # HYOK reduces the provider's practical ability to comply with a
+      # foreign access order without government knowledge, but does not
+      # remove the corporate entity's legal exposure to its home
+      # jurisdiction — kept true so the disposition engine still assesses
+      # (rather than silently suppresses) legal/jurisdiction controls here.
+      extraterritorial_law_exposure: true
+      key_custody: hyok
+      contract_terms:
+        audit_rights: true
+        exit_reversibility: true
+        residency_commitment: true
+        escrow: true

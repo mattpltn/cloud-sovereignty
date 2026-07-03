@@ -1,0 +1,59 @@
+# Golden persona P1 — DRAFT, awaiting project-owner review.
+# Per the persona ownership workflow (CLAUDE.md, Testing methodology), Claude Code
+# drafts this file; only the project owner may change status to "approved" and set
+# approved_by / approved_date. validate.py and the engine test runner refuse to run
+# against any persona not marked approved.
+#
+# Design intent: the high-sovereignty baseline. Government owns the datacenter,
+# runs its own cloud on a vanilla open-source stack, and staffs operations
+# in-house. This persona should sit at or near the structural ceiling across
+# most SOV domains — used to sanity-check that the engine doesn't invent gaps
+# where no external party exists.
+
+persona_id: gov-dc-oss-inhouse
+name: "P1 — Government datacenter, vanilla OSS, in-house ops"
+summary: >
+  A1 (government-owned datacenter, government cloud), vanilla OpenStack
+  (Axis B: no commercial or closed-vendor layer), operations staffed and
+  run entirely by government personnel. High-sovereignty baseline: every
+  layer in the responsibility map is government-owned and government-operated.
+status: draft
+
+# Sovereignty outcome ranking (design principle 5: domain weights derive from
+# this ranking, not fixed ECSF procurement weights). All 5 outcomes required,
+# most important first. A government running its own datacenter is modeled
+# here as prioritizing continuity and freedom from foreign legal reach above
+# cost — consistent with having already paid the capital cost of self-hosting.
+priorities:
+  - continuity_under_disconnection
+  - protection_from_foreign_legal_access
+  - lock_in_avoidance
+  - local_capacity_building
+  - cost_efficiency
+
+# This persona uses the tool's default 4-tier scheme (public/internal/restricted/
+# secret) rather than a named national classification.
+classification_scheme: default_4_tier
+
+# Single scenario applied at the "secret" tier: the most stringent tier is
+# chosen deliberately so the baseline persona demonstrates the achievable
+# ceiling even under the highest sensitivity classification.
+tiers:
+  - tier_id: secret
+    axis_a: A1               # government-owned datacenter, government cloud
+    axis_b: vanilla_oss       # no commercial support layer, no closed vendor stack
+    modifiers:
+      ops_outsourced:
+        outsourced: false     # operations staffed in-house — no external party at the ops layer
+      service_model: IaaS     # the government cloud presents infrastructure-as-a-service internally
+      provider_jurisdiction: "{NATION}"
+      facility_jurisdiction: "{NATION}"
+      extraterritorial_law_exposure: false   # no foreign party in the chain to assert extraterritorial reach
+      # key_custody modeling note: A1 has no third-party "provider" distinct from
+      # government, so provider_held/hyok don't map cleanly. external_hsm is used
+      # here to represent government-operated dedicated key management hardware,
+      # not a third party — flagged for owner review as this is an editorial
+      # interpretation of the modifier for the A1 self-operated case.
+      key_custody: external_hsm
+      # No contract_terms: there is no external vendor contract to attach
+      # audit rights / exit clauses / escrow to at this layer.

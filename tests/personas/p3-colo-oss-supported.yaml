@@ -1,0 +1,53 @@
+# Golden persona P3 — DRAFT, awaiting project-owner review.
+# See P1 for the persona ownership workflow note.
+#
+# Design intent: Axis A2 — government cloud hosted in a commercial
+# colocation facility that happens to be foreign-owned, even though the
+# physical facility is in-country. Platform/software layer stays
+# open-source-with-commercial-support (a middle ground between P1's vanilla
+# OSS and P2's closed stack). Tests that facility-layer dependency on a
+# foreign-owned colo parent is captured even when the building itself sits
+# on national soil.
+
+persona_id: colo-oss-supported
+name: "P3 — Foreign-owned in-country colo, OSS + commercial support"
+summary: >
+  A2 (government cloud in a commercial colocation facility, in-country),
+  open-source stack with commercial support, colo operator foreign-owned.
+  Tests facility-layer dependency wording/disposition when the physical
+  facility is domestic but its corporate parent is not.
+status: draft
+
+priorities:
+  - protection_from_foreign_legal_access
+  - continuity_under_disconnection
+  - local_capacity_building
+  - lock_in_avoidance
+  - cost_efficiency
+
+classification_scheme: default_4_tier
+
+tiers:
+  - tier_id: internal
+    axis_a: A2                       # colo facility, government cloud on top
+    axis_b: oss_commercial_support    # open source + a commercial support contract
+    modifiers:
+      ops_outsourced:
+        outsourced: true
+        to_whom: "OSS commercial support vendor"
+        jurisdiction: "{TRUSTED_REGION}"
+      service_model: IaaS
+      # provider_jurisdiction here refers to the colo operator's legal home,
+      # which is foreign even though the facility they operate is domestic.
+      provider_jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      facility_jurisdiction: "{NATION}"   # the physical building is in-country
+      # The colo operator's foreign parent company remains a plausible
+      # extraterritorial-law vector (e.g. compelled facility access) despite
+      # the facility's domestic location — this is the layer P3 is built to probe.
+      extraterritorial_law_exposure: true
+      key_custody: hyok
+      contract_terms:
+        audit_rights: true
+        exit_reversibility: true
+        residency_commitment: true
+        escrow: false

@@ -1,0 +1,46 @@
+# Golden persona P4 — DRAFT, awaiting project-owner review.
+# See P1 for the persona ownership workflow note.
+#
+# Design intent: Axis A3 — a local (in-country) commercial cloud provider,
+# IaaS, standard/typical contract terms, assessed at the restricted tier.
+# This is the "domestic commercial provider" middle case between fully
+# self-hosted (P1/P2) and foreign hyperscaler (P5/P6): provider and facility
+# are both domestic, but the government no longer owns or directly staffs
+# the infrastructure — a genuine third party now exists at most layers.
+
+persona_id: local-csp-iaas
+name: "P4 — Local (in-country) commercial CSP, IaaS, restricted tier"
+summary: >
+  A3 (IaaS from a local/in-country cloud provider), standard commercial
+  terms, restricted-tier workload. Domestic provider and facility, but a
+  genuine third party now exists at most layers — tests dispositions for
+  a real commercial relationship that is nonetheless entirely in-jurisdiction.
+status: draft
+
+priorities:
+  - local_capacity_building
+  - protection_from_foreign_legal_access
+  - continuity_under_disconnection
+  - cost_efficiency
+  - lock_in_avoidance
+
+classification_scheme: default_4_tier
+
+tiers:
+  - tier_id: restricted   # matches the persona's name/intent
+    axis_a: A3             # local in-country CSP, no Axis B — no gov-run platform layer to classify
+    modifiers:
+      ops_outsourced:
+        outsourced: true
+        to_whom: "Local commercial CSP's own operations team"
+        jurisdiction: "{NATION}"
+      service_model: IaaS
+      provider_jurisdiction: "{NATION}"
+      facility_jurisdiction: "{NATION}"
+      extraterritorial_law_exposure: false   # domestic provider, domestic facility, no foreign parent modeled
+      key_custody: provider_held   # standard/typical terms, not a strengthened contract
+      contract_terms:
+        audit_rights: true
+        exit_reversibility: false
+        residency_commitment: true
+        escrow: false

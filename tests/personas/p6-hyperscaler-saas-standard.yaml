@@ -1,0 +1,47 @@
+# Golden persona P6 — DRAFT, awaiting project-owner review.
+# See P1 for the persona ownership workflow note.
+#
+# Design intent: the deliberate floor case. Axis A4, SaaS (the government
+# controls the least of the stack of any service model), standard/default
+# contract terms with none of P5's mitigations. This is expected to produce
+# the lowest achieved score and lowest ceiling of the persona set — used to
+# confirm the scoring model has a believable floor and that gap
+# recommendations (negotiate/implement/strategic) are richest here.
+
+persona_id: hyperscaler-saas-standard
+name: "P6 — Foreign hyperscaler, SaaS, standard terms"
+summary: >
+  A4 (SaaS from an international hyperscaler), standard/default terms —
+  no HYOK, no audit rights, no residency or exit commitments. Lowest-ceiling
+  case in the golden set: SaaS cedes the most stack layers to the provider,
+  and standard terms add no contractual mitigation. Used as the floor
+  reference for differential-pair comparisons against P5.
+status: draft
+
+priorities:
+  - cost_efficiency
+  - continuity_under_disconnection
+  - protection_from_foreign_legal_access
+  - local_capacity_building
+  - lock_in_avoidance
+
+classification_scheme: default_4_tier
+
+tiers:
+  - tier_id: internal   # SaaS commonly carries lower-sensitivity workloads in practice
+    axis_a: A4
+    modifiers:
+      ops_outsourced:
+        outsourced: true
+        to_whom: "Hyperscaler"
+        jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      service_model: SaaS
+      provider_jurisdiction: "foreign, non-{TRUSTED_REGION}"
+      facility_jurisdiction: "foreign, non-{TRUSTED_REGION}"   # standard terms: no committed region/residency
+      extraterritorial_law_exposure: true
+      key_custody: provider_held   # no HYOK — provider manages keys by default
+      contract_terms:
+        audit_rights: false
+        exit_reversibility: false
+        residency_commitment: false
+        escrow: false
