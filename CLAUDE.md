@@ -69,6 +69,7 @@ Per SOV domain and per workload tier: **achieved** score, **ceiling** (max attai
 ## Frontend architecture
 1. **Client-side only — no backend, ever.** Assessment answers (posture, contract gaps, key custody) are sensitive government information and MUST never leave the user's device. Static web app: catalog JSON bundled, engine runs in the browser, state saved/resumed via local JSON file export. No accounts, no analytics, no trackers, no external calls at runtime. Deployable on GitHub Pages AND downloadable as a zip for offline/intranet/air-gapped use. The public repo is the running app — auditable end to end.
 2. **One engine, one language.** The engine (/engine) is **TypeScript**: the exact same build passes the golden-persona test suites in CI and runs in the browser. No parallel implementations, no ports. Python is used only for extraction tooling and data validation (validate.py). Log this as a DECISIONS.md entry in Phase 1.
+   - This machine's system Python is externally managed (PEP 668); use the project venv: `python3 -m venv .venv && .venv/bin/pip install -r scripts/requirements.txt`, then run tools via `.venv/bin/python3 ...` (`.venv/` is gitignored).
 3. **Flow (5 screens):**
    1. *Methodology landing* — sources, derivation tiers, license, decision-register link, and the privacy statement ("your answers never leave your device").
    2. *Priorities* — rank sovereignty outcomes → domain weights.
