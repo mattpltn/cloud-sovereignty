@@ -153,7 +153,7 @@ Runners: Layers 1, 2, 3 and 5 execute against the TypeScript engine via a Node t
 
 ## Current phase
 > Update this line as phases complete.
-Phase 1 merged to main. **Phase 2a — BSI C3A extraction. Complete, pending review (see docs/phases/phase-2a-report.md).** Next: Phase 2b (ECSF extraction).
+Phase 1 and Phase 2a merged to main (squash-merged per D-011; see docs/phases/phase-2a-report.md and reviews/phase-2a-review-addendum-2.md). **Next: Phase 2b (ECSF extraction).**
 
 ## Phase plan
 - **P1** Schema (control record, persona profile, disposition rules; **all human-readable text fields are language-keyed objects, en + fr**) + **all 8 golden personas DRAFTED as separate YAML files (`status: draft`) for owner amendment and approval** + invariant test skeleton (I1–I7 stubs with definitional docstrings) + validate.py (schemas + persona-approval gate) + CI workflow + docs/METHODOLOGY.md skeleton + docs/DECISIONS.md with first entries (incl. the TypeScript-engine decision). Layer-2 assertions are authored by the project owner against approved personas before any engine code.
