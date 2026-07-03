@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/persona-profile.schema.json",
+  "title": "Persona / assessment profile",
+  "description": "A golden persona or a real assessment profile: sovereignty priorities plus one scenario per workload tier. Drafted by Claude Code with status: draft; only the project owner may set status: approved (persona ownership workflow).",
+  "type": "object",
+  "properties": {
+    "persona_id": {
+      "type": "string",
+      "description": "Stable slug, e.g. gov-dc-oss-inhouse.",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": { "type": "string" },
+    "summary": {
+      "type": "string",
+      "description": "What this persona is designed to exercise, e.g. 'facility-sovereign but tech/ops-constrained — must NOT score as sovereign across the board'."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "approved"]
+    },
+    "approved_by": { "type": "string" },
+    "approved_date": { "type": "string", "format": "date" },
+    "priorities": {
+      "type": "array",
+      "description": "Government's sovereignty outcome ranking, most important first. Domain weights derive from this ranking (design principle 5), not fixed ECSF procurement weights.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "continuity_under_disconnection",
+          "protection_from_foreign_legal_access",
+          "lock_in_avoidance",
+          "local_capacity_building",
+          "cost_efficiency"
+        ]
+      },
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "classification_scheme": {
+      "type": "string",
+      "description": "Whether this persona uses the default 4-tier scheme or a national classification (named in tiers[].tier_id).",
+      "enum": ["default_4_tier", "national"]
+    },
+    "tiers": {
+      "type": "array",
+      "description": "One entry per workload tier assessed for this persona. classification tiering (design principle 6): one government = several assessments = a tiered posture map.",
+      "items": { "$ref": "#/$defs/tier_scenario" },
+      "minItems": 1
+    }
+  },
+  "required": ["persona_id", "name", "summary", "status", "priorities", "classification_scheme", "tiers"],
+  "additionalProperties": false,
+  "if": { "properties": { "status": { "const": "approved" } } },
+  "then": { "required": ["approved_by", "approved_date"] },
+  "$defs": {
+    "tier_scenario": {
+      "type": "object",
+      "properties": {
+        "tier_id": {
+          "type": "string",
+          "description": "e.g. public, internal, restricted, secret, or a national classification label."
+        },
+        "axis_a": {
+          "type": "string",
+          "description": "Deployment axis: who provides what.",
+          "enum": ["A1", "A2", "A3", "A4", "A5"]
+        },
+        "axis_b": {
+          "type": "string",
+          "description": "Platform stack. Applies mainly to A1/A2; omit where not applicable (design has no such party/layer for A3-A5 upper stack).",
+          "enum": ["vanilla_oss", "oss_commercial_support", "closed_proprietary"]
+        },
+        "modifiers": { "$ref": "#/$defs/modifiers" }
+      },
+      "required": ["tier_id", "axis_a", "modifiers"],
+      "additionalProperties": false
+    },
+    "modifiers": {
+      "type": "object",
+      "properties": {
+        "ops_outsourced": {
+          "type": "object",
+          "properties": {
+            "outsourced": { "type": "boolean" },
+            "to_whom": { "type": "string" },
+            "jurisdiction": { "type": "string" }
+          },
+          "required": ["outsourced"],
+          "additionalProperties": false
+        },
+        "service_model": {
+          "type": "string",
+          "enum": ["IaaS", "PaaS", "SaaS"]
+        },
+        "provider_jurisdiction": {
+          "type": "string",
+          "description": "Legal home jurisdiction of the provider, expressed relative to {NATION}/{TRUSTED_REGION}."
+        },
+        "facility_jurisdiction": {
+          "type": "string",
+          "description": "Jurisdiction of the physical facility, expressed relative to {NATION}/{TRUSTED_REGION}."
+        },
+        "extraterritorial_law_exposure": {
+          "type": "boolean",
+          "description": "Whether a foreign extraterritorial law (e.g. CLOUD Act analog) can reach this deployment."
+        },
+        "key_custody": {
+          "type": "string",
+          "enum": ["provider_held", "hyok", "external_hsm"]
+        },
+        "contract_terms": {
+          "type": "object",
+          "properties": {
+            "audit_rights": { "type": "boolean" },
+            "exit_reversibility": { "type": "boolean" },
+            "residency_commitment": { "type": "boolean" },
+            "escrow": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": ["service_model", "key_custody"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/control-record.schema.json",
+  "title": "Control record",
+  "description": "A single criterion in the CSAT catalog, traceable to one or more source frameworks. Engine and app read these records; disposition and scoring logic never hardcodes an individual control (design principle 1).",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable catalog identifier, e.g. csat-sov4-01.",
+      "pattern": "^csat-sov[1-7]-[a-z0-9-]+$"
+    },
+    "sov_domain": {
+      "type": "string",
+      "description": "SOV-7 (security) is inheritance-only per the charter: records in this domain must have disposition_default = inherit. SOV-8 is out of scope and must not appear.",
+      "enum": ["SOV-1", "SOV-2", "SOV-3", "SOV-4", "SOV-5", "SOV-6", "SOV-7"]
+    },
+    "criterion_type": {
+      "type": "string",
+      "description": "C3A distinguishes baseline Criteria from Additional Criteria.",
+      "enum": ["C", "AC"]
+    },
+    "localization_level": {
+      "type": "string",
+      "description": "C3A localization tier this record instantiates, where applicable. C1 generalizes to {TRUSTED_REGION}, C2 to {NATION}.",
+      "enum": ["C1", "C2"]
+    },
+    "layer": {
+      "type": "string",
+      "description": "Layer in the responsibility map this control addresses. Used by the disposition engine and by invariant I2 (no rendered question references a party/layer absent from the persona's map).",
+      "enum": [
+        "legal_jurisdiction",
+        "facility",
+        "hardware_supply_chain",
+        "virtualization",
+        "platform",
+        "data",
+        "identity",
+        "operations_personnel"
+      ]
+    },
+    "derivation": {
+      "type": "string",
+      "description": "Provenance tier. editorial records MUST have a corresponding docs/DECISIONS.md entry (working rule 9).",
+      "enum": ["verbatim", "generalized", "derived", "editorial"]
+    },
+    "source_refs": {
+      "type": "array",
+      "description": "Exact framework + section/criterion IDs this record traces to (transparency principle 2). Empty only permitted when derivation = editorial, and then only alongside a DECISIONS.md entry.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "framework": { "type": "string", "enum": ["C3A", "ECSF", "CADA"] },
+          "section_id": {
+            "type": "string",
+            "description": "e.g. SOV-4-01-C2, ECSF-4.2, CADA-Art.12"
+          },
+          "status": {
+            "type": "string",
+            "description": "Flags CADA obligations tied to draft legislation, per charter source-framework note 3.",
+            "const": "proposed_legislation"
+          }
+        },
+        "required": ["framework", "section_id"],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "source_text": {
+      "description": "Verbatim source passage, keyed by language. License care (transparency principle 7): C3A is CC-BY-ND 4.0. Omit this field and use source_pointer instead unless verbatim reproduction has been confirmed permissible and logged in docs/DECISIONS.md.",
+      "$ref": "lang-string.schema.json"
+    },
+    "source_pointer": {
+      "type": "object",
+      "description": "Reference to the official source document/section in place of verbatim text, used when a license does not clearly permit reproduction.",
+      "properties": {
+        "document": { "type": "string" },
+        "section": { "type": "string" }
+      },
+      "required": ["document", "section"],
+      "additionalProperties": false
+    },
+    "generalized_text": {
+      "description": "Question/criterion text with {NATION}/{TRUSTED_REGION}/{PROVIDER} placeholders substituted per the documented substitution rules. Required for all derivation tiers except raw verbatim-only extraction records.",
+      "$ref": "lang-string.schema.json"
+    },
+    "placeholders_used": {
+      "type": "array",
+      "description": "Placeholders present in generalized_text, checked against invariant I3 (no unresolved placeholders in rendered text).",
+      "items": { "type": "string", "enum": ["{NATION}", "{TRUSTED_REGION}", "{PROVIDER}"] }
+    },
+    "disposition_default": {
+      "type": "string",
+      "description": "Fallback disposition absent any matching disposition rule. Actual disposition is computed per-assessment by the responsibility-map engine (design principle 3) and may differ.",
+      "enum": ["assess", "auto_answer", "inherit", "suppress"]
+    },
+    "negotiation_opportunity": {
+      "type": "boolean",
+      "description": "Whether this control carries a model contract-clause suggestion (cross-cutting flag, see Dispositions section).",
+      "default": false
+    },
+    "negotiation_clause": {
+      "description": "Model contract clause language. Required when negotiation_opportunity is true (checked by invariant I5).",
+      "$ref": "lang-string.schema.json"
+    },
+    "evidence_quality_options": {
+      "type": "array",
+      "description": "Which evidence tiers are applicable to this control, ordered weakest to strongest.",
+      "items": { "type": "string", "enum": ["self_attested", "contractual_commitment", "third_party_certified", "independently_audited"] },
+      "minItems": 1
+    },
+    "weight": {
+      "type": "number",
+      "description": "Base weight before outcome-derived domain weighting and renormalization for suppressed controls.",
+      "exclusiveMinimum": 0
+    },
+    "needs_review": {
+      "type": "boolean",
+      "description": "Set true whenever extraction is ambiguous. Never guess (working rule 2).",
+      "default": false
+    },
+    "needs_review_note": {
+      "type": "string",
+      "description": "Required when needs_review is true: explains the ambiguity."
+    }
+  },
+  "required": [
+    "id",
+    "sov_domain",
+    "criterion_type",
+    "layer",
+    "derivation",
+    "source_refs",
+    "generalized_text",
+    "disposition_default",
+    "evidence_quality_options",
+    "weight",
+    "needs_review"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "description": "editorial records need no source_refs entries but must still carry the array (possibly empty) — enforced structurally; the DECISIONS.md linkage is enforced by validate.py, not by schema.",
+      "if": { "properties": { "derivation": { "const": "editorial" } } },
+      "then": {}
+    },
+    {
+      "if": { "properties": { "needs_review": { "const": true } } },
+      "then": { "required": ["needs_review_note"] }
+    },
+    {
+      "if": {
+        "properties": { "negotiation_opportunity": { "const": true } },
+        "required": ["negotiation_opportunity"]
+      },
+      "then": { "required": ["negotiation_clause"] }
+    },
+    {
+      "if": { "not": { "required": ["source_text"] } },
+      "then": { "required": ["source_pointer"] }
+    }
+  ]
+}

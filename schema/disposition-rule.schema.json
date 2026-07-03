@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/disposition-rule.schema.json",
+  "title": "Disposition rule",
+  "description": "A declarative rule in the responsibility-map/disposition engine (Phase 4). Rules condition on Axis A/B and modifiers, never on individual scenarios or personas (design principle 3) — dispositions are computed, not hand-tagged. Every rule is an editorial judgment and therefore requires a docs/DECISIONS.md entry (working rule 9).",
+  "type": "object",
+  "properties": {
+    "rule_id": {
+      "type": "string",
+      "pattern": "^disp-[a-z0-9-]+$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Plain-language statement of what responsibility-map condition this rule encodes."
+    },
+    "derivation": {
+      "type": "string",
+      "const": "editorial",
+      "description": "Disposition mappings are always a project judgment call about who holds responsibility for a layer under a given scenario."
+    },
+    "decision_ref": {
+      "type": "string",
+      "description": "ID of the corresponding docs/DECISIONS.md entry, e.g. D-014.",
+      "pattern": "^D-[0-9]+$"
+    },
+    "condition": {
+      "type": "object",
+      "description": "Matched against a persona tier's axis_a/axis_b/modifiers plus a control's layer/sov_domain. All present keys must match (AND). Two rules matching the same control with different dispositions is a build failure (invariant I1), not silent precedence.",
+      "properties": {
+        "layer": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "legal_jurisdiction",
+              "facility",
+              "hardware_supply_chain",
+              "virtualization",
+              "platform",
+              "data",
+              "identity",
+              "operations_personnel"
+            ]
+          },
+          "minItems": 1
+        },
+        "sov_domain": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["SOV-1", "SOV-2", "SOV-3", "SOV-4", "SOV-5", "SOV-6", "SOV-7"] }
+        },
+        "axis_a": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["A1", "A2", "A3", "A4", "A5"] }
+        },
+        "axis_b": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["vanilla_oss", "oss_commercial_support", "closed_proprietary"] }
+        },
+        "modifier_conditions": {
+          "type": "array",
+          "description": "Free-form key/operator/value checks against a tier's modifiers object, e.g. key_custody != hyok.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": { "type": "string" },
+              "operator": { "type": "string", "enum": ["eq", "neq", "in", "not_in", "exists", "not_exists"] },
+              "value": {}
+            },
+            "required": ["path", "operator"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "disposition": {
+      "type": "string",
+      "enum": ["assess", "auto_answer", "inherit", "suppress"]
+    },
+    "wording_variant": {
+      "type": "string",
+      "description": "Selects which text variant of the control's generalized_text to render when disposition = assess (the adapt_wording mechanism is a variant selector inside assess, not a separate disposition)."
+    },
+    "auto_answer_value": {
+      "type": "string",
+      "description": "The prefilled answer when disposition = auto_answer. Always visible to the user with override allowed (never a silent auto_fail).",
+      "enum": ["met", "not_met", "partially_met"]
+    },
+    "rationale": {
+      "description": "Plain-language explanation shown alongside an auto_answer. Required by invariant I5 whenever disposition = auto_answer.",
+      "$ref": "lang-string.schema.json"
+    },
+    "negotiation_opportunity_override": {
+      "type": "boolean",
+      "description": "Set true/false to override the control record's default negotiation_opportunity flag for this specific rule match."
+    }
+  },
+  "required": ["rule_id", "description", "derivation", "decision_ref", "condition", "disposition"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "disposition": { "const": "auto_answer" } } },
+      "then": { "required": ["auto_answer_value", "rationale"] }
+    },
+    {
+      "if": { "properties": { "disposition": { "const": "assess" } } },
+      "then": { "required": ["wording_variant"] }
+    }
+  ]
+}

@@ -7,6 +7,9 @@
 # Source framework PDFs — held back from the public repo (license care; used locally)
 sources/
 
+# Python venv
+.venv/
+
 # Node (Phase 1+)
 node_modules/
 dist/

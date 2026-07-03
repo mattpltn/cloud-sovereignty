@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/lang-string.schema.json",
+  "title": "Language-keyed string",
+  "description": "Every human-readable field in the catalog/schema is keyed by language code. English and French are the minimum required set (design principle: i18n from day one).",
+  "type": "object",
+  "properties": {
+    "en": { "type": "string", "minLength": 1 },
+    "fr": { "type": "string", "minLength": 1 }
+  },
+  "required": ["en", "fr"],
+  "additionalProperties": { "type": "string", "minLength": 1 }
+}
