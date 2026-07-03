@@ -7,6 +7,9 @@
 # Source framework PDFs — held back from the public repo (license care; used locally)
 sources/
 
+# Verbatim extraction text held back from the public repo (D-009, license care)
+data/local/
+
 # Python venv
 .venv/
 

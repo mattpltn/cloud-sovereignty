@@ -162,3 +162,125 @@ No layer is expected to be substantively implemented until its
 prerequisite phase (catalog, engine, scoring) exists — Phase 1's job was
 to make sure the *shape* everything else plugs into is correct and
 tested, which it is.
+
+## Phase 2a — BSI C3A extraction
+
+### Source and tooling
+
+`sources/C3A_Cloud_Computing_Autonomy.pdf` (BSI C3A v1.0, 27.04.2026), 16
+pages, held locally per D-002/D-005 (git-ignored, not published). Text was
+extracted with `pypdf` (`poppler-utils`/`pdftotext` were not installable
+in this environment — no passwordless sudo — so the Read tool's PDF
+renderer, which depends on `pdftoppm`, could not be used; `pypdf`'s text
+extraction proved clean and complete for this document, verified against
+the table of contents' section list and page count). The raw extracted
+text was read in full and hand-transcribed, criterion by criterion, into
+`scripts/extract_c3a.py`, then cross-checked against the raw extraction
+before each domain batch was written out.
+
+### Extraction rules applied
+
+- **Unit of extraction:** one control record per criterion (C) or
+  additional criterion (AC), per CLAUDE.md's Phase 2a instruction to
+  capture "every criterion (C) and additional criterion (AC)... nothing
+  skipped, nothing merged, nothing invented."
+- **Criterion type from the explicit label, not the ID suffix.**
+  `SOV-4-01-C3` is printed with a "C3"-style ID but is explicitly labelled
+  "Additional criterion" in the source text — it is extracted as
+  `criterion_type: AC`. This is the only such mismatch found in the
+  document; every other ID suffix and label agree.
+- **Supplementary Information (SI) blocks are out of scope for this
+  phase.** The schema's `criterion_type` enum has no SI value, and the
+  Phase 2a instruction named only C and AC. SI text is neither extracted
+  as a record nor folded into another record's `source_text` (which would
+  corrupt verbatim accuracy). It remains available in the source PDF for
+  a later phase if the app's UI wants to surface it as contextual help.
+- **`derivation: verbatim` for all 59 records** — no generalization, no
+  placeholder substitution. That is Phase 2d.
+- **`localization_level` (C1=EU / C2=Germany) is set only for genuine
+  paired variants** of the identical requirement (same subject/scope,
+  differing only in EU-vs-Germany jurisdiction) — 20 of 59 records
+  qualify. Criteria that merely mention "EU" or "Germany" without a
+  paired counterpart of the *same* requirement are left untagged, even
+  where the source's own ID suffix might suggest otherwise. The clearest
+  example is `SOV-3-01`: five criteria share the ID stem, but only C3
+  (EU, customer data) and C4 (Germany, customer data) are a true pair —
+  C1 (a generic customer-visibility requirement), C2 (EU-only, derived +
+  account data) and C5 (EU-only, provider data) have no jurisdictional
+  counterpart in the document, so none of the three are tagged.
+- **`fr` fields carry the literal placeholder `"FR-TRANSLATION-PENDING"`**
+  in both `source_text` and `generalized_text`, per D-006 — framework text
+  is not machine-translated, since that would itself be a derivative work
+  under C3A's CC-BY-ND license.
+- **`layer` is a best-effort mapping** to the responsibility-map layer
+  enum from Phase 1, revised in Phase 2a's CR-2 response (D-007): the
+  original eight-value enum's single `hardware_supply_chain` catch-all was
+  split into `supply_chain_hardware`, `supply_chain_software`,
+  `supply_chain_services`, and the 7 affected SOV-5 records were retagged
+  by subject matter. This cleared 4 of the original 15 `needs_review`
+  flags outright; 11 of 59 records (~19%) still carry `needs_review: true`
+  — the remainder are either genuine multi-layer criteria (e.g. `SOV-2-03`
+  State of Defense Takeover touches legal, facility, and personnel at
+  once; `SOV-5-04` export restrictions still spans all three post-split
+  supply-chain layers) or, for one record family (`SOV-4-02-C2`), a
+  verbatim source-text inconsistency (see D-008: reviewer-confirmed
+  against the published PDF, kept verbatim as printed per working rule 4,
+  intended meaning to be handled via a generalization_note in Phase 2d).
+- **`disposition_default: assess`, `weight: 1.0`, and the full four-tier
+  `evidence_quality_options`** are uniform placeholders across all 59
+  records — scenario-dependent disposition is Phase 4 rule work; weighting
+  and evidence-tier applicability are Phase 5 scoring work.
+- **`source_pointer` (document, section, page) is populated on every
+  record**, alongside verbatim `source_text` — an extension of D-002
+  logged as D-005, specific to this extraction working stage (see
+  DECISIONS.md; the public-catalog-record default from D-002 is
+  unchanged and still open).
+
+### Statistics
+
+| | |
+|---|---|
+| Total records | 59 |
+| By domain | SOV-1: 7, SOV-2: 5, SOV-3: 15, SOV-4: 19, SOV-5: 9, SOV-6: 4 |
+| By criterion_type | C: 43, AC: 16 |
+| By derivation | verbatim: 59 (100%) |
+| By layer | data: 14, platform: 13, legal_jurisdiction: 12, operations_personnel: 7, supply_chain_hardware: 3, supply_chain_software: 2, supply_chain_services: 2, identity: 4, facility: 2, virtualization: 0 |
+| needs_review | 11 (19%), down from 15 after D-007's supply-chain layer split |
+| localization_level set | 20 (34%) |
+
+### Validation
+
+`scripts/validate.py` was extended this phase to validate every record in
+`/data/extracted/*.json` against `control-record.schema.json` (previously
+deferred from Phase 1, since no extracted data existed yet) and to check
+`id` uniqueness within each file — the schema itself can't express
+array-level uniqueness. All 59 records validate clean; extraction
+proceeded in six batches (one per SOV domain), each run through the
+validator before committing, per working rule 1.
+
+### Response to review (CR-2)
+
+Three follow-ups were made to the initial extraction in response to a
+project-owner review, before Phase 2b started:
+
+1. **D-007 — supply-chain layer split**, described above.
+2. **D-008 — SOV-4-02-C2 erratum confirmed, not corrected.** The reviewer
+   checked the published PDF directly (p. 11) and confirmed the record's
+   verbatim text is printed exactly as extracted (sentence 1: "within the
+   EU"; sentence 2: "outside Germany"). The record is left untouched; the
+   likely-intended meaning ("within Germany") will be captured via a
+   `generalization_note` referencing D-008 when Phase 2d performs
+   placeholder substitution — not by silently editing the verbatim
+   capture now.
+3. **D-009 — verbatim text moved out of the public artifact.**
+   `data/extracted/c3a.json` (public, git-tracked) had every record's
+   `source_text` language values replaced with the literal placeholder
+   `"SEE-LOCAL-VERBATIM"`. The real verbatim text moved to
+   `data/local/c3a-verbatim.json`, keyed by record `id`, which is
+   git-ignored. `scripts/validate.py` now checks, when
+   `data/local/c3a-verbatim.json` is present, that every record has a
+   matching verbatim entry and vice versa; when the file is absent (e.g.
+   in CI, which never has it), that check is skipped with a printed
+   notice rather than failing. This directly implements D-002/D-005's
+   still-open license caution rather than resolving it — the underlying
+   BSI/counsel question is unchanged.

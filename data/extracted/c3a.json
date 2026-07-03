@@ -1,0 +1,2098 @@
+[
+  {
+    "id": "csat-sov1-01-c1",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-1-01-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-1-01-C1",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov1-01-c2",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-1-01-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-1-01-C2",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C2"
+  },
+  {
+    "id": "csat-sov1-02-c1",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-1-02-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-1-02-C1",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov1-02-c2",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-1-02-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-1-02-C2",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C2"
+  },
+  {
+    "id": "csat-sov1-03-c1",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-1-03-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-1-03-C1",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov1-03-c2",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-1-03-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-1-03-C2",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C2"
+  },
+  {
+    "id": "csat-sov1-04-c",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-1-04-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-1-04-C",
+      "page": 8
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-01-c",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-2-01-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-2-01-C",
+      "page": 8
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-02-c1",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-2-02-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-2-02-C1",
+      "page": 8
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov2-02-c2",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-2-02-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-2-02-C2",
+      "page": 8
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C2"
+  },
+  {
+    "id": "csat-sov2-03-c1",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-2-03-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-2-03-C1",
+      "page": 8
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "localization_level": "C1",
+    "needs_review_note": "Spans legal_jurisdiction (the right to take over), facility (physical assets), and operations_personnel (personnel handover); tagged legal_jurisdiction as the primary overarching obligation since the requirement is fundamentally a legal enablement duty. Review whether Phase 4's disposition rules need a multi-layer treatment instead."
+  },
+  {
+    "id": "csat-sov2-03-c2",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-2-03-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-2-03-C2",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "localization_level": "C2",
+    "needs_review_note": "Same multi-layer concern as SOV-2-03-C1 (legal_jurisdiction / facility / operations_personnel); tagged legal_jurisdiction as primary."
+  },
+  {
+    "id": "csat-sov3-01-c1",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-01-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-01-C1",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-01-c2",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-01-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-01-C2",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-01-c3",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-01-C3"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-01-C3",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov3-01-c4",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-01-C4"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-01-C4",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C2"
+  },
+  {
+    "id": "csat-sov3-01-c5",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-01-C5"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-01-C5",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-02-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-02-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-02-C",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-02-ac",
+    "sov_domain": "SOV-3",
+    "criterion_type": "AC",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-02-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-02-AC",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-03-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "identity",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-03-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-03-C",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-03-ac1",
+    "sov_domain": "SOV-3",
+    "criterion_type": "AC",
+    "layer": "identity",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-03-AC1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-03-AC1",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-03-ac2",
+    "sov_domain": "SOV-3",
+    "criterion_type": "AC",
+    "layer": "identity",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-03-AC2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-03-AC2",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-03-ac3",
+    "sov_domain": "SOV-3",
+    "criterion_type": "AC",
+    "layer": "identity",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-03-AC3"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-03-AC3",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-04-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-04-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-04-C",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Logging capability spans data (records of data-access activity) and platform/operations_personnel (who/what performs and hosts the logging); tagged data as the closest fit since the criterion centers on data-access accountability."
+  },
+  {
+    "id": "csat-sov3-04-ac1",
+    "sov_domain": "SOV-3",
+    "criterion_type": "AC",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-04-AC1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-04-AC1",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C."
+  },
+  {
+    "id": "csat-sov3-04-ac2",
+    "sov_domain": "SOV-3",
+    "criterion_type": "AC",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-04-AC2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-04-AC2",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C."
+  },
+  {
+    "id": "csat-sov3-05-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-3-05-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-3-05-C",
+      "page": 10
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-01-c1",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-01-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-01-C1",
+      "page": 11
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov4-01-c2",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-01-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-01-C2",
+      "page": 11
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C2"
+  },
+  {
+    "id": "csat-sov4-01-c3",
+    "sov_domain": "SOV-4",
+    "criterion_type": "AC",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-01-C3"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-01-C3",
+      "page": 11
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-02-c1",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-02-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-02-C1",
+      "page": 11
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov4-02-c2",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-02-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-02-C2",
+      "page": 11
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "localization_level": "C2",
+    "needs_review_note": "Verbatim source text states access paths must be located 'within the EU' in the first sentence but restricts non-'Germany' origins in the second — a source-document inconsistency confirmed against the published PDF, p. 11 (D-008; the C2/Germany variant would be expected to say 'within Germany' throughout, matching SOV-4-01-C2's pattern). Captured verbatim as printed, not corrected. Intended meaning to be handled via a generalization_note referencing D-008 in Phase 2d."
+  },
+  {
+    "id": "csat-sov4-03-c",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "facility",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-03-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-03-C",
+      "page": 11
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Connectivity-provider redundancy sits between facility (physical network connectivity into the datacenter) and supply_chain_services (connectivity provider as an external supplier relationship, post-D-007 taxonomy); tagged facility as primary since the criterion concerns operational network redundancy at the facility level."
+  },
+  {
+    "id": "csat-sov4-03-ac",
+    "sov_domain": "SOV-4",
+    "criterion_type": "AC",
+    "layer": "facility",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-03-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-03-AC",
+      "page": 11
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Same facility/supply_chain_services ambiguity as SOV-4-03-C."
+  },
+  {
+    "id": "csat-sov4-04-c1",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-04-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-04-C1",
+      "page": 12
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C1"
+  },
+  {
+    "id": "csat-sov4-04-c2",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-04-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-04-C2",
+      "page": 12
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false,
+    "localization_level": "C2"
+  },
+  {
+    "id": "csat-sov4-05-c",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-05-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-05-C",
+      "page": 12
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-05-ac1",
+    "sov_domain": "SOV-4",
+    "criterion_type": "AC",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-05-AC1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-05-AC1",
+      "page": 12
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-05-ac2",
+    "sov_domain": "SOV-4",
+    "criterion_type": "AC",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-05-AC2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-05-AC2",
+      "page": 12
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-06-c",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-06-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-06-C",
+      "page": 12
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-07-c",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-07-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-07-C",
+      "page": 12
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-08-c",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-08-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-08-C",
+      "page": 13
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-08-ac",
+    "sov_domain": "SOV-4",
+    "criterion_type": "AC",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-08-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-08-AC",
+      "page": 13
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-09-c",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-09-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-09-C",
+      "page": 13
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-09-ac",
+    "sov_domain": "SOV-4",
+    "criterion_type": "AC",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-09-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-09-AC",
+      "page": 14
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-10-c",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-4-10-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-4-10-C",
+      "page": 14
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-01-c",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_software",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-01-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-01-C",
+      "page": 14
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-01-ac",
+    "sov_domain": "SOV-5",
+    "criterion_type": "AC",
+    "layer": "supply_chain_software",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-01-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-01-AC",
+      "page": 14
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-02-c",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_hardware",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-02-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-02-C",
+      "page": 15
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-02-ac",
+    "sov_domain": "SOV-5",
+    "criterion_type": "AC",
+    "layer": "supply_chain_hardware",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-02-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-02-AC",
+      "page": 15
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-03-c",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_services",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-03-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-03-C",
+      "page": 15
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-03-ac",
+    "sov_domain": "SOV-5",
+    "criterion_type": "AC",
+    "layer": "supply_chain_services",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-03-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-03-AC",
+      "page": 15
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-04-c",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_hardware",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-04-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-04-C",
+      "page": 15
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Spans all three post-D-007 supply-chain layers (software, hardware, external services) simultaneously — export-restriction risk applies across all of them. Tagged supply_chain_hardware as primary since export-control regimes (e.g. ITAR/EAR-style restrictions) are most classically applied to physical hardware/technology export; software and service dependencies are also in scope per the verbatim text above."
+  },
+  {
+    "id": "csat-sov5-05-c1",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-05-C1"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-05-C1",
+      "page": 16
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "localization_level": "C1",
+    "needs_review_note": "Filed under the SOV-5 Supply Chain Sovereignty domain in the source, but content concerns operational capacity-management location, not a supply-chain relationship; tagged platform as the better content-based layer fit. sov_domain (SOV-5) is preserved as given by the source structure; layer is assessed independently per the responsibility-map model."
+  },
+  {
+    "id": "csat-sov5-05-c2",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-5-05-C2"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-5-05-C2",
+      "page": 16
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "localization_level": "C2",
+    "needs_review_note": "Same domain/layer distinction as SOV-5-05-C1."
+  },
+  {
+    "id": "csat-sov6-01-c",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-6-01-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-6-01-C",
+      "page": 16
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-02-c",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-6-02-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-6-02-C",
+      "page": 16
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-02-ac",
+    "sov_domain": "SOV-6",
+    "criterion_type": "AC",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-6-02-AC"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-6-02-AC",
+      "page": 16
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-03-c",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "C3A",
+        "section_id": "SOV-6-03-C"
+      }
+    ],
+    "source_pointer": {
+      "document": "BSI C3A v1.0 (27.04.2026)",
+      "section": "SOV-6-03-C",
+      "page": 16
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  }
+]

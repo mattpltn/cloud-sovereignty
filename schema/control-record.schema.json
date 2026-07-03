@@ -31,7 +31,9 @@
       "enum": [
         "legal_jurisdiction",
         "facility",
-        "hardware_supply_chain",
+        "supply_chain_hardware",
+        "supply_chain_software",
+        "supply_chain_services",
         "virtualization",
         "platform",
         "data",
@@ -72,10 +74,11 @@
     },
     "source_pointer": {
       "type": "object",
-      "description": "Reference to the official source document/section in place of verbatim text, used when a license does not clearly permit reproduction.",
+      "description": "Reference to the official source document/section, sufficient to locate the passage without reproducing it. Required on every record regardless of whether source_text is also present, so a record remains traceable even if source_text is later stripped before publication.",
       "properties": {
         "document": { "type": "string" },
-        "section": { "type": "string" }
+        "section": { "type": "string" },
+        "page": { "type": "integer", "minimum": 1 }
       },
       "required": ["document", "section"],
       "additionalProperties": false

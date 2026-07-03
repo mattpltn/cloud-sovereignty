@@ -8,7 +8,9 @@ export type Disposition = "assess" | "auto_answer" | "inherit" | "suppress";
 export type Layer =
   | "legal_jurisdiction"
   | "facility"
-  | "hardware_supply_chain"
+  | "supply_chain_hardware"
+  | "supply_chain_software"
+  | "supply_chain_services"
   | "virtualization"
   | "platform"
   | "data"
