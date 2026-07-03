@@ -153,7 +153,7 @@ Runners: Layers 1, 2, 3 and 5 execute against the TypeScript engine via a Node t
 
 ## Current phase
 > Update this line as phases complete.
-**Phase 0 — repo setup.** Next: Phase 1 (schema + personas + test harness skeleton).
+**Phase 1 — schema + personas + test harness skeleton. Complete, pending merge to main after external review (see docs/phases/phase-1-report.md).** Next: Phase 2a (C3A extraction).
 
 ## Phase plan
 - **P1** Schema (control record, persona profile, disposition rules; **all human-readable text fields are language-keyed objects, en + fr**) + **all 8 golden personas DRAFTED as separate YAML files (`status: draft`) for owner amendment and approval** + invariant test skeleton (I1–I7 stubs with definitional docstrings) + validate.py (schemas + persona-approval gate) + CI workflow + docs/METHODOLOGY.md skeleton + docs/DECISIONS.md with first entries (incl. the TypeScript-engine decision). Layer-2 assertions are authored by the project owner against approved personas before any engine code.
