@@ -1,0 +1,16 @@
+# Claude Code local machine state
+.claude/settings.local.json
+
+# Windows "downloaded from internet" markers
+*:Zone.Identifier
+
+# Source framework PDFs — held back from the public repo (license care; used locally)
+sources/
+
+# Node (Phase 1+)
+node_modules/
+dist/
+*.log
+
+# OS
+.DS_Store
