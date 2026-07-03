@@ -1,0 +1,244 @@
+{
+  "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+  "version": "undated (post-tender publication, referenced 2026-07-03)",
+  "weight_profiles": [
+    {
+      "id": "ecsf_guidance_matrix",
+      "label": {
+        "en": "ECSF Implementation Guidance alternative weight matrix",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "weights_percent": {
+        "SOV-1": 20,
+        "SOV-2": 10,
+        "SOV-3": 10,
+        "SOV-4": 15,
+        "SOV-5": 10,
+        "SOV-6": 15,
+        "SOV-7": 15,
+        "SOV-8": 5
+      },
+      "note": {
+        "en": "Differs from v1.2.1's default weights (SOV-1 15, SOV-5 20, SOV-7 10; see ecsf-scoring.json) only in SOV-1 (+5), SOV-5 (-10) and SOV-7 (+5); sum is 100 in both sets. The guidance text states authorities may adapt these values. This is also the exact weight set used by the official calculator XLSX's own D-column (cross-checked in Phase 2b.1) — the calculator does not use the v1.2.1 default weights.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix",
+        "page": 6
+      }
+    }
+  ],
+  "seal_aggregation_rule": {
+    "description": {
+      "en": "The government's overall SEAL level for an assessment is the minimum (lowest) SEAL level achieved across all assessed objectives, not an average or weighted score.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "source_pointer": {
+      "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+      "section": "Assessment of Sovereignty Objectives",
+      "page": 9
+    }
+  },
+  "domain_seal_requirements": [
+    {
+      "domain": "SOV-1",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "seal_3": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+    },
+    {
+      "domain": "SOV-2",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "seal_3": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+    },
+    {
+      "domain": "SOV-3",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "seal_3": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+    },
+    {
+      "domain": "SOV-4",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "seal_3": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+    },
+    {
+      "domain": "SOV-5",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "seal_3": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+    },
+    {
+      "domain": "SOV-6",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "seal_3": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+    },
+    {
+      "domain": "SOV-7",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "seal_3": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+    },
+    {
+      "domain": "SOV-8",
+      "seal_2": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "seal_4": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "The Sovereign Cloud Framework Matrix — SEAL-2/3/4 requirements table",
+        "page": 10
+      },
+      "needs_review": true,
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. SOV-8's SEAL-3 cell has no text distinguishable from SEAL-2/SEAL-4 in the source reflow and is omitted rather than guessed."
+    }
+  ],
+  "seal_level_label_variants": [
+    {
+      "level": 3,
+      "v1_2_1_label": {
+        "en": "Digital Resilience",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "guidance_label": {
+        "en": "SEE-LOCAL-VERBATIM",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "source_pointer_v1_2_1": {
+        "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+        "section": "SEAL levels",
+        "page": 3
+      },
+      "source_pointer_guidance": {
+        "document": "Cloud Sovereignty Framework - Implementation guidance (EU Commission, post-tender, undated)",
+        "section": "Sovereignty Effective Assurance Levels",
+        "page": 3
+      }
+    }
+  ]
+}

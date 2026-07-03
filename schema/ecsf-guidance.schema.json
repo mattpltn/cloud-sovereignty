@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/ecsf-guidance.schema.json",
+  "title": "ECSF Implementation Guidance deltas relative to v1.2.1",
+  "description": "The EU Commission's post-tender 'Cloud Sovereignty Framework — Implementation guidance' document is a second ECSF source that diverges from v1.2.1 in several material ways (see reviews/phase-2b-review-addendum.md and docs/DECISIONS.md D-014). This schema captures those deltas: an alternative named weight profile, the SEAL minimum-aggregation rule, per-domain SEAL-2/3/4 requirement descriptions, and the SEAL-3 label variant. It does NOT modify ecsf-scoring.json (v1.2.1's own weights/labels stay as extracted in Phase 2b).",
+  "type": "object",
+  "properties": {
+    "document": { "type": "string" },
+    "version": { "type": "string" },
+    "weight_profiles": {
+      "type": "array",
+      "description": "Named alternative weight sets. v1.2.1's own default weights live in ecsf-scoring.json and are not repeated here.",
+      "items": { "$ref": "#/$defs/weightProfile" },
+      "minItems": 1
+    },
+    "seal_aggregation_rule": { "$ref": "#/$defs/sealAggregationRule" },
+    "domain_seal_requirements": {
+      "type": "array",
+      "description": "Per-domain concrete meaning of SEAL-2/3/4, one entry per SOV domain (SOV-1..SOV-8), as printed in the guidance's matrix table (page 10).",
+      "items": { "$ref": "#/$defs/domainSealRequirement" },
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "seal_level_label_variants": {
+      "type": "array",
+      "description": "Cases where the guidance document uses a different label for a SEAL level than v1.2.1's own text (captured in ecsf-scoring.json). Only known variant so far: SEAL-3.",
+      "items": { "$ref": "#/$defs/sealLabelVariant" }
+    }
+  },
+  "required": ["document", "version", "weight_profiles", "seal_aggregation_rule", "domain_seal_requirements", "seal_level_label_variants"],
+  "additionalProperties": false,
+  "$defs": {
+    "sourcePointer": {
+      "type": "object",
+      "properties": {
+        "document": { "type": "string" },
+        "section": { "type": "string" },
+        "page": { "type": "integer", "minimum": 1 }
+      },
+      "required": ["document", "section"],
+      "additionalProperties": false
+    },
+    "weightProfile": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "$ref": "lang-string.schema.json" },
+        "weights_percent": {
+          "type": "object",
+          "properties": {
+            "SOV-1": { "type": "number" },
+            "SOV-2": { "type": "number" },
+            "SOV-3": { "type": "number" },
+            "SOV-4": { "type": "number" },
+            "SOV-5": { "type": "number" },
+            "SOV-6": { "type": "number" },
+            "SOV-7": { "type": "number" },
+            "SOV-8": { "type": "number" }
+          },
+          "required": ["SOV-1", "SOV-2", "SOV-3", "SOV-4", "SOV-5", "SOV-6", "SOV-7", "SOV-8"],
+          "additionalProperties": false
+        },
+        "note": { "$ref": "lang-string.schema.json" },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" }
+      },
+      "required": ["id", "label", "weights_percent", "source_pointer"],
+      "additionalProperties": false
+    },
+    "sealAggregationRule": {
+      "type": "object",
+      "properties": {
+        "description": { "$ref": "lang-string.schema.json" },
+        "source_text": { "$ref": "lang-string.schema.json" },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" }
+      },
+      "required": ["description", "source_text", "source_pointer"],
+      "additionalProperties": false
+    },
+    "domainSealRequirement": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "enum": ["SOV-1", "SOV-2", "SOV-3", "SOV-4", "SOV-5", "SOV-6", "SOV-7", "SOV-8"]
+        },
+        "seal_2": { "$ref": "lang-string.schema.json" },
+        "seal_3": { "$ref": "lang-string.schema.json" },
+        "seal_4": { "$ref": "lang-string.schema.json" },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" },
+        "needs_review": { "type": "boolean" },
+        "needs_review_note": { "type": "string" }
+      },
+      "required": ["domain", "seal_2", "seal_4", "source_pointer"],
+      "additionalProperties": false
+    },
+    "sealLabelVariant": {
+      "type": "object",
+      "properties": {
+        "level": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "v1_2_1_label": { "$ref": "lang-string.schema.json" },
+        "guidance_label": { "$ref": "lang-string.schema.json" },
+        "source_pointer_v1_2_1": { "$ref": "#/$defs/sourcePointer" },
+        "source_pointer_guidance": { "$ref": "#/$defs/sourcePointer" }
+      },
+      "required": ["level", "v1_2_1_label", "guidance_label", "source_pointer_v1_2_1", "source_pointer_guidance"],
+      "additionalProperties": false
+    }
+  }
+}

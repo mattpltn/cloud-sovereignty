@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/ecsf-scoring.schema.json",
+  "title": "ECSF SEAL scale, domain definitions, weights, and scoring formula",
+  "description": "The EU Cloud Sovereignty Framework (ECSF) is not a criteria catalogue like C3A: it defines a maturity scale (SEAL 0-4), eight SOV domain definitions, official procurement weights, and a scoring formula. This schema captures those four data shapes as a single document, distinct from control-record.schema.json which captures ECSF's per-domain contributing factors as individual records (data/extracted/ecsf.json).",
+  "type": "object",
+  "properties": {
+    "document": {
+      "type": "string",
+      "description": "Human-readable source document identifier, e.g. 'EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)'."
+    },
+    "version": {
+      "type": "string"
+    },
+    "seal_levels": {
+      "type": "array",
+      "description": "Sovereignty Effectiveness Assurance Levels, SEAL-0 (no sovereignty) through SEAL-4 (full digital sovereignty).",
+      "items": { "$ref": "#/$defs/sealLevel" },
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "domains": {
+      "type": "array",
+      "description": "All 8 ECSF Sovereignty Objectives (SOV-1..SOV-8), including SOV-7 (inheritance-only per CLAUDE.md) and SOV-8 (out of scope), kept here for traceability even though SOV-7/SOV-8 do not produce control records.",
+      "items": { "$ref": "#/$defs/domain" },
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "scoring_formula": { "$ref": "#/$defs/scoringFormula" }
+  },
+  "required": ["document", "version", "seal_levels", "domains", "scoring_formula"],
+  "additionalProperties": false,
+  "$defs": {
+    "sourcePointer": {
+      "type": "object",
+      "properties": {
+        "document": { "type": "string" },
+        "section": { "type": "string" },
+        "page": { "type": "integer", "minimum": 1 }
+      },
+      "required": ["document", "section"],
+      "additionalProperties": false
+    },
+    "sealLevel": {
+      "type": "object",
+      "properties": {
+        "level": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "label": { "$ref": "lang-string.schema.json" },
+        "description": { "$ref": "lang-string.schema.json" },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" }
+      },
+      "required": ["level", "label", "description", "source_pointer"],
+      "additionalProperties": false
+    },
+    "domain": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": ["SOV-1", "SOV-2", "SOV-3", "SOV-4", "SOV-5", "SOV-6", "SOV-7", "SOV-8"]
+        },
+        "label": { "$ref": "lang-string.schema.json" },
+        "description": { "$ref": "lang-string.schema.json" },
+        "weight_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Official ECSF procurement weight for this domain (section 5). Distinct from the outcome-derived domain weighting CSAT computes per assessment (Phase 5) — this is the source framework's own value, kept for traceability."
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["assessed", "inheritance_only", "out_of_scope"],
+          "description": "assessed: contributing factors extracted as control records in ecsf.json. inheritance_only: SOV-7, satisfied by C5/ISO/SOC2 evidence per CLAUDE.md, no questions. out_of_scope: SOV-8, not part of this tool per CLAUDE.md."
+        },
+        "factors": {
+          "type": "array",
+          "description": "Verbatim contributing-factor bullet list for this domain, as printed in ECSF section 4. Present for SOV-1..7; omitted for SOV-8 (out of scope, not extracted).",
+          "items": { "$ref": "lang-string.schema.json" }
+        },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" }
+      },
+      "required": ["id", "label", "description", "weight_percent", "scope", "source_pointer"],
+      "additionalProperties": false
+    },
+    "scoringFormula": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "lang-string.schema.json",
+          "description": "Plain-language restatement of the formula, since the PDF's mathematical notation does not extract cleanly as text."
+        },
+        "source_text": {
+          "$ref": "lang-string.schema.json",
+          "description": "The formula as extracted from the PDF, kept verbatim including any character-extraction artifacts from the mathematical notation."
+        },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" }
+      },
+      "required": ["description", "source_pointer"],
+      "additionalProperties": false
+    }
+  }
+}

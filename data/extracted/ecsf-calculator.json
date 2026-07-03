@@ -1,0 +1,2932 @@
+[
+  {
+    "id": "sov1-so1",
+    "sov_domain": "SOV-1",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.67,
+        "seal_level": 1
+      },
+      {
+        "seal_level": 1,
+        "needs_review": true,
+        "needs_review_note": "blank answer label in source row; missing point value in source row"
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.34,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.01,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 5-9"
+    },
+    "needs_review": true
+  },
+  {
+    "id": "sov1-so2",
+    "sov_domain": "SOV-1",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 31.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 93.75,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 10-14"
+    }
+  },
+  {
+    "id": "sov1-so3",
+    "sov_domain": "SOV-1",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.67,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "seal_level": 2,
+        "needs_review": true,
+        "needs_review_note": "non-text answer label in source row (raw value: 0); missing point value in source row"
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.34,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.01,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 15-19"
+    },
+    "needs_review": true
+  },
+  {
+    "id": "sov1-so4",
+    "sov_domain": "SOV-1",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 31.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 93.75,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-03"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 20-24"
+    }
+  },
+  {
+    "id": "sov1-so5",
+    "sov_domain": "SOV-1",
+    "objective_number": 5,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 31.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 93.75,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-04"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 25-29"
+    }
+  },
+  {
+    "id": "sov1-so6",
+    "sov_domain": "SOV-1",
+    "objective_number": 6,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 31.25,
+        "seal_level": 4,
+        "needs_review": true,
+        "needs_review_note": "whitespace-only answer label in source row"
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 93.75,
+        "seal_level": 4,
+        "needs_review": true,
+        "needs_review_note": "whitespace-only answer label in source row"
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-05"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 30-34"
+    },
+    "needs_review": true
+  },
+  {
+    "id": "sov1-so7",
+    "sov_domain": "SOV-1",
+    "objective_number": 7,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.67,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "seal_level": 4,
+        "needs_review": true,
+        "needs_review_note": "whitespace-only answer label in source row; missing point value in source row"
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.01,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-05"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 35-39"
+    },
+    "needs_review": true
+  },
+  {
+    "id": "sov1-so8",
+    "sov_domain": "SOV-1",
+    "objective_number": 8,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 31.25,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 93.75,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov1-ecsf-06"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 40-44"
+    }
+  },
+  {
+    "id": "sov2-so1",
+    "sov_domain": "SOV-2",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 84,
+        "seal_level": 1
+      },
+      {
+        "seal_level": 1,
+        "needs_review": true,
+        "needs_review_note": "blank answer label in source row; missing point value in source row"
+      },
+      {
+        "seal_level": 3,
+        "needs_review": true,
+        "needs_review_note": "blank answer label in source row; missing point value in source row"
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov2-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 46-50"
+    },
+    "needs_review": true
+  },
+  {
+    "id": "sov2-so2",
+    "sov_domain": "SOV-2",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov2-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 51-55"
+    }
+  },
+  {
+    "id": "sov2-so3",
+    "sov_domain": "SOV-2",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov2-ecsf-03"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 56-60"
+    }
+  },
+  {
+    "id": "sov2-so4",
+    "sov_domain": "SOV-2",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov2-ecsf-04"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 61-65"
+    }
+  },
+  {
+    "id": "sov2-so5",
+    "sov_domain": "SOV-2",
+    "objective_number": 5,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov2-ecsf-05"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 66-70"
+    }
+  },
+  {
+    "id": "sov2-so6",
+    "sov_domain": "SOV-2",
+    "objective_number": 6,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov2-ecsf-05"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 71-75"
+    }
+  },
+  {
+    "id": "sov3-so1",
+    "sov_domain": "SOV-3",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov3-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 77-81"
+    }
+  },
+  {
+    "id": "sov3-so2",
+    "sov_domain": "SOV-3",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov3-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 82-86"
+    }
+  },
+  {
+    "id": "sov3-so3",
+    "sov_domain": "SOV-3",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov3-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 87-91"
+    }
+  },
+  {
+    "id": "sov3-so4",
+    "sov_domain": "SOV-3",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov3-ecsf-03"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 92-96"
+    }
+  },
+  {
+    "id": "sov3-so5",
+    "sov_domain": "SOV-3",
+    "objective_number": 5,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov3-ecsf-04"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 97-101"
+    }
+  },
+  {
+    "id": "sov4-so1",
+    "sov_domain": "SOV-4",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov4-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 103-107"
+    }
+  },
+  {
+    "id": "sov4-so2",
+    "sov_domain": "SOV-4",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov4-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 108-112"
+    }
+  },
+  {
+    "id": "sov4-so3",
+    "sov_domain": "SOV-4",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov4-ecsf-03"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 113-117"
+    }
+  },
+  {
+    "id": "sov4-so4",
+    "sov_domain": "SOV-4",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov4-ecsf-04"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 118-122"
+    }
+  },
+  {
+    "id": "sov4-so5",
+    "sov_domain": "SOV-4",
+    "objective_number": 5,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov4-ecsf-05"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 123-127"
+    }
+  },
+  {
+    "id": "sov4-so6",
+    "sov_domain": "SOV-4",
+    "objective_number": 6,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 41.75,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 83.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 167,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov4-ecsf-06"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 128-132"
+    }
+  },
+  {
+    "id": "sov5-so1",
+    "sov_domain": "SOV-5",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov5-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 134-138"
+    }
+  },
+  {
+    "id": "sov5-so2",
+    "sov_domain": "SOV-5",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov5-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 139-143"
+    }
+  },
+  {
+    "id": "sov5-so3",
+    "sov_domain": "SOV-5",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov5-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 144-148"
+    }
+  },
+  {
+    "id": "sov5-so4",
+    "sov_domain": "SOV-5",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov5-ecsf-03"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 149-153"
+    }
+  },
+  {
+    "id": "sov5-so5",
+    "sov_domain": "SOV-5",
+    "objective_number": 5,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov5-ecsf-03"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 154-158"
+    }
+  },
+  {
+    "id": "sov5-so6",
+    "sov_domain": "SOV-5",
+    "objective_number": 6,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov5-ecsf-04"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 159-163"
+    }
+  },
+  {
+    "id": "sov5-so7",
+    "sov_domain": "SOV-5",
+    "objective_number": 7,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov5-ecsf-05"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 164-168"
+    }
+  },
+  {
+    "id": "sov6-so1",
+    "sov_domain": "SOV-6",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov6-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 170-174"
+    }
+  },
+  {
+    "id": "sov6-so2",
+    "sov_domain": "SOV-6",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov6-ecsf-01"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 175-179"
+    }
+  },
+  {
+    "id": "sov6-so3",
+    "sov_domain": "SOV-6",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov6-ecsf-02"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 180-184"
+    }
+  },
+  {
+    "id": "sov6-so4",
+    "sov_domain": "SOV-6",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov6-ecsf-03"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 185-189"
+    }
+  },
+  {
+    "id": "sov6-so5",
+    "sov_domain": "SOV-6",
+    "objective_number": 5,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 50,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 100,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 150,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 200,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "covered",
+      "ecsf_factor_candidates": [
+        "csat-sov6-ecsf-04"
+      ]
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 190-194"
+    }
+  },
+  {
+    "id": "sov7-so1",
+    "sov_domain": "SOV-7",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 196-200"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov7-so2",
+    "sov_domain": "SOV-7",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 201-205"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov7-so3",
+    "sov_domain": "SOV-7",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 206-210"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov7-so4",
+    "sov_domain": "SOV-7",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 211-215"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov7-so5",
+    "sov_domain": "SOV-7",
+    "objective_number": 5,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 216-220"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov7-so6",
+    "sov_domain": "SOV-7",
+    "objective_number": 6,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 221-225"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov7-so7",
+    "sov_domain": "SOV-7",
+    "objective_number": 7,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 35.75,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 71.5,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 107.25,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 143,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 226-230"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov8-so1",
+    "sov_domain": "SOV-8",
+    "objective_number": 1,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 187.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 250,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 232-236"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov8-so2",
+    "sov_domain": "SOV-8",
+    "objective_number": 2,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 0
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 187.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 250,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 237-241"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov8-so3",
+    "sov_domain": "SOV-8",
+    "objective_number": 3,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 1
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 2
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 187.5,
+        "seal_level": 3
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 250,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 242-246"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  },
+  {
+    "id": "sov8-so4",
+    "sov_domain": "SOV-8",
+    "objective_number": 4,
+    "description": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "answer_options": [
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 0,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 62.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 125,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 187.5,
+        "seal_level": 4
+      },
+      {
+        "label": {
+          "en": "SEE-LOCAL-VERBATIM",
+          "fr": "FR-TRANSLATION-PENDING"
+        },
+        "point_value": 250,
+        "seal_level": 4
+      }
+    ],
+    "ecsf_factor_hints": {
+      "coverage": "uncovered",
+      "ecsf_factor_candidates": []
+    },
+    "source_pointer": {
+      "document": "Annex - Sovereignty assessment calculator.xlsx (EU Commission, Cloud III DPS tender annex)",
+      "section": "Sov Assessment Levels (COL), rows 247-251"
+    },
+    "needs_review": true,
+    "needs_review_note": "SOV-7/SOV-8 have no ecsf.json control records (inheritance-only / out of scope per CLAUDE.md and Phase 2b) — coverage: uncovered by construction, not a judgment that no analogue exists."
+  }
+]

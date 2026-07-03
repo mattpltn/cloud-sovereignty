@@ -1,0 +1,1067 @@
+[
+  {
+    "id": "csat-sov1-ecsf-01",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-1-F01"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-1 factor 1",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov1-ecsf-02",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-1-F02"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-1 factor 2",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov1-ecsf-03",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-1-F03"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-1 factor 3",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Financing-source dependency is an ownership/economic factor, not cleanly any single responsibility-map layer (all ten layer values describe technical-operational responsibility, not capital structure). Tagged legal_jurisdiction as the closest fit, consistent with how C3A's own SOV-1 criteria (effective control, ownership transparency) were tagged in Phase 2a. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses financing source)."
+  },
+  {
+    "id": "csat-sov1-ecsf-04",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-1-F04"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-1 factor 4",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Same ambiguity as csat-sov1-ecsf-03: an industrial/economic factor without a clean layer fit. Tagged legal_jurisdiction for consistency with the domain's other factors. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses EU investment/jobs/value creation)."
+  },
+  {
+    "id": "csat-sov1-ecsf-05",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-1-F05"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-1 factor 5",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "A policy-alignment factor rather than a technical responsibility-layer concern. Tagged legal_jurisdiction as the closest available fit; no layer value captures policy-alignment specifically. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses EU policy-initiative alignment)."
+  },
+  {
+    "id": "csat-sov1-ecsf-06",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-1-F06"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-1 factor 6",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Spans legal_jurisdiction (the request to cease/suspend typically originates from a jurisdictional authority or the vendor's home-country obligations) and operations_personnel (sustaining operations despite the disruption is an operational continuity concern). Tagged operations_personnel as primary since the factor asks about the government's/operator's ability to continue running the service, not about the legal basis of the request itself."
+  },
+  {
+    "id": "csat-sov2-ecsf-01",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-2-F01"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-2 factor 1",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-ecsf-02",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-2-F02"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-2 factor 2",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-ecsf-03",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-2-F03"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-2 factor 3",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Explicitly spans legal_jurisdiction (the compulsion mechanism itself) and data/identity (the 'technical channels' through which access would actually occur). Tagged legal_jurisdiction as primary since the factor is framed around the existence of a compulsion pathway, not the technical access-control mechanics."
+  },
+  {
+    "id": "csat-sov2-ecsf-04",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-2-F04"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-2 factor 4",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-ecsf-05",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-2-F05"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-2 factor 5",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "IP jurisdiction is a hybrid of legal_jurisdiction and platform/technology ownership; tagged legal_jurisdiction since the factor's own text frames it primarily in jurisdictional terms ('legal jurisdiction where IP is created and developed'). Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses IP creation/registration location)."
+  },
+  {
+    "id": "csat-sov3-ecsf-01",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-3-F01"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-3 factor 1",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Cryptographic key-custody control could be tagged identity (access-management layer, per C3A's SOV-3-03 IAM convention) or data (data-protection layer, per C3A's SOV-3-01/02 convention). Tagged data as primary since the factor centers on protecting data confidentiality outcomes, not on IAM integration mechanics."
+  },
+  {
+    "id": "csat-sov3-ecsf-02",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-3-F02"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-3 factor 2",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Access/audit logging spans data vs. platform/operations_personnel (who operates the logging system), mirroring the same ambiguity flagged for C3A's SOV-3-04 in Phase 2a. Tagged data as primary since the factor's subject is data-access visibility."
+  },
+  {
+    "id": "csat-sov3-ecsf-03",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-3-F03"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-3 factor 3",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov3-ecsf-04",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-3-F04"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-3 factor 4",
+      "page": 4
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Spans platform (hosting/training infrastructure) and data (training-data provenance) simultaneously. Tagged platform as primary since the factor centers on where/how the AI system itself is built and run, not on the data assets it consumes. Coverage: candidate uncovered factor — verify in Phase 3 (C3A has no AI-specific criteria)."
+  },
+  {
+    "id": "csat-sov4-ecsf-01",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-4-F01"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-4 factor 1",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-ecsf-02",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-4-F02"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-4 factor 2",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-ecsf-03",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-4-F03"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-4 factor 3",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-ecsf-04",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-4-F04"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-4 factor 4",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Spans operations_personnel (support delivered from within the EU) and legal_jurisdiction (subject exclusively to EU legal frameworks). Tagged operations_personnel as primary since the factor is fundamentally about where support work is performed."
+  },
+  {
+    "id": "csat-sov4-ecsf-05",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-4-F05"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-4 factor 5",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-ecsf-06",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "layer": "supply_chain_services",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-4-F06"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-4 factor 6",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-ecsf-01",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_hardware",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-5-F01"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-5 factor 1",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-ecsf-02",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_hardware",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-5-F02"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-5 factor 2",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Firmware is embedded code (software-like) but tightly bound to specific hardware. Tagged supply_chain_hardware as primary, consistent with C3A's SOV-5-04 precedent (D-007) of tagging hardware-adjacent embedded technology under the hardware layer; could also be argued as supply_chain_software."
+  },
+  {
+    "id": "csat-sov5-ecsf-03",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_software",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-5-F03"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-5 factor 3",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-ecsf-04",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_services",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-5-F04"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-5 factor 4",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Spans all three post-D-007 supply-chain layers at once: vendors/facilities (services), facilities (hardware-adjacent), and proprietary technologies (software) — the same multi-layer pattern flagged for C3A's SOV-5-04-C. Tagged supply_chain_services as primary since 'reliance on vendors' is the dominant framing."
+  },
+  {
+    "id": "csat-sov5-ecsf-05",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "layer": "supply_chain_services",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-5-F05"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-5 factor 5",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-ecsf-01",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-6-F01"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-6 factor 1",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Coverage: candidate uncovered factor — verify in Phase 3 (C3A's SOV-6 criteria address source-code backup and vendor-disruption contingency, not API/protocol openness as such; C3A's SOV-3-03-AC1 requires open standards for identity-provider integration specifically, not a general API-openness requirement)."
+  },
+  {
+    "id": "csat-sov6-ecsf-02",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-6-F02"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-6 factor 2",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Coverage: candidate uncovered factor — verify in Phase 3 (C3A has no criterion requiring open-license software or audit/modify/redistribute rights)."
+  },
+  {
+    "id": "csat-sov6-ecsf-03",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-6-F03"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-6 factor 3",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-ecsf-04",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "layer": "supply_chain_hardware",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "ECSF",
+        "section_id": "ECSF-§4-SOV-6-F04"
+      }
+    ],
+    "source_pointer": {
+      "document": "EU Cloud Sovereignty Framework v1.2.1 (Oct. 2025)",
+      "section": "§4 SOV-6 factor 4",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "SEE-LOCAL-VERBATIM"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "GENERALIZATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Spans platform (software ecosystems) and supply_chain_hardware (processors, accelerators). Tagged supply_chain_hardware as primary since the factor centers on hardware/compute independence, with software ecosystems as a secondary aspect."
+  }
+]

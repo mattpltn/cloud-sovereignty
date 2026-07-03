@@ -382,3 +382,190 @@ framework-sourced one. License caution per C3A's CC-BY-ND 4.0 terms
 reachable via `origin`'s branch history until the remote branch is
 deleted per this decision; the project owner retains the full history
 locally (local branch ref / reflog) independent of the remote deletion.
+
+---
+
+## D-012 — ECSF text license basis, and why the D-009/D-010 verbatim-isolation regime is applied anyway
+
+**Date:** 2026-07-03
+**Decision:** The EU Cloud Sovereignty Framework (ECSF) v1.2.1 is a
+European Commission (DG DIGIT) procurement document. Per CLAUDE.md's
+license-care section, "ECSF and CADA follow EU Commission reuse policy,"
+which is materially more permissive than C3A's CC-BY-ND 4.0 — EU
+Commission documents are, by default, reusable under the EU's standard
+reuse policy (Decision 2011/833/EU), typically equivalent to CC-BY,
+unless a document states otherwise. No CC-BY-ND-style "No Derivatives"
+restriction applies. On this basis:
+- `data/extracted/ecsf-scoring.json` (SEAL levels, domain definitions,
+  official weights, scoring formula) carries full verbatim ECSF text
+  directly in the public, git-tracked file — no local/public split is
+  applied to this artifact, since the license basis does not require it.
+- `data/extracted/ecsf.json` (SOV-1..6 contributing factors, extracted as
+  control records) **is** put through the same D-009/D-010
+  verbatim-isolation regime as C3A anyway (public `source_text`/
+  `generalized_text` placeholdered; real text in git-ignored
+  `data/local/ecsf-verbatim.json`), per explicit instruction for this
+  phase, even though ECSF's license does not strictly require it.
+**Alternatives considered:** (a) treat all ECSF artifacts uniformly as
+license-permissive and skip the local/public split entirely, including
+for `ecsf.json` — rejected for this phase per explicit instruction, to
+keep the extraction pipeline's provenance mechanics uniform across
+frameworks rather than branching behavior on a license determination
+that, while more confident than the open C3A question, has not itself
+been separately confirmed by counsel; (b) apply the split to
+`ecsf-scoring.json` too, for total consistency — rejected because that
+file's content (SEAL scale, domain weights, formula) is short, factual,
+and structurally different from prose criteria text, and the explicit
+instruction only asked for the split on the contributing-factor control
+records.
+**Rationale:** This produces an intentional, documented asymmetry within
+the same source framework: `ecsf-scoring.json` is verbatim-in-public,
+`ecsf.json` is verbatim-isolated-to-local. This is not an oversight — it
+is recorded here specifically so the asymmetry is traceable rather than
+looking like an inconsistency, per the transparency principle that every
+editorial choice must be visible and explained (CLAUDE.md, Transparency
+& provenance, item 4).
+**Framework anchor:** ECSF v1.2.1; EU Commission document reuse policy
+(Decision 2011/833/EU) as generally understood, not yet separately
+confirmed by counsel for this specific document.
+**Status:** Open (lower urgency than C3A's D-002/D-005/D-009/D-010,
+since the reuse policy is inherently more permissive) pending explicit
+confirmation of ECSF's specific reuse terms.
+
+## D-013 — ecsf-c3a-hints.json re-encoded as a coverage object (correction, CR-1)
+
+**Date:** 2026-07-03
+**Decision:** `data/extracted/ecsf-c3a-hints.json` (Phase 2b) originally
+encoded each entry as a bare list of C3A candidate ids, with the literal
+string `"uncovered"` used as a magic sentinel value inside that list for
+the 7 factors with no plausible C3A match. The external Phase 2b review
+(`reviews/phase-2b-review.md`, CR-1) correctly flagged this: a bare list
+lets the sentinel sit silently inside what is otherwise an id list, and a
+malformed mixed entry (real ids alongside the sentinel) would validate
+without error. Each entry is now re-encoded as an object:
+`{"coverage": "covered"|"uncovered", "c3a_candidates": [...]}`, with
+`c3a_candidates` required non-empty when `coverage` is `"covered"` and
+required empty when `"uncovered"`. The existing candidate-id lists
+themselves are unchanged — this is a re-encoding of the same mappings,
+not a re-assessment of them. `scripts/build_ecsf_c3a_hints.py` was
+updated to emit the new shape, and `scripts/validate.py`'s
+`check_ecsf_c3a_hints()` was tightened to reject bare lists, reject the
+sentinel string anywhere, require `coverage` to be one of the two
+allowed values, and enforce the non-empty/empty pairing with `coverage`.
+**Alternatives considered:** leave the sentinel in place and just
+document the convention more clearly in the docstring — rejected per the
+reviewer's point that documentation cannot substitute for a check when
+the format itself permits an invalid state.
+**Rationale:** This is a correction to the Phase 2b hints design
+introduced when `ecsf-c3a-hints.json` was first built (see
+`docs/phases/phase-2b-report.md`); as the reviewer noted, the root cause
+traces to loose wording in the original Phase 2b task description, not a
+data-entry error — logged here for process honesty per the append-only
+register rules (correction, not an edit to the original design).
+**Framework anchor:** Editorial — internal data-shape decision, no
+framework criterion involved.
+**Status:** Resolved.
+
+## D-014 — Dual ECSF weight sets stored; CSAT's outcome-derived weighting remains the tool's approach
+
+**Date:** 2026-07-03
+**Decision:** The Phase 2b.1 second source, the EU Commission's "Cloud
+Sovereignty Framework — Implementation guidance" PDF, contains an
+alternative domain weight matrix (SOV-1 20%, SOV-2 10%, SOV-3 10%,
+SOV-4 15%, SOV-5 10%, SOV-6 15%, SOV-7 15%, SOV-8 5%; sum 100) that
+differs from v1.2.1's own default weights (SOV-1 15%, SOV-5 20%, SOV-7
+10%; `data/extracted/ecsf-scoring.json`) in exactly those three domains.
+The guidance text itself states contracting authorities may adapt these
+values, so no single canonical ECSF weight set exists. Both are now
+recorded as named, traceable reference profiles: v1.2.1's weights stay
+in `ecsf-scoring.json` as before; the guidance's alternative is stored as
+`ecsf_guidance_matrix` in the new `data/extracted/ecsf-guidance.json`.
+Neither is treated as authoritative for CSAT's own scoring: per
+CLAUDE.md's core design principle 5, CSAT derives domain weights from
+each assessment's elicited sovereignty-outcome priorities, not from
+either ECSF procurement weight set. Storing both here is for
+traceability and Phase 5 reference only (e.g. as a sanity check or an
+optional "compare to ECSF procurement weighting" view), not because
+CSAT will default to one of them.
+**Alternatives considered:** (a) discard the guidance's alternative
+weights as a one-off procurement artifact not worth capturing — rejected
+because it is officially published Commission guidance and materially
+informs Phase 5 design (it also happens to be the weight set the
+official calculator XLSX itself actually uses, per Phase 2b.1's own
+cross-check); (b) treat the guidance weights as an update superseding
+v1.2.1's — rejected, since v1.2.1 remains the primary source framework
+per CLAUDE.md and nothing indicates v1.2.1's weights were withdrawn.
+**Rationale:** Recording both, explicitly labeled and source-pointed,
+keeps the project's stated non-adoption of either procurement weighting
+scheme (design principle 5) visible and defensible rather than requiring
+a reader to reconcile two documents themselves.
+**Framework anchor:** ECSF v1.2.1 §5 (default weights, already in
+`ecsf-scoring.json`); Implementation Guidance, "The Sovereign Cloud
+Framework Matrix" (page 6-7) for the alternative matrix.
+**Status:** Resolved.
+
+## D-015 — SEAL minimum-aggregation rule adopted as a Phase 5 ceiling-semantics anchor
+
+**Date:** 2026-07-03
+**Decision:** The Implementation Guidance states a SEAL aggregation rule
+absent from v1.2.1 itself: "The overall SEAL level is the lowest SEAL
+level achieved in any of the objectives" (page 9), captured verbatim in
+`data/extracted/ecsf-guidance.json`'s `seal_aggregation_rule`. This
+weakest-link rule is logged now, in Phase 2b.1, as an explicit anchor for
+Phase 5's ceiling/ceiling-vs-achieved design: CSAT's own "ceiling" concept
+(the maximum attainable score given structural constraints, CLAUDE.md
+"Scoring") is conceptually the same weakest-link idea ECSF uses for
+SEAL, and Phase 5 should either adopt a minimum-across-domains rule for
+an analogous overall-ceiling figure or explicitly document why CSAT
+diverges from ECSF's own precedent here.
+**Alternatives considered:** wait until Phase 5 to record this — rejected
+because the rule was found now (Phase 2b.1) and CLAUDE.md's provenance
+discipline (working rule 9) calls for logging judgments/anchors in the
+commit where they're identified, not deferring documentation to a later
+phase that may not re-derive them from the source.
+**Rationale:** Makes the source basis for a likely Phase 5 design choice
+traceable back to this phase rather than appearing to be invented in
+Phase 5 without a framework anchor.
+**Framework anchor:** Implementation Guidance, "Assessment of Sovereignty
+Objectives" (page 9).
+**Status:** Open — Phase 5 must decide whether/how to adopt; this entry
+only establishes the source basis, not the Phase 5 design itself.
+
+## D-016 — Official calculator kept as a separate operationalization layer, not merged into the 30 normative v1.2.1 factors
+
+**Date:** 2026-07-03
+**Decision:** The official Cloud III DPS tender calculator XLSX (`Annex -
+Sovereignty assessment calculator.xlsx`) breaks the 30 v1.2.1
+contributing factors (`data/extracted/ecsf.json`) into 48 finer-grained
+"specific objectives," each with multiple-choice answer options carrying
+a point value and a SEAL level. These are extracted into a new, separate
+file, `data/extracted/ecsf-calculator.json` (schema:
+`schema/ecsf-calculator.schema.json`), rather than merged into or
+replacing the existing 30 `ecsf.json` factor records. Each calculator
+objective carries a provisional, unverified `ecsf_factor_hints` mapping
+back to the `ecsf.json` factor(s) it operationalizes (coverage-object
+encoding per D-013/CR-1), built by reading the calculator's objective
+titles against the Implementation Guidance's own "Criteria" bullets
+(near-identical wording to the `ecsf.json` factor text). SOV-7 and SOV-8
+objectives have no `ecsf.json` records to map to at all (inheritance-only
+/ out of scope, Phase 2b) and are therefore marked `"uncovered"` by
+construction, not because no analogue was found.
+**Alternatives considered:** (a) treat the 48 specific objectives as
+replacing the 30 factors as CSAT's normative catalogue — rejected: the
+factors are v1.2.1's own primary-source text (verbatim, CC-BY-ND-style
+caution already applied via D-012); the calculator is a downstream
+operational artifact from a specific tender, with example scoring values
+its own sheet calls fictitious, and conflating the two would blur which
+data is the source-of-truth criteria versus a worked implementation
+example; (b) silently drop the calculator's malformed/blank answer rows
+during extraction — rejected per this phase's explicit instruction and
+working rule 2 ("never guess silently"); every blank/malformed row is
+captured as-is with `needs_review`.
+**Rationale:** Keeps the calculator as what it is — an operationalization
+reference for Phases 4-6 question/answer design — without letting a
+single tender's implementation choices (e.g. its own fictitious example
+scores, or rows that are blank/malformed in the source spreadsheet)
+contaminate the catalogue of normative criteria.
+**Framework anchor:** `Annex - Sovereignty assessment calculator.xlsx`,
+sheet "Sov Assessment Levels (COL)".
+**Status:** Resolved.

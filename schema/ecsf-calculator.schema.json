@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/ecsf-calculator.schema.json",
+  "title": "ECSF official Sovereignty assessment calculator — specific objectives",
+  "description": "The Cloud III DPS tender's official calculator XLSX (Annex - Sovereignty assessment calculator.xlsx) breaks each ECSF Sovereignty Objective into 'specific objectives' (48 total across SOV-1..SOV-8), each with a question/description, a list of answer options with point values, and a per-answer SEAL level. This is an operationalization layer distinct from the 30 normative v1.2.1 contributing factors (ecsf.json) — see docs/DECISIONS.md on why the two are kept separate. The sheet's own 'Score' column is a fictitious worked example per its own disclaimer and is never captured here. Several source rows are blank or malformed (merged-cell artifacts); these are captured as-is with needs_review rather than repaired.",
+  "type": "array",
+  "items": { "$ref": "#/$defs/specificObjective" },
+  "$defs": {
+    "sourcePointer": {
+      "type": "object",
+      "properties": {
+        "document": { "type": "string" },
+        "section": { "type": "string" }
+      },
+      "required": ["document", "section"],
+      "additionalProperties": false
+    },
+    "coverageHint": {
+      "type": "object",
+      "description": "Provisional, unverified mapping to the v1.2.1 contributing factor(s) this specific objective operationalizes, encoded per the CR-1 pattern (docs/DECISIONS.md D-013).",
+      "properties": {
+        "coverage": { "type": "string", "enum": ["covered", "uncovered"] },
+        "ecsf_factor_candidates": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["coverage", "ecsf_factor_candidates"],
+      "additionalProperties": false
+    },
+    "answerOption": {
+      "type": "object",
+      "properties": {
+        "label": { "$ref": "lang-string.schema.json" },
+        "point_value": { "type": "number" },
+        "seal_level": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "needs_review": { "type": "boolean" },
+        "needs_review_note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "specificObjective": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sov_domain": {
+          "type": "string",
+          "enum": ["SOV-1", "SOV-2", "SOV-3", "SOV-4", "SOV-5", "SOV-6", "SOV-7", "SOV-8"]
+        },
+        "objective_number": { "type": "integer", "minimum": 1 },
+        "description": { "$ref": "lang-string.schema.json" },
+        "answer_options": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/answerOption" },
+          "minItems": 1
+        },
+        "ecsf_factor_hints": { "$ref": "#/$defs/coverageHint" },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" },
+        "needs_review": { "type": "boolean" },
+        "needs_review_note": { "type": "string" }
+      },
+      "required": ["id", "sov_domain", "objective_number", "description", "answer_options", "ecsf_factor_hints", "source_pointer"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -22,6 +22,20 @@ PERSONAS_DIR = ROOT / "tests" / "personas"
 EXTRACTED_DIR = ROOT / "data" / "extracted"
 LOCAL_DIR = ROOT / "data" / "local"
 
+# Files in data/extracted that are NOT arrays of control-record.schema.json
+# records, and are validated separately (see their own check_* functions).
+NON_CONTROL_RECORD_FILES = {"ecsf-scoring.json", "ecsf-c3a-hints.json", "ecsf-guidance.json", "ecsf-calculator.json"}
+
+# data/local/*-verbatim.json pairs whose public counterpart is not a flat
+# array of {"id": ...} control records (ecsf-guidance.json is a single
+# nested object; ecsf-calculator.json's ids don't match the verbatim
+# file's finer per-field keys, e.g. "sov1-so1-desc"/"sov1-so1-opt1" vs.
+# the record id "sov1-so1"). These are excluded from the generic id-set
+# cross-check (check_local_verbatim) — see check_verbatim_placeholder_count
+# for their equivalent completeness check — but still covered by the
+# (generalized) leak check.
+ID_KEYED_VERBATIM_EXCLUSIONS = {"ecsf-guidance.json", "ecsf-calculator.json"}
+
 
 def load_schemas() -> tuple[dict[str, dict], Registry]:
     schemas = {}
@@ -90,6 +104,8 @@ def check_extracted_records(schemas: dict[str, dict], registry: Registry) -> tup
         schemas["control-record.schema.json"], registry=registry
     )
     for f in sorted(EXTRACTED_DIR.glob("*.json")):
+        if f.name in NON_CONTROL_RECORD_FILES:
+            continue
         records = json.loads(f.read_text())
         seen_ids = set()
         for i, record in enumerate(records):
@@ -123,6 +139,8 @@ def check_local_verbatim() -> list[str]:
 
     for verbatim_file in sorted(LOCAL_DIR.glob("*-verbatim.json")):
         base_name = verbatim_file.name.removesuffix("-verbatim.json") + ".json"
+        if base_name in ID_KEYED_VERBATIM_EXCLUSIONS:
+            continue
         public_file = EXTRACTED_DIR / base_name
         if not public_file.exists():
             errors.append(f"data/local/{verbatim_file.name}: no matching public file data/extracted/{base_name}")
@@ -184,16 +202,186 @@ def check_verbatim_leak() -> list[str]:
             for text in walk_strings(entry):
                 leak_spans.update(word_spans(text))
 
-        public_records = json.loads(public_file.read_text())
-        for record in public_records:
+        public_data = json.loads(public_file.read_text())
+        # Most public files are arrays of {"id": ...} control records;
+        # ecsf-guidance.json is a single nested object instead. Both are
+        # covered: walk_strings already recurses through dicts/lists, so
+        # for a bare object we just scan it as one unit rather than
+        # per-record.
+        records = public_data if isinstance(public_data, list) else [public_data]
+        for record in records:
+            label = record.get("id", "?") if isinstance(record, dict) else "?"
             for text in walk_strings(record):
                 for span in word_spans(text):
                     if span in leak_spans:
                         errors.append(
-                            f"data/extracted/{base_name}: record {record.get('id', '?')!r} "
+                            f"data/extracted/{base_name}: record {label!r} "
                             f"contains a >15-word span matching local verbatim text: {span!r}"
                         )
                         break
+
+    return errors
+
+
+def check_verbatim_placeholder_count() -> list[str]:
+    """Completeness check for the ID_KEYED_VERBATIM_EXCLUSIONS pair
+    (ecsf-guidance.json, ecsf-calculator.json), whose local verbatim keys
+    don't line up with a public record id (see that constant's docstring
+    note). Since check_local_verbatim's id-set cross-check is skipped for
+    these, this instead asserts that the count of SEE-LOCAL-VERBATIM
+    placeholders in the public file equals the number of entries in the
+    matching local verbatim file — a weaker but shape-agnostic
+    completeness signal that catches the same class of drift (a field
+    scrubbed but never isolated, or vice versa).
+    """
+    errors = []
+    if not LOCAL_DIR.exists():
+        return errors
+
+    def count_placeholders(value) -> int:
+        if isinstance(value, str):
+            return 1 if value == "SEE-LOCAL-VERBATIM" else 0
+        if isinstance(value, dict):
+            return sum(count_placeholders(v) for v in value.values())
+        if isinstance(value, list):
+            return sum(count_placeholders(v) for v in value)
+        return 0
+
+    for base_name in sorted(ID_KEYED_VERBATIM_EXCLUSIONS):
+        verbatim_file = LOCAL_DIR / (base_name.removesuffix(".json") + "-verbatim.json")
+        public_file = EXTRACTED_DIR / base_name
+        if not verbatim_file.exists() or not public_file.exists():
+            continue
+
+        local_count = len(json.loads(verbatim_file.read_text()))
+        public_count = count_placeholders(json.loads(public_file.read_text()))
+        if local_count != public_count:
+            errors.append(
+                f"data/extracted/{base_name}: {public_count} SEE-LOCAL-VERBATIM "
+                f"placeholder(s) but data/local/{verbatim_file.name} has "
+                f"{local_count} entries — these should match"
+            )
+
+    return errors
+
+
+def check_ecsf_scoring(schemas: dict[str, dict], registry: Registry) -> list[str]:
+    """Validates data/extracted/ecsf-scoring.json (Phase 2b) against
+    ecsf-scoring.schema.json, if present. Not a control-record array, so
+    handled separately from check_extracted_records().
+    """
+    errors = []
+    f = EXTRACTED_DIR / "ecsf-scoring.json"
+    if not f.exists():
+        return errors
+    validator = Draft202012Validator(
+        schemas["ecsf-scoring.schema.json"], registry=registry
+    )
+    data = json.loads(f.read_text())
+    for err in validator.iter_errors(data):
+        errors.append(f"data/extracted/ecsf-scoring.json: {'/'.join(str(p) for p in err.path)}: {err.message}")
+    return errors
+
+
+def check_ecsf_c3a_hints() -> list[str]:
+    """Validates data/extracted/ecsf-c3a-hints.json (Phase 2b), if present:
+    every ecsf record id referenced as a key must exist in ecsf.json, every
+    entry must be an object {"coverage": "covered"|"uncovered",
+    "c3a_candidates": [...]} (D-013, CR-1 — no bare lists, no "uncovered"
+    sentinel), c3a_candidates must be non-empty iff coverage is "covered"
+    and empty iff "uncovered", and every referenced c3a id must exist in
+    c3a.json. These hints are UNVERIFIED candidates for the Phase 3
+    crosswalk, not authoritative — this check only guards against
+    typos/dangling ids/malformed entries, not correctness of the mapping
+    itself.
+    """
+    errors = []
+    f = EXTRACTED_DIR / "ecsf-c3a-hints.json"
+    if not f.exists():
+        return errors
+
+    ecsf_file = EXTRACTED_DIR / "ecsf.json"
+    c3a_file = EXTRACTED_DIR / "c3a.json"
+    ecsf_ids = {r["id"] for r in json.loads(ecsf_file.read_text())} if ecsf_file.exists() else set()
+    c3a_ids = {r["id"] for r in json.loads(c3a_file.read_text())} if c3a_file.exists() else set()
+
+    hints = json.loads(f.read_text())
+    for ecsf_id, entry in hints.items():
+        if ecsf_id not in ecsf_ids:
+            errors.append(f"data/extracted/ecsf-c3a-hints.json: key {ecsf_id!r} does not match any id in ecsf.json")
+
+        if not isinstance(entry, dict):
+            errors.append(f"data/extracted/ecsf-c3a-hints.json: {ecsf_id!r} entry must be an object with 'coverage' and 'c3a_candidates', not a bare list")
+            continue
+
+        coverage = entry.get("coverage")
+        candidates = entry.get("c3a_candidates")
+
+        if coverage not in ("covered", "uncovered"):
+            errors.append(f"data/extracted/ecsf-c3a-hints.json: {ecsf_id!r} has invalid coverage {coverage!r} (must be 'covered' or 'uncovered')")
+            continue
+
+        if not isinstance(candidates, list):
+            errors.append(f"data/extracted/ecsf-c3a-hints.json: {ecsf_id!r} c3a_candidates must be a list")
+            continue
+
+        if coverage == "covered" and len(candidates) == 0:
+            errors.append(f"data/extracted/ecsf-c3a-hints.json: {ecsf_id!r} coverage is 'covered' but c3a_candidates is empty")
+        if coverage == "uncovered" and len(candidates) != 0:
+            errors.append(f"data/extracted/ecsf-c3a-hints.json: {ecsf_id!r} coverage is 'uncovered' but c3a_candidates is non-empty")
+
+        for c in candidates:
+            if c == "uncovered":
+                errors.append(f"data/extracted/ecsf-c3a-hints.json: {ecsf_id!r} contains the sentinel string 'uncovered' as a candidate id, which is no longer accepted (use coverage: \"uncovered\" with an empty list)")
+                continue
+            if c not in c3a_ids:
+                errors.append(f"data/extracted/ecsf-c3a-hints.json: {ecsf_id!r} references unknown C3A id {c!r}")
+
+    return errors
+
+
+def check_ecsf_guidance(schemas: dict[str, dict], registry: Registry) -> list[str]:
+    """Validates data/extracted/ecsf-guidance.json (Phase 2b.1) against
+    ecsf-guidance.schema.json, if present.
+    """
+    errors = []
+    f = EXTRACTED_DIR / "ecsf-guidance.json"
+    if not f.exists():
+        return errors
+    validator = Draft202012Validator(schemas["ecsf-guidance.schema.json"], registry=registry)
+    data = json.loads(f.read_text())
+    for err in validator.iter_errors(data):
+        errors.append(f"data/extracted/ecsf-guidance.json: {'/'.join(str(p) for p in err.path)}: {err.message}")
+    return errors
+
+
+def check_ecsf_calculator(schemas: dict[str, dict], registry: Registry) -> list[str]:
+    """Validates data/extracted/ecsf-calculator.json (Phase 2b.1) against
+    ecsf-calculator.schema.json, if present. Also checks that every
+    ecsf_factor_hints.ecsf_factor_candidates id exists in ecsf.json, and
+    id uniqueness, since the schema itself can't enforce cross-file
+    references or array-wide uniqueness.
+    """
+    errors = []
+    f = EXTRACTED_DIR / "ecsf-calculator.json"
+    if not f.exists():
+        return errors
+    validator = Draft202012Validator(schemas["ecsf-calculator.schema.json"], registry=registry)
+    data = json.loads(f.read_text())
+    for err in validator.iter_errors(data):
+        errors.append(f"data/extracted/ecsf-calculator.json: {'/'.join(str(p) for p in err.path)}: {err.message}")
+
+    ecsf_file = EXTRACTED_DIR / "ecsf.json"
+    ecsf_ids = {r["id"] for r in json.loads(ecsf_file.read_text())} if ecsf_file.exists() else set()
+    seen_ids = set()
+    for record in data:
+        rid = record.get("id")
+        if rid in seen_ids:
+            errors.append(f"data/extracted/ecsf-calculator.json: duplicate id {rid!r}")
+        seen_ids.add(rid)
+        for c in record.get("ecsf_factor_hints", {}).get("ecsf_factor_candidates", []):
+            if c not in ecsf_ids:
+                errors.append(f"data/extracted/ecsf-calculator.json: {rid!r} references unknown ecsf.json id {c!r}")
 
     return errors
 
@@ -208,6 +396,11 @@ def main() -> int:
     errors.extend(extracted_errors)
     errors.extend(check_local_verbatim())
     errors.extend(check_verbatim_leak())
+    errors.extend(check_verbatim_placeholder_count())
+    errors.extend(check_ecsf_scoring(schemas, registry))
+    errors.extend(check_ecsf_c3a_hints())
+    errors.extend(check_ecsf_guidance(schemas, registry))
+    errors.extend(check_ecsf_calculator(schemas, registry))
 
     print(f"Schemas checked: {len(schemas)}")
     print(f"Personas checked: {draft_count + approved_count} ({draft_count} draft, {approved_count} approved)")

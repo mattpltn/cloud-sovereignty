@@ -1,0 +1,208 @@
+{
+  "csat-sov1-ecsf-01": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov1-01-c1",
+      "csat-sov1-01-c2",
+      "csat-sov1-03-c1",
+      "csat-sov1-03-c2"
+    ]
+  },
+  "csat-sov1-ecsf-02": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov1-04-c"
+    ]
+  },
+  "csat-sov1-ecsf-03": {
+    "coverage": "uncovered",
+    "c3a_candidates": []
+  },
+  "csat-sov1-ecsf-04": {
+    "coverage": "uncovered",
+    "c3a_candidates": []
+  },
+  "csat-sov1-ecsf-05": {
+    "coverage": "uncovered",
+    "c3a_candidates": []
+  },
+  "csat-sov1-ecsf-06": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov6-02-c",
+      "csat-sov6-02-ac"
+    ]
+  },
+  "csat-sov2-ecsf-01": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov1-01-c1",
+      "csat-sov1-01-c2"
+    ]
+  },
+  "csat-sov2-ecsf-02": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov2-01-c"
+    ]
+  },
+  "csat-sov2-ecsf-03": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov2-01-c",
+      "csat-sov2-03-c1",
+      "csat-sov2-03-c2"
+    ]
+  },
+  "csat-sov2-ecsf-04": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov2-01-c"
+    ]
+  },
+  "csat-sov2-ecsf-05": {
+    "coverage": "uncovered",
+    "c3a_candidates": []
+  },
+  "csat-sov3-ecsf-01": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov3-02-c",
+      "csat-sov3-02-ac"
+    ]
+  },
+  "csat-sov3-ecsf-02": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov3-04-c",
+      "csat-sov3-04-ac1",
+      "csat-sov3-04-ac2"
+    ]
+  },
+  "csat-sov3-ecsf-03": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov3-01-c1",
+      "csat-sov3-01-c2",
+      "csat-sov3-01-c3",
+      "csat-sov3-01-c4",
+      "csat-sov3-01-c5"
+    ]
+  },
+  "csat-sov3-ecsf-04": {
+    "coverage": "uncovered",
+    "c3a_candidates": []
+  },
+  "csat-sov4-ecsf-01": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov6-02-c",
+      "csat-sov6-02-ac"
+    ]
+  },
+  "csat-sov4-ecsf-02": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov4-01-c1",
+      "csat-sov4-01-c2",
+      "csat-sov4-01-c3",
+      "csat-sov4-02-c1",
+      "csat-sov4-02-c2"
+    ]
+  },
+  "csat-sov4-ecsf-03": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov4-01-c1",
+      "csat-sov4-01-c2",
+      "csat-sov4-01-c3"
+    ]
+  },
+  "csat-sov4-ecsf-04": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov4-01-c1",
+      "csat-sov4-01-c2",
+      "csat-sov4-01-c3",
+      "csat-sov4-02-c1",
+      "csat-sov4-02-c2"
+    ]
+  },
+  "csat-sov4-ecsf-05": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov6-01-c",
+      "csat-sov4-05-ac2"
+    ]
+  },
+  "csat-sov4-ecsf-06": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov4-03-c",
+      "csat-sov4-03-ac",
+      "csat-sov5-03-c",
+      "csat-sov5-03-ac"
+    ]
+  },
+  "csat-sov5-ecsf-01": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov5-02-c",
+      "csat-sov5-02-ac"
+    ]
+  },
+  "csat-sov5-ecsf-02": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov5-02-c",
+      "csat-sov5-02-ac",
+      "csat-sov5-01-c"
+    ]
+  },
+  "csat-sov5-ecsf-03": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov5-01-c",
+      "csat-sov5-01-ac"
+    ]
+  },
+  "csat-sov5-ecsf-04": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov5-04-c",
+      "csat-sov5-01-ac",
+      "csat-sov5-02-ac",
+      "csat-sov5-03-ac"
+    ]
+  },
+  "csat-sov5-ecsf-05": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov5-01-c",
+      "csat-sov5-02-c",
+      "csat-sov5-03-c"
+    ]
+  },
+  "csat-sov6-ecsf-01": {
+    "coverage": "uncovered",
+    "c3a_candidates": []
+  },
+  "csat-sov6-ecsf-02": {
+    "coverage": "uncovered",
+    "c3a_candidates": []
+  },
+  "csat-sov6-ecsf-03": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov4-08-c",
+      "csat-sov4-08-ac"
+    ]
+  },
+  "csat-sov6-ecsf-04": {
+    "coverage": "covered",
+    "c3a_candidates": [
+      "csat-sov5-02-c",
+      "csat-sov5-02-ac"
+    ]
+  }
+}
