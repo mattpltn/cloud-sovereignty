@@ -1,0 +1,17 @@
+{
+  "name": "cloud-sovereignty-assessment-tool",
+  "private": true,
+  "type": "module",
+  "description": "CSAT engine + test harness. See CLAUDE.md for architecture and phase plan.",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^4.1.9",
+    "js-yaml": "^4.1.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.9.0"
+  }
+}
