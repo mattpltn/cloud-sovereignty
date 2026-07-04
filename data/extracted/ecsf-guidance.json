@@ -197,7 +197,7 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. Additionally: the SEAL-3 cell reads \"ELA 3.\" in the source PDF, which is almost certainly a typo for \"EAL 3\" (Evaluation Assurance Level, matching the \"EAL2\"/\"EAL 4-5\" phrasing used in the neighboring SEAL-2/SEAL-4 cells of this same row). Preserved verbatim as printed per project convention (working rule 2 — never silently correct source text); erratum candidate, alongside BSI SOV-4-02-C2 (Phase 2a) and the Article 18/19 cross-reference (Phase 2c)."
     },
     {
       "domain": "SOV-8",
@@ -215,7 +215,7 @@
         "page": 10
       },
       "needs_review": true,
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. SOV-8's SEAL-3 cell has no text distinguishable from SEAL-2/SEAL-4 in the source reflow and is omitted rather than guessed."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. SOV-8's SEAL-3 cell has no text distinguishable from SEAL-2/SEAL-4 in the source reflow and is omitted rather than guessed. Additionally: the source row for SOV-8 prints only two visually distinct cells across the SEAL-2/3/4 columns, not three — this extraction assigns the first cell to SEAL-2 and the second to SEAL-4 based on sentence content, but this seal_2/seal_4 assignment is an interpretation, not a direct reading of confirmed column boundaries; the source PDF's table geometry has not been visually confirmed against the extracted text for this row specifically."
     }
   ],
   "seal_level_label_variants": [

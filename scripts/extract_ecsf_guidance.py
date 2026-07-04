@@ -143,6 +143,28 @@ DOMAIN_ROW_NOTE = (
     "layout before treating this split as authoritative."
 )
 SOV8_SEAL3_NOTE = DOMAIN_ROW_NOTE + " SOV-8's SEAL-3 cell has no text distinguishable from SEAL-2/SEAL-4 in the source reflow and is omitted rather than guessed."
+SOV7_SEAL3_TYPO_NOTE = (
+    DOMAIN_ROW_NOTE
+    + " Additionally: the SEAL-3 cell reads \"ELA 3.\" in the source PDF, "
+    "which is almost certainly a typo for \"EAL 3\" (Evaluation Assurance "
+    "Level, matching the \"EAL2\"/\"EAL 4-5\" phrasing used in the "
+    "neighboring SEAL-2/SEAL-4 cells of this same row). Preserved verbatim "
+    "as printed per project convention (working rule 2 — never silently "
+    "correct source text); erratum candidate, alongside BSI SOV-4-02-C2 "
+    "(Phase 2a) and the Article 18/19 cross-reference (Phase 2c)."
+)
+SOV8_ROW_NOTE = (
+    DOMAIN_ROW_NOTE
+    + " SOV-8's SEAL-3 cell has no text distinguishable from SEAL-2/SEAL-4 "
+    "in the source reflow and is omitted rather than guessed. Additionally: "
+    "the source row for SOV-8 prints only two visually distinct cells "
+    "across the SEAL-2/3/4 columns, not three — this extraction assigns "
+    "the first cell to SEAL-2 and the second to SEAL-4 based on sentence "
+    "content, but this seal_2/seal_4 assignment is an interpretation, not a "
+    "direct reading of confirmed column boundaries; the source PDF's table "
+    "geometry has not been visually confirmed against the extracted text "
+    "for this row specifically."
+)
 
 
 def main() -> None:
@@ -190,9 +212,9 @@ def main() -> None:
         seal3_key = f"dsr-{dom}-seal3"
         if seal3_key in VERBATIM:
             entry["seal_3"] = pub(seal3_key)
-            entry["needs_review_note"] = DOMAIN_ROW_NOTE
+            entry["needs_review_note"] = SOV7_SEAL3_TYPO_NOTE if dom == "SOV-7" else DOMAIN_ROW_NOTE
         else:
-            entry["needs_review_note"] = SOV8_SEAL3_NOTE
+            entry["needs_review_note"] = SOV8_ROW_NOTE if dom == "SOV-8" else SOV8_SEAL3_NOTE
         domain_seal_requirements.append(entry)
 
     seal_level_label_variants = [

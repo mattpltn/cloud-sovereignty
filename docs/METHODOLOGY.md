@@ -6,6 +6,17 @@ rules, disposition logic, scoring math, testing method). A phase does not
 merge without its section here. See `CLAUDE.md` for the full project
 charter, source frameworks, and phase plan.
 
+**Extraction conventions (all phases):** terminal punctuation at
+criterion/list boundaries is normalized to a period, and line-break
+hyphenation artifacts introduced by PDF text extraction are reconstructed
+into whole words. All other characters — including source typos — are
+preserved exactly as printed, flagged `needs_review` with an explanatory
+note rather than silently corrected (working rule 2). Confirmed source
+errata caught by this discipline so far: BSI SOV-4-02-C2 (Phase 2a), the
+Article 18/19 cross-reference in the CADA proposal (Phase 2c), the ECSF
+Implementation Guidance's "ELA 3." (Phase 2b.1), and CADA Annex II
+2.1(d)'s "presonnel" (Phase 2c, see D-018 on `phase-2c-cada`).
+
 ---
 
 ## Phase 0 — Repository setup
@@ -474,6 +485,19 @@ geometry. Every one of the 8 domain rows is therefore marked
 inferred split as certain (working rule 2). SOV-8's SEAL-3 cell has no
 text distinguishable from its SEAL-2/SEAL-4 neighbors in the reflow at
 all and was left absent rather than guessed.
+
+**CR-1 refinements (external fidelity check):** SOV-7's SEAL-3 cell
+reads "ELA 3." in the source PDF — almost certainly a typo for "EAL 3"
+(Evaluation Assurance Level, matching the "EAL2"/"EAL 4-5" phrasing in
+the same row's SEAL-2/SEAL-4 cells). Preserved verbatim per the
+extraction-conventions rule above rather than silently corrected; its
+`needs_review_note` now names this explicitly as an erratum candidate.
+SOV-8's row prints only two visually distinct source cells across the
+three SEAL columns; this extraction's seal_2/seal_4 assignment is an
+interpretation based on sentence content, not a confirmed reading of the
+table's actual cell boundaries for this specific row — its
+`needs_review_note` now says so explicitly, pending visual confirmation
+of the source table layout.
 
 ### Coverage hints (calculator → v1.2.1 factors)
 
