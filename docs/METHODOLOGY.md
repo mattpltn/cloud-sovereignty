@@ -557,3 +557,172 @@ when a leak/mismatch was deliberately injected, then confirmed clean
 after restoring the generated files. Validator run locally throughout
 with `data/local/{c3a,ecsf,ecsf-guidance,ecsf-calculator}-verbatim.json`
 present.
+
+## Phase 2c — CADA extraction
+
+### Source and scope
+
+`sources/COM_2026_502_1_EN_annexe_proposition_part1_v7_...pdf` (Annexes
+1-3) and `sources/COM_2026_502_1_EN_ACT_part1_v7_...pdf` (the Regulation
+itself, 129 pages), both read locally per D-002 and extracted with
+`pypdf`. Per CLAUDE.md, every CADA record carries `status:
+proposed_legislation` and is pinned to `"COM(2026) 502 final, 3.6.2026"`.
+Three shapes were extracted, matching this phase's scope exactly (Annex
+I "Grand Challenges" is explicitly out of scope — it defines EU R&D
+funding priorities, not assessable criteria or obligations, and contains
+no content a government cloud customer's posture assessment would use):
+
+1. **Annex II (Union assurance level criteria)** → `data/extracted/cada.json`,
+   40 `control-record.schema.json` records, `derivation: verbatim`, one
+   new optional schema field `assurance_level` (enum `UA-1`..`UA-4`).
+2. **Annex III (audit evidence)** → `data/extracted/cada-evidence.json`,
+   conforming to a new schema, `schema/cada-evidence.schema.json` (the
+   phase's one authorized new schema).
+3. **The Act itself** → `data/extracted/cada-act.json`, 13 hand-picked
+   records (`derivation: derived`) covering definitions, the Article 29
+   risk-assessment obligation, the Article 18/19 third-country
+   mechanism, the Article 30 procurement obligation, and the Article 41
+   open-source-first preference — not the whole 129-page regulation.
+
+Annex II's introductory scope statement (software in scope per CRA Art.
+3(4); hardware per Art. 3(5) excluded) is captured as file-level
+metadata in a small separate file, `data/extracted/cada-scope.json`,
+rather than as a control record (it has no criterion content of its own).
+
+### UA-1 vs. UA-2/3/4: two distinct lettering schemes, not one repeated four times
+
+Annex II's four Union assurance levels are NOT the same lettered
+criteria (a)-(k) repeated with minor wording deltas throughout. UA-1 is
+a **self-assessment** (Article 19) with its own 7-criterion scheme
+(a)-(g), substantively distinct from UA-2/UA-3/UA-4's shared 11-criterion
+scheme (a)-(k), which are **independently audited** (Article 20) and
+cumulative among themselves (a UA-4 audit must also satisfy UA-3's
+criteria, per Article 20(1)). `scripts/extract_cada.py` therefore
+carries two separate letter->(domain, layer, needs_review) mapping
+tables (`UA1_MAP`, `UA_SHARED_MAP`) rather than one map reused across
+all four levels. Per this phase's explicit instruction, every level's
+lettered criterion is extracted as its own record with its own verbatim
+text — even where UA-2/UA-3/UA-4 repeat a criterion nearly verbatim
+(e.g. (a), (f)) — rather than deduplicated (that consolidation is
+explicitly Phase 3's job, not this phase's).
+
+Numbered sub-criteria the source prints inside a lettered clause (e.g.
+2.1(g) i-iv) are kept as part of that same record's single verbatim text
+block, preserving the sub-list inline as printed, rather than
+introducing a new nested schema field beyond the one authorized addition
+(`assurance_level`). This is a schema-fit choice, not a content decision
+— analogous to Phase 2b's `criterion_type: "C"` choice for ECSF — and is
+documented here rather than in DECISIONS.md since no substantive
+judgment about the criterion's meaning is involved, only its JSON
+encoding.
+
+### SOV domain / layer mapping for Annex II criteria
+
+Annex II's criteria are organized by Union assurance level, not by SOV
+domain, so each lettered criterion was mapped to the SOV-1..7 taxonomy
+and the ten-value layer enum by substance, cross-checked against how
+C3A's own SOV-1/SOV-2/SOV-5/SOV-6 criteria were tagged in Phase 2a
+(`data/extracted/c3a.json` on this branch) to keep the mapping
+consistent with existing precedent rather than guessed independently
+(e.g. SOV-1/SOV-2 content -> `legal_jurisdiction` layer; SOV-5/SOV-6 ->
+`supply_chain_*`/`platform`, matching C3A's own convention exactly).
+Criterion (e) (cybersecurity certification/standards) maps to SOV-7,
+which CLAUDE.md treats as inheritance-only project-wide (no questions —
+satisfied by C5/ISO 27001/SOC 2 evidence). Consistent with that, (e)'s
+`disposition_default` is set to `inherit` rather than the catalog's
+usual `assess` default, and its `layer` (the ten-value taxonomy has no
+SOV-7-specific option, since that taxonomy was designed for the six
+assessed domains) is flagged `needs_review` rather than silently forced
+into a layer that doesn't really apply.
+
+Criterion (g) (absence of third-country control) was tagged SOV-1
+(matching ECSF's own "Change of Control Risk" factor,
+`csat-sov1-ecsf-02`) rather than SOV-2, since "control"/ownership is the
+criterion's defining concept even though its enforcement mechanism is
+legal/jurisdictional — flagged `needs_review` as a genuine SOV-1/SOV-2
+boundary case, not a clear-cut assignment.
+
+### A source cross-reference discrepancy, captured not corrected
+
+Annex II 3.1(g) (UA-3) and Annex III criterion G's step 7.2(c) both cite
+"an implementing act under Article 19" for the third-country adequacy
+mechanism. But Article 19 in the Act (as extracted) is titled
+"Conformity self-assessment" (the UA-1 procedure) — it says nothing
+about third countries. Article 18, "Associated third countries", is
+what substantively implements the described mechanism (a six-condition
+Commission implementing-act test for designating third countries whose
+control doesn't disqualify a provider from UA-3). This reads as a
+cross-reference/numbering inconsistency in this draft of the proposal.
+Per working rule 2, it is captured as printed (citing "Article 19") on
+the affected `cada.json` record (`csat-sov1-cada-ua3-g`) and flagged
+`needs_review`, with the same note echoed on `cada-act.json`'s
+`cada-act-art18-associated-third-countries` record — not silently
+"corrected" to Article 18, since the source text itself says Article 19
+and a later consolidated version of the proposal may resolve this
+differently than assumed here. Confirmed by the external Phase 2c
+review (`reviews/phase-2c-review.md`) against the Act PDF directly —
+the second official-source erratum this pipeline has caught, after BSI
+SOV-4-02-C2 in Phase 2a.
+
+### `cada-act.json`'s data shape (D-017)
+
+The Act extracts do not validate against `control-record.schema.json`
+and no new schema was created for them either — see D-017 for the full
+reasoning (logged as D-012 on the `phase-2c-cada` branch originally,
+renumbered to D-017 at rebase onto `main` post-Phase-2b-merge — see
+docs/DECISIONS.md). In short: most of what Article 29 (risk assessment),
+Article 30 (procurement), and Article 41 (open-source preference)
+describe are obligations on the **assessing government**, not a cloud
+provider's posture, so `control-record.schema.json`'s
+layer/disposition_default-centric shape doesn't fit; and no schema was
+authorized for this part of the phase. `scripts/validate.py`'s
+`check_cada_act()` performs a plain structural check instead (required
+fields present, `derivation: "derived"`, `needs_review_note` present
+whenever `needs_review` is true, id uniqueness).
+
+### Verbatim isolation
+
+`cada.json` and `cada-evidence.json` (both `derivation: verbatim`) went
+through the D-009/D-010 regime from the start:
+`data/local/cada-verbatim.json` and
+`data/local/cada-evidence-verbatim.json` (both git-ignored) hold the
+real text; public fields carry `"SEE-LOCAL-VERBATIM"`. `cada-scope.json`
+(a single nested object, not a control-record array) and
+`cada-evidence.json` (a nested object wrapping the criteria array, not
+itself a flat record array) don't fit the existing generic
+`check_local_verbatim()` id-set cross-check, so both were added to the
+`ID_KEYED_VERBATIM_EXCLUSIONS` set (merged with Phase 2b's own entries
+for this same constant at the Phase 2b/2c rebase — both phases had
+independently reintroduced this infrastructure while their branches were
+unmerged). A `check_verbatim_placeholder_count()` covers completeness
+for those two files instead: the count of `SEE-LOCAL-VERBATIM`
+placeholders in the public file must equal the number of entries in the
+matching local verbatim file. `cada-act.json` (`derivation: derived`)
+does not go through this regime at all: its `obligation_text` fields are
+plain-language restatements, not verbatim block quotes, and its optional
+`source_quote` anchors are deliberately kept under the 16-word leak
+threshold (checked: all are 9-12 words).
+
+### Statistics
+
+| Metric | Value |
+|---|---|
+| Annex II criteria extracted | 40 (UA-1: 7, UA-2: 11, UA-3: 11, UA-4: 11) |
+| Annex III audit criteria extracted | 11 (A-K) |
+| Act extracts | 13 (8 definitions, Article 18, Article 19, Article 29, Article 30, Article 41) |
+| Annex II needs_review | 4/40 (10%) — criterion (e) x4 levels (SOV-7 layer-taxonomy gap), criterion (g) x4 levels (SOV-1/SOV-2 boundary), UA-1 (b)/(d) (facility/operations_personnel framing), UA-3 (g) (Article 18/19 citation) |
+| Act extracts needs_review | 2/13 — Union entities vs. public sector body persona-model gap; Article 18/19 citation discrepancy |
+| Derivation | cada.json/cada-evidence.json: 100% verbatim; cada-act.json: 100% derived |
+
+### Validation
+
+All 99 combined control records (59 C3A + 40 CADA Annex II) validate
+against `control-record.schema.json`, including the new
+`assurance_level` field; `cada-evidence.json` validates against the new
+`cada-evidence.schema.json` (0 errors); `cada-scope.json` and
+`cada-act.json` pass their respective structural checks. The leak check
+and placeholder-count check were both manually verified to fail on a
+deliberately injected leak/mismatch for `cada-scope.json` and
+`cada-evidence.json`, then reconfirmed clean after restoring the
+generated files. Validator run locally throughout with
+`data/local/{c3a,cada,cada-evidence}-verbatim.json` present.

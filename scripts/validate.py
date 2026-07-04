@@ -24,17 +24,19 @@ LOCAL_DIR = ROOT / "data" / "local"
 
 # Files in data/extracted that are NOT arrays of control-record.schema.json
 # records, and are validated separately (see their own check_* functions).
-NON_CONTROL_RECORD_FILES = {"ecsf-scoring.json", "ecsf-c3a-hints.json", "ecsf-guidance.json", "ecsf-calculator.json"}
+NON_CONTROL_RECORD_FILES = {
+    "ecsf-scoring.json", "ecsf-c3a-hints.json", "ecsf-guidance.json", "ecsf-calculator.json",
+    "cada-scope.json", "cada-evidence.json", "cada-act.json",
+}
 
-# data/local/*-verbatim.json pairs whose public counterpart is not a flat
-# array of {"id": ...} control records (ecsf-guidance.json is a single
-# nested object; ecsf-calculator.json's ids don't match the verbatim
-# file's finer per-field keys, e.g. "sov1-so1-desc"/"sov1-so1-opt1" vs.
-# the record id "sov1-so1"). These are excluded from the generic id-set
-# cross-check (check_local_verbatim) — see check_verbatim_placeholder_count
-# for their equivalent completeness check — but still covered by the
-# (generalized) leak check.
-ID_KEYED_VERBATIM_EXCLUSIONS = {"ecsf-guidance.json", "ecsf-calculator.json"}
+# array of {"id": ...} control records (ecsf-guidance.json/cada-scope.json/
+# cada-evidence.json are single nested objects; ecsf-calculator.json's ids
+# don't match the verbatim file's finer per-field keys, e.g.
+# "sov1-so1-desc"/"sov1-so1-opt1" vs. the record id "sov1-so1"). These are
+# excluded from the generic id-set cross-check (check_local_verbatim) —
+# see check_verbatim_placeholder_count for their equivalent completeness
+# check — but still covered by the (generalized) leak check.
+ID_KEYED_VERBATIM_EXCLUSIONS = {"ecsf-guidance.json", "ecsf-calculator.json", "cada-scope.json", "cada-evidence.json"}
 
 
 def load_schemas() -> tuple[dict[str, dict], Registry]:
@@ -204,8 +206,9 @@ def check_verbatim_leak() -> list[str]:
 
         public_data = json.loads(public_file.read_text())
         # Most public files are arrays of {"id": ...} control records;
-        # ecsf-guidance.json is a single nested object instead. Both are
-        # covered: walk_strings already recurses through dicts/lists, so
+        # ecsf-guidance.json/cada-scope.json are single nested objects
+        # instead. Both are covered: walk_strings already recurses through
+        # dicts/lists, so
         # for a bare object we just scan it as one unit rather than
         # per-record.
         records = public_data if isinstance(public_data, list) else [public_data]
@@ -224,15 +227,16 @@ def check_verbatim_leak() -> list[str]:
 
 
 def check_verbatim_placeholder_count() -> list[str]:
-    """Completeness check for the ID_KEYED_VERBATIM_EXCLUSIONS pair
-    (ecsf-guidance.json, ecsf-calculator.json), whose local verbatim keys
-    don't line up with a public record id (see that constant's docstring
-    note). Since check_local_verbatim's id-set cross-check is skipped for
-    these, this instead asserts that the count of SEE-LOCAL-VERBATIM
-    placeholders in the public file equals the number of entries in the
-    matching local verbatim file — a weaker but shape-agnostic
-    completeness signal that catches the same class of drift (a field
-    scrubbed but never isolated, or vice versa).
+    """Completeness check for the ID_KEYED_VERBATIM_EXCLUSIONS set
+    (ecsf-guidance.json, ecsf-calculator.json, cada-scope.json,
+    cada-evidence.json), whose local verbatim keys don't line up with a
+    public record id (see that constant's docstring note). Since
+    check_local_verbatim's id-set cross-check is skipped for these, this
+    instead asserts that the count of SEE-LOCAL-VERBATIM placeholders in
+    the public file equals the number of entries in the matching local
+    verbatim file — a weaker but shape-agnostic completeness signal that
+    catches the same class of drift (a field scrubbed but never isolated,
+    or vice versa).
     """
     errors = []
     if not LOCAL_DIR.exists():
@@ -386,6 +390,70 @@ def check_ecsf_calculator(schemas: dict[str, dict], registry: Registry) -> list[
     return errors
 
 
+def check_cada_scope() -> list[str]:
+    """Structural check for data/extracted/cada-scope.json (Phase 2c),
+    if present: not a control-record array, and not validated against a
+    dedicated schema (none is authorized for this small file — it just
+    carries Annex II's introductory scope statement as file-level
+    metadata), so just check the fields the extraction script and any
+    downstream reader depend on are present.
+    """
+    errors = []
+    f = EXTRACTED_DIR / "cada-scope.json"
+    if not f.exists():
+        return errors
+    data = json.loads(f.read_text())
+    for field in ("document", "annex", "scope_statement", "in_scope", "out_of_scope", "source_pointer"):
+        if field not in data:
+            errors.append(f"data/extracted/cada-scope.json: missing required field {field!r}")
+    return errors
+
+
+def check_cada_evidence(schemas: dict[str, dict], registry: Registry) -> list[str]:
+    """Validates data/extracted/cada-evidence.json (Phase 2c) against
+    cada-evidence.schema.json, if present.
+    """
+    errors = []
+    f = EXTRACTED_DIR / "cada-evidence.json"
+    if not f.exists():
+        return errors
+    validator = Draft202012Validator(schemas["cada-evidence.schema.json"], registry=registry)
+    data = json.loads(f.read_text())
+    for err in validator.iter_errors(data):
+        errors.append(f"data/extracted/cada-evidence.json: {'/'.join(str(p) for p in err.path)}: {err.message}")
+    return errors
+
+
+def check_cada_act() -> list[str]:
+    """Structural check for data/extracted/cada-act.json (Phase 2c), if
+    present. Deliberately NOT validated against control-record.schema.json
+    (D-017): these are obligations on the assessing government / plain
+    definitions, not provider-facing criteria with a layer/disposition, so
+    that schema's shape doesn't fit. No new schema is authorized for this
+    file either, so this is a plain structural check instead.
+    """
+    errors = []
+    f = EXTRACTED_DIR / "cada-act.json"
+    if not f.exists():
+        return errors
+    records = json.loads(f.read_text())
+    seen_ids = set()
+    required = {"id", "derivation", "source_refs", "title", "obligation_text", "source_pointer", "needs_review"}
+    for i, r in enumerate(records):
+        missing = required - r.keys()
+        if missing:
+            errors.append(f"data/extracted/cada-act.json[{i}] ({r.get('id', '?')}): missing field(s) {sorted(missing)}")
+        if r.get("derivation") != "derived":
+            errors.append(f"data/extracted/cada-act.json[{i}] ({r.get('id', '?')}): derivation must be 'derived'")
+        if r.get("needs_review") and "needs_review_note" not in r:
+            errors.append(f"data/extracted/cada-act.json[{i}] ({r.get('id', '?')}): needs_review is true but needs_review_note is missing")
+        rid = r.get("id")
+        if rid in seen_ids:
+            errors.append(f"data/extracted/cada-act.json: duplicate id {rid!r}")
+        seen_ids.add(rid)
+    return errors
+
+
 def main() -> int:
     schemas, registry = load_schemas()
 
@@ -401,6 +469,9 @@ def main() -> int:
     errors.extend(check_ecsf_c3a_hints())
     errors.extend(check_ecsf_guidance(schemas, registry))
     errors.extend(check_ecsf_calculator(schemas, registry))
+    errors.extend(check_cada_scope())
+    errors.extend(check_cada_evidence(schemas, registry))
+    errors.extend(check_cada_act())
 
     print(f"Schemas checked: {len(schemas)}")
     print(f"Personas checked: {draft_count + approved_count} ({draft_count} draft, {approved_count} approved)")

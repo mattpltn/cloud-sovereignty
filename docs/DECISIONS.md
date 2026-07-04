@@ -569,3 +569,85 @@ contaminate the catalogue of normative criteria.
 **Framework anchor:** `Annex - Sovereignty assessment calculator.xlsx`,
 sheet "Sov Assessment Levels (COL)".
 **Status:** Resolved.
+
+## D-017 — `cada-act.json` records do not conform to `control-record.schema.json`
+
+**Note (renumbering, CR-2 sequencing):** originally logged as D-012 on
+the `phase-2c-cada` branch, allocated independently and in parallel with
+`phase-2b-ecsf`'s own D-012..D-016. Per the reviewer's CR-2 and the new
+CLAUDE.md working rule ("DECISIONS numbers on parallel phase branches
+are provisional; the later-merging branch renumbers at rebase"),
+renumbered to D-017 at rebase onto the post-2b-merge `main`, since 2b
+merged first and already holds D-012..D-016. No content below this note
+was changed — see the phase-2c-cada rebase/renumbering commit for the
+full old->new mapping.
+
+**Date:** 2026-07-03
+**Decision:** Phase 2c's Act-derived extracts (`data/extracted/cada-act.json`
+— a hand-picked subset of CADA proposal articles: definitions, the
+Article 29 risk-assessment obligation, the Article 18/19 third-country
+mechanism, the Article 30 procurement obligation, and the Article 41
+open-source-first preference) use a small ad-hoc record shape, checked
+structurally by `scripts/validate.py`'s `check_cada_act()`, rather than
+validating against `control-record.schema.json` and rather than
+introducing a new JSON Schema file.
+**Alternatives considered:** (a) force these records into
+`control-record.schema.json` by picking a plausible `sov_domain`/`layer`/
+`disposition_default` for each — rejected: that schema models a
+provider-facing criterion assessed via one of assess/auto_answer/
+inherit/suppress, but most of what this file captures is either a plain
+definition (no disposition makes sense) or an obligation on the
+**assessing government itself** (conduct a risk assessment; procure only
+recognised UA levels; prefer open source) — not a cloud provider's
+posture, so the schema's central concept doesn't fit; (b) introduce a
+new schema (`cada-act.schema.json`) for this shape — rejected because
+this phase's instructions authorized exactly one new schema for Annex
+III (`cada-evidence.schema.json`) and none for the Act extracts; adding
+one anyway would exceed that authorization for a 13-record file where a
+plain structural check is sufficient.
+**Rationale:** Keeps the distinction CLAUDE.md's scenario model already
+draws — between controls that assess a *provider's* posture (what
+`control-record.schema.json` is for) and obligations that fall on the
+*government* running the assessment — visible in the data shape itself,
+rather than papering over it by stretching a provider-criterion schema
+onto government-obligation content.
+**Framework anchor:** N/A — internal data-modeling decision, not
+dictated by C3A/ECSF/CADA.
+**Status:** Resolved.
+
+## D-018 — CADA Annex II 2.1(d) verbatim typo ("presonnel") restored (correction, CR-1)
+
+**Date:** 2026-07-04
+**Decision:** `data/local/cada-verbatim.json`'s entry for
+`csat-sov4-cada-ua2-d` (Annex II, Union assurance level 2, paragraph
+2.1(d), personnel screening/citizenship criterion) originally
+transcribed "...the audited provider should ensure that **personnel**
+meeting those requirements are available," silently correcting a typo
+present in the source PDF, which actually reads "...ensure that
+**presonnel** meeting those requirements are available" (COM(2026) 502
+final, 3.6.2026). The external Phase 2c review's CR-1 fidelity check
+caught this deviation from strict verbatim transcription. The verbatim
+entry is corrected to read "presonnel," exactly as printed, and the
+corresponding public record (`csat-sov4-cada-ua2-d` in
+`data/extracted/cada.json`) is flagged `needs_review: true` with the
+note "source typo 'presonnel' preserved verbatim per project convention
+— erratum candidate."
+**Alternatives considered:** leave the silent correction in place, on
+the reasoning that "presonnel" is obviously a typo for "personnel" and
+faithful transcription of an obvious typo serves no purpose — rejected:
+per the METHODOLOGY.md extraction-conventions rule (working rule 2),
+only terminal punctuation and PDF line-break hyphenation artifacts are
+normalized; every other character, including source typos, is preserved
+and flagged rather than silently corrected, precisely so this class of
+transcription drift is always caught and logged rather than invisibly
+"fixed" during extraction.
+**Rationale:** Restores strict verbatim discipline for this record and
+catalogues the typo as a confirmed source erratum, alongside BSI
+SOV-4-02-C2 (Phase 2a, D-008) and the Article 18/19 cross-reference
+discrepancy (Phase 2c) — all three are candidates for submission via
+the respective source organizations' feedback/erratum mechanisms, per
+the external reviewer's recommendation.
+**Framework anchor:** COM(2026) 502 final, 3.6.2026, Annex II, 2.1(d).
+**Status:** Resolved (verbatim corrected); the underlying source typo
+itself remains open pending any official erratum from the European
+Commission.

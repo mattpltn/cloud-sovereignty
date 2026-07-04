@@ -20,6 +20,11 @@
       "description": "C3A distinguishes baseline Criteria from Additional Criteria.",
       "enum": ["C", "AC"]
     },
+    "assurance_level": {
+      "type": "string",
+      "description": "CADA Annex II Union assurance level this record instantiates (UA-1..UA-4 are cumulative — a higher level's provider must also meet every lower level's criteria). Phase 2c addition; only used by CADA-derived records.",
+      "enum": ["UA-1", "UA-2", "UA-3", "UA-4"]
+    },
     "localization_level": {
       "type": "string",
       "description": "C3A localization tier this record instantiates, where applicable. C1 generalizes to {TRUSTED_REGION}, C2 to {NATION}.",

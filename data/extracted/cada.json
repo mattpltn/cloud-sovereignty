@@ -1,0 +1,1495 @@
+[
+  {
+    "id": "csat-sov2-cada-ua1-a",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-1",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-1.1(a)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-1, paragraph 1.1(a)",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua1-b",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-1",
+    "layer": "facility",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-1.1(b)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-1, paragraph 1.1(b)",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Criterion covers infrastructure and assets location only (not personnel, unlike the UA-2/3/4 equivalent); tagged facility, but the location concern is fundamentally about jurisdictional reach, so SOV-2 vs. a facility-specific domain framing is a judgment call."
+  },
+  {
+    "id": "csat-sov3-cada-ua1-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "assurance_level": "UA-1",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-1.1(c)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-1, paragraph 1.1(c)",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-cada-ua1-d",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "assurance_level": "UA-1",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-1.1(d)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-1, paragraph 1.1(d)",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Could plausibly be tagged SOV-5/supply_chain_services instead (the criterion is about outsourcing arrangements to third-party providers); tagged SOV-4 since the substance is about preserving the provider's own operational autonomy."
+  },
+  {
+    "id": "csat-sov7-cada-ua1-e",
+    "sov_domain": "SOV-7",
+    "criterion_type": "C",
+    "assurance_level": "UA-1",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-1.1(e)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-1, paragraph 1.1(e)",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "inherit",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment."
+  },
+  {
+    "id": "csat-sov5-cada-ua1-f",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "assurance_level": "UA-1",
+    "layer": "supply_chain_services",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-1.1(f)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-1, paragraph 1.1(f)",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua1-g",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-1",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-1.1(g)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-1, paragraph 1.1(g)",
+      "page": 5
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua2-a",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(a)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(a)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua2-b",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "facility",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(b)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(b)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Criterion spans infrastructure/assets (facility) and personnel (operations_personnel) location in a single clause; tagged facility as the criterion's primary framing, but this is a genuine either/or."
+  },
+  {
+    "id": "csat-sov3-cada-ua2-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(c)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(c)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov7-cada-ua2-e",
+    "sov_domain": "SOV-7",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(e)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(e)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "inherit",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment."
+  },
+  {
+    "id": "csat-sov3-cada-ua2-f",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(f)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(f)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov1-cada-ua2-g",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(g)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(g)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Third-country control/ownership test combines SOV-1 (strategic ownership/control, the defining concept — 'subject to the control of') and SOV-2 (jurisdictional exposure, the mechanism); tagged SOV-1 for consistency with ECSF's own 'Change of Control Risk' factor (csat-sov1-ecsf-02)."
+  },
+  {
+    "id": "csat-sov4-cada-ua2-h",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(h)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(h)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-cada-ua2-i",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "supply_chain_software",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(i)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(i)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-cada-ua2-j",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(j)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(j)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua2-k",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(k)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(k)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua3-a",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(a)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(a)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua3-b",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "facility",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(b)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(b)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Criterion spans infrastructure/assets (facility) and personnel (operations_personnel) location in a single clause; tagged facility as the criterion's primary framing, but this is a genuine either/or."
+  },
+  {
+    "id": "csat-sov3-cada-ua3-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(c)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(c)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-cada-ua3-d",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(d)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(d)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov7-cada-ua3-e",
+    "sov_domain": "SOV-7",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(e)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(e)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "inherit",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment."
+  },
+  {
+    "id": "csat-sov3-cada-ua3-f",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(f)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(f)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov1-cada-ua3-g",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(g)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(g)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Third-country control/ownership test combines SOV-1 (strategic ownership/control, the defining concept — 'subject to the control of') and SOV-2 (jurisdictional exposure, the mechanism); tagged SOV-1 for consistency with ECSF's own 'Change of Control Risk' factor (csat-sov1-ecsf-02). Annex II 3.1(g) cites 'an implementing act under Article 19', but Article 19 in the Act (COM(2026) 502 final part 1) is titled 'Conformity self-assessment' (Union assurance level 1) — the substantively matching third-country adequacy mechanism is Article 18, 'Associated third countries'. Possible cross-reference inconsistency in the source draft; captured verbatim as printed, not corrected. Flag for Phase 3/owner verification against a later consolidated version of the proposal."
+  },
+  {
+    "id": "csat-sov4-cada-ua3-h",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(h)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(h)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-cada-ua3-i",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "supply_chain_software",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(i)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(i)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-cada-ua3-j",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(j)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(j)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua3-k",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-3",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-3.1(k)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-3, paragraph 3.1(k)",
+      "page": 7
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua4-a",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(a)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(a)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua4-b",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "facility",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(b)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(b)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Criterion spans infrastructure/assets (facility) and personnel (operations_personnel) location in a single clause; tagged facility as the criterion's primary framing, but this is a genuine either/or."
+  },
+  {
+    "id": "csat-sov3-cada-ua4-c",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(c)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(c)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-cada-ua4-d",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(d)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(d)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov7-cada-ua4-e",
+    "sov_domain": "SOV-7",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(e)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(e)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "inherit",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment."
+  },
+  {
+    "id": "csat-sov3-cada-ua4-f",
+    "sov_domain": "SOV-3",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "data",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(f)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(f)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov1-cada-ua4-g",
+    "sov_domain": "SOV-1",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(g)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(g)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "Third-country control/ownership test combines SOV-1 (strategic ownership/control, the defining concept — 'subject to the control of') and SOV-2 (jurisdictional exposure, the mechanism); tagged SOV-1 for consistency with ECSF's own 'Change of Control Risk' factor (csat-sov1-ecsf-02)."
+  },
+  {
+    "id": "csat-sov4-cada-ua4-h",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(h)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(h)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov5-cada-ua4-i",
+    "sov_domain": "SOV-5",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "supply_chain_software",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(i)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(i)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov6-cada-ua4-j",
+    "sov_domain": "SOV-6",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "platform",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(j)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(j)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov2-cada-ua4-k",
+    "sov_domain": "SOV-2",
+    "criterion_type": "C",
+    "assurance_level": "UA-4",
+    "layer": "legal_jurisdiction",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-4.1(k)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-4, paragraph 4.1(k)",
+      "page": 9
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": false
+  },
+  {
+    "id": "csat-sov4-cada-ua2-d",
+    "sov_domain": "SOV-4",
+    "criterion_type": "C",
+    "assurance_level": "UA-2",
+    "layer": "operations_personnel",
+    "derivation": "verbatim",
+    "source_refs": [
+      {
+        "framework": "CADA",
+        "section_id": "CADA-Annex-II-2.1(d)",
+        "status": "proposed_legislation"
+      }
+    ],
+    "source_pointer": {
+      "document": "COM(2026) 502 final, 3.6.2026 — Annexes 1 to 3 (Cloud and AI Development Act proposal)",
+      "section": "Annex II, UA-2, paragraph 2.1(d)",
+      "page": 6
+    },
+    "source_text": {
+      "en": "SEE-LOCAL-VERBATIM",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "GENERALIZATION-PENDING",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "disposition_default": "assess",
+    "evidence_quality_options": [
+      "self_attested",
+      "contractual_commitment",
+      "third_party_certified",
+      "independently_audited"
+    ],
+    "weight": 1.0,
+    "needs_review": true,
+    "needs_review_note": "source typo 'presonnel' preserved verbatim per project convention — erratum candidate"
+  }
+]

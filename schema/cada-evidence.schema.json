@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/cada-evidence.schema.json",
+  "title": "CADA Annex III — audit evidence for the audit procedure",
+  "description": "Annex III lists eleven audit criteria (A-K), each identifying the Annex II paragraph(s) it assesses and the evidence items an auditing organisation should request. Extraction only, no interpretation (Phase 2c scope) — this feeds the evidence-tier machinery and the inherit disposition in later phases. Numbered/lettered/roman sub-items within a single evidence item are kept inline in that item's text as printed in the source, rather than introducing further nested schema structure (a schema-fit choice, like Annex II's sub-criteria — see METHODOLOGY.md).",
+  "type": "object",
+  "properties": {
+    "document": { "type": "string" },
+    "version": { "type": "string" },
+    "criteria": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": { "$ref": "#/$defs/auditCriterion" }
+    }
+  },
+  "required": ["document", "version", "criteria"],
+  "additionalProperties": false,
+  "$defs": {
+    "sourcePointer": {
+      "type": "object",
+      "properties": {
+        "document": { "type": "string" },
+        "section": { "type": "string" },
+        "page": { "type": "integer", "minimum": 1 }
+      },
+      "required": ["document", "section"],
+      "additionalProperties": false
+    },
+    "auditCriterion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+        },
+        "title": { "$ref": "lang-string.schema.json" },
+        "assesses_annex_ii_paragraph": {
+          "type": "string",
+          "description": "The Annex II lettered paragraph this criterion assesses, e.g. 'paragraph (a)' — assessed under Union assurance levels 2, 3 and 4 per Annex III's own framing for every criterion A-K."
+        },
+        "evidence_items": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "lang-string.schema.json" }
+        },
+        "notes": {
+          "$ref": "lang-string.schema.json",
+          "description": "Optional clarifying 'NB' definitions Annex III attaches to some criteria (e.g. criterion B's definitions of Infrastructure/Assets/Personnel, criterion C's definitions of customer/customer data)."
+        },
+        "source_pointer": { "$ref": "#/$defs/sourcePointer" }
+      },
+      "required": ["id", "title", "assesses_annex_ii_paragraph", "evidence_items", "source_pointer"],
+      "additionalProperties": false
+    }
+  }
+}
