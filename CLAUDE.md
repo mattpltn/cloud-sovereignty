@@ -150,10 +150,11 @@ Runners: Layers 1, 2, 3 and 5 execute against the TypeScript engine via a Node t
 8. **Tone rules apply to generated content** (question text, rationales, recommendations): non-judgmental vocabulary per design principle 4; recommendations reference the World Bank outcome-based framing where relevant.
 9. **Provenance discipline.** Never create a record or rule without `derivation` + `source_refs` (or, for `editorial`, a DECISIONS.md entry written in the same commit). Never edit existing DECISIONS.md entries — the register is append-only; corrections are new entries referencing the old ID.
 10. **Documentation duty.** A phase is not complete until its METHODOLOGY.md section and phase report exist. Documentation is a deliverable, not an afterthought.
+11. **DECISIONS numbers on parallel phase branches are provisional; the later-merging branch renumbers at rebase.**
 
 ## Current phase
 > Update this line as phases complete.
-Phase 1 and Phase 2a merged to main (squash-merged per D-011; see docs/phases/phase-2a-report.md and reviews/phase-2a-review-addendum-2.md). **Next: Phase 2b (ECSF extraction).**
+Phase 2a and Phase 2b merged to main (see docs/phases/phase-2a-report.md, docs/phases/phase-2b-report.md). Phase 2c (CADA extraction) complete on `phase-2c-cada`, rebased onto the post-2b `main`, but awaiting an external fidelity check (CR-1, reviews/phase-2c-review.md) before merge. **Next: Phase 2d (generalization).**
 
 ## Phase plan
 - **P1** Schema (control record, persona profile, disposition rules; **all human-readable text fields are language-keyed objects, en + fr**) + **all 8 golden personas DRAFTED as separate YAML files (`status: draft`) for owner amendment and approval** + invariant test skeleton (I1–I7 stubs with definitional docstrings) + validate.py (schemas + persona-approval gate) + CI workflow + docs/METHODOLOGY.md skeleton + docs/DECISIONS.md with first entries (incl. the TypeScript-engine decision). Layer-2 assertions are authored by the project owner against approved personas before any engine code.
