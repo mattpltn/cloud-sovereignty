@@ -651,3 +651,317 @@ the external reviewer's recommendation.
 **Status:** Resolved (verbatim corrected); the underlying source typo
 itself remains open pending any official erratum from the European
 Commission.
+
+## D-019 — Generalization rule table (R1-R9), placeholder registry, and generalization_class schema fields
+
+**Note (renumbering, parallel-branch collision):** originally logged as
+D-017 on the `phase-2d-generalization` branch, allocated independently
+and in parallel with `phase-2c-cada`'s own D-017/D-018 (both branches
+were unmerged siblings of `main` at the time). Per the working rule
+"DECISIONS numbers on parallel phase branches are provisional; the
+later-merging branch renumbers at rebase," `phase-2c-cada` merged to
+`main` first (bringing D-017/D-018), so `phase-2d-generalization`'s
+entries are renumbered here to D-019/D-020. No content below this note
+was changed.
+
+**Date:** 2026-07-04
+**Decision:** Phase 2d-i introduces the project's generalization
+infrastructure, the central editorial artifact of this phase (this is
+the single consolidated entry the project owner reviews in place of a
+per-rule log):
+- **`data/rules/placeholders.yaml`** — the permanent placeholder
+  registry: `{NATION}`, `{TRUSTED_REGION}`, `{NATION_CYBERSECURITY_AUTHORITY}`,
+  `{NATION_ADMINISTRATION}`, `{GOVERNMENT_CUSTOMER}`, `{PROVIDER}`. These
+  remain in the public catalog permanently — the client-side app
+  resolves them per-assessment from the government's own profile
+  (CLAUDE.md, "Jurisdiction parameterization"); no placeholder may be
+  added without its own DECISIONS entry.
+- **`data/rules/generalization-rules.yaml`** — nine substitution rules
+  (R1-R9), each with a machine-readable `pattern`/`replacement` (Python
+  `re.sub`, applied in list order — order is load-bearing: more specific
+  patterns, e.g. R3's "EU member state" and R5's "non-EU" forms, must
+  fire before R2's blanket "EU"->{TRUSTED_REGION} substitution or that
+  blanket rule would pre-empt them, since "EU" sits at a regex word
+  boundary even inside "non-EU"). R4 and R9 are documentation-only
+  entries (no pattern): R4's two-level constructs (e.g. "EU citizens
+  with Germany as main residency") fall out automatically from R1/R2
+  substituting independently per-token, and R9's "responsible authority
+  is the one in the country where the data center is located" sentence
+  is already region-agnostic and needs no substitution. R6/R7/R8 seed
+  the table for Phase 2d-ii (ECSF/CADA) but fire zero times on
+  `c3a.json` (verified — no "public sector body"/"Union entities", named
+  EU regulation citations, or EU-institutional-only mechanisms appear in
+  C3A's 59 criteria).
+- **`scripts/generalize.py`** — `generalize(text, rules)` is a pure
+  function (ordered regex substitutions, no external state), making the
+  engine deterministic and idempotent by construction: re-running it
+  over already-generalized records reproduces the same output.
+  Per-record overrides (currently one: `csat-sov4-02-c2`, the D-008
+  erratum) live in the rules file's own `overrides` section, checked by
+  id before the regex pipeline — this keeps the override
+  "part of the rules" rather than a code-level special case, so the
+  overridden record still validates as `generalization_class: direct`
+  (the override IS what `generalize(verbatim, rules)` returns for that
+  id; there is no equality-check divergence to reconcile).
+- **Schema:** two new optional fields on `control-record.schema.json` —
+  `generalization_class` (enum `direct`/`structural_adaptation`/
+  `eu_institutional`) and `generalization_note` (lang-string, required
+  by a new `if`/`then` when `generalization_class` is
+  `structural_adaptation`). No other schema changes, per this phase's
+  explicit scope.
+- **Validator:** `scripts/validate.py` gained an equality check
+  (`generalized_text.en == generalize(verbatim.en, rules)` for every
+  `generalization_class: direct` record, when local verbatim files are
+  present) and a residual-literal lint (no `generalized_text` may
+  contain "Germany"/"German"/"EU"/"European Union"/"the Union"/"Member
+  State(s)" outside an R7 `"(source cites: ...)"` exemption zone).
+- **Existing `check_verbatim_leak()` adjusted:** `generalized_text` is
+  now excluded from that check's scan. This is not a weakening of the
+  D-009/D-010 leak protection — it is a necessary consequence of
+  generalization being light-touch placeholder substitution rather than
+  paraphrase (large verbatim spans legitimately persist in
+  `generalized_text` by design; CLAUDE.md's License care section already
+  establishes `generalized_text` as the intended *public*, non-isolated
+  artifact, unlike `source_text`). `source_text` and every other field
+  remain fully covered by the leak check, verified by deliberately
+  injecting a leak into `needs_review_note` and confirming the check
+  still fails correctly.
+**Alternatives considered:** (a) a single monolithic "translate EU ->
+TRUSTED_REGION" find-and-replace with no rule table — rejected: several
+constructions (non-EU forms, EU-member-state-as-actor, named
+instruments, EU-institutional-only mechanisms) need different treatment
+than a blanket substitution, and an auditable table is what CLAUDE.md's
+transparency principle requires; (b) hardcode the D-008 erratum
+override in `scripts/generalize.py` Python code — rejected per this
+phase's explicit instruction ("implement as a documented per-record
+override in the rules file, not code"), so the override stays data,
+reviewable by the project owner alongside the rest of the rule table,
+not buried in script logic.
+**Rationale:** A machine-readable, ordered, documented rule table is
+citable per-rule (id, pattern, rationale, examples) exactly as
+CLAUDE.md's transparency principle requires for every disposition rule
+and scoring formula — generalization rules are no different. Keeping
+`generalize()` a pure function of (text, rules) is what makes the
+validator's equality check meaningful: it proves every `direct` record's
+`generalized_text` is fully re-derivable from `source_text` plus the
+rule table, not hand-edited out of sync.
+**Framework anchor:** N/A — internal tooling/data-shape decision. The
+underlying placeholder concept (`{NATION}`/`{TRUSTED_REGION}`) is
+CLAUDE.md's own design principle 2, not framework-derived.
+**Status:** Resolved.
+
+## D-020 — Public `generalized_text` for C3A remains subject to D-002's pending BSI/counsel posture
+
+**Note (renumbering, parallel-branch collision):** originally logged as
+D-018 on the `phase-2d-generalization` branch; renumbered to D-020 for
+the same reason as D-019 above (see that entry's renumbering note).
+
+**Date:** 2026-07-04
+**Decision:** Phase 2d-i populates `generalized_text` for all 59
+`c3a.json` records with real text (light-touch placeholder substitution
+of the verbatim source), replacing the `"GENERALIZATION-PENDING"`
+placeholder used since Phase 2a/D-010. This text is committed to the
+public, git-tracked `data/extracted/c3a.json`. Per CLAUDE.md's License
+care section, `generalized_text` (unlike `source_text`) is the artifact
+this project's design already designates as the intended *public*
+output — but D-002 (BSI/counsel confirmation of permissible verbatim
+reproduction *and generalization*) remains open. This entry records
+that populating `generalized_text` now, ahead of D-002's resolution, is
+a deliberate continuation of the project's existing cautious-default
+posture, not a new determination that generalization is confirmed safe.
+**Alternatives considered:** wait for D-002 to resolve before
+populating any public `generalized_text` — rejected: D-005 already
+established that extraction work proceeds ahead of D-002's resolution
+(with source_text isolated per D-009/D-010), and CLAUDE.md's own charter
+identifies `generalized_text` as the intended public-safe artifact
+specifically because placeholder substitution is a real transformation
+of the source (unlike verbatim `source_text`); waiting would block the
+entire generalization phase pending a legal determination the project
+has, from Phase 1 onward, structured its whole publication model
+around already resolving in `generalized_text`'s favor.
+**Rationale:** Keeps the open question visible rather than letting the
+act of populating real `generalized_text` be read as an implicit "this
+is settled" signal. D-002's status line is unchanged by this entry.
+**Framework anchor:** C3A v1.0 license terms (CC-BY-ND 4.0), same
+open question as D-002/D-005/D-009/D-010.
+**Status:** Open — tracks D-002; not a new license determination.
+
+## D-021 — R5d amended to match plural "third countries" (Phase 2d-ii, ecsf.json)
+
+**Date:** 2026-07-04
+**Decision:** `data/rules/generalization-rules.yaml`'s R5d rule
+originally matched only the singular "third country"/"third-country"
+(pattern `\bthird[- ]country\b`), sufficient for every occurrence in
+`c3a.json` (none) and `cada.json` (singular only, throughout). Applying
+the unchanged rule table to `ecsf.json` (Phase 2d-ii) surfaced two
+records using the plural "third countries"
+(`csat-sov2-ecsf-05`, `csat-sov3-ecsf-03`), which the original pattern
+did not match, leaving the literal untouched in `generalized_text`. R5d
+is amended to `\bthird[- ]countr(?:y|ies)\b`, matching both forms.
+**Alternatives considered:** (a) leave R5d singular-only and add a
+separate R5e rule for the plural — rejected as an unnecessary
+duplicate rule for what is the same construction; a single regex
+alternation is simpler and equally auditable; (b) tag the two affected
+`ecsf.json` records `needs_review` instead of amending the rule —
+rejected: this is a straightforward, unambiguous grammatical-number
+gap in a mechanical pattern, not a genuine interpretive ambiguity, so
+fixing the rule (and re-verifying zero residual-literal-adjacent gaps
+across all three already-generalized files) is more honest than
+flagging it as an open question.
+**Rationale:** Keeps the rule table's coverage complete across all
+three frameworks rather than leaving a known, mechanical gap; the fix
+was verified not to change any of the 59 already-generalized
+`c3a.json` records (no plural "third countries" appears there), so no
+re-generalization of Phase 2d-i's output was needed.
+**Framework anchor:** N/A — internal rule-table maintenance, surfaced
+by ECSF's text, not dictated by any framework requirement.
+**Status:** Resolved.
+
+## D-022 — New rule R2b: narrow bare-"Union" generalization (Phase 2d-ii, cada.json)
+
+**Date:** 2026-07-04
+**Decision:** CADA frequently uses bare "Union" (no preceding "the" or
+"European") as an adjective: "Union citizens," "Union citizenship,"
+"Where no Union or national cybersecurity certification schemes
+exist," "national laws of Member States or Union law." R2's existing
+pattern only matches "the Union"/"European Union," so these were left
+ungeneralized. A new rule, R2b, adds a narrow lookahead-restricted
+pattern
+(`\bUnion(?=\s+citizens?\b|\s+citizenship\b|\s+or national\b|\s+law\b)`
+-> `{TRUSTED_REGION}`) matching only these confirmed constructions.
+**Alternatives considered:** (a) a blanket `\bUnion\b` ->
+`{TRUSTED_REGION}` rule — rejected: this would also rewrite CADA's own
+proper term "Union assurance level" (its UA-1..4 certification scheme
+name — a defined term of art, not a jurisdictional reference, and
+correctly left untouched, exactly as ECSF's "SEAL" is never
+generalized) and would double-fire against R6's "Union entities" ->
+`{GOVERNMENT_CUSTOMER}` mapping; (b) tag the affected records
+`needs_review` instead of extending the rule table — rejected for the
+same reason as D-021: this is an unambiguous mechanical coverage gap
+(a missing sentence construction), not an interpretive judgment call.
+**Rationale:** Keeps generalization coverage complete for CADA without
+touching the framework's own defined terminology or overlapping with
+an existing rule (R6); the narrow lookahead is deliberately
+conservative — it fires on 6 confirmed occurrences across
+`cada.json`'s 40 records and nowhere else, verified by re-running the
+full validator (0 regressions on `c3a.json`/`ecsf.json`, both of which
+use "EU citizens" rather than "Union citizens" and never trigger this
+pattern).
+**Framework anchor:** N/A — internal rule-table maintenance, surfaced
+by CADA's text, not dictated by any framework requirement.
+**Status:** Resolved.
+
+## D-023 — R2 amended to match bare "Europe" (Phase 2d-ii, ecsf-guidance.json); schema fields for generalized dsr cells and ecsf-scoring domains
+
+**Date:** 2026-07-04
+**Decision:** Two related additions while generalizing the ECSF guidance
+and scoring files:
+1. R2's pattern originally matched "European" (adjective) but not bare
+   "Europe" (place-name noun). Applying the rule table to
+   `ecsf-guidance.json`'s domain SEAL-2/3/4 cells surfaced one instance
+   ("Availability of expertise in Europe, including subcontractors,"
+   SOV-4 SEAL-3) that the original pattern left ungeneralized. R2 is
+   amended to also match bare "Europe" (ordered after "European" in the
+   alternation so "European" is still matched whole, not truncated to
+   "Europe" + dangling "an").
+2. Schema additions (authorized for these two files only, per this
+   phase's explicit instruction): `ecsf-guidance.schema.json`'s
+   `domainSealRequirement` gains three optional fields,
+   `generalized_seal_2`/`generalized_seal_3`/`generalized_seal_4`
+   (lang-string), plus `generalization_note` (lang-string, populated
+   only where a cell's generalized text diverges from a mechanical rule
+   application — currently just the SOV-7 SEAL-3 "ELA 3." -> "EAL 3."
+   erratum correction). These sit *alongside* the existing verbatim
+   `seal_2`/`seal_3`/`seal_4` fields (still isolated per D-009/D-010),
+   mirroring the `source_text`/`generalized_text` split
+   `control-record.schema.json` already uses, rather than replacing the
+   verbatim fields in place.
+3. `scripts/validate.py`'s leak-check field-exclusion (previously
+   hardcoded to skip only the literal key `"generalized_text"`) is
+   generalized to skip any key matching `generalized_*` or
+   `generalization_note`, at any nesting depth — needed because
+   `ecsf-guidance.json`'s new fields sit inside a nested
+   `domain_seal_requirements` array, not at a record's top level like
+   `control-record.schema.json`'s `generalized_text`.
+**Alternatives considered:** (a) leave "Europe" unmatched since it's not
+one of the residual-literal lint's banned tokens (the lint only checks
+"Germany"/"German"/"EU"/"European Union"/"the Union"/"Member State(s)",
+not bare "Europe") — rejected: passing the lint isn't the same as being
+correctly generalized, and leaving a known, findable gap uncorrected
+once discovered would be inconsistent with D-021/D-022's own reasoning;
+(b) replace `seal_2`/`seal_3`/`seal_4` in place with generalized text
+(as done for `cada-evidence.json`, which has no schema authorization for
+new fields) — rejected here specifically because this phase's
+instruction *does* authorize new fields on `ecsf-guidance.schema.json`,
+so the source_text/generalized_text-style split (preferred throughout
+the rest of the project) is used instead of the in-place fallback.
+**Rationale:** Keeps ECSF guidance's verbatim/generalized distinction
+structurally explicit (matching every other framework's pattern) rather
+than collapsing it, now that a schema change is authorized; fixes a
+real, if narrow, rule-table gap found in the process.
+**Framework anchor:** N/A — internal rule-table/schema maintenance,
+surfaced by the ECSF Implementation Guidance's text, not dictated by any
+framework requirement.
+**Status:** Resolved.
+
+## D-024 — generalization_class semantics codified (CR-1, Phase 2d review)
+
+**Date:** 2026-07-04
+**Decision:** Phase 2d-i/2d-ii kept every per-record override (the D-008
+C3A erratum, the CADA 2.1(d) typo correction, the R7 named-instrument
+reframings, and every other hand-written override in
+`data/rules/generalization-rules.yaml`'s `overrides` table) classified
+`generalization_class: "direct"`, rather than introducing a distinct
+class for "overridden." This was an implementation choice made without
+its own DECISIONS entry at the time; the external Phase 2d review
+(`reviews/phase-2d-review.md`, CR-1) endorsed the choice — it means the
+validator's equality check (`scripts/validate.py`,
+`check_generalization()`) covers 128 of 129 control records rather than
+only the mechanically-substituted subset — but required the semantics
+be registered explicitly rather than left implicit. This entry is that
+registration:
+- **`direct`** means `generalized_text` is machine-reproducible as
+  `f(verbatim, rules)`, where `rules` includes both the ordered R1-R9
+  substitution pipeline *and* the `overrides` table's per-record
+  entries (checked by id before the pipeline runs). A record being
+  `direct` does **not** imply no human judgment was involved — it means
+  whatever judgment was applied is captured as *data* (an entry in the
+  public `overrides` table), not as an undocumented one-off edit, and
+  is therefore still subject to the equality check every time the
+  validator runs.
+- **`structural_adaptation`** means the divergence from a mechanical
+  substitution is not expressible as replacement text at all — it is a
+  narrative functional restatement of a mechanism with no
+  `{NATION}`/`{TRUSTED_REGION}`-level analog (rule R8; currently one
+  record, `csat-sov1-cada-ua3-g`). These records are exempt from the
+  equality check (there is no `f(verbatim, rules)` to compare against
+  in the same sense) but the schema requires a `generalization_note` on
+  every one.
+- **The complete enumeration of every point of human judgment in
+  generalization**, for any reader auditing this project, is: the
+  public `overrides` table in `data/rules/generalization-rules.yaml`
+  **union** every record where `generalization_class != "direct"` (i.e.
+  `"structural_adaptation"` or `"eu_institutional"`). Nothing else in
+  the generalization pipeline involves judgment — every other record's
+  `generalized_text` is reproducible from `source_text`/verbatim plus
+  the ordered rule list alone.
+**Alternatives considered:** (a) introduce a fourth
+`generalization_class` value (e.g. `"overridden"`) distinct from
+`"direct"`, reserved for override-table entries — rejected per the
+reviewer's own recommendation: it would *shrink* equality-check
+coverage (overridden records would become exempt, like
+`structural_adaptation`) for no verification benefit, since the
+override text is already fully data-driven and checkable; (b) leave the
+semantics implicit, relying on code-reading to discover them — rejected
+per this CR: a project built on the transparency principle (CLAUDE.md,
+Transparency & provenance) needs this class distinction registered
+somewhere a reader can find without reading `scripts/generalize.py`.
+**Rationale:** Registers, rather than silently accepts, a deviation
+between what the Phase 2d-i/2d-ii task instructions originally
+specified (an implicit assumption that overrides would need their own
+class) and what was actually built and is being kept (overrides stay
+`direct`) — per the reviewer's endorsement that the built behavior is
+strictly stronger for verification purposes.
+**Framework anchor:** N/A — internal data-modeling/verification-design
+decision, not dictated by any source framework.
+**Status:** Resolved.

@@ -97,6 +97,15 @@
       "description": "Placeholders present in generalized_text, checked against invariant I3 (no unresolved placeholders in rendered text).",
       "items": { "type": "string", "enum": ["{NATION}", "{TRUSTED_REGION}", "{PROVIDER}"] }
     },
+    "generalization_class": {
+      "type": "string",
+      "description": "Phase 2d: how generalized_text relates to source_text. direct: a mechanical rule-based substitution (scripts/generalize.py), checked for exact equality against generalize(verbatim, rules) by the validator. structural_adaptation: a functional restatement of a mechanism with no national analog (e.g. an EU-institutional process) — exempt from the equality check but requires generalization_note. eu_institutional: reserved for EU-institutional content kept as a named source example rather than generalized (see rule R7 in data/rules/generalization-rules.yaml).",
+      "enum": ["direct", "structural_adaptation", "eu_institutional"]
+    },
+    "generalization_note": {
+      "description": "Required when generalization_class is structural_adaptation; explains why generalized_text diverges from a mechanical rule application.",
+      "$ref": "lang-string.schema.json"
+    },
     "disposition_default": {
       "type": "string",
       "description": "Fallback disposition absent any matching disposition rule. Actual disposition is computed per-assessment by the responsibility-map engine (design principle 3) and may differ.",
@@ -162,6 +171,13 @@
         "required": ["negotiation_opportunity"]
       },
       "then": { "required": ["negotiation_clause"] }
+    },
+    {
+      "if": {
+        "properties": { "generalization_class": { "const": "structural_adaptation" } },
+        "required": ["generalization_class"]
+      },
+      "then": { "required": ["generalization_note"] }
     },
     {
       "if": { "not": { "required": ["source_text"] } },

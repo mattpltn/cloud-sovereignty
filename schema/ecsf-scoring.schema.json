@@ -61,6 +61,10 @@
         },
         "label": { "$ref": "lang-string.schema.json" },
         "description": { "$ref": "lang-string.schema.json" },
+        "generalized_description": {
+          "$ref": "lang-string.schema.json",
+          "description": "Phase 2d-ii: description with {NATION}/{TRUSTED_REGION} placeholders substituted per data/rules/generalization-rules.yaml. description itself stays verbatim (this file carries full verbatim text publicly per D-012 — no isolation regime applies here)."
+        },
         "weight_percent": {
           "type": "number",
           "minimum": 0,

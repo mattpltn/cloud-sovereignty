@@ -9,6 +9,7 @@ rule 7: no commit with a failing validator.
 
 import glob
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -16,11 +17,22 @@ import yaml
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generalize import generalize, load_rules  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_DIR = ROOT / "schema"
 PERSONAS_DIR = ROOT / "tests" / "personas"
 EXTRACTED_DIR = ROOT / "data" / "extracted"
 LOCAL_DIR = ROOT / "data" / "local"
+RULES_DIR = ROOT / "data" / "rules"
+
+# Residual-literal lint (Phase 2d-i): generalized_text must not contain
+# these literal strings outside an R7 "(source cites: ...)" parenthetical
+# exemption zone. Checked whole-word (case-sensitive, matching the exact
+# capitalization used in the source frameworks).
+RESIDUAL_LITERAL_PATTERN = re.compile(r"\b(Germany|German|EU|European Union|the Union|Member States?)\b")
+R7_EXEMPTION_PATTERN = re.compile(r"\(source cites:[^)]*\)")
 
 # Files in data/extracted that are NOT arrays of control-record.schema.json
 # records, and are validated separately (see their own check_* functions).
@@ -37,6 +49,16 @@ NON_CONTROL_RECORD_FILES = {
 # see check_verbatim_placeholder_count for their equivalent completeness
 # check — but still covered by the (generalized) leak check.
 ID_KEYED_VERBATIM_EXCLUSIONS = {"ecsf-guidance.json", "ecsf-calculator.json", "cada-scope.json", "cada-evidence.json"}
+
+# Phase 2d-ii: files with no separate generalized_text field at all — their
+# only text fields were generalized in place (the SEE-LOCAL-VERBATIM
+# placeholder replaced directly with generalized text, since no schema
+# change was authorized to add a parallel field). Like generalized_text
+# elsewhere, expected to overlap heavily with (or exactly equal, for
+# passages needing no substitution) the verbatim source, and no longer
+# carries the placeholder marker at all — excluded from both the leak scan
+# and the placeholder-count completeness check for that reason.
+GENERALIZED_IN_PLACE_FILES = {"cada-evidence.json"}
 
 
 def load_schemas() -> tuple[dict[str, dict], Registry]:
@@ -182,11 +204,21 @@ def check_verbatim_leak() -> list[str]:
         for i in range(len(words) - n + 1):
             yield " ".join(words[i : i + n])
 
+    # Phase 2d: any "generalized_*"-named field (generalized_text,
+    # generalized_seal_2/3/4, generalization_note, ...) is EXPECTED to
+    # overlap heavily with verbatim text by design (light-touch placeholder
+    # substitution, not paraphrase — CLAUDE.md License care: these are the
+    # publishable artifacts). Skipped at every nesting depth so nested
+    # structures (e.g. ecsf-guidance.json's domain_seal_requirements array)
+    # are covered, not just top-level record keys; every other field
+    # (source_text, seal_2/3/4, needs_review_note, ...) is still scanned.
     def walk_strings(value):
         if isinstance(value, str):
             yield value
         elif isinstance(value, dict):
-            for v in value.values():
+            for k, v in value.items():
+                if k.startswith("generalized_") or k == "generalization_note":
+                    continue
                 yield from walk_strings(v)
         elif isinstance(value, list):
             for v in value:
@@ -194,6 +226,8 @@ def check_verbatim_leak() -> list[str]:
 
     for verbatim_file in sorted(LOCAL_DIR.glob("*-verbatim.json")):
         base_name = verbatim_file.name.removesuffix("-verbatim.json") + ".json"
+        if base_name in GENERALIZED_IN_PLACE_FILES:
+            continue
         public_file = EXTRACTED_DIR / base_name
         if not public_file.exists():
             continue
@@ -251,7 +285,7 @@ def check_verbatim_placeholder_count() -> list[str]:
             return sum(count_placeholders(v) for v in value)
         return 0
 
-    for base_name in sorted(ID_KEYED_VERBATIM_EXCLUSIONS):
+    for base_name in sorted(ID_KEYED_VERBATIM_EXCLUSIONS - GENERALIZED_IN_PLACE_FILES):
         verbatim_file = LOCAL_DIR / (base_name.removesuffix(".json") + "-verbatim.json")
         public_file = EXTRACTED_DIR / base_name
         if not verbatim_file.exists() or not public_file.exists():
@@ -390,6 +424,188 @@ def check_ecsf_calculator(schemas: dict[str, dict], registry: Registry) -> list[
     return errors
 
 
+def check_overrides_have_notes() -> list[str]:
+    """CR-1(b) (Phase 2d review, D-024): every entry in
+    data/rules/generalization-rules.yaml's overrides table must carry a
+    non-empty generalization_note. Per D-024, the overrides table is one
+    of the two places (alongside generalization_class != "direct"
+    records) that together enumerate every point of human judgment in
+    generalization — an override with no rationale would be an
+    undocumented judgment call, which working rule 2 ("never guess
+    silently") and the transparency principle both rule out. Runs
+    unconditionally (not gated on data/local/ presence): this checks the
+    rules file itself, not a verbatim comparison.
+    """
+    errors = []
+    rules_path = RULES_DIR / "generalization-rules.yaml"
+    if not rules_path.exists():
+        return errors
+    _, overrides = load_rules(rules_path)
+    for rid, override in overrides.items():
+        note = override.get("generalization_note", "").strip()
+        if not note:
+            errors.append(
+                f"data/rules/generalization-rules.yaml: override {rid!r} has no "
+                f"(non-empty) generalization_note"
+            )
+    return errors
+
+
+def check_generalization() -> list[str]:
+    """Phase 2d-i: for every control-record file that has a matching
+    data/local/<name>-verbatim.json, when present:
+
+    1. Equality check — every record with generalization_class: direct
+       must have generalized_text.en == generalize(verbatim.en, rules)
+       (scripts/generalize.py), confirming the engine is deterministic
+       and that no one hand-edited a generalized record out of sync with
+       the rule table. Records with generalization_class:
+       structural_adaptation are exempt from this check but MUST carry a
+       generalization_note (also enforced structurally by the schema's
+       own if/then). Records with no generalization_class at all (not
+       yet generalized, e.g. GENERALIZATION-PENDING) are skipped.
+    2. Residual-literal lint — no generalized_text may contain
+       "Germany"/"German"/"EU"/"European Union"/"the Union"/"Member
+       State(s)" outside an R7 "(source cites: ...)" parenthetical
+       exemption zone. Any hit is a validator error: either a rule table
+       gap (a construction the rules don't yet cover) or a record that
+       should have been classified structural_adaptation/eu_institutional
+       instead of direct.
+    """
+    errors = []
+    if not LOCAL_DIR.exists():
+        return errors
+
+    rules_path = RULES_DIR / "generalization-rules.yaml"
+    if not rules_path.exists():
+        return errors
+    rules, overrides = load_rules(rules_path)
+
+    for verbatim_file in sorted(LOCAL_DIR.glob("*-verbatim.json")):
+        base_name = verbatim_file.name.removesuffix("-verbatim.json") + ".json"
+        if base_name in ID_KEYED_VERBATIM_EXCLUSIONS or base_name in NON_CONTROL_RECORD_FILES:
+            continue
+        public_file = EXTRACTED_DIR / base_name
+        if not public_file.exists():
+            continue
+
+        verbatim = json.loads(verbatim_file.read_text())
+        public_records = json.loads(public_file.read_text())
+
+        for record in public_records:
+            rid = record.get("id")
+            gclass = record.get("generalization_class")
+            gen_text = record.get("generalized_text", {}).get("en", "")
+
+            if gclass == "direct" and rid in verbatim:
+                expected = generalize(verbatim[rid]["en"], rules)
+                if rid in overrides:
+                    expected = overrides[rid]["generalized_text"].strip()
+                if gen_text != expected:
+                    errors.append(
+                        f"data/extracted/{base_name}: record {rid!r} generalized_text does not equal "
+                        f"generalize(verbatim, rules) — expected {expected!r}, got {gen_text!r}"
+                    )
+
+            if gclass in ("direct", "structural_adaptation", "eu_institutional"):
+                scrubbed = R7_EXEMPTION_PATTERN.sub("", gen_text)
+                m = RESIDUAL_LITERAL_PATTERN.search(scrubbed)
+                if m:
+                    errors.append(
+                        f"data/extracted/{base_name}: record {rid!r} generalized_text contains "
+                        f"residual literal {m.group()!r} outside an R7 exemption — rule table gap "
+                        f"or wrong generalization_class"
+                    )
+
+    # Second pass: files with no matching data/local/*-verbatim.json at all
+    # (derivation: derived, e.g. cada-act.json — no verbatim source to check
+    # equality against) still get the residual-literal lint on any record
+    # carrying a generalization_class, so hand-generalized text is held to
+    # the same literal-leak standard as mechanically generalized text.
+    linted_already = {
+        vf.name.removesuffix("-verbatim.json") + ".json" for vf in LOCAL_DIR.glob("*-verbatim.json")
+    }
+    for f in sorted(EXTRACTED_DIR.glob("*.json")):
+        if f.name in linted_already:
+            continue
+        data = json.loads(f.read_text())
+        records = data if isinstance(data, list) else [data]
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            rid = record.get("id")
+            gclass = record.get("generalization_class")
+            gen_text = record.get("generalized_text", {}).get("en", "")
+            if gclass in ("direct", "structural_adaptation", "eu_institutional"):
+                scrubbed = R7_EXEMPTION_PATTERN.sub("", gen_text)
+                m = RESIDUAL_LITERAL_PATTERN.search(scrubbed)
+                if m:
+                    errors.append(
+                        f"data/extracted/{f.name}: record {rid!r} generalized_text contains "
+                        f"residual literal {m.group()!r} outside an R7 exemption — rule table gap "
+                        f"or wrong generalization_class"
+                    )
+
+    # cada-evidence.json (Phase 2d-ii) has no generalization_class field at
+    # all (no schema change was authorized for it) — its title/
+    # evidence_items/notes were generalized in place. Lint those directly.
+    evidence_file = EXTRACTED_DIR / "cada-evidence.json"
+    if evidence_file.exists():
+        evidence_data = json.loads(evidence_file.read_text())
+        for c in evidence_data.get("criteria", []):
+            texts = [("title", c["title"]["en"])] + [
+                (f"evidence_items[{i}]", item["en"]) for i, item in enumerate(c["evidence_items"])
+            ]
+            if "notes" in c:
+                texts.append(("notes", c["notes"]["en"]))
+            for field, text in texts:
+                scrubbed = R7_EXEMPTION_PATTERN.sub("", text)
+                m = RESIDUAL_LITERAL_PATTERN.search(scrubbed)
+                if m:
+                    errors.append(
+                        f"data/extracted/cada-evidence.json: criterion {c['id']!r} {field} contains "
+                        f"residual literal {m.group()!r} outside an R7 exemption"
+                    )
+
+    # ecsf-scoring.json (Phase 2d-ii) has no generalization_class field
+    # either (only a generalized_description field was authorized). Lint
+    # every domain's generalized_description directly.
+    scoring_file = EXTRACTED_DIR / "ecsf-scoring.json"
+    if scoring_file.exists():
+        scoring_data = json.loads(scoring_file.read_text())
+        for dom in scoring_data.get("domains", []):
+            if "generalized_description" not in dom:
+                continue
+            text = dom["generalized_description"]["en"]
+            scrubbed = R7_EXEMPTION_PATTERN.sub("", text)
+            m = RESIDUAL_LITERAL_PATTERN.search(scrubbed)
+            if m:
+                errors.append(
+                    f"data/extracted/ecsf-scoring.json: domain {dom['id']!r} generalized_description "
+                    f"contains residual literal {m.group()!r} outside an R7 exemption"
+                )
+
+    # ecsf-guidance.json's domain_seal_requirements generalized_seal_2/3/4
+    # fields similarly carry no generalization_class marker.
+    guidance_file = EXTRACTED_DIR / "ecsf-guidance.json"
+    if guidance_file.exists():
+        guidance_data = json.loads(guidance_file.read_text())
+        for entry in guidance_data.get("domain_seal_requirements", []):
+            for level in ("generalized_seal_2", "generalized_seal_3", "generalized_seal_4"):
+                if level not in entry:
+                    continue
+                text = entry[level]["en"]
+                scrubbed = R7_EXEMPTION_PATTERN.sub("", text)
+                m = RESIDUAL_LITERAL_PATTERN.search(scrubbed)
+                if m:
+                    errors.append(
+                        f"data/extracted/ecsf-guidance.json: domain {entry['domain']!r} {level} "
+                        f"contains residual literal {m.group()!r} outside an R7 exemption"
+                    )
+
+    return errors
+
+
 def check_cada_scope() -> list[str]:
     """Structural check for data/extracted/cada-scope.json (Phase 2c),
     if present: not a control-record array, and not validated against a
@@ -472,6 +688,8 @@ def main() -> int:
     errors.extend(check_cada_scope())
     errors.extend(check_cada_evidence(schemas, registry))
     errors.extend(check_cada_act())
+    errors.extend(check_overrides_have_notes())
+    errors.extend(check_generalization())
 
     print(f"Schemas checked: {len(schemas)}")
     print(f"Personas checked: {draft_count + approved_count} ({draft_count} draft, {approved_count} approved)")

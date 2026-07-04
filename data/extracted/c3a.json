@@ -21,8 +21,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST operate under {TRUSTED_REGION} jurisdiction, with contract governance and dispute resolution.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -33,7 +33,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-01-c2",
@@ -57,8 +58,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST operate under {NATION} jurisdiction, with contract governance and dispute resolution.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -69,7 +70,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C2"
+    "localization_level": "C2",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-02-c1",
@@ -93,8 +95,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST have a registered head office in the {TRUSTED_REGION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -105,7 +107,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-02-c2",
@@ -129,8 +132,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST have a registered head office in {NATION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -141,7 +144,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C2"
+    "localization_level": "C2",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-03-c1",
@@ -165,8 +169,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST be effectively controlled by one or more {TRUSTED_REGION} corporations. The cloud service provider MUST ensure that effective controls are transparent to cloud service customers.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -177,7 +181,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-03-c2",
@@ -201,8 +206,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST be under the effective control of one or more {NATION} undertakings. The cloud service provider MUST ensure that effective controls are transparent to cloud service customers.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -213,7 +218,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C2"
+    "localization_level": "C2",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-04-c",
@@ -237,8 +243,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST inform cloud service customers 90 days in advance of any actual changes affecting the cloud service provider's control that could undermine or affect the C3A controls associated with the cloud service, including significant changes to ownership, shareholding, or governance relationships of the cloud service provider.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -248,7 +254,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-01-c",
@@ -272,8 +279,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST identify, at least once a year, any law from outside {TRUSTED_REGION} relating directly to the provided cloud services that have cross-border implications for the availability of cloud services and the confidentiality and integrity of customer created data. They MUST also carry out a structured risk assessment to evaluate the risks arising from these laws.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -283,7 +290,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-02-c1",
@@ -307,8 +315,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST document procedures that allow the relevant federal or national cybersecurity authority to verify compliance with the C3A criteria by an audit. The responsible authority is the one in the country where the data center is located.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -319,7 +327,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-02-c2",
@@ -343,8 +352,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST document procedures that allow the {NATION_ADMINISTRATION} to verify compliance with the C3A criteria by an audit.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -355,7 +364,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C2"
+    "localization_level": "C2",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-03-c1",
@@ -379,8 +389,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "If {NATION} declares a state of defense, the cloud service provider MUST enable {NATION} to take over the capabilities required to operate the cloud, including the necessary physical assets and personnel, within the framework of legal possibilities.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -392,7 +402,8 @@
     "weight": 1.0,
     "needs_review": true,
     "localization_level": "C1",
-    "needs_review_note": "Spans legal_jurisdiction (the right to take over), facility (physical assets), and operations_personnel (personnel handover); tagged legal_jurisdiction as the primary overarching obligation since the requirement is fundamentally a legal enablement duty. Review whether Phase 4's disposition rules need a multi-layer treatment instead."
+    "needs_review_note": "Spans legal_jurisdiction (the right to take over), facility (physical assets), and operations_personnel (personnel handover); tagged legal_jurisdiction as the primary overarching obligation since the requirement is fundamentally a legal enablement duty. Review whether Phase 4's disposition rules need a multi-layer treatment instead.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-03-c2",
@@ -416,8 +427,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "If {NATION} declares a state of defense, the cloud service provider MUST enable the {NATION_ADMINISTRATION} to take over the capabilities required to operate the cloud, including the necessary material assets and personnel, within the framework of legal possibilities.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -429,7 +440,8 @@
     "weight": 1.0,
     "needs_review": true,
     "localization_level": "C2",
-    "needs_review_note": "Same multi-layer concern as SOV-2-03-C1 (legal_jurisdiction / facility / operations_personnel); tagged legal_jurisdiction as primary."
+    "needs_review_note": "Same multi-layer concern as SOV-2-03-C1 (legal_jurisdiction / facility / operations_personnel); tagged legal_jurisdiction as primary.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-01-c1",
@@ -453,8 +465,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "A cloud service customer MUST be able to check where their cloud service derived data, cloud service customer data, and account data are stored and processed.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -464,7 +476,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-01-c2",
@@ -488,8 +501,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide a service option where cloud service derived data and account data are exclusively stored and processed in the {TRUSTED_REGION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -499,7 +512,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-01-c3",
@@ -523,8 +537,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide a service option where cloud service customer data is exclusively stored and processed in the {TRUSTED_REGION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -535,7 +549,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-01-c4",
@@ -559,8 +574,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide a service option where cloud service customer data is exclusively stored and processed in {NATION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -571,7 +586,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C2"
+    "localization_level": "C2",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-01-c5",
@@ -595,8 +611,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide a service option where cloud service provider data is exclusively stored and processed in the {TRUSTED_REGION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -606,7 +622,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-02-c",
@@ -630,8 +647,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST allow the integration of external encryption key management system for creating, managing, and storing encryption keys outside of the cloud service provider environment for the use of IaaS and PaaS, or provide functionally equivalent mechanisms that ensure the customer can only create, manage and store the encryption keys only outside of the cloud service provider environment.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -641,7 +658,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-02-ac",
@@ -665,8 +683,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST allow the integration of external key management systems for creating, managing and storing keys outside of the cloud environment also for SaaS, or provide functionally equivalent mechanisms that ensure the customer can only create, manage and store the encryption keys outside of the cloud service provider environment.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -676,7 +694,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-03-c",
@@ -700,8 +719,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST support standards-based integration of external identity providers for authentication and access management for the cloud service.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -711,7 +730,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-03-ac1",
@@ -735,8 +755,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The integration of an external Identity Provider MUST be implemented via open, non-proprietary standards.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -746,7 +766,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-03-ac2",
@@ -770,8 +791,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The provider MUST support a stateless authentication model that does not mandate the creation and copies of accounts within the provider's directory.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -781,7 +802,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-03-ac3",
@@ -805,8 +827,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Authorization MUST be controllable via dynamic claims and attributes issued directly by the customer's external identity provider.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -816,7 +838,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-04-c",
@@ -840,8 +863,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide customers with the capability to record, retain, and review logs of management and data access activities related to cloud service customer data. These logs MUST enable customers to identify when access occurred, the identity associated with the request, and the relevant operational context available through the service's logging capabilities.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -852,7 +875,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Logging capability spans data (records of data-access activity) and platform/operations_personnel (who/what performs and hosts the logging); tagged data as the closest fit since the criterion centers on data-access accountability."
+    "needs_review_note": "Logging capability spans data (records of data-access activity) and platform/operations_personnel (who/what performs and hosts the logging); tagged data as the closest fit since the criterion centers on data-access accountability.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-04-ac1",
@@ -876,8 +900,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The logging service MUST ensure full data flow transparency by providing real-time access via standardized open-source APIs.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -888,7 +912,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C."
+    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-04-ac2",
@@ -912,8 +937,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The service MUST support granular filtering.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -924,7 +949,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C."
+    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-05-c",
@@ -948,8 +974,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST enable client-side encryption of cloud service customer data. Whenever the cloud service customer data is transmitted, processed or stored inside the cloud environment, it MUST be encrypted with a private key that is only available to the cloud service customer outside of the cloud service provider environment.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -959,7 +985,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-01-c1",
@@ -983,8 +1010,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "All personnel who have logical or physical access to infrastructure used to operate the cloud service, as well as those who are responsible for customer support, and all persons who have management control of the cloud service provider MUST be {TRUSTED_REGION} citizens with {TRUSTED_REGION} as main residency.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -995,7 +1022,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-01-c2",
@@ -1019,8 +1047,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "All personnel who have logical or physical access to infrastructure used to operate the cloud service, as well as those who are responsible for customer support, and all persons who have management control of the cloud service provider MUST be {TRUSTED_REGION} citizens with {NATION} as main residency.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1031,7 +1059,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C2"
+    "localization_level": "C2",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-01-c3",
@@ -1055,8 +1084,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The operating personnel is part of an organization that MUST be a standalone {TRUSTED_REGION} organization.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1066,7 +1095,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-02-c1",
@@ -1090,8 +1120,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST implement organizational and technical measures ensuring that administrative access to systems used to operate the cloud service is performed through access paths located within the {TRUSTED_REGION}. Administrative access originating from locations outside the {TRUSTED_REGION} MUST be technically restricted, except in narrowly defined and controlled exceptional scenarios that are subject to additional authorization and monitoring controls.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1102,7 +1132,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-02-c2",
@@ -1126,8 +1157,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST implement organizational and technical measures ensuring that administrative access to systems used to operate the cloud service is performed through access paths located within {NATION}. Administrative access originating from locations outside {NATION} MUST be technically restricted, except in narrowly defined and controlled exceptional scenarios that are subject to additional authorization and monitoring controls.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1139,7 +1170,12 @@
     "weight": 1.0,
     "needs_review": true,
     "localization_level": "C2",
-    "needs_review_note": "Verbatim source text states access paths must be located 'within the EU' in the first sentence but restricts non-'Germany' origins in the second — a source-document inconsistency confirmed against the published PDF, p. 11 (D-008; the C2/Germany variant would be expected to say 'within Germany' throughout, matching SOV-4-01-C2's pattern). Captured verbatim as printed, not corrected. Intended meaning to be handled via a generalization_note referencing D-008 in Phase 2d."
+    "needs_review_note": "Verbatim source text states access paths must be located 'within the EU' in the first sentence but restricts non-'Germany' origins in the second — a source-document inconsistency confirmed against the published PDF, p. 11 (D-008; the C2/Germany variant would be expected to say 'within Germany' throughout, matching SOV-4-01-C2's pattern). Captured verbatim as printed, not corrected. Intended meaning to be handled via a generalization_note referencing D-008 in Phase 2d.",
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "D-008 erratum override: the verbatim source text's first sentence reads \"within the EU\" (mechanical R2 substitution would yield \"within {TRUSTED_REGION}\"), but per D-008 this is confirmed against the published C3A v1.0 PDF as the record's own internal inconsistency — the second sentence (\"outside Germany\") and the C2/Germany-variant pattern used throughout C3A make clear the first sentence's intended meaning is \"within Germany\" (-> {NATION}), not \"within the EU\". Generalized text here reflects that intended meaning rather than a literal mechanical substitution of the verbatim text; source_text itself is left unmodified (D-008) and needs_review stays set on the record.",
+      "fr": "FR-TRANSLATION-PENDING"
+    }
   },
   {
     "id": "csat-sov4-03-c",
@@ -1163,8 +1199,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST ensure redundant and independent connectivity for the delivery of the sovereign cloud service. In the event of a disruption of one connectivity provider, alternative connectivity providers MUST be able to maintain connectivity in accordance with the contractual service level agreements. At least one of the connectivity providers MUST be an {TRUSTED_REGION} based company.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1175,7 +1211,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Connectivity-provider redundancy sits between facility (physical network connectivity into the datacenter) and supply_chain_services (connectivity provider as an external supplier relationship, post-D-007 taxonomy); tagged facility as primary since the criterion concerns operational network redundancy at the facility level."
+    "needs_review_note": "Connectivity-provider redundancy sits between facility (physical network connectivity into the datacenter) and supply_chain_services (connectivity provider as an external supplier relationship, post-D-007 taxonomy); tagged facility as primary since the criterion concerns operational network redundancy at the facility level.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-03-ac",
@@ -1199,8 +1236,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "At least one of the connectivity providers is not part of the corporate structure of the cloud service provider.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1211,7 +1248,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Same facility/supply_chain_services ambiguity as SOV-4-03-C."
+    "needs_review_note": "Same facility/supply_chain_services ambiguity as SOV-4-03-C.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-04-c1",
@@ -1235,8 +1273,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST ensure that Security Operations Center (SOC) capabilities for the offered cloud services are established and operated within the {TRUSTED_REGION}. In the case of a disconnect (SOV-4-10), a stand-alone and equivalent SOC MUST be provided in the {TRUSTED_REGION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1247,7 +1285,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C1"
+    "localization_level": "C1",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-04-c2",
@@ -1271,8 +1310,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST ensure that Security Operations Center (SOC) capabilities for the offered cloud services are established and operated within {NATION}. In the case of a disconnect (SOV-4-10), a stand-alone and equivalent SOC MUST be provided in {NATION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1283,7 +1322,8 @@
     ],
     "weight": 1.0,
     "needs_review": false,
-    "localization_level": "C2"
+    "localization_level": "C2",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-05-c",
@@ -1307,8 +1347,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "All software updates and operational data affecting the cloud service MUST be received, authorized and validated in a secured network area managed and controlled by the cloud service provider. The cloud service provider MUST verify and check updates for known vulnerabilities. Updates MUST include documentation satisfying the needs of the cloud service provider. The update process MUST be based on a controlled change management processes.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1318,7 +1358,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-05-ac1",
@@ -1342,8 +1383,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST implement the secure network area (e. g. DMZ) on dedicated physical devices.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1353,7 +1394,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-05-ac2",
@@ -1377,8 +1419,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide technical documentation how the criterion SOV-4-05-C is implemented to the responsible cybersecurity authority if requested, in accordance with applicable law and established supervisory, cooperation agreements or audit mechanisms. The responsible authority is the one in the country where the data center is located. Such information may be provided through appropriate confidentiality protections and secure disclosure procedures.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1388,7 +1430,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-06-c",
@@ -1412,8 +1455,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "When using third-party software under the cloud service provider's responsibility, the cloud service provider MUST implement risk-based security analysis prior to deployment, including measures to detect and mitigate malicious code, viruses, spyware, and ransomware.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1423,7 +1466,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-07-c",
@@ -1447,8 +1491,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Any cloud service derived data, cloud service customer data and account data exchanged between the cloud service provider and third parties MUST always be monitored, controlled and logged. In order to do so, the cloud service provider MUST establish a documented process. The documentation MUST be reviewed and updated regularly, at least once a year. The cloud service provider MUST document what kind of data is exchanged with third parties. This documentation MUST ensure that it is clear which data is flowing to which party and this can also be meaningfully aggregated. The cloud service provider MUST make this documentation available to the cloud service customer. It is acceptable that this is only made available to the customer if they have agreed to keep the information confidential and not publicly disclose it. The cloud service provider MUST clearly define the exchange format and document it as part of the data exchange documentation.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1458,7 +1502,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-08-c",
@@ -1482,8 +1527,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST document, define, and visualize (via a Data Flow Diagram) all data exchanges between the cloud service provider and third parties of cloud service derived data, cloud service customer data, and account data. The data exchanges MUST occur only via known gateways. The documentation MUST clearly identify data origins, destinations, transport protocols, data type and security mechanisms protecting these exchanges. The documentation MUST be reviewed and updated regularly, at least once a year. This documentation does not need to be published publicly.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1493,7 +1538,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-08-ac",
@@ -1517,8 +1563,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide the Data Flow Diagram to the responsible cybersecurity authority if requested, in accordance with applicable law and established supervisory, cooperation agreements or audit mechanisms. The responsible authority is the one in the country where the data center is located. Such information may be provided through appropriate confidentiality protections and secure disclosure procedures.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1528,7 +1574,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-09-c",
@@ -1552,8 +1599,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST be able to disconnect all network-connections from outside {TRUSTED_REGION} to the cloud without an impairment of the availability, integrity, authenticity and confidentiality of the cloud service. This includes all incoming updates and data exchanges with entities from outside {TRUSTED_REGION} (including but not limited to: external heartbeat signals and global license validation servers) that are in the responsibility of the cloud service provider. The cloud service provider MUST establish and document a process, when and how a disconnect is executed. This process MUST be independent from entities from outside {TRUSTED_REGION}. The cloud service provider MUST update this documentation regularly, at least once a year. The cloud service provider MUST conduct disconnection tests for ensuring the availability of all cloud services in case of a disconnection from the network-connections from outside {TRUSTED_REGION} at least once a year. The cloud service provider MUST document these tests as part of the aforementioned documentations. The documentation MUST include, but is not limited to, the results of the performed test.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1563,7 +1610,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-09-ac",
@@ -1587,8 +1635,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST provide the documentation of the disconnect process and disconnection tests to the responsible cybersecurity authority if requested, in accordance with applicable law and established supervisory, cooperation agreements or audit mechanisms. Where relevant, the cloud service provider may provide supporting documentation. The responsible authority is the one in the country where the data center is located. Such information may be provided through appropriate confidentiality protections and secure disclosure procedures.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1598,7 +1646,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-10-c",
@@ -1622,8 +1671,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST be able to reestablish all connections from outside {TRUSTED_REGION} after a disconnect in accordance of criterion SOV-4-9-C (\"Disconnect\") has been performed and has a process to install updates if the cloud environment was disconnected for a maximum of 90 days. The process to install updates if the cloud environment was disconnected for at most 90 days MUST also be tested.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1633,7 +1682,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-01-c",
@@ -1657,8 +1707,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST identify, for each cloud service, the software components used and their respective countries of origin. A list of the relevant software suppliers and their country or countries for each service, MUST be compiled and available on demand to cloud service customers. The identification of the software components should be based on a Software Bill of Materials (SBOM) (e.g. TR-03183-2) or achieve a comparable level of quality.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1668,7 +1718,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-01-ac",
@@ -1692,8 +1743,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST maintain a risk-based process for identifying and mitigating dependencies on external software suppliers relevant to the operation of the cloud service. Where critical dependencies are identified, the cloud service provider MUST implement appropriate mitigation strategies and maintain architectural flexibility that enables substitution of software components. If it is not technically and reasonably feasible, this information MUST be adequately provided to the cloud service customer.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1703,7 +1754,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-02-c",
@@ -1727,8 +1779,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST maintain a documented inventory of the hardware components used to provide cloud services. A list of the relevant hardware suppliers and their country or countries MUST be compiled and available on demand to cloud service customers.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1738,7 +1790,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-02-ac",
@@ -1762,8 +1815,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST maintain a risk-based process for identifying and mitigating dependencies on hardware suppliers relevant to the operation of the cloud service. Where critical dependencies are identified, the cloud service provider MUST implement mitigation strategies and maintain architectural flexibility enabling substitution of hardware components. If it is not technically and operationally feasible, this information MUST be adequately provided to the cloud service customer.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1773,7 +1826,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-03-c",
@@ -1797,8 +1851,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST maintain a documented inventory of used external cloud services that are necessary for the delivery of the cloud service. The list of information regarding the relevant external service providers and the country or countries of service provision or development MUST be made available to cloud service customers.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1808,7 +1862,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-03-ac",
@@ -1832,8 +1887,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST maintain a documented process for identifying and managing external service dependencies relevant to the delivery of the cloud service. Where critical dependencies are identified, the cloud service provider MUST implement mitigation strategies and maintain architectural flexibility enabling substitution of service dependencies. If it is not technically and operationally feasible, this information MUST be adequately provided to the cloud service customer.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1843,7 +1898,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-04-c",
@@ -1867,8 +1923,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST maintain documented processes for identifying and mitigating risks related to export restrictions or supply chain disruptions affecting software, external services, and hardware used in the delivery of the cloud service. Where such restrictions may materially affect the operation of the cloud service, the cloud service provider MUST inform affected customers.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1879,7 +1935,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Spans all three post-D-007 supply-chain layers (software, hardware, external services) simultaneously — export-restriction risk applies across all of them. Tagged supply_chain_hardware as primary since export-control regimes (e.g. ITAR/EAR-style restrictions) are most classically applied to physical hardware/technology export; software and service dependencies are also in scope per the verbatim text above."
+    "needs_review_note": "Spans all three post-D-007 supply-chain layers (software, hardware, external services) simultaneously — export-restriction risk applies across all of them. Tagged supply_chain_hardware as primary since export-control regimes (e.g. ITAR/EAR-style restrictions) are most classically applied to physical hardware/technology export; software and service dependencies are also in scope per the verbatim text above.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-05-c1",
@@ -1903,8 +1960,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Capacity management MUST be performed in the {TRUSTED_REGION} in accordance with C5.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1916,7 +1973,8 @@
     "weight": 1.0,
     "needs_review": true,
     "localization_level": "C1",
-    "needs_review_note": "Filed under the SOV-5 Supply Chain Sovereignty domain in the source, but content concerns operational capacity-management location, not a supply-chain relationship; tagged platform as the better content-based layer fit. sov_domain (SOV-5) is preserved as given by the source structure; layer is assessed independently per the responsibility-map model."
+    "needs_review_note": "Filed under the SOV-5 Supply Chain Sovereignty domain in the source, but content concerns operational capacity-management location, not a supply-chain relationship; tagged platform as the better content-based layer fit. sov_domain (SOV-5) is preserved as given by the source structure; layer is assessed independently per the responsibility-map model.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-05-c2",
@@ -1940,8 +1998,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Capacity management MUST be performed in {NATION} in accordance with C5.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1953,7 +2011,8 @@
     "weight": 1.0,
     "needs_review": true,
     "localization_level": "C2",
-    "needs_review_note": "Same domain/layer distinction as SOV-5-05-C1."
+    "needs_review_note": "Same domain/layer distinction as SOV-5-05-C1.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-01-c",
@@ -1977,8 +2036,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST have a backup of the source code in the {TRUSTED_REGION} that is not older than 24 hours and contains at minimum 5 versions of the cloud services so that the operation of the cloud service is possible at any time without external dependencies. This includes all infrastructure-as-code build-scripts and deployment toolchains. The local source code backup MUST include a documentation that enables the cloud service provider to independently work with the source code and develop it further at any time without external dependencies.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1988,7 +2047,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-02-c",
@@ -2012,8 +2072,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "In the event of disconnection of third parties, the cloud service provider MUST maintain documented contingency strategies ensuring continued secure delivery of the cloud services. These strategies may include alternative software suppliers, internal remediation capabilities, or compensating security controls.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -2023,7 +2083,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-02-ac",
@@ -2047,8 +2108,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "In the event of disruption or loss of an external software vendor, the cloud service provider MUST maintain the capability to remediate software vulnerabilities and implement necessary changes. The cloud provider MUST maintain specialized engineering talent and local build-environments necessary to compile, test, and deploy emergency security patches to the cloud services independently of third parties.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -2058,7 +2119,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-03-c",
@@ -2082,8 +2144,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The cloud service provider MUST ensure that authorised personnel have access to the software development tools and environments necessary to maintain and update the cloud services. The cloud service provider MUST also maintain documented contingency procedures for scenarios in which access to critical software development tools or development environment dependencies is disrupted, ensuring the continued ability to maintain and update the cloud services.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -2093,6 +2155,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   }
 ]

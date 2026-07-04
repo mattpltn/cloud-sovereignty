@@ -65,7 +65,19 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative.",
+      "generalized_seal_2": {
+        "en": "An autonomous entity in its organization, but not in its technical choices. The service continues but no longer has access to updates and security patches in the event of a break in access to the underlying technology.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_3": {
+        "en": "Access to the roadmap. Complete guarantee of operations continuity.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "Decision-making centres exclusively in the {TRUSTED_REGION}. Priority {TRUSTED_REGION} customers in roadmap arbitrations.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     },
     {
       "domain": "SOV-2",
@@ -87,7 +99,19 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative.",
+      "generalized_seal_2": {
+        "en": "Isolation by creating separate entities. Limited exposure to export control-type measures.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_3": {
+        "en": "Complete insulation guaranteeing the inapplicability of legislation from outside {TRUSTED_REGION}. No exposure of {NATION} to export control measures.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "Operations are designed and carried out exclusively in the {TRUSTED_REGION}. Protection of international institutions against export control measures.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     },
     {
       "domain": "SOV-3",
@@ -109,7 +133,19 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative.",
+      "generalized_seal_2": {
+        "en": "Full control of the data, including encryption control, data localization and deletion guarantee. Logs available.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_3": {
+        "en": "{TRUSTED_REGION} design AI. Logs recorded in real time in the {TRUSTED_REGION}.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "Immutability of logs, audits carried out by {TRUSTED_REGION} teams.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     },
     {
       "domain": "SOV-4",
@@ -131,7 +167,19 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative.",
+      "generalized_seal_2": {
+        "en": "Operations carried out and documented locally. Expertise from outside the {TRUSTED_REGION} may be necessary. Open and documented alternatives exist.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_3": {
+        "en": "Availability of expertise in Europe, including subcontractors. Processes are designed and documented locally.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "Complete {TRUSTED_REGION} autonomy, including security clearances and the integration of key skills of subcontractors.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     },
     {
       "domain": "SOV-5",
@@ -153,7 +201,19 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative.",
+      "generalized_seal_2": {
+        "en": "Majority of the supply chains are documented. Deployments are carried out locally, according to procedures that can be external. Critical suppliers and subcontractors can be audited.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_3": {
+        "en": "The majority of services are designed in the {TRUSTED_REGION}. They are deployed and orchestrated locally. No subcontractors involved in critical services.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "{TRUSTED_REGION}-certified components origin. {TRUSTED_REGION} design, build and compliance check. No dependence on suppliers from outside {TRUSTED_REGION}. Complete auditability of suppliers and subcontractors.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     },
     {
       "domain": "SOV-6",
@@ -175,7 +235,19 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative.",
+      "generalized_seal_2": {
+        "en": "The services are partially interoperable. HPC is hosted on-premises.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_3": {
+        "en": "{TRUSTED_REGION} and public standards for core services. Open-source majority and predominance of {TRUSTED_REGION} contributors.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "Auditability of the architecture. Full compliance: {TRUSTED_REGION} Open AI, public standard, open source.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     },
     {
       "domain": "SOV-7",
@@ -197,7 +269,23 @@
         "en": "SEE-LOCAL-VERBATIM",
         "fr": "FR-TRANSLATION-PENDING"
       },
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. Additionally: the SEAL-3 cell reads \"ELA 3.\" in the source PDF, which is almost certainly a typo for \"EAL 3\" (Evaluation Assurance Level, matching the \"EAL2\"/\"EAL 4-5\" phrasing used in the neighboring SEAL-2/SEAL-4 cells of this same row). Preserved verbatim as printed per project convention (working rule 2 — never silently correct source text); erratum candidate, alongside BSI SOV-4-02-C2 (Phase 2a) and the Article 18/19 cross-reference (Phase 2c)."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. Additionally: the SEAL-3 cell reads \"ELA 3.\" in the source PDF, which is almost certainly a typo for \"EAL 3\" (Evaluation Assurance Level, matching the \"EAL2\"/\"EAL 4-5\" phrasing used in the neighboring SEAL-2/SEAL-4 cells of this same row). Preserved verbatim as printed per project convention (working rule 2 — never silently correct source text); erratum candidate, alongside BSI SOV-4-02-C2 (Phase 2a) and the Article 18/19 cross-reference (Phase 2c).",
+      "generalized_seal_2": {
+        "en": "EAL2 level security. Local operations, transparent and immediate feedback of information, audits allowed.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalization_note": {
+        "en": "Erratum override: verbatim source reads 'ELA 3.' — a probable source typo for 'EAL 3' (Evaluation Assurance Level), matching the 'EAL2'/'EAL 4-5' phrasing in the same row's SEAL-2/SEAL-4 cells (see this entry's own needs_review_note). generalized_seal_3 corrects this to 'EAL 3.'; the verbatim seal_3 field (isolated in data/local/) is left unmodified per working rule 2.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_3": {
+        "en": "EAL 3.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "EAL 4-5, ENISA integration, immutable logs.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     },
     {
       "domain": "SOV-8",
@@ -215,7 +303,15 @@
         "page": 10
       },
       "needs_review": true,
-      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. SOV-8's SEAL-3 cell has no text distinguishable from SEAL-2/SEAL-4 in the source reflow and is omitted rather than guessed. Additionally: the source row for SOV-8 prints only two visually distinct cells across the SEAL-2/3/4 columns, not three — this extraction assigns the first cell to SEAL-2 and the second to SEAL-4 based on sentence content, but this seal_2/seal_4 assignment is an interpretation, not a direct reading of confirmed column boundaries; the source PDF's table geometry has not been visually confirmed against the extracted text for this row specifically."
+      "needs_review_note": "SEAL-2/3/4 column boundaries in this row are inferred from sentence/punctuation breaks in the guidance PDF's reflowed text (source page 10); the original table's cell geometry was not preserved by text extraction. Verify against the source PDF table layout before treating this split as authoritative. SOV-8's SEAL-3 cell has no text distinguishable from SEAL-2/SEAL-4 in the source reflow and is omitted rather than guessed. Additionally: the source row for SOV-8 prints only two visually distinct cells across the SEAL-2/3/4 columns, not three — this extraction assigns the first cell to SEAL-2 and the second to SEAL-4 based on sentence content, but this seal_2/seal_4 assignment is an interpretation, not a direct reading of confirmed column boundaries; the source PDF's table geometry has not been visually confirmed against the extracted text for this row specifically.",
+      "generalized_seal_2": {
+        "en": "Documented and transparent approach.",
+        "fr": "FR-TRANSLATION-PENDING"
+      },
+      "generalized_seal_4": {
+        "en": "{TRUSTED_REGION}-certified lifecycle, {TRUSTED_REGION}-audited reporting.",
+        "fr": "FR-TRANSLATION-PENDING"
+      }
     }
   ],
   "seal_level_label_variants": [

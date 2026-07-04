@@ -1,0 +1,536 @@
+# Phase 2d-i: substitution rule table (the phase's central editorial
+# artifact — logged as a single consolidated docs/DECISIONS.md entry).
+#
+# Applied in LIST ORDER by scripts/generalize.py (order matters: more
+# specific patterns must fire before more general ones that would
+# otherwise consume their input — e.g. R3's "EU member state" must run
+# before R2's blanket "EU" substitution, and R5's "non-EU" patterns must
+# run before R2 as well, since "non-EU" contains the substring "EU" at a
+# regex word boundary). Each `pattern` is a Python `re` pattern applied
+# with `re.sub(pattern, replacement, text)`; `replacement` may use
+# backreferences (\1, \2, ...).
+#
+# generalize(verbatim_text, rules) is a pure function of its two
+# arguments (scripts/generalize.py) — deterministic and idempotent by
+# construction, since it is just an ordered sequence of regex
+# substitutions with no external state.
+#
+# R4 (two-level constructs, e.g. "EU citizens with Germany as main
+# residency" -> "{TRUSTED_REGION} citizens with {NATION} as main
+# residency") and R9 (the "responsible authority is the one in the
+# country where the data center is located" sentence) do not need their
+# own regex: R4's structure is preserved automatically because R1 and R2
+# substitute "Germany"/"EU" independently at each occurrence, in place,
+# without collapsing or reordering the sentence; R9's sentence contains
+# none of the literal strings any other rule matches, so it already
+# passes through unchanged (verified against the residual-literal lint).
+# Both are recorded below as documentation-only entries (empty pattern
+# list) so the rule table stays the complete, citable record of every
+# generalization decision, per R4/R9's explicit mention in this phase's
+# scope.
+#
+# R6/R7/R8 do not fire on c3a.json (Phase 2d-i scope) — C3A's criteria
+# name no "public sector body"/"Union entities" addressee (R6), no named
+# EU legal instruments by number (R7), and no EU-institutional
+# mechanisms without a national analog (R8). They are included here in
+# full per this phase's instruction and will be exercised in Phase 2d-ii
+# (ECSF/CADA).
+
+rules:
+  - id: R1a
+    description: "Germany-specific administration body → {NATION_ADMINISTRATION} (most specific Germany-pattern; must run before R1b's bare-word substitution)"
+    pattern: '\bGerman federal administration\b'
+    replacement: '{NATION_ADMINISTRATION}'
+    rationale: >
+      "German federal administration" names the government AS AN
+      ADMINISTRATION, not merely the jurisdiction "Germany" — a distinct
+      placeholder ({NATION_ADMINISTRATION}) captures that role, per the
+      placeholder registry (data/rules/placeholders.yaml).
+    examples:
+      - before: "the cloud service provider MUST enable the German federal administration to take over the capabilities"
+        after: "the cloud service provider MUST enable {NATION_ADMINISTRATION} to take over the capabilities"
+
+  - id: R3
+    description: "EU member state / Member State, as the acting government → {NATION}"
+    pattern: '\b(?:an?|the)\s+EU member state\b'
+    replacement: '{NATION}'
+    rationale: >
+      C3A's C1 (region-generic) criteria are still assessed per one
+      specific government at a time; where the criterion's ACTOR is "an
+      EU member state" (i.e. whichever member state is being assessed),
+      that actor is the assessed {NATION} itself, not the broader
+      {TRUSTED_REGION} — this is a narrower, more specific substitution
+      than R2's blanket EU->TRUSTED_REGION and must run first so R2
+      doesn't consume the "EU" inside "EU member state" before this rule
+      can match.
+    examples:
+      - before: "If an EU member state declares a state of defense, the cloud service provider MUST enable the EU member state to take over the capabilities"
+        after: "If {NATION} declares a state of defense, the cloud service provider MUST enable {NATION} to take over the capabilities"
+
+  - id: R3b
+    description: "Bare 'Member State' (as acting government), not already part of 'EU member state' → {NATION}"
+    pattern: '\bMember States?\b'
+    replacement: '{NATION}'
+    rationale: >
+      Same reasoning as R3, for any standalone "Member State"/"Member
+      States" occurrence not already consumed by R3's more specific
+      phrase match. No occurrences in c3a.json's 59 records as of Phase
+      2d-i (R3 alone covers every current instance); kept for CADA/ECSF
+      coverage in Phase 2d-ii.
+    examples:
+      - before: "a Member State's competent authority"
+        after: "{NATION}'s competent authority"
+
+  - id: R5a
+    description: "'non-EU <noun phrase>' (space-separated) → '<noun phrase> from outside {TRUSTED_REGION}'"
+    pattern: '\bnon-EU\s+([a-z][\w-]*)'
+    replacement: '\1 from outside {TRUSTED_REGION}'
+    rationale: >
+      Must run before R2's blanket "EU"->{TRUSTED_REGION} substitution:
+      the substring "EU" inside "non-EU" sits at a regex word boundary
+      (the hyphen counts as a non-word character), so R2 would otherwise
+      wrongly turn "non-EU" into "non-{TRUSTED_REGION}" before this
+      pattern gets a chance to match. Converts the prenominal adjective
+      construction into the postnominal "outside {TRUSTED_REGION}" form
+      the review specified.
+    examples:
+      - before: "any non-EU law relating directly to the provided cloud services"
+        after: "any law from outside {TRUSTED_REGION} relating directly to the provided cloud services"
+      - before: "disconnect all non-EU network-connections to the cloud"
+        after: "disconnect all network-connections from outside {TRUSTED_REGION} to the cloud"
+      - before: "data exchanges with non-EU entities"
+        after: "data exchanges with entities from outside {TRUSTED_REGION}"
+
+  - id: R5b
+    description: "'non-EU-<compound noun>' (hyphen-joined) → '<compound noun> from outside {TRUSTED_REGION}'"
+    pattern: '\bnon-EU-([a-z][\w-]*)'
+    replacement: '\1 from outside {TRUSTED_REGION}'
+    rationale: >
+      Same as R5a, for the hyphen-joined compound form (e.g.
+      "non-EU-connections", one token in the source rather than two
+      space-separated words). Must also run before R2 for the same
+      word-boundary reason.
+    examples:
+      - before: "reestablish all non-EU-connections after a disconnect"
+        after: "reestablish all connections from outside {TRUSTED_REGION} after a disconnect"
+
+  - id: R5c
+    description: "'third country' / 'third-country' / 'a legal entity established in a third-country' → 'outside {TRUSTED_REGION}' forms"
+    pattern: '\ba (?:legal entity|company|entity) established in a third[- ]country\b'
+    replacement: 'an entity established outside {TRUSTED_REGION}'
+    rationale: >
+      No occurrences in c3a.json (Phase 2d-i); CADA's Annex II/III text
+      uses this construction extensively (Phase 2d-ii). Included now so
+      the rule table is complete for the whole R1-R9 set this phase
+      seeds, per instruction.
+    examples:
+      - before: "a legal entity established in a third-country"
+        after: "an entity established outside {TRUSTED_REGION}"
+
+  - id: R5d
+    description: "bare 'third country(-ies)' / 'third-country' (adjective/noun, singular or plural, not already matched by R5c) → 'outside {TRUSTED_REGION}'"
+    pattern: '\bthird[- ]countr(?:y|ies)\b'
+    replacement: 'outside {TRUSTED_REGION}'
+    rationale: >
+      Catch-all for "third country"/"third-country"/"third countries"
+      not part of the longer R5c phrase. No occurrences in c3a.json;
+      exercised heavily by CADA (singular only, e.g. "a legal entity
+      established in a third country") and by ECSF (plural, e.g.
+      "third countries" in csat-sov2-ecsf-05/csat-sov3-ecsf-03).
+      D-021 (Phase 2d-ii): amended from a singular-only pattern
+      (`third[- ]country`) to also match the plural "third countries",
+      found when applying the unchanged rule table to ecsf.json — this
+      is the one rule-table amendment made during Phase 2d-ii, per this
+      phase's "any amendment requires a DECISIONS entry" instruction.
+    examples:
+      - before: "a third-country legal entity"
+        after: "an outside {TRUSTED_REGION} legal entity"
+      - before: "development (EU vs. third countries), legal jurisdiction"
+        after: "development ({TRUSTED_REGION} vs. outside {TRUSTED_REGION}), legal jurisdiction"
+
+  - id: R1b
+    description: "Bare 'German'/'Germany' (not already matched by R1a) → {NATION}"
+    pattern: '\bGerman(y)?\b'
+    replacement: '{NATION}'
+    rationale: >
+      R1's core rule: "Germany" / "German jurisdiction" / "German
+      undertakings" all reduce to the single {NATION} placeholder once
+      the more specific R1a phrase ("German federal administration") has
+      already been matched and removed. The same {NATION} token is used
+      whether the source word was the noun "Germany" or the adjective
+      "German" — grammatical fitting at substitution time is the
+      client's job (CLAUDE.md design principle 2), not extraction's.
+    examples:
+      - before: "The cloud service provider MUST operate under German jurisdiction"
+        after: "The cloud service provider MUST operate under {NATION} jurisdiction"
+      - before: "MUST have a registered head office in Germany"
+        after: "MUST have a registered head office in {NATION}"
+      - before: "under the effective control of one or more German undertakings"
+        after: "under the effective control of one or more {NATION} undertakings"
+
+  - id: R2
+    description: "EU / European Union / the Union / EU/EEA / European jurisdictions / bare 'European' / bare 'Europe' → {TRUSTED_REGION}"
+    pattern: '\b(?:European Union|EU/EEA|European jurisdictions|the Union|EU|European|Europe)\b'
+    replacement: '{TRUSTED_REGION}'
+    rationale: >
+      CLAUDE.md's {TRUSTED_REGION} placeholder generalizes C3A's C1
+      (EU) localization level to "the assessing government's chosen
+      trusted bloc," per the regional-trust-framework policy alignment
+      (AU Data Policy Framework, Malabo Convention, AfCFTA digital trade
+      protocol — CLAUDE.md References). Ordered as a single alternation
+      (longest phrases first within the regex alternation) so
+      "European Union" is matched whole rather than leaving a dangling
+      "Union" for a separate rule to catch; must run after R1
+      (Germany/German), R3 (EU member state), and R5 (non-EU forms) so
+      those more specific patterns are not pre-empted by this blanket
+      substitution.
+    examples:
+      - before: "MUST have a registered head office in the EU"
+        after: "MUST have a registered head office in the {TRUSTED_REGION}"
+      - before: "MUST be effectively controlled by one or more EU corporations"
+        after: "MUST be effectively controlled by one or more {TRUSTED_REGION} corporations"
+      - before: "part of an organization that MUST be a standalone European organization"
+        after: "part of an organization that MUST be a standalone {TRUSTED_REGION} organization"
+
+  - id: R2b
+    description: "Bare 'Union' (no preceding 'the'/'European'), only before citizens/citizenship/'or national'/law → {TRUSTED_REGION} — narrow lookahead so CADA's own proper term 'Union assurance level' and R6's 'Union entities' are never touched"
+    pattern: '\bUnion(?=\s+citizens?\b|\s+citizenship\b|\s+or national\b|\s+law\b)'
+    replacement: '{TRUSTED_REGION}'
+    rationale: >
+      D-022 (Phase 2d-ii): CADA frequently uses bare "Union" (no
+      preceding "the") as an adjective — "Union citizens," "Union
+      citizenship," "no Union or national cybersecurity certification
+      schemes exist," "national laws of Member States or Union law" —
+      which R2's pattern (matching only "the Union"/"European Union")
+      does not catch. A blanket `\bUnion\b` rule would also wrongly
+      rewrite CADA's own proper term "Union assurance
+      level" (its UA-1..4 certification scheme name, analogous to
+      ECSF's "SEAL" — a framework's own defined term, not a
+      jurisdictional reference, and correctly left untouched) and would
+      collide with R6's "Union entities" -> `{GOVERNMENT_CUSTOMER}`
+      mapping. A narrow lookahead restricts this rule to the specific
+      constructions confirmed to need generalization, leaving every
+      other bare "Union" occurrence (assurance level, entities, "Union
+      of ...") alone.
+    examples:
+      - before: "the personnel ... are Union citizens and, where appropriate"
+        after: "the personnel ... are {TRUSTED_REGION} citizens and, where appropriate"
+      - before: "imposing additional personnel screening and Union citizenship requirements"
+        after: "imposing additional personnel screening and {TRUSTED_REGION} citizenship requirements"
+      - before: "unless such measures are legitimate under the national laws of Member States or Union law"
+        after: "unless such measures are legitimate under the national laws of {NATION} or {TRUSTED_REGION} law"
+      - before: "Where no Union or national cybersecurity certification schemes exist"
+        after: "Where no {TRUSTED_REGION} or national cybersecurity certification schemes exist"
+
+  - id: R4
+    description: "Two-level constructs (e.g. 'EU citizens with Germany as main residency') preserve their structure — documentation only, no separate pattern"
+    pattern: null
+    replacement: null
+    rationale: >
+      R1 and R2 substitute "Germany"/"German" and "EU"/"European"
+      independently, in place, at each occurrence — they do not collapse
+      or reorder multi-clause sentences. A two-level construct like "EU
+      citizens with Germany as main residency" (csat-sov4-01-c2)
+      therefore generalizes correctly to "{TRUSTED_REGION} citizens with
+      {NATION} as main residency" purely as a side effect of R1+R2
+      running per-token, with no dedicated regex needed for the
+      construct as a whole. Recorded here so the rule table documents
+      this construct explicitly, as this phase's instructions require.
+    examples:
+      - before: "MUST be EU citizens with EU as main residency"
+        after: "MUST be {TRUSTED_REGION} citizens with {TRUSTED_REGION} as main residency"
+      - before: "MUST be EU citizens with Germany as main residency"
+        after: "MUST be {TRUSTED_REGION} citizens with {NATION} as main residency"
+
+  - id: R6
+    description: "'public sector body' / 'Union entities' (as customer) → {GOVERNMENT_CUSTOMER}"
+    pattern: '\b(?:public sector bod(?:y|ies)|Union entit(?:y|ies))\b'
+    replacement: '{GOVERNMENT_CUSTOMER}'
+    rationale: >
+      Closes review N-2 (reviews/phase-2c-review.md): CADA names both
+      "public sector body" and "Union entities" as the addressee of its
+      obligations (Articles 29/30/41); both generalize to the single
+      {GOVERNMENT_CUSTOMER} token, matching CSAT's own scenario model
+      (the assessing government IS the cloud customer). No occurrences
+      in c3a.json (C3A speaks of "cloud service customer" throughout,
+      already generic); this rule is seeded for Phase 2d-ii (CADA).
+    examples:
+      - before: "Union entities and public sector bodies whose public sector activities have not been identified"
+        after: "{GOVERNMENT_CUSTOMER} whose activities have not been identified"
+
+  - id: R7
+    description: "Named legal instruments are NOT substituted — reframe generically, retain instrument as a parenthetical source example"
+    pattern: null
+    replacement: null
+    rationale: >
+      Named instruments (Regulation (EU) 2019/881, Regulation (EU)
+      2024/2847/CRA, GDPR, EUVD, TR-03183, etc.) are specific EU/German
+      legal citations that don't generalize to a placeholder — a
+      {NATION} or {TRUSTED_REGION} government may have no equivalent
+      instrument at all, or a differently-numbered one. Per this rule,
+      generalized text reframes the requirement in generic functional
+      terms and keeps the named instrument only as a parenthetical
+      source example, in the fixed form "(source cites: <instrument>)" —
+      this exact marker string is what the residual-literal lint
+      (scripts/validate.py) recognizes as an R7 exemption zone, so a
+      literal "EU" inside e.g. "Regulation (EU) 2019/881" does not fail
+      the lint. No occurrences requiring this treatment in c3a.json
+      (SOV-5-01-C's "TR-03183-2" citation is already phrased generically
+      — "e.g. TR-03183-2 ... or achieve a comparable level of quality" —
+      and needed no rewriting); this rule is seeded for Phase 2d-ii
+      (CADA cites several EU regulations by number).
+    examples:
+      - before: "obtains a European cybersecurity certificate ... under a European cybersecurity certification scheme ... established under Regulation (EU) 2019/881"
+        after: "obtains a cybersecurity certification scheme recognized by {NATION} or {TRUSTED_REGION} (source cites: Regulation (EU) 2019/881)"
+
+  - id: R8
+    description: "EU-institutional mechanisms with no national analog → describe the functional equivalent; tag generalization_class: structural_adaptation"
+    pattern: null
+    replacement: null
+    rationale: >
+      Some CADA mechanisms (Commission implementing acts under Article
+      18/19, the BRIS/VIES EU-only registries) have no analog in a
+      generic {NATION}'s institutional structure at all — force-fitting
+      a placeholder would misrepresent what the record actually
+      requires. Instead, generalized text describes the functional
+      equivalent (e.g. "a formal adequacy/allowlist decision by
+      {NATION}'s competent authority") and the record is tagged
+      `generalization_class: structural_adaptation` with a
+      `generalization_note` explaining the substitution is a functional
+      restatement, not a mechanical one — and is therefore exempt from
+      the generalize(verbatim, rules) equality check (scripts/validate.py).
+      No occurrences in c3a.json; seeded for Phase 2d-ii (CADA).
+    examples:
+      - before: "the Commission has adopted an implementing act under Article 19"
+        after: "a formal adequacy/allowlist decision has been made by {NATION}'s competent authority (source mechanism: EU Commission implementing act, CADA Art. 18/19)"
+
+  - id: R9
+    description: "'the responsible authority is the one in the country where the data center is located' — retained as-is, already parametric"
+    pattern: null
+    replacement: null
+    rationale: >
+      This sentence (csat-sov2-02-c1, csat-sov4-05-ac2, csat-sov4-08-ac,
+      csat-sov4-09-ac — all C1/None localization) is already a generic,
+      functional description of jurisdiction resolution ("whichever
+      country hosts the data center is the one whose authority applies")
+      rather than a named-country statement. It contains none of R1-R8's
+      trigger literals and needs no substitution: for a C1-tier record
+      the sentence is deliberately region-agnostic already; the
+      {NATION}/{TRUSTED_REGION} resolution happens implicitly per the
+      record's own `localization_level` at rendering time, not by
+      rewriting this sentence's text. Recorded here as a documentation
+      entry per this phase's explicit instruction (R9), confirming the
+      pass-through is intentional, not an oversight.
+    examples:
+      - before: "The responsible authority is the one in the country where the data center is located."
+        after: "The responsible authority is the one in the country where the data center is located."
+
+# Per-record overrides: text that intentionally diverges from the plain
+# rule pipeline above. generalize(verbatim, rules) checks this table
+# FIRST, by record id — so these records remain classified
+# `generalization_class: direct` (the override IS what f(verbatim,
+# rules) returns for that id; there is no other divergence to reconcile
+# with the equality check in scripts/validate.py).
+overrides:
+  - id: csat-sov4-02-c2
+    generalized_text: >-
+      The cloud service provider MUST implement organizational and
+      technical measures ensuring that administrative access to systems
+      used to operate the cloud service is performed through access
+      paths located within {NATION}. Administrative access originating
+      from locations outside {NATION} MUST be technically restricted,
+      except in narrowly defined and controlled exceptional scenarios
+      that are subject to additional authorization and monitoring
+      controls.
+    generalization_note: >-
+      D-008 erratum override: the verbatim source text's first sentence
+      reads "within the EU" (mechanical R2 substitution would yield
+      "within {TRUSTED_REGION}"), but per D-008 this is confirmed
+      against the published C3A v1.0 PDF as the record's own internal
+      inconsistency — the second sentence ("outside Germany") and the
+      C2/Germany-variant pattern used throughout C3A make clear the
+      first sentence's intended meaning is "within Germany"
+      (-> {NATION}), not "within the EU". Generalized text here
+      reflects that intended meaning rather than a literal mechanical
+      substitution of the verbatim text; source_text itself is left
+      unmodified (D-008) and needs_review stays set on the record.
+    decision_ref: D-008
+
+  - id: csat-sov4-cada-ua2-d
+    generalized_text: >-
+      if the {GOVERNMENT_CUSTOMER} determines that imposing additional
+      personnel screening and {TRUSTED_REGION} citizenship requirements
+      are necessary, the audited provider should ensure that personnel
+      meeting those requirements are available.
+    generalization_note: >-
+      D-018 typo override: the verbatim source text (and source_text
+      field) preserve the source PDF's own typo "presonnel" per D-018
+      (working rule 2 — verbatim discipline). generalized_text corrects
+      this to "personnel": the generalized field is not a verbatim
+      reproduction, so there is no reason to propagate a source
+      typo into it; needs_review stays set on the record (D-018).
+    decision_ref: D-018
+
+  - id: csat-sov7-cada-ua2-e
+    generalized_text: >-
+      the audited service obtains a {TRUSTED_REGION} cybersecurity
+      certificate of at least assurance level 'substantial' under a
+      {TRUSTED_REGION} cybersecurity certification scheme covering cloud
+      computing services, recognized by {NATION} or {TRUSTED_REGION}
+      (source cites: Regulation (EU) 2019/881), provided that such a
+      scheme has been established and is available to cloud computing
+      service providers. Until the establishment of such a scheme,
+      national cybersecurity certification schemes shall apply, where
+      they exist. Where no {TRUSTED_REGION} or national cybersecurity
+      certification schemes exist, the audited provider is to
+      demonstrate that the service complies with the highest
+      cybersecurity standards under applicable {TRUSTED_REGION} law.
+    generalization_note: >-
+      R7 override: Regulation (EU) 2019/881 is a named EU legal
+      instrument that does not generalize to a placeholder (a {NATION}
+      may have no equivalent scheme, or a differently-numbered one).
+      Reframed generically ("recognized by {NATION} or {TRUSTED_REGION}")
+      with the instrument retained as a parenthetical source example,
+      per rule R7.
+
+  - id: csat-sov7-cada-ua3-e
+    generalized_text: >-
+      the audited service obtains a {TRUSTED_REGION} cybersecurity
+      certificate of at least assurance level 'substantial' under a
+      {TRUSTED_REGION} cybersecurity certification scheme covering cloud
+      computing services, recognized by {NATION} or {TRUSTED_REGION}
+      (source cites: Regulation (EU) 2019/881), provided that such a
+      scheme has been established and is available to cloud computing
+      service providers. Until the establishment of such a scheme,
+      national cybersecurity certification schemes shall apply, where
+      they exist. Where no {TRUSTED_REGION} or national cybersecurity
+      certification schemes exist, the audited provider is to
+      demonstrate that the service complies with the highest
+      cybersecurity standards under applicable {TRUSTED_REGION} law.
+    generalization_note: >-
+      R7 override: same reasoning as csat-sov7-cada-ua2-e (identical
+      criterion text at UA-3).
+
+  - id: csat-sov7-cada-ua4-e
+    generalized_text: >-
+      the audited service obtains a {TRUSTED_REGION} cybersecurity
+      certificate of at least assurance level 'high' under a
+      {TRUSTED_REGION} cybersecurity certification scheme covering cloud
+      computing services, recognized by {NATION} or {TRUSTED_REGION}
+      (source cites: Regulation (EU) 2019/881), provided that such a
+      scheme has been established and is available to cloud computing
+      service providers. Until the establishment of such a scheme,
+      national cybersecurity certification schemes shall apply, where
+      they exist. Where no {TRUSTED_REGION} or national cybersecurity
+      certification schemes exist, the audited provider is to
+      demonstrate that the service complies with the highest
+      cybersecurity standards under applicable {TRUSTED_REGION} law.
+    generalization_note: >-
+      R7 override: same reasoning as csat-sov7-cada-ua2-e (UA-4 raises
+      the assurance level to 'high' but cites the same instrument).
+
+  - id: csat-sov5-cada-ua2-i
+    generalized_text: >-
+      the audited provider demonstrates that the following software
+      supply chain measures are in place: i. a complete and up-to-date
+      software bill of materials (SBOM) (source cites: Regulation (EU)
+      2024/2847, Article 3, point (39)), and a list of identified
+      dependencies relevant to the provision of the service are
+      documented and made available to the auditing organisation; ii.
+      where software components (source cites: Regulation (EU)
+      2024/2847, Article 3, point (6)) or products are provided, owned,
+      and licensed by an entity established outside {TRUSTED_REGION},
+      controls are implemented and documented to block any remote
+      features that could materially tamper with or disrupt a device,
+      system, or software (including during updates) and to ensure that
+      the security-relevant components from software manufacturers
+      outside {TRUSTED_REGION} (source cites: Regulation (EU)
+      2024/2847, Article 3, point (13)) are subject to source code
+      audits, and have a documented migration plan in the event that
+      the vendor fails or an entity outside {TRUSTED_REGION} imposes
+      restrictions; iii. where the cloud computing service provider is
+      subject to the control of an entity outside {TRUSTED_REGION}, the
+      cloud computing service provider guarantees that there are no
+      existing laws and practices in that jurisdiction, demonstrated by
+      independent sources, that require the cloud computing service
+      provider to report information on software vulnerabilities to
+      authorities of that jurisdiction prior to those vulnerabilities
+      being known to have been exploited.
+    generalization_note: >-
+      R7 override: Regulation (EU) 2024/2847 (the Cyber Resilience Act)
+      is cited three times in the verbatim text to define SBOM,
+      software component, and third-country manufacturer respectively;
+      all three generalize to a parenthetical source citation per rule
+      R7 rather than a placeholder substitution, since a {NATION} may
+      have no equivalent instrument. Mechanical "a outside
+      {TRUSTED_REGION}" phrasing from rules R5c/R5d was also tidied to
+      "an entity outside {TRUSTED_REGION}" for readability while
+      preserving the same substitutions.
+
+  - id: csat-sov4-cada-ua3-d
+    generalized_text: >-
+      the personnel, including the personnel of the subcontractors
+      which are involved in the provision of the audited service are
+      {TRUSTED_REGION} citizens and where appropriate, the personnel
+      must also have the necessary national security clearance issued
+      by a {NATION} when handling classified information (source cites:
+      Regulation (EU) 2021/697, Article 2, point (21)).
+    generalization_note: >-
+      R7 override: Regulation (EU) 2021/697's definition of "classified
+      information" generalizes to a parenthetical source citation per
+      rule R7 rather than a placeholder substitution.
+
+  - id: csat-sov1-cada-ua3-g
+    generalized_text: >-
+      the audited provider and the subcontractors which are involved in
+      the provision of the audited service are not subject to the
+      control of an entity outside {TRUSTED_REGION}. By way of
+      derogation to this criterion, a cloud computing service provider
+      and its subcontractors which are involved in the provision of the
+      audited service that are subject to the control of an entity
+      outside {TRUSTED_REGION} may be audited for Union assurance level
+      3 where {NATION}'s competent authority has made a formal
+      adequacy/allowlist decision for that jurisdiction (see this
+      record's own needs_review_note on the Article 18/19 citation
+      discrepancy in the source text). Where such a decision has been
+      made, the
+      audited provider and the subcontractors which are involved in the
+      provision of the audited service must also demonstrate that the
+      necessary legal, technical and organisational measures have been
+      implemented to ensure that the: i. control of that jurisdiction
+      or the legal entity established there over the audited provider
+      is not exercised in a manner that restrains or restricts the
+      provider's ability to perform and deliver the service, imposes
+      limitations on the infrastructure, assets, and personnel required
+      for the service provision, or undermines the capabilities and
+      standards necessary to perform the audited service. The audited
+      provider should allow for reasonable access to the code; ii.
+      access by that jurisdiction or an entity established there to
+      customer data is prevented; iii. possibility of disruption of the
+      service continuity and/or the degradation of the service quality
+      by that jurisdiction or an entity established there is prevented;
+      iv. control of that jurisdiction or the legal entity established
+      there over the audited provider is not exercised in a manner that
+      obliges the audited provider to implement, enforce, give effect
+      to, or comply with restrictive measures such as sanction regimes,
+      embargoes, or any equivalent legal or administrative measures
+      adopted by that jurisdiction, unless such measures are legitimate
+      under the national laws of {NATION} or {TRUSTED_REGION} law.
+    generalization_note: >-
+      R8 structural_adaptation: the source text's third-country
+      derogation mechanism (adopting an implementing act "under Article
+      19") has no clean {NATION}-level analog to substitute
+      mechanically — it is described here functionally, as a formal
+      adequacy/allowlist decision by the assessing government's own
+      competent authority, mirroring the mechanism CADA's Article 18
+      ("Associated third countries") substantively describes. This
+      record's own needs_review_note (set at extraction, Phase 2c)
+      already documents that the verbatim text cites "Article 19" where
+      Article 18 appears to be the intended provision — this
+      generalization_note cites that existing documentation rather than
+      repeating it, per this phase's instruction to cite "the erratum
+      decision." generalization_class is set to structural_adaptation
+      (not direct) for this record specifically, since the Article
+      18/19 mechanism, unlike the rest of this criterion's text, is not
+      a mechanical rule substitution.
+    generalization_class_override: structural_adaptation

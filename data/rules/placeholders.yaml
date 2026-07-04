@@ -1,0 +1,62 @@
+# Phase 2d-i: placeholder registry.
+#
+# These tokens remain in the public catalog PERMANENTLY — the app
+# substitutes them at runtime from the assessing government's profile
+# (CLAUDE.md, "Jurisdiction parameterization"). Extraction/generalization
+# never resolves them to a concrete value; that only happens client-side,
+# per assessment. No placeholder may be added to this file without a
+# docs/DECISIONS.md entry (this file's own creation is logged as part of
+# the Phase 2d-i rule-table decision).
+
+placeholders:
+  - token: "{NATION}"
+    meaning: >
+      The assessing government's own country (generalizes C3A's C2/Germany
+      localization level). May render as a country name, adjective, or
+      demonym depending on grammatical context in the surrounding sentence
+      — the same token is used for all forms per D-0xx (Phase 2d-i rule
+      table decision).
+    source_generalizes: ["Germany", "German"]
+
+  - token: "{TRUSTED_REGION}"
+    meaning: >
+      The assessing government's chosen trusted bloc or alliance
+      (generalizes C3A's C1/EU localization level; maps to the regional
+      trust-framework concept in CLAUDE.md's policy-alignment section —
+      AU Data Policy Framework, Malabo Convention, AfCFTA digital trade
+      protocol, etc. — not hardcoded to the EU).
+    source_generalizes: ["EU", "European Union", "the Union", "EU/EEA", "European"]
+
+  - token: "{NATION_CYBERSECURITY_AUTHORITY}"
+    meaning: >
+      The national cybersecurity authority of the assessing government
+      (e.g. what BSI is for Germany). Distinct from {NATION_ADMINISTRATION}:
+      this token is used where the source text names a specific
+      cybersecurity-oversight function, not the general government.
+    source_generalizes: ["the relevant federal or national cybersecurity authority", "responsible cybersecurity authority"]
+
+  - token: "{NATION_ADMINISTRATION}"
+    meaning: >
+      The assessing government AS AN ADMINISTRATION/civil-service body —
+      used where the source text names a general governmental body acting
+      (e.g. "German federal administration"), distinct from {NATION} used
+      as a place/jurisdiction name and from {NATION_CYBERSECURITY_AUTHORITY}
+      used for cybersecurity-specific oversight functions.
+    source_generalizes: ["German federal administration"]
+
+  - token: "{GOVERNMENT_CUSTOMER}"
+    meaning: >
+      The assessing government IN ITS ROLE AS CLOUD CUSTOMER — used where
+      source text (chiefly CADA) names "public sector body" or "Union
+      entities" as the addressee/beneficiary of an obligation. Distinct
+      from {NATION_ADMINISTRATION} (the government as a general
+      administrative body) since this token specifically marks the
+      customer role CSAT's own scenario model already centers.
+    source_generalizes: ["public sector body", "Union entities"]
+
+  - token: "{PROVIDER}"
+    meaning: >
+      The cloud service provider being assessed. Already used in Phase 1's
+      schema design (control-record.schema.json's placeholders_used enum);
+      listed here for completeness of the registry, not newly introduced.
+    source_generalizes: []

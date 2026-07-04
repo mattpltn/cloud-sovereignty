@@ -86,6 +86,13 @@
         "seal_2": { "$ref": "lang-string.schema.json" },
         "seal_3": { "$ref": "lang-string.schema.json" },
         "seal_4": { "$ref": "lang-string.schema.json" },
+        "generalized_seal_2": { "$ref": "lang-string.schema.json" },
+        "generalized_seal_3": { "$ref": "lang-string.schema.json" },
+        "generalized_seal_4": { "$ref": "lang-string.schema.json" },
+        "generalization_note": {
+          "$ref": "lang-string.schema.json",
+          "description": "Phase 2d-ii: present only where a generalized cell diverges from a mechanical rule substitution (e.g. the SOV-7 SEAL-3 'ELA 3.' -> 'EAL 3.' typo correction)."
+        },
         "source_pointer": { "$ref": "#/$defs/sourcePointer" },
         "needs_review": { "type": "boolean" },
         "needs_review_note": { "type": "string" }

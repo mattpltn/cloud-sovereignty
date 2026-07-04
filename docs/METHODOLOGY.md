@@ -726,3 +726,322 @@ deliberately injected leak/mismatch for `cada-scope.json` and
 `cada-evidence.json`, then reconfirmed clean after restoring the
 generated files. Validator run locally throughout with
 `data/local/{c3a,cada,cada-evidence}-verbatim.json` present.
+
+## Phase 2d-i — Generalization infrastructure + C3A
+
+### Scope
+
+This phase builds the generalization infrastructure (placeholder
+registry, substitution rule table, engine, validator extensions) and
+applies it to `c3a.json` only. `ecsf.json`, `ecsf-guidance.json`,
+`ecsf-scoring.json`, and CADA files are untouched (Phase 2d-ii, on the
+same branch).
+
+### Placeholder registry (`data/rules/placeholders.yaml`)
+
+Six tokens, permanent in the public catalog (resolved client-side, per
+assessment, from the government's profile — CLAUDE.md "Jurisdiction
+parameterization"): `{NATION}`, `{TRUSTED_REGION}`,
+`{NATION_CYBERSECURITY_AUTHORITY}`, `{NATION_ADMINISTRATION}`,
+`{GOVERNMENT_CUSTOMER}`, `{PROVIDER}`. Only `{NATION}`, `{TRUSTED_REGION}`,
+and `{PROVIDER}` fire on `c3a.json` in this phase;
+`{NATION_CYBERSECURITY_AUTHORITY}` and `{GOVERNMENT_CUSTOMER}` are seeded
+for Phase 2d-ii (CADA's "responsible cybersecurity authority" and
+"public sector body"/"Union entities" constructions respectively).
+
+### Rule table (`data/rules/generalization-rules.yaml`) — D-019
+
+Nine rules (R1-R9), each with a Python `re` `pattern`/`replacement`,
+`rationale`, and `examples`, applied in list order by
+`scripts/generalize.py`. Full reasoning in D-019 (originally logged as
+D-017 on this branch, renumbered at the post-2c-merge rebase — see
+docs/DECISIONS.md); in short:
+
+- **Order is load-bearing.** R3 (EU member state, as actor, ->
+  `{NATION}`) and R5 (non-EU forms -> "outside `{TRUSTED_REGION}`") must
+  fire before R2's blanket `EU -> {TRUSTED_REGION}` substitution,
+  because the literal substring "EU" sits at a regex word boundary even
+  inside "non-EU" (the hyphen is a non-word character) — if R2 ran
+  first, "non-EU" would become "non-`{TRUSTED_REGION}`" and R3's
+  narrower "EU member state" match would already be consumed.
+- **R4 and R9 are documentation-only** (no pattern/replacement): R4's
+  two-level constructs (e.g. "EU citizens with Germany as main
+  residency" -> "`{TRUSTED_REGION}` citizens with `{NATION}` as main
+  residency") fall out automatically from R1 and R2 substituting
+  independently, per occurrence, without reordering the sentence — no
+  dedicated regex is needed for the construct as a whole. R9's
+  "responsible authority is the one in the country where the data
+  center is located" sentence (appearing verbatim in 4 C1/unscoped
+  records) is already region-agnostic and passes through unchanged; its
+  entry documents that this is intentional, not an oversight.
+- **R6/R7/R8 fire zero times on `c3a.json`.** Verified directly: C3A's
+  59 criteria name no "public sector body"/"Union entities" addressee
+  (R6), cite no EU regulation by number in a way requiring the
+  generic-reframing-plus-parenthetical treatment (R7 — SOV-5-01-C's
+  "TR-03183-2" citation is already phrased as a generic "e.g." example
+  and needed no rewriting), and describe no EU-institutional mechanism
+  without a national analog (R8). These three rules are fully seeded
+  (pattern, rationale, examples) for Phase 2d-ii, where CADA exercises
+  all three heavily.
+
+### Engine (`scripts/generalize.py`)
+
+`generalize(text, rules)` is a pure function: an ordered sequence of
+`re.sub` calls with no external state, so it is deterministic (same
+input -> same output every time) and idempotent (re-running it on an
+already-generalized record is a no-op, since the function only ever
+reads `source_text`/verbatim, never `generalized_text`, as its input).
+Per-record overrides (the D-008 erratum on `csat-sov4-02-c2`) are looked
+up by record id in the rules file's own `overrides` section *before*
+the regex pipeline runs, so an overridden record's `generalized_text`
+is still, by definition, what `generalize(verbatim, rules)` returns for
+that id — it stays `generalization_class: direct` and satisfies the
+validator's equality check like every other record, per this phase's
+explicit instruction to implement the override "in the rules file, not
+code."
+
+Batched per SOV domain (`scripts/generalize.py c3a SOV-1` etc.), one
+commit each, per working rule 1 and this phase's explicit process
+instruction.
+
+### Validator extensions
+
+- **Equality check** (`check_generalization()`): for every
+  `generalization_class: direct` record, when the matching
+  `data/local/*-verbatim.json` is present, asserts `generalized_text.en
+  == generalize(verbatim.en, rules)` (importing the same `generalize()`
+  function the CLI script uses, so there is exactly one implementation
+  to keep in sync, not two). `structural_adaptation`/`eu_institutional`
+  records are exempt from this specific check (per the schema's own
+  requirement that they instead carry a `generalization_note`) but are
+  still covered by the lint below.
+- **Residual-literal lint:** no `generalized_text` may contain
+  "Germany"/"German"/"EU"/"European Union"/"the Union"/"Member
+  State(s)" outside an R7 `"(source cites: ...)"` exemption zone (a
+  fixed marker string the lint strips before scanning). Both checks
+  were manually verified to fail correctly on a deliberately injected
+  wrong-text/residual-literal record, then reconfirmed clean.
+- **`check_verbatim_leak()` adjusted:** `generalized_text` excluded
+  from its scan. Necessary because generalization is light-touch
+  placeholder substitution, not paraphrase — most of each criterion's
+  wording is, by design, identical between `source_text` and
+  `generalized_text` (CLAUDE.md's License care section already
+  establishes `generalized_text` as the intended public artifact,
+  unlike `source_text`). Verified the check still catches a genuine
+  leak injected into `needs_review_note` after this change, so the
+  adjustment is scoped narrowly to the one field where overlap is
+  expected, not a general weakening.
+
+### Schema (`control-record.schema.json`)
+
+Two new optional fields, exactly as authorized: `generalization_class`
+(enum `direct`/`structural_adaptation`/`eu_institutional`) and
+`generalization_note` (lang-string), with a new `if`/`then` requiring
+`generalization_note` when `generalization_class` is
+`structural_adaptation`. `placeholders_used` (Phase 1's existing field,
+enum-limited to `{NATION}`/`{TRUSTED_REGION}`/`{PROVIDER}`) was left
+unpopulated and its enum unextended — the three new placeholders
+introduced by this phase's registry are not yet reflected there, since
+extending that enum was not part of this phase's authorized schema
+change. Deferred to whichever future phase actually needs
+`placeholders_used` populated/enforced (it is not yet checked by any
+validator rule).
+
+### Statistics
+
+| Metric | Value |
+|---|---|
+| c3a.json records generalized | 59/59 (100%), 0 remaining `GENERALIZATION-PENDING` |
+| `generalization_class: direct` | 59/59 |
+| `generalization_class: structural_adaptation` / `eu_institutional` | 0 (none needed for C3A) |
+| Records with a `generalization_note` | 1 (`csat-sov4-02-c2`, D-008 erratum override) |
+| Records with >=1 rule fired | 27/59 |
+| Records needing no substitution at all (pure pass-through) | 32/59 |
+| Rule fire counts | R1a (German federal administration): 2; R1b (bare German/Germany): 10; R2 (EU/European forms): 19; R3 (EU member state as actor): 1; R5a (non-EU, space-separated): 2; R5b (non-EU-, hyphenated): 1; R3b/R5c/R5d/R6: 0 (no matching constructions in C3A) |
+| Residual-literal lint hits (final state) | 0/59 |
+| Per-record overrides | 1 (`csat-sov4-02-c2`, D-008) |
+
+### Validation
+
+`.venv/bin/python3 scripts/validate.py` (with `data/local/c3a-verbatim.json`
+present) passes clean: schema validation, the new equality check (all
+59 `direct` records match `generalize(verbatim, rules)` exactly), and
+the residual-literal lint (0 hits) all green. `npm test`/`npm run
+typecheck` unaffected (no engine/TypeScript changes this phase).
+
+## Phase 2d-ii — Generalization applied to ECSF, CADA, and the ECSF second-source files
+
+### Scope
+
+Applies the same, largely unchanged rule table (`data/rules/generalization-rules.yaml`)
+to every remaining extracted file: `ecsf.json` (30), `cada.json` (40),
+`cada-act.json` (13), `cada-evidence.json` (11), plus the ECSF second
+sources' text — `ecsf-guidance.json`'s domain SEAL-2/3/4 cells and
+`ecsf-scoring.json`'s domain definitions. Three rule amendments were
+needed (each logged as its own DECISIONS entry, per this phase's
+instruction); no rule was removed or reinterpreted.
+
+### Two genuinely different file shapes needed different treatment
+
+- **`ecsf.json` and `cada.json`** fit the established
+  `control-record.schema.json` pattern exactly: `generalize(verbatim,
+  rules)` writes `generalized_text` + `generalization_class: "direct"`,
+  batched via `scripts/generalize.py` exactly as Phase 2d-i did for
+  `c3a.json`.
+- **`cada-act.json`** is analytical commentary (`derivation: derived`,
+  written during Phase 2c, not verbatim CADA text) with no matching
+  `data/local/*-verbatim.json` to mechanically generalize against.
+  Worse, several records are self-referential *definitions of the very
+  terms* (`"Union entities"` vs `"public sector body"`) that the
+  mechanical rule table would otherwise collapse into the same
+  `{GOVERNMENT_CUSTOMER}` placeholder — destroying the distinction the
+  sentence exists to state. All 13 records were hand-generalized
+  instead, with a `generalization_note` on every record explaining why.
+  No schema change was needed (no schema was ever authorized for this
+  file, per D-017) — `generalized_text`/`generalization_class`/
+  `generalization_note` are simply added ad-hoc keys, consistent with
+  the file's existing unschema'd, structurally-checked-only status.
+- **`cada-evidence.json`** is verbatim Annex III text (unlike
+  `cada-act.json`) but is a nested object (`{document, version,
+  criteria: [...]}`), not a flat control-record array, and no schema
+  change was authorized for it either. Its `title`/`evidence_items`/
+  `notes` fields were generalized **in place** (the
+  `"SEE-LOCAL-VERBATIM"` placeholder replaced directly with generalized
+  text, computed via `generalize()` against the matching field-level key
+  in `data/local/cada-evidence-verbatim.json`) rather than adding a
+  parallel field, since this file's schema was never designed with a
+  separate verbatim/generalized split in the first place.
+- **`ecsf-guidance.json` and `ecsf-scoring.json`** *did* have schema
+  changes authorized (this phase's explicit instruction). Both keep the
+  `source_text`/`generalized_text`-style split used everywhere else:
+  `ecsf-guidance.schema.json` gained `generalized_seal_2/3/4` +
+  `generalization_note` fields on `domainSealRequirement`, alongside the
+  existing (still-isolated) `seal_2/3/4`; `ecsf-scoring.schema.json`
+  gained `generalized_description` on `domain`, alongside the existing
+  (already-public, per D-012) `description`.
+
+### The Article 18/19 erratum, generalized functionally (R8)
+
+`cada.json`'s `csat-sov1-cada-ua3-g` and `cada-evidence.json`'s
+criterion G both reference the source's "implementing act under Article
+19" mechanism. Both are hand-overridden to describe the functional
+mechanism generically — "a formal adequacy/allowlist decision by
+{NATION}'s competent authority" — rather than mechanically substituting
+a placeholder into "Article 19" (which has no {NATION}-level analog at
+all). `csat-sov1-cada-ua3-g` is the one record in this phase tagged
+`generalization_class: "structural_adaptation"` rather than `"direct"`,
+per rule R8; both records' `generalization_note` cites the existing
+Phase 2c `needs_review_note` documenting the citation discrepancy rather
+than re-explaining it.
+
+### The 2.1(d) typo, corrected in generalized text only
+
+`cada.json`'s `csat-sov4-cada-ua2-d` preserves the source's "presonnel"
+typo verbatim (D-018). Its `generalized_text` override corrects this to
+"personnel" — the generalized field is not a verbatim reproduction, so
+there is no reason to propagate a source typo into it — with a
+`generalization_note` citing D-018 and `needs_review` staying set on
+the record.
+
+### Named-instrument citations (R7), applied for the first time
+
+R7 fires for real in this phase: `cada.json`'s cybersecurity-certificate
+criteria (citing Regulation (EU) 2019/881, three UA levels), its SBOM
+criterion (Regulation (EU) 2024/2847, cited three times in one record),
+its classified-information criterion (Regulation (EU) 2021/697), and
+several `cada-act.json`/`cada-evidence.json` definitions/evidence items
+citing Directives/Regulations by number. Each is hand-overridden to
+reframe the requirement generically with the instrument retained as a
+`(source cites: ...)` parenthetical — mechanical substitution would
+otherwise have produced nonsense like "Regulation ({TRUSTED_REGION})
+2019/881."
+
+### Three rule amendments (D-021, D-022, D-023)
+
+1. **R5d widened to match plural "third countries"** (D-021) — found in
+   `ecsf.json` (`csat-sov2-ecsf-05`, `csat-sov3-ecsf-03`); CADA only
+   ever uses the singular.
+2. **New rule R2b for bare "Union"** (D-022) — CADA uses "Union
+   citizens," "Union citizenship," and "Union law" as bare adjectives
+   (no preceding "the"), which R2's existing pattern never matched. A
+   narrow lookahead-restricted pattern was added rather than a blanket
+   `\bUnion\b` rule, specifically so CADA's own proper term "Union
+   assurance level" (its UA-1..4 certification scheme name — a defined
+   term of art, not a jurisdictional reference, and correctly left
+   untouched) and R6's "Union entities" mapping are never touched.
+3. **R2 widened to match bare "Europe"** (D-023) — found in
+   `ecsf-guidance.json`'s SOV-4 SEAL-3 cell ("expertise in Europe");
+   ordered after "European" in the alternation so "European" still
+   matches whole rather than being truncated.
+
+All three were verified not to change any already-generalized
+`c3a.json` record before being committed.
+
+### Validator extensions for the new file shapes
+
+`check_generalization()`'s main loop (equality check + lint, keyed off
+`data/local/*-verbatim.json` pairs) now also generalizes/lints
+`ecsf.json` and `cada.json` for free — no code change needed beyond
+what Phase 2d-i already built. Three dedicated lint-only passes were
+added for files whose new generalized fields carry no
+`generalization_class` marker at all (so the generic pass can't find
+them): `cada-evidence.json` (title/evidence_items/notes, generalized in
+place), `ecsf-scoring.json` (`generalized_description`), and
+`ecsf-guidance.json` (`generalized_seal_2/3/4`). `check_verbatim_leak()`'s
+field-exclusion (previously hardcoded to the single key
+`"generalized_text"`) is generalized to skip any `generalized_*`-named
+key or `generalization_note`, at any nesting depth — needed because
+`ecsf-guidance.json`'s new fields sit inside a nested array, not at a
+record's top level. A new `GENERALIZED_IN_PLACE_FILES` constant
+(`cada-evidence.json`) excludes that file from the leak check and the
+placeholder-count completeness check entirely, since its fields no
+longer carry the `SEE-LOCAL-VERBATIM` marker post-generalization (by
+design — there is no parallel field for it to be compared against).
+
+All new/adjusted checks were manually verified to fail correctly on a
+deliberately injected defect (wrong equality, residual literal, missing
+field) in every file touched this phase, then reconfirmed clean after
+restoring the generated content.
+
+### Statistics
+
+| File | Records | `direct` | `structural_adaptation` | With `generalization_note` |
+|---|---|---|---|---|
+| `c3a.json` (Phase 2d-i, unchanged) | 59 | 59 | 0 | 1 |
+| `ecsf.json` | 30 | 30 | 0 | 0 |
+| `cada.json` | 40 | 39 | 1 | 7 |
+| `cada-act.json` | 13 | 13 (hand-generalized) | 0 | 13 |
+| `cada-evidence.json` | 11 criteria (generalized in place, no class field) | — | — | — |
+| `ecsf-guidance.json` | 8 domain rows, 23 generalized cells (of 24 possible — SOV-8 SEAL-3 has no verbatim cell to generalize) | — | — | 1 |
+| `ecsf-scoring.json` | 8 domains, 8 generalized descriptions | — | — | 0 |
+
+Rule-table amendments this phase: 3 (D-021, D-022, D-023). Overrides
+added this phase: 8 (`cada.json`: 7 — the typo correction, the R8
+Article-18/19 record, and 5 named-instrument records; `cada-evidence.json`:
+3 hand-written text substitutions for the same Article-18/19 and
+named-instrument constructions, applied directly since that file has no
+formal overrides-table mechanism of its own).
+
+### Validation
+
+Full validator green with every `data/local/*-verbatim.json` file
+present (`c3a`, `ecsf`, `cada`, `cada-evidence`, `ecsf-guidance`); 129
+combined control records (59 C3A + 30 ECSF + 40 CADA Annex II) all
+validate; every schema (including the two newly authorized field
+additions) validates against Draft 2020-12; 0 residual-literal lint
+hits across every file this phase touched. `npm test` (2 passing, 7
+todo) and `npm run typecheck` unaffected — no engine/TypeScript changes
+this phase either.
+
+### Enumerating every point of human judgment (CR-1, D-024)
+
+Per D-024, any reader can enumerate the complete set of human-judgment
+points in generalization without reading `scripts/generalize.py`: take
+the union of (1) every entry in `data/rules/generalization-rules.yaml`'s
+public `overrides` table, and (2) every control record where
+`generalization_class` is not `"direct"` (currently just
+`csat-sov1-cada-ua3-g`, tagged `"structural_adaptation"`). Everything
+else is mechanically reproducible from `source_text`/verbatim plus the
+ordered R1-R9 rule list alone, which is exactly what
+`check_generalization()`'s equality check verifies on every validator
+run.

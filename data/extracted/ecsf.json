@@ -21,8 +21,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Ensuring that bodies having decisive authority over your services are located within {TRUSTED_REGION} jurisdiction.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -32,7 +32,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-ecsf-02",
@@ -56,8 +57,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Evaluating the assurances against change of control.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -67,7 +68,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-ecsf-03",
@@ -91,8 +93,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Degree to which the provider relies on financing coming from {TRUSTED_REGION} sources.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -103,7 +105,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Financing-source dependency is an ownership/economic factor, not cleanly any single responsibility-map layer (all ten layer values describe technical-operational responsibility, not capital structure). Tagged legal_jurisdiction as the closest fit, consistent with how C3A's own SOV-1 criteria (effective control, ownership transparency) were tagged in Phase 2a. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses financing source)."
+    "needs_review_note": "Financing-source dependency is an ownership/economic factor, not cleanly any single responsibility-map layer (all ten layer values describe technical-operational responsibility, not capital structure). Tagged legal_jurisdiction as the closest fit, consistent with how C3A's own SOV-1 criteria (effective control, ownership transparency) were tagged in Phase 2a. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses financing source).",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-ecsf-04",
@@ -127,8 +130,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Extent of investment, jobs, and value creation within {TRUSTED_REGION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -139,7 +142,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Same ambiguity as csat-sov1-ecsf-03: an industrial/economic factor without a clean layer fit. Tagged legal_jurisdiction for consistency with the domain's other factors. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses EU investment/jobs/value creation)."
+    "needs_review_note": "Same ambiguity as csat-sov1-ecsf-03: an industrial/economic factor without a clean layer fit. Tagged legal_jurisdiction for consistency with the domain's other factors. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses EU investment/jobs/value creation).",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-ecsf-05",
@@ -163,8 +167,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Involvement in {TRUSTED_REGION} initiatives, Consistency with digital, green, and industrial sovereignty objectives defined at {TRUSTED_REGION} level.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -175,7 +179,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "A policy-alignment factor rather than a technical responsibility-layer concern. Tagged legal_jurisdiction as the closest available fit; no layer value captures policy-alignment specifically. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses EU policy-initiative alignment)."
+    "needs_review_note": "A policy-alignment factor rather than a technical responsibility-layer concern. Tagged legal_jurisdiction as the closest available fit; no layer value captures policy-alignment specifically. Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses EU policy-initiative alignment).",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov1-ecsf-06",
@@ -199,8 +204,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Ability to sustain secure operations against requests to cease or suspend the service, or if vendor support is withdrawn or disrupted.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -211,7 +216,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Spans legal_jurisdiction (the request to cease/suspend typically originates from a jurisdictional authority or the vendor's home-country obligations) and operations_personnel (sustaining operations despite the disruption is an operational continuity concern). Tagged operations_personnel as primary since the factor asks about the government's/operator's ability to continue running the service, not about the legal basis of the request itself."
+    "needs_review_note": "Spans legal_jurisdiction (the request to cease/suspend typically originates from a jurisdictional authority or the vendor's home-country obligations) and operations_personnel (sustaining operations despite the disruption is an operational continuity concern). Tagged operations_personnel as primary since the factor asks about the government's/operator's ability to continue running the service, not about the legal basis of the request itself.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-ecsf-01",
@@ -235,8 +241,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "The national legal system governing the provider's operations and contracts.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -246,7 +252,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-ecsf-02",
@@ -270,8 +277,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Degree of exposure to laws from outside {TRUSTED_REGION} with cross-border reach (e.g., US CLOUD Act, Chinese Cybersecurity Law).",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -281,7 +288,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-ecsf-03",
@@ -305,8 +313,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Existence of legal, contractual, or technical channels through which authorities from outside {TRUSTED_REGION} could compel access to data or systems.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -317,7 +325,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Explicitly spans legal_jurisdiction (the compulsion mechanism itself) and data/identity (the 'technical channels' through which access would actually occur). Tagged legal_jurisdiction as primary since the factor is framed around the existence of a compulsion pathway, not the technical access-control mechanics."
+    "needs_review_note": "Explicitly spans legal_jurisdiction (the compulsion mechanism itself) and data/identity (the 'technical channels' through which access would actually occur). Tagged legal_jurisdiction as primary since the factor is framed around the existence of a compulsion pathway, not the technical access-control mechanics.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-ecsf-04",
@@ -341,8 +350,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Applicability of international regimes, which may restrict usage or transfer.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -352,7 +361,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov2-ecsf-05",
@@ -376,8 +386,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Location of intellectual property creation, registration, and development ({TRUSTED_REGION} vs. outside {TRUSTED_REGION}), legal jurisdiction where IP is created and developed.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -388,7 +398,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "IP jurisdiction is a hybrid of legal_jurisdiction and platform/technology ownership; tagged legal_jurisdiction since the factor's own text frames it primarily in jurisdictional terms ('legal jurisdiction where IP is created and developed'). Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses IP creation/registration location)."
+    "needs_review_note": "IP jurisdiction is a hybrid of legal_jurisdiction and platform/technology ownership; tagged legal_jurisdiction since the factor's own text frames it primarily in jurisdictional terms ('legal jurisdiction where IP is created and developed'). Coverage: candidate uncovered factor — verify in Phase 3 (no C3A criterion addresses IP creation/registration location).",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-ecsf-01",
@@ -412,8 +423,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Ensuring that only the customer, not the provider, has effective control over cryptographic access to their data.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -424,7 +435,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Cryptographic key-custody control could be tagged identity (access-management layer, per C3A's SOV-3-03 IAM convention) or data (data-protection layer, per C3A's SOV-3-01/02 convention). Tagged data as primary since the factor centers on protecting data confidentiality outcomes, not on IAM integration mechanics."
+    "needs_review_note": "Cryptographic key-custody control could be tagged identity (access-management layer, per C3A's SOV-3-03 IAM convention) or data (data-protection layer, per C3A's SOV-3-01/02 convention). Tagged data as primary since the factor centers on protecting data confidentiality outcomes, not on IAM integration mechanics.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-ecsf-02",
@@ -448,8 +460,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Visibility into when, where, and by whom data is accessed, including auditability of AI model usage, mechanisms guaranteeing irreversible removal of data, with verifiable evidence.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -460,7 +472,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Access/audit logging spans data vs. platform/operations_personnel (who operates the logging system), mirroring the same ambiguity flagged for C3A's SOV-3-04 in Phase 2a. Tagged data as primary since the factor's subject is data-access visibility."
+    "needs_review_note": "Access/audit logging spans data vs. platform/operations_personnel (who operates the logging system), mirroring the same ambiguity flagged for C3A's SOV-3-04 in Phase 2a. Tagged data as primary since the factor's subject is data-access visibility.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-ecsf-03",
@@ -484,8 +497,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Strict confinement of storage and processing to {TRUSTED_REGION}, with no fallback to outside {TRUSTED_REGION}.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -495,7 +508,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov3-ecsf-04",
@@ -519,8 +533,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Extent to which AI models and data pipelines are developed, trained, hosted, and governed under {TRUSTED_REGION} control, minimizing dependency on technology from outside {TRUSTED_REGION} stacks.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -531,7 +545,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Spans platform (hosting/training infrastructure) and data (training-data provenance) simultaneously. Tagged platform as primary since the factor centers on where/how the AI system itself is built and run, not on the data assets it consumes. Coverage: candidate uncovered factor — verify in Phase 3 (C3A has no AI-specific criteria)."
+    "needs_review_note": "Spans platform (hosting/training infrastructure) and data (training-data provenance) simultaneously. Tagged platform as primary since the factor centers on where/how the AI system itself is built and run, not on the data assets it consumes. Coverage: candidate uncovered factor — verify in Phase 3 (C3A has no AI-specific criteria).",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-ecsf-01",
@@ -555,8 +570,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Ease of migrating workloads or integrating with alternative {TRUSTED_REGION}-controlled solutions without vendor lock-in.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -566,7 +581,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-ecsf-02",
@@ -590,8 +606,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Capacity for {TRUSTED_REGION} operators to manage, maintain, and support the technology without requiring vendor from outside {TRUSTED_REGION} involvement.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -601,7 +617,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-ecsf-03",
@@ -625,8 +642,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Existence of an {TRUSTED_REGION}-based talent pool with the expertise to operate and sustain the service.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -636,7 +653,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-ecsf-04",
@@ -660,8 +678,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Assurance that operational support is delivered from within the {TRUSTED_REGION} and subject exclusively to {TRUSTED_REGION} legal frameworks.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -672,7 +690,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Spans operations_personnel (support delivered from within the EU) and legal_jurisdiction (subject exclusively to EU legal frameworks). Tagged operations_personnel as primary since the factor is fundamentally about where support work is performed."
+    "needs_review_note": "Spans operations_personnel (support delivered from within the EU) and legal_jurisdiction (subject exclusively to EU legal frameworks). Tagged operations_personnel as primary since the factor is fundamentally about where support work is performed.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-ecsf-05",
@@ -696,8 +715,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Availability of full technical documentation, source code, and operational know-how enabling long-term autonomy.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -707,7 +726,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov4-ecsf-06",
@@ -731,8 +751,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Location and legal control of critical suppliers or subcontractors involved in service delivery.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -742,7 +762,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-ecsf-01",
@@ -766,8 +787,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Geographic source of key physical parts, manufacturing location - countries where hardware is manufactured or assembled.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -777,7 +798,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-ecsf-02",
@@ -801,8 +823,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Jurisdiction and provenance of embedded code controlling hardware, firmware.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -813,7 +835,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Firmware is embedded code (software-like) but tightly bound to specific hardware. Tagged supply_chain_hardware as primary, consistent with C3A's SOV-5-04 precedent (D-007) of tagging hardware-adjacent embedded technology under the hardware layer; could also be argued as supply_chain_software."
+    "needs_review_note": "Firmware is embedded code (software-like) but tightly bound to specific hardware. Tagged supply_chain_hardware as primary, consistent with C3A's SOV-5-04 precedent (D-007) of tagging hardware-adjacent embedded technology under the hardware layer; could also be argued as supply_chain_software.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-ecsf-03",
@@ -837,8 +860,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Origin of Software: where and by whom software is architected and programmed, location and jurisdiction governing software packaging, distribution, and updates.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -848,7 +871,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-ecsf-04",
@@ -872,8 +896,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Degree of reliance on vendors from outside {TRUSTED_REGION}, facilities, or proprietary technologies.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -884,7 +908,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Spans all three post-D-007 supply-chain layers at once: vendors/facilities (services), facilities (hardware-adjacent), and proprietary technologies (software) — the same multi-layer pattern flagged for C3A's SOV-5-04-C. Tagged supply_chain_services as primary since 'reliance on vendors' is the dominant framing."
+    "needs_review_note": "Spans all three post-D-007 supply-chain layers at once: vendors/facilities (services), facilities (hardware-adjacent), and proprietary technologies (software) — the same multi-layer pattern flagged for C3A's SOV-5-04-C. Tagged supply_chain_services as primary since 'reliance on vendors' is the dominant framing.",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov5-ecsf-05",
@@ -908,8 +933,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Visibility into the entire supplier and sub-supplier chain, including audit rights.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -919,7 +944,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-ecsf-01",
@@ -943,8 +969,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Ability to integrate with other technologies through well-documented and non-proprietary APIs or protocols, extent to which the solution adheres to publicly governed and widely adopted standards, reducing dependency on single vendors.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -955,7 +981,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Coverage: candidate uncovered factor — verify in Phase 3 (C3A's SOV-6 criteria address source-code backup and vendor-disruption contingency, not API/protocol openness as such; C3A's SOV-3-03-AC1 requires open standards for identity-provider integration specifically, not a general API-openness requirement)."
+    "needs_review_note": "Coverage: candidate uncovered factor — verify in Phase 3 (C3A's SOV-6 criteria address source-code backup and vendor-disruption contingency, not API/protocol openness as such; C3A's SOV-3-03-AC1 requires open standards for identity-provider integration specifically, not a general API-openness requirement).",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-ecsf-02",
@@ -979,8 +1006,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Whether software is accessible under open licenses, with rights to audit, modify, and redistribute, ensuring transparency and adaptability.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -991,7 +1018,8 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Coverage: candidate uncovered factor — verify in Phase 3 (C3A has no criterion requiring open-license software or audit/modify/redistribute rights)."
+    "needs_review_note": "Coverage: candidate uncovered factor — verify in Phase 3 (C3A has no criterion requiring open-license software or audit/modify/redistribute rights).",
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-ecsf-03",
@@ -1015,8 +1043,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Visibility into the design and functioning of the service, including architectural documentation, data flows, and dependencies.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1026,7 +1054,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": false
+    "needs_review": false,
+    "generalization_class": "direct"
   },
   {
     "id": "csat-sov6-ecsf-04",
@@ -1050,8 +1079,8 @@
       "fr": "SEE-LOCAL-VERBATIM"
     },
     "generalized_text": {
-      "en": "GENERALIZATION-PENDING",
-      "fr": "GENERALIZATION-PENDING"
+      "en": "Degree of {TRUSTED_REGION} independence in high-performance computing capabilities, including processors, accelerators, and software ecosystems.",
+      "fr": "FR-TRANSLATION-PENDING"
     },
     "disposition_default": "assess",
     "evidence_quality_options": [
@@ -1062,6 +1091,7 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Spans platform (software ecosystems) and supply_chain_hardware (processors, accelerators). Tagged supply_chain_hardware as primary since the factor centers on hardware/compute independence, with software ecosystems as a secondary aspect."
+    "needs_review_note": "Spans platform (software ecosystems) and supply_chain_hardware (processors, accelerators). Tagged supply_chain_hardware as primary since the factor centers on hardware/compute independence, with software ecosystems as a secondary aspect.",
+    "generalization_class": "direct"
   }
 ]

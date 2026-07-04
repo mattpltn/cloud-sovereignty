@@ -26,6 +26,15 @@
     "source_quote": {
       "en": "'cloud computing service' means cloud computing service as defined in Article 6",
       "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "'Cloud computing service' takes the definition already used elsewhere in {TRUSTED_REGION} law (source cites: Directive (EU) 2022/2555, Article 6, point (30)) rather than defining it afresh — CADA layers its assurance-level framework on top of an existing legal definition, not a new one.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
     }
   },
   {
@@ -54,6 +63,15 @@
     "needs_review": false,
     "source_quote": {
       "en": "means a legal entity which provides a cloud computing service",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "'Cloud computing service provider' means a legal entity which provides a cloud computing service — the party whose posture CADA's UA levels (Annex II) assess.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
       "fr": "FR-TRANSLATION-PENDING"
     }
   },
@@ -84,6 +102,15 @@
     "source_quote": {
       "en": "means public sector body as defined in Article 2, point (1)",
       "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "'Public sector body' takes the definition from {TRUSTED_REGION} law (source cites: Directive (EU) 2019/1024, Article 2, point (1)) — the governments CSAT assesses correspond to {GOVERNMENT_CUSTOMER} in CADA's own terms, which is the hook for CADA's obligations on them (risk assessment, procurement) to apply.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
     }
   },
   {
@@ -110,7 +137,16 @@
       "page": 39
     },
     "needs_review": true,
-    "needs_review_note": "CSAT's persona model targets national/subnational governments ('public sector bodies'); 'Union entities' (EU institutions themselves) is a distinct addressee CSAT does not currently model as a persona type. Flagged for Phase 3/owner consideration, not resolved here."
+    "needs_review_note": "CSAT's persona model targets national/subnational governments ('public sector bodies'); 'Union entities' (EU institutions themselves) is a distinct addressee CSAT does not currently model as a persona type. Flagged for Phase 3/owner consideration, not resolved here.",
+    "generalized_text": {
+      "en": "'Union entities' means {TRUSTED_REGION}'s own institutions, bodies, offices and agencies established under its founding treaties — distinct from 'public sector bodies' ({NATION}-level governments); CADA's obligations on risk assessment and procurement (Articles 29-30) name both categories separately. CSAT's {GOVERNMENT_CUSTOMER} placeholder currently maps to the public-sector-body sense only (see this record's needs_review_note).",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
+    }
   },
   {
     "id": "cada-act-def-control",
@@ -138,6 +174,15 @@
     "needs_review": false,
     "source_quote": {
       "en": "means control as defined in Article 2, point (6)",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "'Control' takes the definition from {TRUSTED_REGION} law (source cites: Regulation (EU) 2021/697, Article 2, point (6)) — this is the legal term of art that Annex II's 'subject to the control of an entity outside {TRUSTED_REGION}' criteria (assessed via Annex III criterion G) turn on.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
       "fr": "FR-TRANSLATION-PENDING"
     }
   },
@@ -168,6 +213,15 @@
     "source_quote": {
       "en": "means contracting authorities as defined in Article 2(1), point (1)",
       "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "'Contracting authorities' takes the definition from {TRUSTED_REGION} law (source cites: Directive 2014/24/EU, Article 2(1), point (1)) — the addressee of Article 30's procurement obligations.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
     }
   },
   {
@@ -197,6 +251,15 @@
     "source_quote": {
       "en": "means open source licence as defined in Article 2, point (12)",
       "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "'Open source licence' takes the definition from {TRUSTED_REGION} law (source cites: Regulation (EU) 2024/903, Article 2, point (12)) — the term used throughout Annex II (j), Annex III criterion J, and Article 41's open-source-first obligation.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
     }
   },
   {
@@ -222,7 +285,16 @@
       "section": "Article 2, points (19)-(20)",
       "page": 39
     },
-    "needs_review": false
+    "needs_review": false,
+    "generalized_text": {
+      "en": "'Audit criteria' means the Annex II cumulative criteria an auditing organisation assesses a provider against for UA-2/3/4 recognition; 'audit evidence' means any information an auditing organisation uses to support its findings and issue an audit opinion — the Annex III items extracted in cada-evidence.json. Directly relevant to CSAT's own evidence-quality tiering (control-record.schema.json's evidence_quality_options: self_attested < contractual_commitment < third_party_certified < independently_audited) — an 'independently_audited' evidence tier for a CADA-derived control corresponds to a positive UA-2/3/4 audit opinion under this mechanism.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
+    }
   },
   {
     "id": "cada-act-art18-associated-third-countries",
@@ -248,7 +320,16 @@
       "page": 54
     },
     "needs_review": true,
-    "needs_review_note": "Annex II 3.1(g) and Annex III criterion G's 7.2(c) both cite 'an implementing act under Article 19' for this third-country adequacy mechanism, but Article 19 in this draft is titled 'Conformity self-assessment' (the UA-1 self-assessment procedure) and does not describe implementing acts on third countries at all — Article 18 ('Associated third countries') is what substantively matches. Likely a cross-reference/numbering error in this draft (COM(2026) 502 final part 1 as extracted); captured as a discrepancy, not silently corrected. Verify against a later consolidated text."
+    "needs_review_note": "Annex II 3.1(g) and Annex III criterion G's 7.2(c) both cite 'an implementing act under Article 19' for this third-country adequacy mechanism, but Article 19 in this draft is titled 'Conformity self-assessment' (the UA-1 self-assessment procedure) and does not describe implementing acts on third countries at all — Article 18 ('Associated third countries') is what substantively matches. Likely a cross-reference/numbering error in this draft (COM(2026) 502 final part 1 as extracted); captured as a discrepancy, not silently corrected. Verify against a later consolidated text.",
+    "generalized_text": {
+      "en": "The Commission may, by implementing act, designate jurisdictions outside {TRUSTED_REGION} whose control over a cloud computing service provider does not disqualify that provider from UA-3 audit, provided the jurisdiction meets six cumulative conditions (an adequacy decision under {TRUSTED_REGION}'s data protection framework (source cites: GDPR); no measures conflicting with lawful-access safeguards (source cites: Regulation (EU) 2023/2854, Article 32(2)-(3)); no power to compel service disruption or sanctions compliance; no impediment to state-of-the-art technology provision; an open market to {TRUSTED_REGION} cloud services; reciprocal procurement access for {TRUSTED_REGION} providers). This is the article that substantively implements what Annex II 3.1(g) calls 'an implementing act under Article 19' — see the citation discrepancy noted below and in csat-sov1-cada-ua3-g's needs_review_note (data/extracted/cada.json).",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
+    }
   },
   {
     "id": "cada-act-art19-conformity-self-assessment",
@@ -273,7 +354,16 @@
       "section": "Article 19",
       "page": 55
     },
-    "needs_review": false
+    "needs_review": false,
+    "generalized_text": {
+      "en": "Every cloud computing service provider seeking UA-1 recognition self-assesses against Annex II's UA-1 criteria and issues a public statement of conformity recognized by {NATION} or {TRUSTED_REGION}, assuming responsibility for its accuracy. Unlike UA-2/3/4 (independent third-party audit, Article 20), UA-1 relies entirely on provider self-attestation — directly relevant to CSAT's evidence-quality tiering: a UA-1 statement of conformity is 'self_attested' evidence, structurally weaker than a UA-2/3/4 audit opinion ('independently_audited').",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
+    }
   },
   {
     "id": "cada-act-art29-risk-assessments",
@@ -301,6 +391,15 @@
     "needs_review": false,
     "source_quote": {
       "en": "Member States and Union entities shall carry out risk assessments",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "{NATION} and {GOVERNMENT_CUSTOMER} must periodically (at least every two years) identify which public sector activities use or will use cloud computing services in public-order-sensitive sectors (source cites: Directive (EU) 2022/2555, Annexes I/II; plus national security, internal security, border management, defence, justice, law enforcement), and determine which UA level (2, 3, or 4) is appropriate for each. The risk assessment must weigh data sensitivity/criticality, the risk of unlawful access from outside {TRUSTED_REGION}, and the risk of service disruption, and must consider whether a multi-vendor/multi-cloud strategy is appropriate. Results go to the Commission; a Commission-specified methodology governs how the highest assurance level is applied to the most critical activities (defence named explicitly). Where a risk assessment requires migrating to a different cloud service, migration must complete within 12 months. This is the direct analogue of CSAT's own workload-classification-tiering design principle (CLAUDE.md: 'Classification tiering' — one government, several per-tier assessments).",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
       "fr": "FR-TRANSLATION-PENDING"
     }
   },
@@ -331,6 +430,15 @@
     "source_quote": {
       "en": "shall use cloud computing services that have been recognised",
       "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "Contracting authorities (and {GOVERNMENT_CUSTOMER} procuring for their own exclusive use) whose activities were NOT identified under Article 29's risk assessment as public-order-sensitive must use only cloud computing services recognised at UA-1 or above. Contracting authorities whose activities WERE so identified must use only services recognised at UA-2, UA-3, or UA-4. A narrow derogation permits procuring an unrecognised service on an exceptional, justified basis: no recognised service can meet the tender's subject matter and no reasonable alternative exists (and this absence isn't the result of an artificially narrow tender); or a prior similar tender drew no suitable bids; or compliance would require disproportionate cost.",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
+      "fr": "FR-TRANSLATION-PENDING"
     }
   },
   {
@@ -359,6 +467,15 @@
     "needs_review": false,
     "source_quote": {
       "en": "shall take the necessary measures to encourage Union entities",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalized_text": {
+      "en": "{TRUSTED_REGION} and {NATION} must take necessary measures to encourage {GOVERNMENT_CUSTOMER} to use and facilitate reuse of open standards and open-source-licensed components when building their cloud/AI ecosystem or stack, weighing functionality (including security), total cost, and other duly justified objective criteria — a preference, not a mandate, and explicitly balanced against functional/cost criteria rather than absolute. Directly grounds CSAT's SOV-6 (Technology Sovereignty) domain and the World Bank outcome-based framing CLAUDE.md requires recommendation text to speak (lock-in avoidance as one weighable outcome among several, not an automatic 'move to open source' directive).",
+      "fr": "FR-TRANSLATION-PENDING"
+    },
+    "generalization_class": "direct",
+    "generalization_note": {
+      "en": "Hand-generalized: obligation_text is analytical commentary (derivation: derived), not verbatim source text, and several records are self-referential definitions of the very terms (\"Union entities\" vs \"public sector body\") the mechanical rule table would otherwise collapse into one placeholder, destroying the distinction being defined — so this file's generalized_text is hand-written per record rather than produced by generalize(verbatim, rules); no data/local verbatim file backs this file (derivation: derived has none), so the validator's equality check does not apply to it (only the residual-literal lint does).",
       "fr": "FR-TRANSLATION-PENDING"
     }
   }
