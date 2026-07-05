@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "id": "csat-sov1-ecsf-04",
+      "framework": "ECSF",
+      "decision_ref": "D-027",
+      "reason": "Extent of investment, jobs, and value creation within the trusted region is a measure of the provider's economic/industrial footprint, not the assessing government's own sovereignty risk exposure — a procurement/economic-development consideration, not a posture-assessment criterion."
+    },
+    {
+      "id": "csat-sov1-ecsf-05",
+      "framework": "ECSF",
+      "decision_ref": "D-027",
+      "reason": "Involvement in regional strategic initiatives and policy-alignment is about the provider's participation in industrial strategy, not the assessing government's own sovereignty exposure — a procurement/policy-alignment consideration, not a posture-assessment criterion."
+    }
+  ]
+}

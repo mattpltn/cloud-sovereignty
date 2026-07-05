@@ -72,8 +72,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Criterion covers infrastructure and assets location only (not personnel, unlike the UA-2/3/4 equivalent); tagged facility, but the location concern is fundamentally about jurisdictional reach, so SOV-2 vs. a facility-specific domain framing is a judgment call.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -150,7 +149,7 @@
     ],
     "weight": 1.0,
     "needs_review": true,
-    "needs_review_note": "Could plausibly be tagged SOV-5/supply_chain_services instead (the criterion is about outsourcing arrangements to third-party providers); tagged SOV-4 since the substance is about preserving the provider's own operational autonomy.",
+    "needs_review_note": "sov_domain choice (SOV-4 vs. SOV-5) remains an open judgment call — the criterion is about outsourcing arrangements to third-party providers, which could plausibly sit under SOV-5/supply_chain_services instead of SOV-4. [Layer: operations_personnel finalized, Phase 3 layer adjudication — the domain question is separate and stays open.]",
     "generalization_class": "direct"
   },
   {
@@ -188,8 +187,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -341,8 +339,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Criterion spans infrastructure/assets (facility) and personnel (operations_personnel) location in a single clause; tagged facility as the criterion's primary framing, but this is a genuine either/or.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -418,8 +415,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment.",
+    "needs_review": false,
     "generalization_class": "direct",
     "generalization_note": {
       "en": "R7 override: Regulation (EU) 2019/881 is a named EU legal instrument that does not generalize to a placeholder (a {NATION} may have no equivalent scheme, or a differently-numbered one). Reframed generically (\"recognized by {NATION} or {TRUSTED_REGION}\") with the instrument retained as a parenthetical source example, per rule R7.",
@@ -732,8 +728,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Criterion spans infrastructure/assets (facility) and personnel (operations_personnel) location in a single clause; tagged facility as the criterion's primary framing, but this is a genuine either/or.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -851,8 +846,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment.",
+    "needs_review": false,
     "generalization_class": "direct",
     "generalization_note": {
       "en": "R7 override: same reasoning as csat-sov7-cada-ua2-e (identical criterion text at UA-3).",
@@ -1165,8 +1159,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Criterion spans infrastructure/assets (facility) and personnel (operations_personnel) location in a single clause; tagged facility as the criterion's primary framing, but this is a genuine either/or.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -1280,8 +1273,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "SOV-7 is inheritance-only (CLAUDE.md) and the ten-value layer taxonomy has no SOV-7-specific option; 'platform' chosen as the closest generic fit. disposition_default set to inherit rather than assess, matching the project-wide SOV-7 treatment.",
+    "needs_review": false,
     "generalization_class": "direct",
     "generalization_note": {
       "en": "R7 override: same reasoning as csat-sov7-cada-ua2-e (UA-4 raises the assurance level to 'high' but cites the same instrument).",

@@ -368,6 +368,7 @@
   {
     "id": "cada-act-art29-risk-assessments",
     "derivation": "derived",
+    "addressed_party": "government_self",
     "source_refs": [
       {
         "framework": "CADA",
@@ -406,6 +407,7 @@
   {
     "id": "cada-act-art30-public-procurement",
     "derivation": "derived",
+    "addressed_party": "government_self",
     "source_refs": [
       {
         "framework": "CADA",
@@ -444,6 +446,7 @@
   {
     "id": "cada-act-art41-open-source-first",
     "derivation": "derived",
+    "addressed_party": "government_self",
     "source_refs": [
       {
         "framework": "CADA",

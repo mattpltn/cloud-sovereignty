@@ -1003,3 +1003,375 @@ derived from C3A/ECSF/CADA. See `reviews/persona-owner-review.md` items
 **Status:** Resolved — supersedes D-003's `external_hsm` interpretation
 for P1/P3/P8-restricted (D-003 itself is left unedited per the
 append-only register rule; this entry is the correction).
+
+---
+
+## D-026 — Layer adjudication: 26 layer-ambiguity `needs_review` flags resolved
+
+**Date:** 2026-07-04
+**Decision:** Every open `needs_review` flag across `c3a.json`,
+`ecsf.json`, and `cada.json` whose stated ambiguity was *which layer*
+(the ten-value responsibility-map enum) a record belongs to — as
+opposed to which SOV domain, whether it's covered by another framework,
+a source erratum, or a source typo — is resolved here, finalizing the
+layer already tagged on each record (Phase 2a/2b/2c's extractors had
+already applied a reasoned "primary layer" choice; this entry makes
+that choice final and closes the flag, rather than re-deciding
+differently). `needs_review`/`needs_review_note` are cleared on records
+where layer was the *only* open question; for records with an
+additional, separate open question (coverage-uncovered, or sov_domain
+choice), `needs_review` stays `true` with the note trimmed to the
+remaining question only.
+
+**C3A (10 records, all layer-only, cleared):**
+- `csat-sov2-03-c1`, `csat-sov2-03-c2` → **legal_jurisdiction** (spans
+  facility/operations_personnel too, but the requirement is fundamentally
+  a legal enablement duty). Noted for Phase 4: the disposition-rule
+  design may still want multi-layer awareness for these two records even
+  though a single primary layer is now settled here.
+- `csat-sov3-04-c`, `csat-sov3-04-ac1`, `csat-sov3-04-ac2` → **data**
+  (logging capability; data-access accountability is the criterion's
+  actual subject, not who operates the logging platform).
+- `csat-sov4-03-c`, `csat-sov4-03-ac` → **facility** (connectivity
+  redundancy is fundamentally about the facility-level network
+  connection, not the connectivity provider as a supply-chain vendor).
+- `csat-sov5-04-c` → **supply_chain_hardware** (export-control regimes
+  are most classically hardware-centric, even though software/service
+  dependencies are also in scope per the verbatim text).
+- `csat-sov5-05-c1`, `csat-sov5-05-c2` → **platform** (content is
+  operational capacity-management location, not a supply-chain
+  relationship, despite being filed under the SOV-5 domain in the
+  source — `sov_domain` is preserved as given by C3A's own structure;
+  only `layer` is assessed independently, per the responsibility-map
+  model).
+
+**ECSF (13 records: 8 layer-only cleared, 5 mixed — layer resolved,
+coverage-uncovered stays open):**
+- `csat-sov1-ecsf-06` → **operations_personnel** (cleared): the factor
+  asks about ability to continue operating despite disruption, not the
+  legal basis of the disruption request.
+- `csat-sov2-ecsf-03` → **legal_jurisdiction** (cleared): framed around
+  the existence of a compulsion pathway, not the technical
+  access-control mechanics it would use.
+- `csat-sov3-ecsf-01`, `csat-sov3-ecsf-02` → **data** (cleared):
+  centers on data-confidentiality/data-access-visibility outcomes, not
+  IAM integration mechanics or who operates the logging platform.
+- `csat-sov4-ecsf-04` → **operations_personnel** (cleared): fundamentally
+  about where support work is performed.
+- `csat-sov5-ecsf-02` → **supply_chain_hardware** (cleared): consistent
+  with C3A's own SOV-5-04 precedent (D-007) of tagging hardware-adjacent
+  embedded technology under the hardware layer.
+- `csat-sov5-ecsf-04` → **supply_chain_services** (cleared): "reliance
+  on vendors" is the factor's dominant framing among the three
+  supply-chain layers it touches.
+- `csat-sov6-ecsf-04` → **supply_chain_hardware** (cleared): centers on
+  hardware/compute independence, with software ecosystems secondary.
+- `csat-sov1-ecsf-03`, `csat-sov1-ecsf-04`, `csat-sov1-ecsf-05` →
+  **legal_jurisdiction** (layer resolved; stays `needs_review` for the
+  separate, still-open coverage-uncovered question): these are
+  ownership/economic/policy-alignment factors with no clean fit in a
+  ten-value taxonomy built for technical-operational responsibility;
+  `legal_jurisdiction` is the closest available fit and is now final.
+- `csat-sov2-ecsf-05` → **legal_jurisdiction** (layer resolved, coverage
+  stays open): the factor's own text frames IP jurisdiction primarily
+  in jurisdictional terms.
+- `csat-sov3-ecsf-04` → **platform** (layer resolved, coverage stays
+  open): centers on where/how the AI system itself is built and run,
+  not the data it consumes.
+- `csat-sov6-ecsf-01`, `csat-sov6-ecsf-02` are **not** included here —
+  their `needs_review` flags are coverage-only (no layer alternative was
+  ever proposed for these two); untouched, per this entry's scope.
+
+**CADA (8 records layer-only cleared, 1 mixed — layer resolved,
+sov_domain choice stays open):**
+- `csat-sov2-cada-ua1-b`, `-ua2-b`, `-ua3-b`, `-ua4-b` → **facility**
+  (cleared): the criterion's primary framing is infrastructure/assets
+  location, even where personnel location is also named in the same
+  clause.
+- `csat-sov7-cada-ua1-e`, `-ua2-e`, `-ua3-e`, `-ua4-e` → **platform**
+  (cleared): confirmed as the standing, permanent convention for
+  SOV-7 records. The underlying limitation this flag originally raised
+  — the ten-value layer taxonomy has no SOV-7-specific option, since it
+  was designed for the six assessed domains — is not resolved by this
+  choice; it is a genuine taxonomy gap, noted here for a future phase
+  to consider (e.g. an eleventh layer value, or a documented convention
+  that SOV-7/inheritance-only records don't need a layer at all). Not
+  re-opened as a new `needs_review` flag, since `platform` remains a
+  defensible closest-fit choice in the meantime.
+- `csat-sov4-cada-ua1-d` → **operations_personnel** (layer resolved;
+  stays `needs_review` for the separate, still-open `sov_domain`
+  question — SOV-4 vs. SOV-5 — since the criterion is about outsourcing
+  arrangements to third-party providers, which could plausibly sit under
+  SOV-5/supply_chain_services instead).
+- `csat-sov1-cada-ua2-g`, `-ua3-g`, `-ua4-g` are **not** included here —
+  their `needs_review` flags are about `sov_domain` choice (SOV-1 vs.
+  SOV-2), not layer; `-ua3-g` additionally carries the open Article
+  18/19 citation discrepancy. Both untouched, per this entry's scope.
+- `csat-sov4-cada-ua2-d` is **not** included here — its flag is the
+  "presonnel" verbatim typo (D-018), not a layer question. Untouched.
+
+**Alternatives considered:** re-derive each layer independently from
+first principles rather than confirming Phase 2a/2b/2c's existing
+primary-tag choices — rejected: those choices were already made with
+stated reasoning and cross-checked against precedent at extraction
+time (e.g. D-007's supply-chain convention); re-litigating them without
+new information would not improve accuracy, only cost effort, and risks
+introducing inconsistency with records that used the same reasoning
+pattern but weren't flagged.
+**Rationale:** Closes the layer dimension of ambiguity across all three
+frameworks in one auditable pass, leaving only the ambiguities that are
+genuinely still open (SOV-domain choice, coverage-uncovered status, a
+citation discrepancy, a source typo, and the D-008 erratum) — none of
+which this entry touches.
+**Framework anchor:** N/A — internal responsibility-map/layer-taxonomy
+decision (D-007's ten-value enum), not dictated by any single source
+framework.
+**Status:** Resolved.
+
+## D-027 — Master catalog primary_id precedence: C3A > ECSF > CADA
+
+**Date:** 2026-07-04
+**Decision:** `data/catalog/catalog.json` clusters `c3a.json`/`ecsf.json`/
+`cada.json` records via union-find over the crosswalk's `equivalent` and
+`subsumed_by` relations only (`partially_covers`/`related` are
+cross-references that do not merge records into one catalog entry).
+Each resulting entry designates one member as `primary_id`, by fixed
+precedence: a C3A id if the cluster contains one, else an ECSF id, else
+a CADA id.
+**Alternatives considered:** (a) precedence by extraction date/phase
+order (C3A first, so C3A wins) — this happens to produce the same
+ranking as (b) below, so not meaningfully distinct as an alternative;
+(b) no fixed precedence, chosen per-cluster by whichever record has the
+most detailed/complete text — rejected: introduces a subjective,
+re-litigable judgment call per cluster for no clear benefit, whereas a
+fixed rule is mechanical, auditable, and trivially reproducible; (c)
+CADA precedence first (reasoning: it's the newest, most detailed, and
+only prescriptive-legislation source) — rejected: CADA is
+`proposed_legislation` (not yet in force) and its criteria are
+audit-evidence-oriented rather than baseline-posture-oriented; C3A is
+this project's primary criteria source per CLAUDE.md ("BSI C3A v1.0 —
+primary criteria source"), so C3A leading the precedence order matches
+the project's own stated framework hierarchy.
+**Rationale:** A fixed, source-hierarchy-based precedence rule (matching
+CLAUDE.md's own designation of C3A as "primary criteria source," ECSF as
+providing "SOV domain definitions... weighted scoring model," and CADA
+as "legislative obligations... flagged status: proposed_legislation")
+is simpler, more defensible, and easier to audit than a per-cluster
+judgment call, and produces a stable `primary_id` that later phases
+(engine, UI) can rely on without re-deriving it.
+**Framework anchor:** CLAUDE.md, "Source frameworks" section (numbering
+1-3, C3A/ECSF/CADA in that order).
+**Status:** Resolved.
+
+## D-028 — The 7 uncovered ECSF factors: catalog-include vs. documented-out-of-scope, decided individually
+
+**Date:** 2026-07-04
+**Decision:** Each of the 7 ECSF contributing factors Phase 2b flagged
+as having no C3A counterpart is decided individually — catalog-include
+(assessable/actionable by a government cloud customer) vs.
+documented-out-of-scope (procurement/industrial-policy economics, not
+something a customer assesses about its own posture) — recorded in
+`data/catalog/out_of_scope.json` for the excluded two, and simply
+present as a standalone (no-C3A-counterpart) catalog entry for the
+other five:
+- **`csat-sov1-ecsf-03`** (financing sources) → **include**. A
+  government can reasonably request financing-source disclosure as
+  vendor due diligence (self-attested/contractual evidence); foreign
+  financing exposure is a legitimate, actionable proxy for
+  foreign-leverage risk (negotiation-clause and strategic-options
+  material), unlike the two excluded factors below.
+- **`csat-sov1-ecsf-04`** (investment/jobs/value creation within the
+  trusted region) → **exclude** (out of scope). This measures the
+  *provider's* economic footprint/industrial-policy contribution to the
+  region — it does not change the *customer's* own sovereignty risk
+  exposure. Structurally the same kind of criterion as CADA's Article 32
+  "Union added value" non-price procurement award criteria: a
+  procurement/economic-development tool, not a posture-assessment one.
+  Including it would violate CLAUDE.md's non-judgmental, outcome-based
+  design principle by smuggling an industrial-policy metric into a
+  sovereignty-posture score.
+- **`csat-sov1-ecsf-05`** (EU policy-initiative alignment) → **exclude**
+  (out of scope). Same reasoning as `-04`: alignment with regional
+  strategic/industrial policy initiatives is about the *provider's*
+  participation in policy, not the *customer's* sovereignty exposure.
+- **`csat-sov2-ecsf-05`** (IP creation/registration/development
+  location) → **include**. IP jurisdiction bears on long-term
+  technology-dependency/lock-in risk and legal control over critical
+  software — directly analogous to the already-included SOV-5
+  supply-chain-origin criteria; a government can reasonably ask where
+  IP for critical services is legally held.
+- **`csat-sov3-ecsf-04`** (AI models/pipelines under trusted-region
+  control) → **include**. Directly customer-assessable (is the AI
+  service dependent on foreign AI stacks) — the same category of
+  question as the already-included SOV-3/SOV-4 technology-dependency
+  criteria, just for a technology category (AI) C3A predates.
+- **`csat-sov6-ecsf-01`** (open, non-proprietary API/protocol
+  interoperability) → **include**. Directly customer-assessable
+  lock-in-avoidance criterion, core SOV-6 Technology Sovereignty
+  concern, fully analogous to existing catalog content.
+- **`csat-sov6-ecsf-02`** (open-license software, audit/modify/
+  redistribute rights) → **include**. Same category as `-01`: directly
+  customer-assessable technology-sovereignty due diligence.
+**Alternatives considered:** one blanket rule for all 7 (e.g. "include
+everything ECSF extracted" or "exclude everything C3A doesn't cover") —
+rejected per this phase's explicit instruction to decide each
+individually; a blanket rule would either dilute the catalog with
+procurement-economics criteria that don't belong in a posture
+assessment, or discard genuinely assessable technology/IP-sovereignty
+questions that happen to have no C3A precedent.
+**Rationale:** Keeps the master catalog focused on questions that
+change a government's own assessed posture, consistent with CLAUDE.md's
+non-judgmental, outcome-based design and its explicit rejection of
+industrial-policy/procurement-economics framing as a sovereignty
+metric. This is a reversible editorial call: `out_of_scope.json` is a
+small, separate registry precisely so a future phase can re-include
+either excluded factor without touching `ecsf.json` or the crosswalk.
+**Framework anchor:** ECSF v1.2.1 §4 (the 7 factors themselves); CLAUDE.md
+design principle 4 (non-judgmental language) and the World Bank
+outcome-based framing (References).
+**Status:** Resolved.
+
+## D-029: Three-ladder mapping (SEAL ↔ C3A C1/C2 ↔ CADA UA-1..4) — method and confidence tagging
+
+**Date:** 2026-07-04
+**Decision:** Built `data/catalog/ladders.json`, one row set per SOV
+domain (SOV-1..6; SOV-7/SOV-8 excluded, see below), mapping ECSF's
+per-domain SEAL-2/3/4 Implementation Guidance text to the closest CADA
+UA-1..4 criterion and, separately, noting a plausible C3A C1/C2
+correspondence, each cell tagged `source_anchored`, `inferred`, or
+`no_mapping`.
+**Key structural finding:** SEAL/UA are both strictness-maturity
+ladders (0-4 / 1-4); C3A's C1/C2 is a different kind of axis —
+localization SCOPE (does a requirement apply at the trusted-region
+level, or does it require nation-specific instantiation), not
+strictness. No source text directly equates a C1/C2 tier to a specific
+SEAL/UA number, so every `c3a_localization` cell is marked `inferred`
+with an explicit caveat rather than claimed as `source_anchored`, even
+where the SEAL↔UA correspondence in the same cell is source-anchored.
+**SEAL-0/SEAL-1 rows:** `no_mapping` for every domain — the ECSF
+Implementation Guidance provides per-domain text only for SEAL-2/3/4;
+SEAL-0/1 exist only as generic, cross-domain definitions with no
+domain-specific text to anchor against.
+**SOV-6 rows:** `no_mapping` for all three SEAL-2/3/4 cells — CADA's
+sole SOV-6 criterion (open-source tamper-control, letter (j)) is
+narrower than ECSF's SOV-6 factors (general interoperability/open-
+standards/open-source maturity), and no source text supports forcing a
+specific UA-level correspondence.
+**SOV-7/SOV-8 exclusion:** SOV-7 is inheritance-only in this project
+(no assess-type questions, so no SEAL/UA ceiling progression to map);
+SOV-8 is out of scope entirely per CLAUDE.md.
+**Alternatives considered:** (a) omit the C3A C1/C2 column entirely
+since it's a different axis — rejected because CLAUDE.md's own phase
+scope explicitly asks for a three-ladder mapping, and a plausible,
+clearly-caveated `inferred` correspondence is more useful to Phase 5
+than silence; (b) force every cell to a specific UA/C1-C2 pairing —
+rejected per this phase's explicit "do not force cells the sources
+don't support" instruction; `no_mapping` used wherever no textual basis
+exists (15 of 30 cells).
+**Rationale:** This ladder is Phase 3 input for Phase 5's scoring-
+ceiling design, not itself a scoring formula — Phase 5 must weigh
+`inferred` cells differently from `source_anchored` ones when setting
+achieved/ceiling math, and `no_mapping` domains (SOV-6) may need a
+domain-specific ceiling approach that doesn't lean on this ladder at
+all.
+**Framework anchor:** ECSF v1.2.1 Implementation Guidance (per-domain
+SEAL-2/3/4 cells, `data/extracted/ecsf-guidance.json`); C3A v1.0
+`localization_level` field usage across SOV-1..6 (`data/extracted/
+c3a.json`); CADA Annex II UA-1..4 criteria (`data/extracted/cada.json`).
+**Status:** Resolved — 30 cells (2 source_anchored, 13 inferred, 15
+no_mapping); revisit if Phase 5 scoring design finds a cell
+under-supports its intended use.
+
+## D-030: Self-directed controls — `addressed_party` field and cada-act.json catalog entries
+
+**Date:** 2026-07-04
+**Decision:** Added one new optional field to `control-record.schema.json`:
+`addressed_party` (enum `provider` | `government_self`). Absence is the
+default and changes nothing for any pre-existing record (all 129
+c3a/ecsf/cada records address the usual provider/responsibility-map
+party). Tagged three `cada-act.json` records `addressed_party:
+government_self`: `cada-act-art29-risk-assessments`,
+`cada-act-art30-public-procurement`, and
+`cada-act-art41-open-source-first`. `scripts/build_catalog.py` now
+appends one singleton catalog entry per `government_self` record
+(`primary_framework: "CADA"`), since these obligations fall on the
+government itself and have no provider-side crosswalk counterpart to
+cluster against.
+**Which cada-act records were tagged, and why:** Article 29 (risk
+assessment) and Article 30 (procurement) were named explicitly in this
+phase's scope as the minimum. Article 41 (open-source-first preference)
+was added on the same reasoning: its obligation text is "the Union and
+Member States must take measures to encourage [...] public sector
+bodies" — an action for the government to take, not a posture of a
+provider to assess, structurally identical in kind to Articles 29/30.
+The remaining 10 cada-act.json records were NOT tagged: 7 are plain
+definitions (no obligation to assess at all), and `cada-act-art18-
+associated-third-countries` / `cada-act-art19-conformity-self-
+assessment` describe mechanisms a *provider* qualifies under (third-
+country adequacy designation; provider self-assessment), not an action
+the assessing government itself takes.
+**Alternatives considered:** (a) leave cada-act.json entirely out of
+the catalog, as it was through Phase 2d — rejected, since this phase's
+scope explicitly asks for these obligations to become assessable catalog
+entries; (b) fold self-directed obligations into existing SOV domain
+catalog entries by topical similarity — rejected, since Article 29 (a
+tiering/classification duty) and Article 30 (a procurement duty) are
+each `sui generis`, with no equivalent/subsumed_by counterpart among the
+127 in-scope c3a/ecsf/cada records, so forcing them into an existing
+entry would misrepresent them as equivalent to something they are not;
+(c) invent additional `addressed_party` enum values (e.g. distinguishing
+"encouragement" from "mandatory" obligations) — rejected as premature;
+the binary provider/government_self split is sufficient for this
+phase's scope, and disposition/wording nuance belongs to Phase 4's
+engine design, not the schema.
+**Rationale:** These three obligations are genuinely assessable
+questions to a government about its own conduct (has it run the Article
+29 risk assessment; does its procurement policy follow the Article
+30 UA-level gating; does it have an open-source-first preference
+consistent with Article 41), independent of which Axis A/B deployment
+model it uses — a durable, reusable property the responsibility-map
+engine (Phase 4) can key off directly instead of re-deriving it from
+scratch.
+**Framework anchor:** CADA proposal, COM(2026) 502 final, Articles 29,
+30, 41 (`data/extracted/cada-act.json`); CLAUDE.md's "Classification
+tiering" design principle (direct analogue of Article 29) and SOV-6
+Technology Sovereignty domain (direct analogue of Article 41).
+**Status:** Resolved — 3 new catalog entries (cat-0088..cat-0090, CADA
+primary framework, all single-member, no sov_domain assigned since
+these obligations are cross-cutting rather than domain-specific).
+
+## D-031: SOV-7 catalog entries — confirmed inheritance-only, end to end
+
+**Date:** 2026-07-04
+**Decision:** Confirmed (no changes made) that SOV-7 (Security,
+inheritance-only per CLAUDE.md) is represented in the master catalog by
+exactly 4 CADA-derived singleton entries — `csat-sov7-cada-ua1-e`
+through `-ua4-e` — each `disposition_default: inherit`, `layer:
+platform`, and each mapping to CADA Annex III audit criterion E
+(European cybersecurity certification scheme, Regulation (EU)
+2019/881), per the section pointers already present in
+`data/extracted/cada-evidence.json`. C3A and ECSF contribute zero
+SOV-7 records (C3A presupposes BSI C5 and asks no SOV-7 questions of
+its own per the charter; ECSF's SOV-7 factor set was not extracted as
+assessable criteria for the same reason), so there is no crosswalk
+merge to perform and no primary_id precedence question — CADA is the
+only source, by construction.
+**Alternatives considered:** none — this item asked to *confirm*
+end-to-end treatment, not to make a new editorial call. Considered
+whether the 4 UA-level entries should be merged into a single
+catalog entry (one requirement, four assurance tiers) rather than 4
+separate entries — rejected, since `assurance_level` (UA-1..4) is
+cumulative per-record content the disposition/evidence engine
+(Phase 4) needs addressable per tier, matching how every other CADA
+UA-tiered criterion in the catalog is already kept as separate
+per-level records.
+**Rationale:** No catalog or crosswalk change was needed; this decision
+exists to make the confirmation itself traceable, since "nothing to do
+here" is still a reviewable claim under this project's transparency
+requirements.
+**Framework anchor:** CLAUDE.md, "SOV-7 (security) is inheritance-only
+here (satisfied by C5/ISO 27001/SOC 2 evidence; no questions)"; CADA
+Annex III criterion E (`data/extracted/cada-evidence.json`, section
+"Annex III, audit criterion E — European cybersecurity certification
+scheme adopted under Regulation 2019/881").
+**Status:** Resolved — no data changes; confirmation only.

@@ -1,0 +1,877 @@
+{
+  "links": [
+    {
+      "id": "xw-0001",
+      "source_id": "csat-sov1-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-03-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Both require decisive authority/effective control to sit with {TRUSTED_REGION}-based entities."
+    },
+    {
+      "id": "xw-0002",
+      "source_id": "csat-sov1-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-03-c2",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "{NATION} variant of the same effective-control requirement."
+    },
+    {
+      "id": "xw-0003",
+      "source_id": "csat-sov1-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-01-c1",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "Jurisdiction/contract-governance is a narrower, adjacent concept to 'decisive authority location', not the same claim."
+    },
+    {
+      "id": "xw-0004",
+      "source_id": "csat-sov1-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-01-c2",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "{NATION} variant of the same narrower jurisdiction concept."
+    },
+    {
+      "id": "xw-0005",
+      "source_id": "csat-sov1-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-04-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Both require advance-notice/assurance mechanisms against undisclosed changes of control."
+    },
+    {
+      "id": "xw-0006",
+      "source_id": "csat-sov1-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion addresses a provider's financing sources; C3A's SOV-1 criteria are about control/jurisdiction, not capital structure."
+    },
+    {
+      "id": "xw-0007",
+      "source_id": "csat-sov1-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion addresses investment/jobs/value-creation within the trusted region; an industrial-policy metric, not a technical criterion."
+    },
+    {
+      "id": "xw-0008",
+      "source_id": "csat-sov1-ecsf-05",
+      "source_framework": "ECSF",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion addresses alignment with regional strategic policy initiatives."
+    },
+    {
+      "id": "xw-0009",
+      "source_id": "csat-sov1-ecsf-06",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-09-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "C3A's disconnect capability addresses surviving an enforced cutoff, a narrower technical case than ECSF's broader 'sustain operations if vendor support withdrawn'."
+    },
+    {
+      "id": "xw-0010",
+      "source_id": "csat-sov1-ecsf-06",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-10-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Reconnection-after-disconnect capability is the recovery half of the same narrower technical case."
+    },
+    {
+      "id": "xw-0011",
+      "source_id": "csat-sov1-ecsf-06",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov6-02-c",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "Vendor-disruption contingency planning is thematically adjacent but framed around third-party software vendors specifically, not service cease/suspend requests generally."
+    },
+    {
+      "id": "xw-0012",
+      "source_id": "csat-sov2-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Both require the provider's operations/contracts to be governed by {TRUSTED_REGION} law."
+    },
+    {
+      "id": "xw-0013",
+      "source_id": "csat-sov2-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-01-c2",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "{NATION} variant of the same jurisdiction-of-operations requirement."
+    },
+    {
+      "id": "xw-0014",
+      "source_id": "csat-sov2-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov2-01-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Both require identifying/assessing exposure to laws from outside the trusted region with cross-border reach."
+    },
+    {
+      "id": "xw-0015",
+      "source_id": "csat-sov2-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov2-01-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "General non-EU law risk assessment would surface compelled-access risk, but does not specifically require documenting the compulsion channels/mechanisms ECSF asks about."
+    },
+    {
+      "id": "xw-0016",
+      "source_id": "csat-sov2-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov2-01-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Export-control/international-regime restrictions are a subset of the general non-EU law risk assessment, not a dedicated requirement in C3A."
+    },
+    {
+      "id": "xw-0017",
+      "source_id": "csat-sov2-ecsf-05",
+      "source_framework": "ECSF",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion addresses the jurisdiction where IP is created, registered, or developed."
+    },
+    {
+      "id": "xw-0018",
+      "source_id": "csat-sov3-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-02-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Both require customer-exclusive control over cryptographic key access, excluding the provider."
+    },
+    {
+      "id": "xw-0019",
+      "source_id": "csat-sov3-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-02-ac",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "SaaS-scope extension of the same external-key-management requirement."
+    },
+    {
+      "id": "xw-0020",
+      "source_id": "csat-sov3-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-04-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "C3A's logging criterion covers data-access visibility well but not AI-model-usage auditability or irreversible-deletion verification, both of which ECSF also requires."
+    },
+    {
+      "id": "xw-0021",
+      "source_id": "csat-sov3-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-04-ac1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Real-time API access to logs is part of the covered visibility aspect only."
+    },
+    {
+      "id": "xw-0022",
+      "source_id": "csat-sov3-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-04-ac2",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Granular filtering is part of the covered visibility aspect only."
+    },
+    {
+      "id": "xw-0023",
+      "source_id": "csat-sov3-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Customer-side visibility into data storage/processing location is the same data-residency concern."
+    },
+    {
+      "id": "xw-0024",
+      "source_id": "csat-sov3-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-01-c2",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Derived-data/account-data residency variant of the same requirement."
+    },
+    {
+      "id": "xw-0025",
+      "source_id": "csat-sov3-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-01-c3",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Customer-data residency ({TRUSTED_REGION}) variant of the same requirement."
+    },
+    {
+      "id": "xw-0026",
+      "source_id": "csat-sov3-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-01-c4",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Customer-data residency ({NATION}) variant of the same requirement."
+    },
+    {
+      "id": "xw-0027",
+      "source_id": "csat-sov3-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov3-01-c5",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Provider-data residency variant of the same requirement."
+    },
+    {
+      "id": "xw-0028",
+      "source_id": "csat-sov3-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A predates AI-specific criteria entirely; no criterion addresses AI model/pipeline governance or non-EU technology-stack dependency for AI."
+    },
+    {
+      "id": "xw-0029",
+      "source_id": "csat-sov4-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov6-02-c",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "Vendor-disruption contingency implies some substitutability, but C3A has no dedicated workload-portability/migration-ease criterion as ECSF frames it."
+    },
+    {
+      "id": "xw-0030",
+      "source_id": "csat-sov4-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Personnel citizenship/residency requirements support EU-operator capacity but do not by themselves guarantee operation 'without non-EU vendor involvement'."
+    },
+    {
+      "id": "xw-0031",
+      "source_id": "csat-sov4-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-02-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Admin-access-location requirement supports the same capacity claim from a different angle (where access originates, not who performs it)."
+    },
+    {
+      "id": "xw-0032",
+      "source_id": "csat-sov4-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Requiring {TRUSTED_REGION}-citizen, {TRUSTED_REGION}-resident personnel directly ensures an {TRUSTED_REGION}-based talent pool."
+    },
+    {
+      "id": "xw-0033",
+      "source_id": "csat-sov4-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-01-c2",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "{NATION} residency variant of the same talent-pool requirement."
+    },
+    {
+      "id": "xw-0034",
+      "source_id": "csat-sov4-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-01-c3",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Standalone-{TRUSTED_REGION}-organization requirement reinforces the same talent-pool/independence concern."
+    },
+    {
+      "id": "xw-0035",
+      "source_id": "csat-sov4-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Personnel-location requirement covers part of 'support delivered from within the trusted region', combined with a second, distinct C3A criterion (sov4-02) for the admin-access half — neither alone is equivalent to ECSF's combined claim."
+    },
+    {
+      "id": "xw-0036",
+      "source_id": "csat-sov4-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-02-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Admin-access-location requirement covers the other part of the same combined claim; kept partially_covers (not equivalent) so this doesn't force sov4-01 and sov4-02 — two otherwise-distinct C3A criteria — into the same catalog entry."
+    },
+    {
+      "id": "xw-0037",
+      "source_id": "csat-sov4-ecsf-05",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov6-01-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Source-code backup enabling independent development is a direct, strong match for 'full technical documentation, source code, operational know-how'."
+    },
+    {
+      "id": "xw-0038",
+      "source_id": "csat-sov4-ecsf-06",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-03-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Connectivity-provider redundancy/independence is a narrow instance of supplier/subcontractor location and control, not the general claim ECSF makes."
+    },
+    {
+      "id": "xw-0039",
+      "source_id": "csat-sov4-ecsf-06",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-03-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "External-cloud-service-dependency documentation is another narrow instance of the same broader supplier/subcontractor concern."
+    },
+    {
+      "id": "xw-0040",
+      "source_id": "csat-sov5-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-02-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Hardware component country-of-origin documentation is a direct match for geographic source/manufacturing location."
+    },
+    {
+      "id": "xw-0041",
+      "source_id": "csat-sov5-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-02-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Hardware inventory documentation covers hardware generally but doesn't single out embedded firmware as ECSF does."
+    },
+    {
+      "id": "xw-0042",
+      "source_id": "csat-sov5-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-01-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Software inventory documentation covers embedded-code-as-software generally but doesn't single out firmware specifically either."
+    },
+    {
+      "id": "xw-0043",
+      "source_id": "csat-sov5-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-01-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Software component country/supplier documentation is a direct match for software origin."
+    },
+    {
+      "id": "xw-0044",
+      "source_id": "csat-sov5-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-04-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Export-restriction risk mitigation overlaps with, but doesn't fully equal, a general 'degree of reliance' assessment."
+    },
+    {
+      "id": "xw-0045",
+      "source_id": "csat-sov5-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-01-ac",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Software-dependency risk-mitigation process is one supply-chain-layer component of the broader reliance question."
+    },
+    {
+      "id": "xw-0046",
+      "source_id": "csat-sov5-ecsf-05",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-01-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Software supplier inventory is one of the three inventories collectively implementing full supply-chain visibility."
+    },
+    {
+      "id": "xw-0047",
+      "source_id": "csat-sov5-ecsf-05",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-02-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Hardware supplier inventory is the second of the three inventories."
+    },
+    {
+      "id": "xw-0048",
+      "source_id": "csat-sov5-ecsf-05",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-03-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "External-service supplier inventory is the third of the three inventories; audit rights specifically are not explicit in C3A's phrasing, a minor gap."
+    },
+    {
+      "id": "xw-0049",
+      "source_id": "csat-sov6-ecsf-01",
+      "source_framework": "ECSF",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion requires open, non-proprietary API/protocol interoperability as such."
+    },
+    {
+      "id": "xw-0050",
+      "source_id": "csat-sov6-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion requires open-license software or audit/modify/redistribute rights."
+    },
+    {
+      "id": "xw-0051",
+      "source_id": "csat-sov6-ecsf-03",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov4-08-c",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "The Data Flow Diagram requirement is a direct match for architectural documentation, data flows, and dependencies visibility."
+    },
+    {
+      "id": "xw-0052",
+      "source_id": "csat-sov6-ecsf-04",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov5-02-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Hardware component documentation covers general hardware transparency but not HPC/processor/accelerator independence specifically."
+    },
+    {
+      "id": "xw-0053",
+      "source_id": "csat-sov2-cada-ua1-a",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-02-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Provider established in the trusted region is a direct match for a registered head office there."
+    },
+    {
+      "id": "xw-0054",
+      "source_id": "csat-sov2-cada-ua1-b",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion requires general infrastructure/asset residency as a standalone claim (C3A's residency criteria are data-specific, SOV-3-01)."
+    },
+    {
+      "id": "xw-0055",
+      "source_id": "csat-sov3-cada-ua1-c",
+      "source_framework": "CADA",
+      "target_id": "csat-sov3-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim C3A's SOV-3-01 makes."
+    },
+    {
+      "id": "xw-0056",
+      "source_id": "csat-sov4-cada-ua1-d",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-06-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Third-party software risk analysis addresses part of the outsourcing-governance concern, but not operational-support outsourcing generally."
+    },
+    {
+      "id": "xw-0057",
+      "source_id": "csat-sov7-cada-ua1-e",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A extracts no explicit cybersecurity-certification criterion; this routes to SOV-7, inheritance-only per CLAUDE.md."
+    },
+    {
+      "id": "xw-0058",
+      "source_id": "csat-sov5-cada-ua1-f",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "No C3A criterion requires subcontractor transparency/due-diligence/oversight as its own standalone claim."
+    },
+    {
+      "id": "xw-0059",
+      "source_id": "csat-sov2-cada-ua1-g",
+      "source_framework": "CADA",
+      "target_id": "csat-sov2-01-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "General non-EU-law risk assessment would surface this specific vulnerability-disclosure-law risk, but doesn't require the categorical guarantee CADA demands."
+    },
+    {
+      "id": "xw-0060",
+      "source_id": "csat-sov2-cada-ua2-a",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-02-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Provider/subcontractor establishment in the trusted region is a direct match for registered head office there."
+    },
+    {
+      "id": "xw-0061",
+      "source_id": "csat-sov2-cada-ua2-b",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "The personnel-location component matches C3A's citizen/resident requirement; the infrastructure/assets component has no C3A analog."
+    },
+    {
+      "id": "xw-0062",
+      "source_id": "csat-sov3-cada-ua2-c",
+      "source_framework": "CADA",
+      "target_id": "csat-sov3-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim."
+    },
+    {
+      "id": "xw-0063",
+      "source_id": "csat-sov4-cada-ua2-d",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Personnel citizenship/residency is the same core requirement; CADA's UA levels add a security-clearance nuance C3A doesn't have."
+    },
+    {
+      "id": "xw-0064",
+      "source_id": "csat-sov7-cada-ua2-e",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A extracts no explicit cybersecurity-certification criterion; routes to SOV-7, inheritance-only per CLAUDE.md."
+    },
+    {
+      "id": "xw-0065",
+      "source_id": "csat-sov3-cada-ua2-f",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A predates AI-specific criteria entirely; no criterion restricts AI training on customer-derived data."
+    },
+    {
+      "id": "xw-0066",
+      "source_id": "csat-sov1-cada-ua2-g",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-03-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Third-country control test is the same core 'who effectively controls the entity' concept C3A's SOV-1-03 addresses; CADA's sub-conditions (i-iv) are additional detail, not a different concept."
+    },
+    {
+      "id": "xw-0067",
+      "source_id": "csat-sov4-cada-ua2-h",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-02-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Admin-access-location requirement covers part of 'no support outside the trusted region'; CADA's (h) is broader, covering all support/maintenance/monitoring/incident-response."
+    },
+    {
+      "id": "xw-0068",
+      "source_id": "csat-sov5-cada-ua2-i",
+      "source_framework": "CADA",
+      "target_id": "csat-sov5-01-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Software inventory/dependency documentation overlaps substantially with SBOM+dependency-list, but CADA additionally requires remote-tamper controls and source-code audits C3A doesn't."
+    },
+    {
+      "id": "xw-0069",
+      "source_id": "csat-sov6-cada-ua2-j",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-06-c",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "General third-party software risk analysis is thematically adjacent; C3A has no open-source-specific tamper-control requirement."
+    },
+    {
+      "id": "xw-0070",
+      "source_id": "csat-sov2-cada-ua2-k",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-03-c1",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "Both concern corporate-structure sovereignty (control), but CADA's specific subsidiary-separation mechanism has no direct C3A analog."
+    },
+    {
+      "id": "xw-0071",
+      "source_id": "csat-sov2-cada-ua3-a",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-02-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Provider/subcontractor establishment in the trusted region is a direct match for registered head office there."
+    },
+    {
+      "id": "xw-0072",
+      "source_id": "csat-sov2-cada-ua3-b",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "The personnel-location component matches C3A's citizen/resident requirement; the infrastructure/assets component has no C3A analog."
+    },
+    {
+      "id": "xw-0073",
+      "source_id": "csat-sov3-cada-ua3-c",
+      "source_framework": "CADA",
+      "target_id": "csat-sov3-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim."
+    },
+    {
+      "id": "xw-0074",
+      "source_id": "csat-sov4-cada-ua3-d",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Personnel citizenship/residency is the same core requirement; CADA's UA levels add a security-clearance nuance C3A doesn't have."
+    },
+    {
+      "id": "xw-0075",
+      "source_id": "csat-sov7-cada-ua3-e",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A extracts no explicit cybersecurity-certification criterion; routes to SOV-7, inheritance-only per CLAUDE.md."
+    },
+    {
+      "id": "xw-0076",
+      "source_id": "csat-sov3-cada-ua3-f",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A predates AI-specific criteria entirely; no criterion restricts AI training on customer-derived data."
+    },
+    {
+      "id": "xw-0077",
+      "source_id": "csat-sov1-cada-ua3-g",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-03-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Third-country control test is the same core 'who effectively controls the entity' concept C3A's SOV-1-03 addresses; CADA's sub-conditions (i-iv) are additional detail, not a different concept."
+    },
+    {
+      "id": "xw-0078",
+      "source_id": "csat-sov4-cada-ua3-h",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-02-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Admin-access-location requirement covers part of 'no support outside the trusted region'; CADA's (h) is broader, covering all support/maintenance/monitoring/incident-response."
+    },
+    {
+      "id": "xw-0079",
+      "source_id": "csat-sov5-cada-ua3-i",
+      "source_framework": "CADA",
+      "target_id": "csat-sov5-01-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Software inventory/dependency documentation overlaps substantially with SBOM+dependency-list, but CADA additionally requires remote-tamper controls and source-code audits C3A doesn't."
+    },
+    {
+      "id": "xw-0080",
+      "source_id": "csat-sov6-cada-ua3-j",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-06-c",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "General third-party software risk analysis is thematically adjacent; C3A has no open-source-specific tamper-control requirement."
+    },
+    {
+      "id": "xw-0081",
+      "source_id": "csat-sov2-cada-ua3-k",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-03-c1",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "Both concern corporate-structure sovereignty (control), but CADA's specific subsidiary-separation mechanism has no direct C3A analog."
+    },
+    {
+      "id": "xw-0082",
+      "source_id": "csat-sov2-cada-ua4-a",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-02-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Provider/subcontractor establishment in the trusted region is a direct match for registered head office there."
+    },
+    {
+      "id": "xw-0083",
+      "source_id": "csat-sov2-cada-ua4-b",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "The personnel-location component matches C3A's citizen/resident requirement; the infrastructure/assets component has no C3A analog."
+    },
+    {
+      "id": "xw-0084",
+      "source_id": "csat-sov3-cada-ua4-c",
+      "source_framework": "CADA",
+      "target_id": "csat-sov3-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim."
+    },
+    {
+      "id": "xw-0085",
+      "source_id": "csat-sov4-cada-ua4-d",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-01-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Personnel citizenship/residency is the same core requirement; CADA's UA levels add a security-clearance nuance C3A doesn't have."
+    },
+    {
+      "id": "xw-0086",
+      "source_id": "csat-sov7-cada-ua4-e",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A extracts no explicit cybersecurity-certification criterion; routes to SOV-7, inheritance-only per CLAUDE.md."
+    },
+    {
+      "id": "xw-0087",
+      "source_id": "csat-sov3-cada-ua4-f",
+      "source_framework": "CADA",
+      "target_id": null,
+      "target_framework": null,
+      "relation": "no_counterpart",
+      "justification": "C3A predates AI-specific criteria entirely; no criterion restricts AI training on customer-derived data."
+    },
+    {
+      "id": "xw-0088",
+      "source_id": "csat-sov1-cada-ua4-g",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-03-c1",
+      "target_framework": "C3A",
+      "relation": "equivalent",
+      "justification": "Third-country control test is the same core 'who effectively controls the entity' concept C3A's SOV-1-03 addresses; CADA's sub-conditions (i-iv) are additional detail, not a different concept."
+    },
+    {
+      "id": "xw-0089",
+      "source_id": "csat-sov4-cada-ua4-h",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-02-c1",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Admin-access-location requirement covers part of 'no support outside the trusted region'; CADA's (h) is broader, covering all support/maintenance/monitoring/incident-response."
+    },
+    {
+      "id": "xw-0090",
+      "source_id": "csat-sov5-cada-ua4-i",
+      "source_framework": "CADA",
+      "target_id": "csat-sov5-01-c",
+      "target_framework": "C3A",
+      "relation": "partially_covers",
+      "justification": "Software inventory/dependency documentation overlaps substantially with SBOM+dependency-list, but CADA additionally requires remote-tamper controls and source-code audits C3A doesn't."
+    },
+    {
+      "id": "xw-0091",
+      "source_id": "csat-sov6-cada-ua4-j",
+      "source_framework": "CADA",
+      "target_id": "csat-sov4-06-c",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "General third-party software risk analysis is thematically adjacent; C3A has no open-source-specific tamper-control requirement."
+    },
+    {
+      "id": "xw-0092",
+      "source_id": "csat-sov2-cada-ua4-k",
+      "source_framework": "CADA",
+      "target_id": "csat-sov1-03-c1",
+      "target_framework": "C3A",
+      "relation": "related",
+      "justification": "Both concern corporate-structure sovereignty (control), but CADA's specific subsidiary-separation mechanism has no direct C3A analog."
+    },
+    {
+      "id": "xw-0093",
+      "source_id": "csat-sov3-cada-ua2-f",
+      "source_framework": "CADA",
+      "target_id": "csat-sov3-ecsf-04",
+      "target_framework": "ECSF",
+      "relation": "subsumed_by",
+      "justification": "CADA's narrow 'no AI training on customer data' rule is one specific instance of ECSF's broader 'AI models/pipelines under trusted-region control' factor — CADA's requirement is subsumed by ECSF's broader ask."
+    },
+    {
+      "id": "xw-0094",
+      "source_id": "csat-sov3-cada-ua3-f",
+      "source_framework": "CADA",
+      "target_id": "csat-sov3-ecsf-04",
+      "target_framework": "ECSF",
+      "relation": "subsumed_by",
+      "justification": "Same relationship as the UA-2 instance of this criterion (identical requirement text)."
+    },
+    {
+      "id": "xw-0095",
+      "source_id": "csat-sov3-cada-ua4-f",
+      "source_framework": "CADA",
+      "target_id": "csat-sov3-ecsf-04",
+      "target_framework": "ECSF",
+      "relation": "subsumed_by",
+      "justification": "Same relationship as the UA-2 instance of this criterion (identical requirement text)."
+    },
+    {
+      "id": "xw-0096",
+      "source_id": "csat-sov6-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov6-cada-ua2-j",
+      "target_framework": "CADA",
+      "relation": "related",
+      "justification": "Both concern open-source software, but ECSF asks about licensing/audit-modify-redistribute rights while CADA(j) asks about remote-tamper-prevention controls — different specific asks under the same theme."
+    },
+    {
+      "id": "xw-0097",
+      "source_id": "csat-sov1-ecsf-02",
+      "source_framework": "ECSF",
+      "target_id": "csat-sov1-cada-ua2-g",
+      "target_framework": "CADA",
+      "relation": "related",
+      "justification": "Both concern control-change risk, but ECSF's factor is a general 'assurances against change of control' while CADA(g) is specifically about third-country control."
+    }
+  ]
+}

@@ -131,6 +131,11 @@
       "description": "Base weight before outcome-derived domain weighting and renormalization for suppressed controls.",
       "exclusiveMinimum": 0
     },
+    "addressed_party": {
+      "type": "string",
+      "description": "Phase 3 addition: who this control's obligation falls on. Absent (the default, unchanged for all pre-existing records) means the usual provider/responsibility-map party. government_self marks obligations CADA places on the assessing government/public sector body directly (e.g. its own risk-assessment or procurement duties), independent of any provider's posture — these are assessed the same way regardless of Axis A/B deployment choice.",
+      "enum": ["provider", "government_self"]
+    },
     "needs_review": {
       "type": "boolean",
       "description": "Set true whenever extraction is ambiguous. Never guess (working rule 2).",

@@ -1,0 +1,245 @@
+{
+  "note": "SOV-7 (inheritance-only) and SOV-8 (out of scope) are not included — see DECISIONS.md and CLAUDE.md for why. This ladder is Phase 3 input for Phase 5's scoring-ceiling design, not itself a scoring formula.",
+  "domains": [
+    {
+      "sov_domain": "SOV-1",
+      "cells": [
+        {
+          "seal": 0,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 1,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 2,
+          "cada_ua": "UA-1",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-2 ('autonomous in organization, not technical choices; loses updates/patches on disconnect') describes a weak baseline closest to UA-1's self-assessed establishment/control bar, not yet UA-2's audited non-control test. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        },
+        {
+          "seal": 3,
+          "cada_ua": "UA-2",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-3 ('access to roadmap, complete continuity guarantee') is stronger than SEAL-2 but short of full independence — closest to UA-2's audited (but not yet fully independent) control posture. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        },
+        {
+          "seal": 4,
+          "cada_ua": "UA-4",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-4 ('decision-making centres exclusively in the trusted region') matches CADA's strictest 'not subject to third-country control' bar (UA-3/UA-4's (g)); UA-4 chosen as ECSF's own ceiling framing is at the trusted-region level, not a further nation-specific tightening C3A's C2 would represent. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        }
+      ]
+    },
+    {
+      "sov_domain": "SOV-2",
+      "cells": [
+        {
+          "seal": 0,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 1,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 2,
+          "cada_ua": "UA-1",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-2 ('isolation via separate entities, limited export-control exposure') is a partial-mitigation posture, closest to UA-1's baseline establishment/traceability bar. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        },
+        {
+          "seal": 3,
+          "cada_ua": "UA-2",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-3 ('complete insulation from outside-region legislation') aligns with UA-2's audited non-EU-law-exposure criteria, a step beyond UA-1's self-assessment. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        },
+        {
+          "seal": 4,
+          "cada_ua": "UA-3",
+          "c3a_localization": "C2",
+          "confidence": "inferred",
+          "justification": "SEAL-4 ('operations designed and carried out exclusively in the trusted region, protection of international institutions') matches UA-3's stricter operational-exclusivity bar (personnel citizenship + Union residency) more than UA-2's. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        }
+      ]
+    },
+    {
+      "sov_domain": "SOV-3",
+      "cells": [
+        {
+          "seal": 0,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 1,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 2,
+          "cada_ua": "UA-1",
+          "c3a_localization": null,
+          "confidence": "inferred",
+          "justification": "SEAL-2 ('full control of data, encryption control, localization, deletion guarantee, logs available') matches C3A's baseline customer-key-control/data-residency criteria, closest to UA-1's self-assessed data-residency bar (CADA (c))."
+        },
+        {
+          "seal": 3,
+          "cada_ua": "UA-3",
+          "c3a_localization": null,
+          "confidence": "source_anchored",
+          "justification": "SEAL-3 explicitly names 'real time in the {TRUSTED_REGION}' logging, matching CADA UA-3(c)'s stricter customer-data residency (extended to metadata/telemetry, no exceptions) and the real-time-logging emphasis in ECSF's own SOV-3 factors (csat-sov3-ecsf-02)."
+        },
+        {
+          "seal": 4,
+          "cada_ua": "UA-4",
+          "c3a_localization": null,
+          "confidence": "source_anchored",
+          "justification": "SEAL-4's 'immutability of logs, audits carried out by {TRUSTED_REGION} teams' matches CADA UA-4(c)'s sensitivity-classified data residency (the strictest tier, following a risk assessment) and C3A's real-time/immutable logging aspirations in the SOV-3-04 family."
+        }
+      ]
+    },
+    {
+      "sov_domain": "SOV-4",
+      "cells": [
+        {
+          "seal": 0,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 1,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 2,
+          "cada_ua": "UA-1",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-2 ('operations carried out locally, expertise from outside the region may be necessary') is a partial-localization posture, matching UA-1's baseline outsourcing-governance bar (CADA (d)) rather than UA-2's stricter personnel-citizenship requirement. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        },
+        {
+          "seal": 3,
+          "cada_ua": "UA-2",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-3 ('availability of expertise in the trusted region including subcontractors, processes documented locally') aligns with UA-2's personnel-screening/citizenship bar (CADA (d)), a step beyond UA-1's outsourcing-governance-only requirement. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        },
+        {
+          "seal": 4,
+          "cada_ua": "UA-4",
+          "c3a_localization": "C2",
+          "confidence": "inferred",
+          "justification": "SEAL-4 ('complete regional autonomy including security clearances, integration of subcontractor skills') matches UA-4's strictest personnel-citizenship-plus-security-clearance bar (CADA (d)), the same criterion family C3A's own C2/nation-specific SOV-4-01/02 tier targets. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        }
+      ]
+    },
+    {
+      "sov_domain": "SOV-5",
+      "cells": [
+        {
+          "seal": 0,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 1,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 2,
+          "cada_ua": "UA-1",
+          "c3a_localization": "C1",
+          "confidence": "inferred",
+          "justification": "SEAL-2 ('majority of supply chains documented, deployments local, critical suppliers auditable') matches a baseline supply-chain-documentation posture; CADA has no UA-1-level supply-chain criterion, so this is inferred from C3A's own baseline supply-chain documentation criteria (SOV-5-01/02/03) rather than a CADA anchor. C3A's C1/C2 is a localization-SCOPE axis (trusted-region vs. nation-specific), not a strictness ladder like SEAL/UA — this cell is offered as a plausible correspondence, not a source-anchored equivalence; no source text directly equates a C1/C2 tier to a specific SEAL number."
+        },
+        {
+          "seal": 3,
+          "cada_ua": "UA-2",
+          "c3a_localization": null,
+          "confidence": "inferred",
+          "justification": "SEAL-3 ('majority of services designed in the trusted region, no subcontractors in critical services') aligns with CADA UA-2(i)'s SBOM/dependency-transparency bar, a step beyond bare documentation."
+        },
+        {
+          "seal": 4,
+          "cada_ua": "UA-4",
+          "c3a_localization": null,
+          "confidence": "inferred",
+          "justification": "SEAL-4 ('trusted-region-certified components, no dependence on outside-region suppliers, complete auditability') matches CADA UA-4(i)'s strictest 'retain effective control over software components' bar, the top of the supply-chain criteria progression."
+        }
+      ]
+    },
+    {
+      "sov_domain": "SOV-6",
+      "cells": [
+        {
+          "seal": 0,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 1,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "The ECSF Implementation Guidance provides no per-domain text for SEAL-0/SEAL-1 (only the generic, cross-domain SEAL level definitions exist) — no domain-specific source to anchor a mapping against."
+        },
+        {
+          "seal": 2,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "SEAL-2 ('partially interoperable, HPC hosted on-premises') has no CADA UA analog — CADA's SOV-6 criterion (j) addresses only open-source tamper-controls, not interoperability/HPC generally; no source text supports a specific UA-level correspondence for this cell."
+        },
+        {
+          "seal": 3,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "SEAL-3 ('trusted-region and public standards, open-source majority/contributors') similarly has no CADA UA analog for the same reason — CADA's (j) is narrower in scope than ECSF's SOV-6 factors."
+        },
+        {
+          "seal": 4,
+          "cada_ua": null,
+          "c3a_localization": null,
+          "confidence": "no_mapping",
+          "justification": "SEAL-4 ('full compliance: open AI, public standard, open source') has no CADA UA analog; CADA's SOV-6 criterion doesn't scale a general open-standards/interoperability requirement across UA levels the way ECSF's SEAL scale does."
+        }
+      ]
+    }
+  ]
+}

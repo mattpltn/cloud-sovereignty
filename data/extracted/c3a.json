@@ -400,9 +400,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
+    "needs_review": false,
     "localization_level": "C1",
-    "needs_review_note": "Spans legal_jurisdiction (the right to take over), facility (physical assets), and operations_personnel (personnel handover); tagged legal_jurisdiction as the primary overarching obligation since the requirement is fundamentally a legal enablement duty. Review whether Phase 4's disposition rules need a multi-layer treatment instead.",
     "generalization_class": "direct"
   },
   {
@@ -438,9 +437,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
+    "needs_review": false,
     "localization_level": "C2",
-    "needs_review_note": "Same multi-layer concern as SOV-2-03-C1 (legal_jurisdiction / facility / operations_personnel); tagged legal_jurisdiction as primary.",
     "generalization_class": "direct"
   },
   {
@@ -874,8 +872,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Logging capability spans data (records of data-access activity) and platform/operations_personnel (who/what performs and hosts the logging); tagged data as the closest fit since the criterion centers on data-access accountability.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -911,8 +908,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -948,8 +944,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Same data/platform ambiguity as SOV-3-04-C.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -1210,8 +1205,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Connectivity-provider redundancy sits between facility (physical network connectivity into the datacenter) and supply_chain_services (connectivity provider as an external supplier relationship, post-D-007 taxonomy); tagged facility as primary since the criterion concerns operational network redundancy at the facility level.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -1247,8 +1241,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Same facility/supply_chain_services ambiguity as SOV-4-03-C.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -1934,8 +1927,7 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
-    "needs_review_note": "Spans all three post-D-007 supply-chain layers (software, hardware, external services) simultaneously — export-restriction risk applies across all of them. Tagged supply_chain_hardware as primary since export-control regimes (e.g. ITAR/EAR-style restrictions) are most classically applied to physical hardware/technology export; software and service dependencies are also in scope per the verbatim text above.",
+    "needs_review": false,
     "generalization_class": "direct"
   },
   {
@@ -1971,9 +1963,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
+    "needs_review": false,
     "localization_level": "C1",
-    "needs_review_note": "Filed under the SOV-5 Supply Chain Sovereignty domain in the source, but content concerns operational capacity-management location, not a supply-chain relationship; tagged platform as the better content-based layer fit. sov_domain (SOV-5) is preserved as given by the source structure; layer is assessed independently per the responsibility-map model.",
     "generalization_class": "direct"
   },
   {
@@ -2009,9 +2000,8 @@
       "independently_audited"
     ],
     "weight": 1.0,
-    "needs_review": true,
+    "needs_review": false,
     "localization_level": "C2",
-    "needs_review_note": "Same domain/layer distinction as SOV-5-05-C1.",
     "generalization_class": "direct"
   },
   {

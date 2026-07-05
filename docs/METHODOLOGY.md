@@ -1045,3 +1045,175 @@ else is mechanically reproducible from `source_text`/verbatim plus the
 ordered R1-R9 rule list alone, which is exactly what
 `check_generalization()`'s equality check verifies on every validator
 run.
+
+## Phase 3 — Master catalog, crosswalk, ladder mapping
+
+Phase 3 does not touch `source_text`, `generalized_text`, or any other
+per-record content in `c3a.json`/`ecsf.json`/`cada.json` — its output is
+purely structural: which records represent the *same* requirement
+across frameworks, one master list of distinct requirements, and a
+best-effort maturity-ladder alignment for Phase 5's scoring design.
+
+### Crosswalk (`data/catalog/crosswalk.json`, `scripts/build_crosswalk.py`)
+
+Five typed relations, each carrying a required, non-empty
+`justification`: `equivalent` (same requirement, different wording),
+`subsumed_by` (source is a narrower instance of a broader target),
+`partially_covers` (target covers part but not all of source's
+substance), `related` (thematically connected, not a coverage claim),
+and `no_counterpart` (nothing in the target framework addresses this).
+Only `equivalent` and `subsumed_by` are identity claims that merge
+records in the master catalog; `partially_covers`/`related` are
+cross-references that keep both records distinct. This split is the
+single most load-bearing modeling decision in Phase 3 — see the
+over-merging bug below.
+
+97 links were built: verifying and correcting all 30 ECSF→C3A hints
+from Phase 2b's unverified `data/extracted/ecsf-c3a-hints.json`
+(several corrected — e.g. `csat-sov1-ecsf-06` redirected to SOV-4
+personnel-continuity criteria rather than the SOV-6 target the
+original hint proposed, since no real SOV-6 counterpart exists for it);
+all 40 CADA Annex II criteria mapped to C3A via two lookup tables
+(`UA1_MAP` for the 7 UA-1-only letters, `UA_SHARED_MAP` for the 11
+letters shared cumulatively across UA-2/3/4); and 5 direct ECSF↔CADA
+links found by comparing text directly, where no C3A intermediary
+existed to carry the relationship.
+
+Relation counts: 37 `equivalent`, 29 `partially_covers`, 16
+`no_counterpart`, 12 `related`, 3 `subsumed_by`.
+
+**Two bugs found and fixed during construction, both self-caught before
+commit:**
+
+1. **Backwards `subsumed_by` direction.** The ECSF↔CADA AI-training link
+   was first coded with CADA (the narrower rule) as the `subsumed_by`
+   target and ECSF (the broader factor) as the source — backwards from
+   the relation's own definition, since `subsumed_by` means *the source*
+   is subsumed by *the target*. Fixed by swapping source/target and
+   extending the same relationship to the UA-3/UA-4 instances that were
+   missing (committed as a follow-up commit, not an amendment, per this
+   project's git discipline).
+2. **Over-merging via a shared "equivalent" target.** `csat-sov4-ecsf-04`
+   ("operational support delivered from within the trusted region") was
+   tagged `equivalent` to *two different* C3A criteria —
+   `csat-sov4-01-c1` (personnel citizenship) and `csat-sov4-02-c1`
+   (admin-access location) — which are not themselves equivalent to
+   each other. Union-find transitivity then bridged them into one
+   9-member cluster that wrongly merged "talent pool" and "admin access
+   location" into a single catalog entry. Found by manually inspecting
+   every cluster of size ≥4 after a first catalog build. Fixed by
+   downgrading both of `csat-sov4-ecsf-04`'s relations to
+   `partially_covers` (which, by design, does not trigger a merge).
+
+This second bug is the practical justification for keeping
+`partially_covers`/`related` structurally incapable of merging records:
+an `equivalent` claim is a much stronger commitment than it first
+appears once transitivity is in play, and the fix demonstrates why.
+
+### Master catalog (`data/catalog/catalog.json`, `scripts/build_catalog.py`)
+
+Union-find over the crosswalk's `equivalent`/`subsumed_by` links,
+across all 127 in-scope records (129 total across c3a/ecsf/cada, minus
+2 documented out-of-scope, D-028). `primary_id` per cluster is chosen
+by a fixed precedence — C3A > ECSF > CADA (D-027) — citing CLAUDE.md's
+own "Source frameworks" ordering (C3A as "primary criteria source").
+
+Result: 87 entries from the 127 in-scope c3a/ecsf/cada records (12
+multi-member, 75 single-member) — cluster sizes ranging from 2 up to
+10 (the data-residency cluster). Phase 3's item 5(b) then appended 3
+more singleton entries for `government_self` cada-act.json obligations
+(see below), bringing the total to 90.
+
+### Bounded editorial decisions
+
+- **D-027** fixes the `primary_id` precedence rule itself as its own
+  decision (a structural choice, not a per-record judgment).
+- **D-028** decides each of the 7 ECSF factors with no C3A counterpart
+  individually: 5 included (AI-model trusted-region control,
+  interoperability, open-source rights, and two others), 2 excluded as
+  documented out-of-scope (`data/catalog/out_of_scope.json`) — provider
+  investment/job-creation and regional-strategic-initiative involvement,
+  both judged procurement-economics criteria rather than sovereignty-
+  posture questions the assessing government can act on.
+- **D-026** is one consolidated decision resolving every open
+  layer-related `needs_review` flag across all three frameworks: 26
+  cleared, 6 kept open (5 ECSF, 1 CADA) because a *separate*,
+  non-layer concern remains (coverage-uncovered or `sov_domain`
+  ambiguity) — each of those 6 got its layer-specific note trimmed
+  but was not otherwise touched. Post-Phase-3 `needs_review` counts:
+  `c3a.json` 1 (the pre-existing D-008 erratum), `ecsf.json` 7,
+  `cada.json` 5 — all pre-existing, non-layer concerns this phase
+  deliberately left open.
+- **D-030** adds the `addressed_party` field (`provider` |
+  `government_self`, optional, defaulting to unchanged behavior) and
+  tags 3 `cada-act.json` obligations (Articles 29, 30, 41) as
+  self-directed, each becoming its own singleton catalog entry.
+- **D-031** confirms, without any data change, that SOV-7 is
+  represented end-to-end by exactly 4 CADA-only `inherit` entries
+  (Annex III criterion E, the cybersecurity-certification evidence
+  linkage already present in `cada-evidence.json`) with no C3A/ECSF
+  SOV-7 records to reconcile against.
+
+### Three-ladder mapping (`data/catalog/ladders.json`, `scripts/build_ladders.py`, D-029)
+
+Maps ECSF's SEAL 0-4 scale against C3A's C1/C2 localization tier and
+CADA's UA-1..4 assurance level, per SOV domain (SOV-1..6; SOV-7 is
+inheritance-only and SOV-8 out of scope, so both are excluded). Each
+of the resulting 30 cells (6 domains × 5 SEAL levels) carries a
+confidence tag: `source_anchored`, `inferred`, or `no_mapping` — the
+project's standing "do not force cells the sources don't support"
+instruction is enforced literally: 15 of 30 cells are `no_mapping`.
+
+The build surfaced a structural finding worth stating plainly: SEAL and
+UA are both strictness/maturity ladders (weakest to strongest), but
+C3A's C1/C2 is a *different kind of axis* — localization scope
+(trusted-region-wide vs. nation-specific), orthogonal to strictness. No
+source text ever equates a C1/C2 tier to a specific SEAL/UA number, so
+every `c3a_localization` cell is marked `inferred` with an explicit
+caveat, even in rows where the SEAL↔UA correspondence in the same cell
+is `source_anchored`. SEAL-0/SEAL-1 are `no_mapping` in every domain
+(the ECSF Implementation Guidance has no per-domain text below SEAL-2);
+all of SOV-6 is `no_mapping` (CADA's sole SOV-6 criterion is narrower in
+scope than ECSF's SOV-6 factors, with nothing to anchor a level-by-level
+correspondence against).
+
+Confidence breakdown: 2 `source_anchored`, 13 `inferred`, 15
+`no_mapping`.
+
+### Validator extensions
+
+`check_crosswalk()` validates the new `crosswalk.schema.json` (the one
+new schema this phase authorizes) plus cross-reference resolution
+(source_id/target_id must resolve within their declared framework) and
+non-empty justification. `check_catalog()` is a plain structural check
+(no schema authorized for `catalog.json`, matching the precedent set
+for `cada-act.json` in Phase 2c/D-017): every entry has ≥1 member,
+`primary_id` is one of its own members, every member resolves to a
+known record (including `government_self` cada-act.json ids), no
+record appears in more than one entry, and a no-orphan-records check —
+every c3a/ecsf/cada record must be in some entry's members or in
+`out_of_scope.json` with a `decision_ref`. `check_ladders()` similarly
+validates `ladders.json` structurally: every domain covers SEAL 0-4
+exactly once, every cell's confidence tag is one of the three
+recognized values, `no_mapping` cells assert no `cada_ua`/
+`c3a_localization` value, and every cell carries a non-empty
+justification.
+
+### Statistics
+
+| Artifact | Count |
+|---|---|
+| Crosswalk links | 97 (37 equivalent, 29 partially_covers, 16 no_counterpart, 12 related, 3 subsumed_by) |
+| Catalog entries | 90 (78 single-member, 12 multi-member; cluster sizes 2-10) |
+| In-scope records clustered | 127 (of 129; 2 documented out-of-scope) |
+| Self-directed (`government_self`) entries added | 3 |
+| Ladder cells | 30 (2 source_anchored, 13 inferred, 15 no_mapping) |
+| `needs_review` remaining (all pre-existing, non-layer) | 13 (1 c3a, 7 ecsf, 5 cada) |
+| New DECISIONS entries this phase | 6 (D-027 through D-031, plus D-026 layer adjudication) |
+
+### Validation
+
+Full validator green (9 schemas, 8 draft personas, 129 extracted
+control records, plus the new crosswalk/catalog/ladders checks); `npm
+test` (2 passing, 7 todo) and `npm run typecheck` unaffected — no
+engine/TypeScript changes this phase.

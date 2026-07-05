@@ -26,6 +26,7 @@ PERSONAS_DIR = ROOT / "tests" / "personas"
 EXTRACTED_DIR = ROOT / "data" / "extracted"
 LOCAL_DIR = ROOT / "data" / "local"
 RULES_DIR = ROOT / "data" / "rules"
+CATALOG_DIR = ROOT / "data" / "catalog"
 
 # Residual-literal lint (Phase 2d-i): generalized_text must not contain
 # these literal strings outside an R7 "(source cites: ...)" parenthetical
@@ -670,6 +671,155 @@ def check_cada_act() -> list[str]:
     return errors
 
 
+def check_crosswalk(schemas: dict[str, dict], registry: Registry) -> list[str]:
+    """Phase 3: validates data/catalog/crosswalk.json against
+    crosswalk.schema.json, if present, plus cross-reference checks the
+    schema itself can't express: every source_id/target_id must resolve
+    to a real record in the framework its own source_framework/
+    target_framework names, and every link must carry a non-empty
+    justification (also enforced structurally by the schema's minLength,
+    checked again here with a clearer error message).
+    """
+    errors = []
+    f = CATALOG_DIR / "crosswalk.json"
+    if not f.exists():
+        return errors
+    validator = Draft202012Validator(schemas["crosswalk.schema.json"], registry=registry)
+    data = json.loads(f.read_text())
+    for err in validator.iter_errors(data):
+        errors.append(f"data/catalog/crosswalk.json: {'/'.join(str(p) for p in err.path)}: {err.message}")
+
+    ids_by_framework = {
+        "C3A": {r["id"] for r in json.loads((EXTRACTED_DIR / "c3a.json").read_text())},
+        "ECSF": {r["id"] for r in json.loads((EXTRACTED_DIR / "ecsf.json").read_text())},
+        "CADA": {r["id"] for r in json.loads((EXTRACTED_DIR / "cada.json").read_text())},
+    }
+    for link in data.get("links", []):
+        lid = link.get("id", "?")
+        sfw = link.get("source_framework")
+        if sfw in ids_by_framework and link.get("source_id") not in ids_by_framework[sfw]:
+            errors.append(f"data/catalog/crosswalk.json: link {lid!r} source_id {link.get('source_id')!r} not found in {sfw}")
+        tfw = link.get("target_framework")
+        tid = link.get("target_id")
+        if tid is not None and tfw in ids_by_framework and tid not in ids_by_framework[tfw]:
+            errors.append(f"data/catalog/crosswalk.json: link {lid!r} target_id {tid!r} not found in {tfw}")
+        if not link.get("justification", "").strip():
+            errors.append(f"data/catalog/crosswalk.json: link {lid!r} has no (non-empty) justification")
+
+    return errors
+
+
+def check_catalog() -> list[str]:
+    """Phase 3: structural check for data/catalog/catalog.json (no
+    schema authorized for this file — structure only, per instruction).
+    Every entry must have >=1 member_ids, primary_id must be one of
+    member_ids, and every member_id/primary_id must resolve to a real
+    record in the framework's own extracted file.
+    """
+    errors = []
+    f = CATALOG_DIR / "catalog.json"
+    if not f.exists():
+        return errors
+
+    ids_by_framework = {
+        "C3A": {r["id"] for r in json.loads((EXTRACTED_DIR / "c3a.json").read_text())},
+        "ECSF": {r["id"] for r in json.loads((EXTRACTED_DIR / "ecsf.json").read_text())},
+        "CADA": {r["id"] for r in json.loads((EXTRACTED_DIR / "cada.json").read_text())},
+    }
+    all_known_ids = set().union(*ids_by_framework.values())
+
+    # government_self cada-act.json records (D-030, item 5b) are eligible
+    # catalog members too, even though cada-act.json is excluded from the
+    # orphan check below (its non-self-directed records are reference
+    # material, not controls, and were never in scope for catalog membership).
+    cada_act_file = EXTRACTED_DIR / "cada-act.json"
+    government_self_ids = set()
+    if cada_act_file.exists():
+        government_self_ids = {r["id"] for r in json.loads(cada_act_file.read_text())
+                                if r.get("addressed_party") == "government_self"}
+    all_known_ids |= government_self_ids
+
+    data = json.loads(f.read_text())
+    seen_members = set()
+    for entry in data.get("entries", []):
+        eid = entry.get("id", "?")
+        members = entry.get("member_ids", [])
+        if not members:
+            errors.append(f"data/catalog/catalog.json: entry {eid!r} has no member_ids")
+            continue
+        if entry.get("primary_id") not in members:
+            errors.append(f"data/catalog/catalog.json: entry {eid!r} primary_id not in its own member_ids")
+        for mid in members:
+            if mid not in all_known_ids:
+                errors.append(f"data/catalog/catalog.json: entry {eid!r} member_id {mid!r} does not resolve to any known record")
+            if mid in seen_members:
+                errors.append(f"data/catalog/catalog.json: record {mid!r} appears in more than one catalog entry")
+            seen_members.add(mid)
+
+    # No-orphan-records check: every c3a/ecsf/cada record must appear in
+    # >=1 catalog entry OR be explicitly tagged out-of-scope with a
+    # decision_ref in data/catalog/out_of_scope.json.
+    out_of_scope_file = CATALOG_DIR / "out_of_scope.json"
+    out_of_scope_ids = set()
+    if out_of_scope_file.exists():
+        oos_data = json.loads(out_of_scope_file.read_text())
+        for e in oos_data.get("entries", []):
+            oid = e.get("id", "?")
+            if not e.get("decision_ref", "").strip():
+                errors.append(f"data/catalog/out_of_scope.json: entry {oid!r} has no decision_ref")
+            if oid not in all_known_ids:
+                errors.append(f"data/catalog/out_of_scope.json: entry {oid!r} does not resolve to any known record")
+            out_of_scope_ids.add(oid)
+
+    orphans = all_known_ids - seen_members - out_of_scope_ids
+    for oid in sorted(orphans):
+        errors.append(f"data/catalog/catalog.json: record {oid!r} is an orphan — not in any catalog entry and not tagged out-of-scope")
+
+    return errors
+
+
+def check_ladders() -> list[str]:
+    """Phase 3: structural check for data/catalog/ladders.json (no
+    schema authorized for this file — structure only, per instruction).
+    Every domain must cover SEAL levels 0-4 exactly once each; every
+    cell's confidence must be a recognized tag; every cell must carry a
+    non-empty justification; no_mapping cells must have both cada_ua
+    and c3a_localization null (a cell claiming no mapping exists cannot
+    also assert a specific rung on either ladder).
+    """
+    errors = []
+    f = CATALOG_DIR / "ladders.json"
+    if not f.exists():
+        return errors
+
+    valid_confidence = {"source_anchored", "inferred", "no_mapping"}
+    valid_cada_ua = {None, "UA-1", "UA-2", "UA-3", "UA-4"}
+    valid_c3a_loc = {None, "C1", "C2"}
+
+    data = json.loads(f.read_text())
+    for dom in data.get("domains", []):
+        did = dom.get("sov_domain", "?")
+        cells = dom.get("cells", [])
+        seals_seen = [c.get("seal") for c in cells]
+        if sorted(seals_seen) != [0, 1, 2, 3, 4]:
+            errors.append(f"data/catalog/ladders.json: domain {did!r} does not cover SEAL 0-4 exactly once each (found {seals_seen})")
+        for cell in cells:
+            seal = cell.get("seal")
+            confidence = cell.get("confidence")
+            if confidence not in valid_confidence:
+                errors.append(f"data/catalog/ladders.json: domain {did!r} SEAL-{seal} has invalid confidence {confidence!r}")
+            if cell.get("cada_ua") not in valid_cada_ua:
+                errors.append(f"data/catalog/ladders.json: domain {did!r} SEAL-{seal} has invalid cada_ua {cell.get('cada_ua')!r}")
+            if cell.get("c3a_localization") not in valid_c3a_loc:
+                errors.append(f"data/catalog/ladders.json: domain {did!r} SEAL-{seal} has invalid c3a_localization {cell.get('c3a_localization')!r}")
+            if not cell.get("justification", "").strip():
+                errors.append(f"data/catalog/ladders.json: domain {did!r} SEAL-{seal} has no (non-empty) justification")
+            if confidence == "no_mapping" and (cell.get("cada_ua") is not None or cell.get("c3a_localization") is not None):
+                errors.append(f"data/catalog/ladders.json: domain {did!r} SEAL-{seal} is tagged no_mapping but asserts a cada_ua/c3a_localization value")
+
+    return errors
+
+
 def main() -> int:
     schemas, registry = load_schemas()
 
@@ -690,6 +840,9 @@ def main() -> int:
     errors.extend(check_cada_act())
     errors.extend(check_overrides_have_notes())
     errors.extend(check_generalization())
+    errors.extend(check_crosswalk(schemas, registry))
+    errors.extend(check_catalog())
+    errors.extend(check_ladders())
 
     print(f"Schemas checked: {len(schemas)}")
     print(f"Personas checked: {draft_count + approved_count} ({draft_count} draft, {approved_count} approved)")

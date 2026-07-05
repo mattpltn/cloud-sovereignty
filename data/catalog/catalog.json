@@ -1,0 +1,1032 @@
+{
+  "entries": [
+    {
+      "id": "cat-0001",
+      "primary_id": "csat-sov1-01-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-1",
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov1-01-c1",
+        "csat-sov1-01-c2",
+        "csat-sov2-ecsf-01"
+      ]
+    },
+    {
+      "id": "cat-0002",
+      "primary_id": "csat-sov1-02-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-1",
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov1-02-c1",
+        "csat-sov2-cada-ua1-a",
+        "csat-sov2-cada-ua2-a",
+        "csat-sov2-cada-ua3-a",
+        "csat-sov2-cada-ua4-a"
+      ]
+    },
+    {
+      "id": "cat-0003",
+      "primary_id": "csat-sov1-02-c2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-1"
+      ],
+      "member_ids": [
+        "csat-sov1-02-c2"
+      ]
+    },
+    {
+      "id": "cat-0004",
+      "primary_id": "csat-sov1-03-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-1"
+      ],
+      "member_ids": [
+        "csat-sov1-03-c1",
+        "csat-sov1-03-c2",
+        "csat-sov1-cada-ua2-g",
+        "csat-sov1-cada-ua3-g",
+        "csat-sov1-cada-ua4-g",
+        "csat-sov1-ecsf-01"
+      ]
+    },
+    {
+      "id": "cat-0005",
+      "primary_id": "csat-sov1-04-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-1"
+      ],
+      "member_ids": [
+        "csat-sov1-04-c",
+        "csat-sov1-ecsf-02"
+      ]
+    },
+    {
+      "id": "cat-0006",
+      "primary_id": "csat-sov1-ecsf-03",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-1"
+      ],
+      "member_ids": [
+        "csat-sov1-ecsf-03"
+      ]
+    },
+    {
+      "id": "cat-0007",
+      "primary_id": "csat-sov1-ecsf-06",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-1"
+      ],
+      "member_ids": [
+        "csat-sov1-ecsf-06"
+      ]
+    },
+    {
+      "id": "cat-0008",
+      "primary_id": "csat-sov2-01-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-01-c",
+        "csat-sov2-ecsf-02"
+      ]
+    },
+    {
+      "id": "cat-0009",
+      "primary_id": "csat-sov2-02-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-02-c1"
+      ]
+    },
+    {
+      "id": "cat-0010",
+      "primary_id": "csat-sov2-02-c2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-02-c2"
+      ]
+    },
+    {
+      "id": "cat-0011",
+      "primary_id": "csat-sov2-03-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-03-c1"
+      ]
+    },
+    {
+      "id": "cat-0012",
+      "primary_id": "csat-sov2-03-c2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-03-c2"
+      ]
+    },
+    {
+      "id": "cat-0013",
+      "primary_id": "csat-sov2-cada-ua1-b",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua1-b"
+      ]
+    },
+    {
+      "id": "cat-0014",
+      "primary_id": "csat-sov2-cada-ua1-g",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua1-g"
+      ]
+    },
+    {
+      "id": "cat-0015",
+      "primary_id": "csat-sov2-cada-ua2-b",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua2-b"
+      ]
+    },
+    {
+      "id": "cat-0016",
+      "primary_id": "csat-sov2-cada-ua2-k",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua2-k"
+      ]
+    },
+    {
+      "id": "cat-0017",
+      "primary_id": "csat-sov2-cada-ua3-b",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua3-b"
+      ]
+    },
+    {
+      "id": "cat-0018",
+      "primary_id": "csat-sov2-cada-ua3-k",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua3-k"
+      ]
+    },
+    {
+      "id": "cat-0019",
+      "primary_id": "csat-sov2-cada-ua4-b",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua4-b"
+      ]
+    },
+    {
+      "id": "cat-0020",
+      "primary_id": "csat-sov2-cada-ua4-k",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-cada-ua4-k"
+      ]
+    },
+    {
+      "id": "cat-0021",
+      "primary_id": "csat-sov2-ecsf-03",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-ecsf-03"
+      ]
+    },
+    {
+      "id": "cat-0022",
+      "primary_id": "csat-sov2-ecsf-04",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-ecsf-04"
+      ]
+    },
+    {
+      "id": "cat-0023",
+      "primary_id": "csat-sov2-ecsf-05",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-2"
+      ],
+      "member_ids": [
+        "csat-sov2-ecsf-05"
+      ]
+    },
+    {
+      "id": "cat-0024",
+      "primary_id": "csat-sov3-01-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-01-c1",
+        "csat-sov3-01-c2",
+        "csat-sov3-01-c3",
+        "csat-sov3-01-c4",
+        "csat-sov3-01-c5",
+        "csat-sov3-cada-ua1-c",
+        "csat-sov3-cada-ua2-c",
+        "csat-sov3-cada-ua3-c",
+        "csat-sov3-cada-ua4-c",
+        "csat-sov3-ecsf-03"
+      ]
+    },
+    {
+      "id": "cat-0025",
+      "primary_id": "csat-sov3-02-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-02-ac",
+        "csat-sov3-02-c",
+        "csat-sov3-ecsf-01"
+      ]
+    },
+    {
+      "id": "cat-0026",
+      "primary_id": "csat-sov3-03-ac1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-03-ac1"
+      ]
+    },
+    {
+      "id": "cat-0027",
+      "primary_id": "csat-sov3-03-ac2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-03-ac2"
+      ]
+    },
+    {
+      "id": "cat-0028",
+      "primary_id": "csat-sov3-03-ac3",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-03-ac3"
+      ]
+    },
+    {
+      "id": "cat-0029",
+      "primary_id": "csat-sov3-03-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-03-c"
+      ]
+    },
+    {
+      "id": "cat-0030",
+      "primary_id": "csat-sov3-04-ac1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-04-ac1"
+      ]
+    },
+    {
+      "id": "cat-0031",
+      "primary_id": "csat-sov3-04-ac2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-04-ac2"
+      ]
+    },
+    {
+      "id": "cat-0032",
+      "primary_id": "csat-sov3-04-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-04-c"
+      ]
+    },
+    {
+      "id": "cat-0033",
+      "primary_id": "csat-sov3-05-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-05-c"
+      ]
+    },
+    {
+      "id": "cat-0034",
+      "primary_id": "csat-sov3-ecsf-04",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-cada-ua2-f",
+        "csat-sov3-cada-ua3-f",
+        "csat-sov3-cada-ua4-f",
+        "csat-sov3-ecsf-04"
+      ]
+    },
+    {
+      "id": "cat-0035",
+      "primary_id": "csat-sov3-ecsf-02",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-3"
+      ],
+      "member_ids": [
+        "csat-sov3-ecsf-02"
+      ]
+    },
+    {
+      "id": "cat-0036",
+      "primary_id": "csat-sov4-01-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-01-c1",
+        "csat-sov4-01-c2",
+        "csat-sov4-01-c3",
+        "csat-sov4-cada-ua2-d",
+        "csat-sov4-cada-ua3-d",
+        "csat-sov4-cada-ua4-d",
+        "csat-sov4-ecsf-03"
+      ]
+    },
+    {
+      "id": "cat-0037",
+      "primary_id": "csat-sov4-02-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-02-c1"
+      ]
+    },
+    {
+      "id": "cat-0038",
+      "primary_id": "csat-sov4-02-c2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-02-c2"
+      ]
+    },
+    {
+      "id": "cat-0039",
+      "primary_id": "csat-sov4-03-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-03-ac"
+      ]
+    },
+    {
+      "id": "cat-0040",
+      "primary_id": "csat-sov4-03-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-03-c"
+      ]
+    },
+    {
+      "id": "cat-0041",
+      "primary_id": "csat-sov4-04-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-04-c1"
+      ]
+    },
+    {
+      "id": "cat-0042",
+      "primary_id": "csat-sov4-04-c2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-04-c2"
+      ]
+    },
+    {
+      "id": "cat-0043",
+      "primary_id": "csat-sov4-05-ac1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-05-ac1"
+      ]
+    },
+    {
+      "id": "cat-0044",
+      "primary_id": "csat-sov4-05-ac2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-05-ac2"
+      ]
+    },
+    {
+      "id": "cat-0045",
+      "primary_id": "csat-sov4-05-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-05-c"
+      ]
+    },
+    {
+      "id": "cat-0046",
+      "primary_id": "csat-sov4-06-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-06-c"
+      ]
+    },
+    {
+      "id": "cat-0047",
+      "primary_id": "csat-sov4-07-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-07-c"
+      ]
+    },
+    {
+      "id": "cat-0048",
+      "primary_id": "csat-sov4-08-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-08-ac"
+      ]
+    },
+    {
+      "id": "cat-0049",
+      "primary_id": "csat-sov4-08-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4",
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov4-08-c",
+        "csat-sov6-ecsf-03"
+      ]
+    },
+    {
+      "id": "cat-0050",
+      "primary_id": "csat-sov4-09-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-09-ac"
+      ]
+    },
+    {
+      "id": "cat-0051",
+      "primary_id": "csat-sov4-09-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-09-c"
+      ]
+    },
+    {
+      "id": "cat-0052",
+      "primary_id": "csat-sov4-10-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-10-c"
+      ]
+    },
+    {
+      "id": "cat-0053",
+      "primary_id": "csat-sov4-cada-ua1-d",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-cada-ua1-d"
+      ]
+    },
+    {
+      "id": "cat-0054",
+      "primary_id": "csat-sov4-cada-ua2-h",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-cada-ua2-h"
+      ]
+    },
+    {
+      "id": "cat-0055",
+      "primary_id": "csat-sov4-cada-ua3-h",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-cada-ua3-h"
+      ]
+    },
+    {
+      "id": "cat-0056",
+      "primary_id": "csat-sov4-cada-ua4-h",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-cada-ua4-h"
+      ]
+    },
+    {
+      "id": "cat-0057",
+      "primary_id": "csat-sov4-ecsf-01",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-ecsf-01"
+      ]
+    },
+    {
+      "id": "cat-0058",
+      "primary_id": "csat-sov4-ecsf-02",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-ecsf-02"
+      ]
+    },
+    {
+      "id": "cat-0059",
+      "primary_id": "csat-sov4-ecsf-04",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-ecsf-04"
+      ]
+    },
+    {
+      "id": "cat-0060",
+      "primary_id": "csat-sov6-01-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-4",
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov4-ecsf-05",
+        "csat-sov6-01-c"
+      ]
+    },
+    {
+      "id": "cat-0061",
+      "primary_id": "csat-sov4-ecsf-06",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-4"
+      ],
+      "member_ids": [
+        "csat-sov4-ecsf-06"
+      ]
+    },
+    {
+      "id": "cat-0062",
+      "primary_id": "csat-sov5-01-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-01-ac"
+      ]
+    },
+    {
+      "id": "cat-0063",
+      "primary_id": "csat-sov5-01-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-01-c",
+        "csat-sov5-02-c",
+        "csat-sov5-03-c",
+        "csat-sov5-ecsf-01",
+        "csat-sov5-ecsf-03",
+        "csat-sov5-ecsf-05"
+      ]
+    },
+    {
+      "id": "cat-0064",
+      "primary_id": "csat-sov5-02-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-02-ac"
+      ]
+    },
+    {
+      "id": "cat-0065",
+      "primary_id": "csat-sov5-03-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-03-ac"
+      ]
+    },
+    {
+      "id": "cat-0066",
+      "primary_id": "csat-sov5-04-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-04-c"
+      ]
+    },
+    {
+      "id": "cat-0067",
+      "primary_id": "csat-sov5-05-c1",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-05-c1"
+      ]
+    },
+    {
+      "id": "cat-0068",
+      "primary_id": "csat-sov5-05-c2",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-05-c2"
+      ]
+    },
+    {
+      "id": "cat-0069",
+      "primary_id": "csat-sov5-cada-ua1-f",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-cada-ua1-f"
+      ]
+    },
+    {
+      "id": "cat-0070",
+      "primary_id": "csat-sov5-cada-ua2-i",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-cada-ua2-i"
+      ]
+    },
+    {
+      "id": "cat-0071",
+      "primary_id": "csat-sov5-cada-ua3-i",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-cada-ua3-i"
+      ]
+    },
+    {
+      "id": "cat-0072",
+      "primary_id": "csat-sov5-cada-ua4-i",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-cada-ua4-i"
+      ]
+    },
+    {
+      "id": "cat-0073",
+      "primary_id": "csat-sov5-ecsf-02",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-ecsf-02"
+      ]
+    },
+    {
+      "id": "cat-0074",
+      "primary_id": "csat-sov5-ecsf-04",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-5"
+      ],
+      "member_ids": [
+        "csat-sov5-ecsf-04"
+      ]
+    },
+    {
+      "id": "cat-0075",
+      "primary_id": "csat-sov6-02-ac",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-02-ac"
+      ]
+    },
+    {
+      "id": "cat-0076",
+      "primary_id": "csat-sov6-02-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-02-c"
+      ]
+    },
+    {
+      "id": "cat-0077",
+      "primary_id": "csat-sov6-03-c",
+      "primary_framework": "C3A",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-03-c"
+      ]
+    },
+    {
+      "id": "cat-0078",
+      "primary_id": "csat-sov6-cada-ua2-j",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-cada-ua2-j"
+      ]
+    },
+    {
+      "id": "cat-0079",
+      "primary_id": "csat-sov6-cada-ua3-j",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-cada-ua3-j"
+      ]
+    },
+    {
+      "id": "cat-0080",
+      "primary_id": "csat-sov6-cada-ua4-j",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-cada-ua4-j"
+      ]
+    },
+    {
+      "id": "cat-0081",
+      "primary_id": "csat-sov6-ecsf-01",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-ecsf-01"
+      ]
+    },
+    {
+      "id": "cat-0082",
+      "primary_id": "csat-sov6-ecsf-02",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-ecsf-02"
+      ]
+    },
+    {
+      "id": "cat-0083",
+      "primary_id": "csat-sov6-ecsf-04",
+      "primary_framework": "ECSF",
+      "sov_domains": [
+        "SOV-6"
+      ],
+      "member_ids": [
+        "csat-sov6-ecsf-04"
+      ]
+    },
+    {
+      "id": "cat-0084",
+      "primary_id": "csat-sov7-cada-ua1-e",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-7"
+      ],
+      "member_ids": [
+        "csat-sov7-cada-ua1-e"
+      ]
+    },
+    {
+      "id": "cat-0085",
+      "primary_id": "csat-sov7-cada-ua2-e",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-7"
+      ],
+      "member_ids": [
+        "csat-sov7-cada-ua2-e"
+      ]
+    },
+    {
+      "id": "cat-0086",
+      "primary_id": "csat-sov7-cada-ua3-e",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-7"
+      ],
+      "member_ids": [
+        "csat-sov7-cada-ua3-e"
+      ]
+    },
+    {
+      "id": "cat-0087",
+      "primary_id": "csat-sov7-cada-ua4-e",
+      "primary_framework": "CADA",
+      "sov_domains": [
+        "SOV-7"
+      ],
+      "member_ids": [
+        "csat-sov7-cada-ua4-e"
+      ]
+    },
+    {
+      "id": "cat-0088",
+      "primary_id": "cada-act-art29-risk-assessments",
+      "primary_framework": "CADA",
+      "sov_domains": [],
+      "member_ids": [
+        "cada-act-art29-risk-assessments"
+      ]
+    },
+    {
+      "id": "cat-0089",
+      "primary_id": "cada-act-art30-public-procurement",
+      "primary_framework": "CADA",
+      "sov_domains": [],
+      "member_ids": [
+        "cada-act-art30-public-procurement"
+      ]
+    },
+    {
+      "id": "cat-0090",
+      "primary_id": "cada-act-art41-open-source-first",
+      "primary_framework": "CADA",
+      "sov_domains": [],
+      "member_ids": [
+        "cada-act-art41-open-source-first"
+      ]
+    }
+  ]
+}

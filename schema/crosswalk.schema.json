@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://csat.example/schema/crosswalk.schema.json",
+  "title": "Cross-framework crosswalk",
+  "description": "Phase 3: verified relationships between control records across C3A, ECSF, and CADA. A separate linking artifact — does not modify or duplicate any record in c3a.json/ecsf.json/cada.json. Supersedes the unverified data/extracted/ecsf-c3a-hints.json (Phase 2b), which stays as a historical artifact documenting the pre-verification starting point.",
+  "type": "object",
+  "properties": {
+    "links": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/link" }
+    }
+  },
+  "required": ["links"],
+  "additionalProperties": false,
+  "$defs": {
+    "link": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable link identifier, e.g. xw-0001."
+        },
+        "source_id": {
+          "type": "string",
+          "description": "Control record id this link is FROM (an ECSF or CADA id in this phase's scope)."
+        },
+        "source_framework": {
+          "type": "string",
+          "enum": ["C3A", "ECSF", "CADA"]
+        },
+        "target_id": {
+          "type": ["string", "null"],
+          "description": "Control record id this link is TO. null iff relation is no_counterpart."
+        },
+        "target_framework": {
+          "type": ["string", "null"],
+          "enum": ["C3A", "ECSF", "CADA", null]
+        },
+        "relation": {
+          "type": "string",
+          "enum": ["equivalent", "subsumed_by", "partially_covers", "related", "no_counterpart"],
+          "description": "equivalent: same requirement, different wording. subsumed_by: source is a narrower instance of the (broader) target. partially_covers: target covers part, but not all, of source's substance. related: thematically connected but not a coverage claim. no_counterpart: no record in the target framework addresses this at all (target_id/target_framework null)."
+        },
+        "justification": {
+          "type": "string",
+          "minLength": 1,
+          "description": "One-line reasoning for this specific relation, required for every link including no_counterpart (state why nothing corresponds)."
+        }
+      },
+      "required": ["id", "source_id", "source_framework", "relation", "justification"],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "properties": { "relation": { "const": "no_counterpart" } } },
+          "then": { "properties": { "target_id": { "const": null }, "target_framework": { "const": null } } },
+          "else": { "required": ["target_id", "target_framework"] }
+        }
+      ]
+    }
+  }
+}
