@@ -820,6 +820,65 @@ def check_ladders() -> list[str]:
     return errors
 
 
+def check_layer2_spec() -> list[str]:
+    """Phase 4 precondition: structural check for
+    tests/assertions/layer2-spec.yaml (the owner-authored Layer-2
+    specification — see reviews/layer2-assertions-owner-review.md). This
+    is NOT the executable test conversion (that is Phase 4's own task);
+    it only guards the spec's own shape: the YAML parses, every
+    assertion id is unique, every persona shorthand (P1-P8) referenced
+    as a top-level group resolves to an approved persona, and every
+    assertion carries a non-empty assert statement.
+    """
+    errors = []
+    f = ROOT / "tests" / "assertions" / "layer2-spec.yaml"
+    if not f.exists():
+        return errors
+
+    try:
+        data = yaml.safe_load(f.read_text())
+    except yaml.YAMLError as e:
+        return [f"tests/assertions/layer2-spec.yaml: does not parse as YAML — {e}"]
+
+    # Map P1..P8 shorthand to persona_id by the golden fixture filename
+    # convention (tests/personas/p<N>-<slug>.yaml), then to the fixture's
+    # own status, so this check doesn't hardcode a persona_id table that
+    # could silently drift from the actual fixtures.
+    persona_status_by_shorthand: dict[str, str | None] = {}
+    for pf in sorted(PERSONAS_DIR.glob("p[1-8]-*.yaml")):
+        shorthand = "P" + pf.name.split("-", 1)[0].removeprefix("p")
+        persona_data = yaml.safe_load(pf.read_text())
+        persona_status_by_shorthand[shorthand] = persona_data.get("status")
+
+    ids = []
+    for group_key, group_val in data.items():
+        if group_key == "meta":
+            continue
+        if group_key != "cross_persona" and group_key not in persona_status_by_shorthand:
+            errors.append(f"tests/assertions/layer2-spec.yaml: group {group_key!r} does not resolve to any approved persona (P1-P8)")
+        elif group_key in persona_status_by_shorthand and persona_status_by_shorthand[group_key] != "approved":
+            errors.append(f"tests/assertions/layer2-spec.yaml: group {group_key!r} refers to a persona that is not status: approved")
+        if not isinstance(group_val, list):
+            errors.append(f"tests/assertions/layer2-spec.yaml: group {group_key!r} is not a list of assertions")
+            continue
+        for item in group_val:
+            aid = item.get("id")
+            if not aid:
+                errors.append(f"tests/assertions/layer2-spec.yaml: group {group_key!r} has an assertion with no id")
+            else:
+                ids.append(aid)
+            if not item.get("assert", "").strip():
+                errors.append(f"tests/assertions/layer2-spec.yaml: assertion {aid!r} has no (non-empty) assert statement")
+
+    seen = set()
+    for aid in ids:
+        if aid in seen:
+            errors.append(f"tests/assertions/layer2-spec.yaml: duplicate assertion id {aid!r}")
+        seen.add(aid)
+
+    return errors
+
+
 def main() -> int:
     schemas, registry = load_schemas()
 
@@ -843,6 +902,7 @@ def main() -> int:
     errors.extend(check_crosswalk(schemas, registry))
     errors.extend(check_catalog())
     errors.extend(check_ladders())
+    errors.extend(check_layer2_spec())
 
     print(f"Schemas checked: {len(schemas)}")
     print(f"Personas checked: {draft_count + approved_count} ({draft_count} draft, {approved_count} approved)")

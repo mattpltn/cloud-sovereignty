@@ -1,0 +1,91 @@
+# Layer-2 assertion specification — OWNER-AUTHORED via guided review 2026-07-05.
+# See reviews/layer2-assertions-owner-review.md. This file is the SOURCE OF
+# TRUTH for Phase 4's executable Layer-2 tests. Conversion rules: any ambiguity
+# goes back to the owner; assertions may be refined for API shape but never
+# weakened; every executable test cites its spec id. Comparisons marked
+# equal_weights use a uniform domain-weight profile to isolate posture effects.
+meta:
+  authored_by: "Mathieu Ploton (guided review with external reviewer)"
+  date: "2026-07-05"
+  ceiling_scale: "ordinal maturity bands 0-4 per SOV domain"
+
+cross_persona:
+  - id: X1a  # overall ordering anchors (equal_weights, ceilings)
+    assert: "overall_ceiling(P1) is the maximum among all personas"
+  - id: X1b
+    assert: "overall_ceiling(P6) < overall_ceiling(p) for every other persona p"
+  - id: X1c
+    assert: "overall_ceiling(P4) > overall_ceiling(P5)"   # locality beats contracts (owner decision 3)
+  - id: X1d
+    assert: "overall_ceiling(P2) < overall_ceiling(P1) and overall_ceiling(P2) < overall_ceiling(P3)"
+  - id: X2   # closed-stack trio, SOV-6 (owner decision 4)
+    assert: "ceiling(P7,SOV-6) <= ceiling(P4,SOV-6) and ceiling(P7,SOV-6) <= ceiling(P2,SOV-6); all three < ceiling(P1,SOV-6)"
+  - id: X3   # trap-case material margin (owner decision 5)
+    assert: "ceiling(P2,SOV-6) <= ceiling(P1,SOV-6) - 1 band; ceiling(P2,SOV-4) <= ceiling(P1,SOV-4) - 1 band"
+  - id: X4   # strengthening-modifier anchor (ties to invariant I6)
+    assert: "for every domain d: ceiling(P5,d) >= ceiling(P6,d); ceiling(P5,SOV-3) > ceiling(P6,SOV-3)"
+  - id: X5   # consistency law 1 (owner decision 9i)
+    assert: "engine output (dispositions, ceilings, flags) for P8.restricted is identical to a standalone persona with the same posture (P1-class A1/vanilla_oss/government_held); P8.public identical to P6-class posture output"
+  - id: X6   # consistency law 2 (owner decision 9ii)
+    assert: "applicable-criteria set (incl. additional criteria) at P1.secret is a strict superset-or-stricter of P1.internal"
+
+P1:  # gov DC, vanilla OSS, in-house — high baseline, longest questionnaire
+  - {id: P1-1, assert: "ceiling(P1,d) = max band for all six SOV domains"}
+  - {id: P1-2, assert: "provider-facing controls adapt to self-assessment wording variant (spot: the SBOM/software-dependency control asks in self wording, disposition assess)"}
+  - {id: P1-3, assert: "extraterritorial-exposure controls auto_answer positive, each with rationale and rule citation"}   # owner decision 7c
+  - {id: P1-4, assert: "C3A SOV-1-04-class (change-of-control notification) suppressed: no self-analog"}
+  - {id: P1-5, assert: "external-key-management control auto_answer met (government_held custody)"}
+  - {id: P1-6, assert: "negotiation-flagged controls = 0; recommendations contain implement bucket only"}
+  - {id: P1-7, assert: "asked-question count in [50,90] per tier"}
+  - {id: P1-8, assert: "no rendered question references a provider contract, colo operator, or external vendor (I2 spot)"}
+
+P2:  # gov DC, closed stack, local-integrator ops — the trap case
+  - {id: P2-1, assert: "SOV-6 source-code-availability class (C3A SOV-6-01) auto_answer not-met + negotiation_opportunity (escrow/tech-transfer clause)"}
+  - {id: P2-2, assert: "operations wording variant = third-party integrator phrasing; facility wording = self"}
+  - {id: P2-3, assert: "extraterritorial/legal controls assess or auto_answer not-met — never suppressed (exposure vector = vendor tech channel)"}
+  - {id: P2-4, assert: "negotiation-flagged controls >= 3 (audit rights, exit/reversibility, escrow class)"}
+  - {id: P2-5, assert: "asked-question count in [40,80]"}
+  - {id: P2-6, assert: "update/patch-channel controls (C3A SOV-4-05/SOV-4-09 class) assess with vendor-dependency wording, not suppressed"}
+
+P3:  # gov cloud in foreign-owned colo, OSS+support
+  - {id: P3-1, assert: "facility-layer controls assess with colo-operator wording variant"}
+  - {id: P3-2, assert: "ceiling(P3,SOV-2) < ceiling(P1,SOV-2) (foreign parent legal vector at facility layer)"}
+  - {id: P3-3, assert: "external-key-management control auto_answer met (government_held)"}
+  - {id: P3-4, assert: "negotiation-flagged controls >= 1 targeting the support and/or colo contract"}
+  - {id: P3-5, assert: "asked-question count in [50,90]"}
+  - {id: P3-6, assert: "platform-layer controls adapt to self-assessment wording (government-run stack), as in P1"}
+
+P4:  # local CSP on foreign closed stack, IaaS, standard terms
+  - {id: P4-1, assert: "provider-jurisdiction controls (operate under {NATION} law class) auto_answer met (domestic provider entity)"}
+  - {id: P4-2, assert: "supply-chain/technology controls reflect the foreign platform: SOV-6 ceiling(P4) <= ceiling(P1,SOV-6) - 1 band"}
+  - {id: P4-3, assert: "extraterritorial-exposure controls assess or auto_answer not-met — never suppressed, despite domestic provider (provider_stack vector)"}
+  - {id: P4-4, assert: "negotiation-flagged controls >= 3 (exit/reversibility, escrow-with-platform-vendor, key custody class)"}
+  - {id: P4-5, assert: "asked-question count in [35,75]"}
+  - {id: P4-6, assert: "audit-rights controls auto_answer met via contract (evidence tier: contractual)"}
+
+P5:  # foreign hyperscaler IaaS, strongest realistic contract
+  - {id: P5-1, assert: "external-key-management control auto_answer met (HYOK)"}   # owner decision 7b
+  - {id: P5-2, assert: "data-residency controls: met at {TRUSTED_REGION} localization level, not-met at {NATION} level (localization distinction preserved)"}
+  - {id: P5-3, assert: "provider-jurisdiction controls auto_answer not-met with rationale; negotiation-flagged controls >= 1"}
+  - {id: P5-4, assert: "exit/reversibility controls auto_answer met via contract (evidence tier: contractual)"}
+  - {id: P5-5, assert: "asked-question count in [30,70]"}
+
+P6:  # foreign hyperscaler SaaS, standard terms — the floor
+  - {id: P6-1, assert: "jurisdiction-class controls auto_answer not-met, each with rationale + negotiation_opportunity"}   # owner decision 7a
+  - {id: P6-2, assert: "SaaS external-key-management (AC class) auto_answer not-met (provider_held) + negotiation flag"}
+  - {id: P6-3, assert: "negotiation-flagged controls >= 3 (residency, audit rights, exit class)"}
+  - {id: P6-4, assert: "SaaS-specific wording/criteria variants active (service_model drives AC applicability)"}
+  - {id: P6-5, assert: "asked-question count in [15,50]"}
+
+P7:  # partner-operated sovereign region
+  - {id: P7-1, assert: "ceiling(P7,SOV-6) <= ceiling(P4,SOV-6) and <= ceiling(P2,SOV-6) (deepest platform dependence)"}
+  - {id: P7-2, assert: "ceiling(P7,SOV-1) > ceiling(P5,SOV-1) (local partner entity vs foreign provider entity)"}
+  - {id: P7-3, assert: "key-management controls auto_answer met (HYOK); audit controls met via contract (contractual evidence tier)"}
+  - {id: P7-4, assert: "exit/reversibility controls not-met + negotiation_opportunity >= 1 (no exit path from licensed stack)"}
+  - {id: P7-5, assert: "asked-question count in [30,70]"}
+  - {id: P7-6, assert: "effective-control controls (C3A SOV-1-03 class) assess — not auto-met: license dependence must be examined, local incorporation alone is insufficient"}
+
+P8:  # mixed estate — consistency vehicle
+  - {id: P8-1, assert: "restricted-tier output identical to the P1-class posture output (X5); public-tier identical to P6-class posture output"}
+  - {id: P8-2, assert: "combined report presents both tiers separately with per-tier ceilings; no cross-tier averaging in the posture profile"}
+  - {id: P8-3, assert: "asked-question count = sum of the applicable per-tier bands"}
