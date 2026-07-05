@@ -1,4 +1,4 @@
-# Golden persona P6 — DRAFT, awaiting project-owner review.
+# Golden persona P6 — reviewed and confirmed as drafted by the project owner (guided review, 2026-07-04; see reviews/persona-owner-review.md).
 # See P1 for the persona ownership workflow note.
 #
 # Design intent: the deliberate floor case. Axis A4, SaaS (the government
@@ -16,7 +16,9 @@ summary: >
   case in the golden set: SaaS cedes the most stack layers to the provider,
   and standard terms add no contractual mitigation. Used as the floor
   reference for differential-pair comparisons against P5.
-status: draft
+status: approved
+approved_by: "Mathieu Ploton"
+approved_date: "2026-07-04"
 
 priorities:
   - cost_efficiency

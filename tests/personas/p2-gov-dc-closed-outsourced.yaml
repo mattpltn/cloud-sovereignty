@@ -1,28 +1,34 @@
-# Golden persona P2 — DRAFT, awaiting project-owner review.
+# Golden persona P2 — reviewed and amended by the project owner (guided review,
+# 2026-07-04; see reviews/persona-owner-review.md).
 # See P1 for the persona ownership workflow note.
 #
-# Design intent: this is the critical "facility sovereignty is not enough"
-# test case. The government still owns the datacenter (A1, same as P1) but
-# runs a closed proprietary stack and has outsourced operations to a foreign
-# vendor. This persona MUST NOT score as uniformly sovereign just because the
-# facility is domestic — technology and operations layers should show real
-# gaps. If the engine ever scores P2 close to P1, that is a bug in the
-# responsibility-map/disposition logic, not a feature.
+# Design intent: the critical "facility sovereignty is not enough" test case —
+# now sharpened by the owner's field experience. The government owns the
+# datacenter (A1, same as P1) AND day-to-day operations are run by an
+# INDEPENDENT LOCAL systems integrator ({NATION} staff) — yet the platform is
+# a closed proprietary ecosystem, so the dependency flows entirely through
+# the vendor's technology, licensing, support and patch channel. This persona
+# MUST NOT score as uniformly sovereign just because facility and personnel
+# are domestic — the technology and (vendor-mediated) operations layers must
+# show real gaps. If the engine ever scores P2 close to P1, that is a bug in
+# the responsibility-map/disposition logic, not a feature.
 
 persona_id: gov-dc-closed-outsourced
-name: "P2 — Government datacenter, closed stack, foreign-outsourced ops"
+name: "P2 — Government datacenter, closed stack, local-integrator ops"
 summary: >
-  A1 (government-owned datacenter, government cloud) but on a closed
-  proprietary ecosystem (Axis B), with day-to-day operations outsourced to
-  a foreign systems integrator. Facility-sovereign but technology- and
-  ops-constrained — must NOT score as sovereign across the board.
-status: draft
+  A1 (government-owned datacenter, government cloud) on a closed proprietary
+  ecosystem (Axis B), with day-to-day operations run by an independent local
+  systems integrator on the vendor's tooling. Facility-sovereign AND
+  staffed domestically — but technology-constrained: the closed vendor's
+  licensing/support/patch channel is the dependency vector. Must NOT score
+  as sovereign across the board.
+status: approved
+approved_by: "Mathieu Ploton"
+approved_date: "2026-07-04"
 
-# Same outcome ranking as P1 is deliberately avoided: this persona still
-# ranks continuity and foreign-legal-access protection highly (it's the
-# same government), which is exactly what should expose the gap between
-# stated priorities and what a closed/outsourced posture can actually
-# deliver.
+# Same government as P1 in spirit: it still ranks foreign-legal-access
+# protection and continuity highly — which is exactly what should expose the
+# gap between stated priorities and what a closed-stack posture can deliver.
 priorities:
   - protection_from_foreign_legal_access
   - continuity_under_disconnection
@@ -39,17 +45,23 @@ tiers:
     modifiers:
       ops_outsourced:
         outsourced: true
-        to_whom: "Foreign systems integrator (vendor's managed-services arm)"
-        jurisdiction: "foreign, non-{TRUSTED_REGION}"
+        # Owner decision (2026-07-04): in observed deals, day-to-day ops are
+        # run by an independent local integrator certified on the vendor's
+        # stack — not the vendor's own foreign managed-services arm.
+        to_whom: "Independent local systems integrator operating the closed vendor stack"
+        jurisdiction: "{NATION}"
       service_model: IaaS
       provider_jurisdiction: "{NATION}"       # the datacenter itself is government-owned
-      facility_jurisdiction: "{NATION}"        # facility remains domestic — the "sovereign" part
-      # Outsourced ops staff and the closed vendor's support channel create a
-      # credible extraterritorial exposure path even though the facility and
-      # nominal ownership are domestic — this is the crux of the test case.
+      facility_jurisdiction: "{NATION}"        # facility remains domestic
+      # The extraterritorial vector is NOT personnel: staff are local. It is
+      # the closed vendor's technology channel — licensing enforcement,
+      # remote support tooling, telemetry, and the update/patch pipeline all
+      # reach back to the foreign vendor. This isolates technology dependence
+      # from personnel dependence, which is the crux of the test case.
       extraterritorial_law_exposure: true
       key_custody: provider_held   # closed-stack vendor tooling manages keys by default
       contract_terms:
+        # Owner-confirmed (2026-07-04) as matching real closed-stack deals:
         audit_rights: false
         exit_reversibility: false   # closed proprietary stack — classic lock-in
         residency_commitment: true

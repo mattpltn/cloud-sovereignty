@@ -1,4 +1,4 @@
-# Golden persona P8 — DRAFT, awaiting project-owner review.
+# Golden persona P8 — reviewed by the project owner (guided review, 2026-07-04; see reviews/persona-owner-review.md). Kept as drafted except key-custody convention.
 # See P1 for the persona ownership workflow note.
 #
 # Design intent: exercises classification tiering (design principle 6 —
@@ -19,7 +19,9 @@ summary: >
   government datacenter (A1, in-house ops). Exercises the tiered posture
   map — per-tier scoring/ceilings/recommendations must be computed and
   reported independently, not averaged across tiers.
-status: draft
+status: approved
+approved_by: "Mathieu Ploton"
+approved_date: "2026-07-04"
 
 priorities:
   - protection_from_foreign_legal_access
@@ -64,4 +66,4 @@ tiers:
       provider_jurisdiction: "{NATION}"
       facility_jurisdiction: "{NATION}"
       extraterritorial_law_exposure: false
-      key_custody: external_hsm   # see P1 note: editorial interpretation for the A1 self-operated case
+      key_custody: government_held   # P1 convention (owner decision 2026-07-04): government-operated key hardware

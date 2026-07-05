@@ -1,4 +1,4 @@
-# Golden persona P7 — DRAFT, awaiting project-owner review.
+# Golden persona P7 — reviewed and confirmed as drafted by the project owner (guided review, 2026-07-04; see reviews/persona-owner-review.md).
 # See P1 for the persona ownership workflow note.
 #
 # Design intent: Axis A5 — a local partner entity legally operates a
@@ -18,7 +18,9 @@ summary: >
   of the support chain trace to the foreign parent. Tests that A5 is NOT
   scored identically to A3 (genuine independent local CSP) despite both
   having a domestic operating entity.
-status: draft
+status: approved
+approved_by: "Mathieu Ploton"
+approved_date: "2026-07-04"
 
 priorities:
   - protection_from_foreign_legal_access

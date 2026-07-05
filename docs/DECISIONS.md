@@ -965,3 +965,41 @@ strictly stronger for verification purposes.
 **Framework anchor:** N/A — internal data-modeling/verification-design
 decision, not dictated by any source framework.
 **Status:** Resolved.
+
+---
+
+## D-025 — Persona schema: `government_held` key custody + `provider_stack` modifier (owner review)
+
+**Date:** 2026-07-04
+**Decision:** Per `reviews/persona-owner-review.md` (the project owner's
+guided persona review), two additions to `persona-profile.schema.json`:
+(a) `modifiers.key_custody` enum gains `government_held` — keys held in
+government-operated key-management hardware, with no third party in the
+relationship at all; (b) `modifiers` gains an optional `provider_stack`
+field, using the same enum as `axis_b` (`vanilla_oss` /
+`oss_commercial_support` / `closed_proprietary`), for cases where a
+third-party provider's underlying platform stack matters independently
+of the provider entity/facility jurisdiction (e.g. Axis A3's local CSP
+running a foreign closed-vendor platform).
+**Alternatives considered:** (a) keep using `external_hsm` for the A1
+self-operated case, as D-003 had provisionally done — rejected per the
+owner's explicit review finding that `external_hsm` conflates "hardware
+external to the provider's default key management" (which presupposes
+a provider) with "government's own dedicated hardware, no provider at
+all"; these are different postures and deserve a different value,
+resolving D-003's open question. (b) Model P4's foreign-platform-
+beneath-a-local-provider distinction by changing `provider_jurisdiction`
+itself — rejected by the owner because the provider entity and facility
+genuinely are domestic; the foreign element is specifically the
+platform/stack layer beneath them, which `axis_b` already models for
+A1/A2 but had no equivalent for A3-A5, hence the new field rather than
+overloading an existing one.
+**Rationale:** Both additions are owner-authorized, minimal (no other
+schema changes made alongside them), and directly resolve open
+questions D-003 had left pending for project-owner review.
+**Framework anchor:** N/A — persona/test-fixture schema design, not
+derived from C3A/ECSF/CADA. See `reviews/persona-owner-review.md` items
+1 and 5.
+**Status:** Resolved — supersedes D-003's `external_hsm` interpretation
+for P1/P3/P8-restricted (D-003 itself is left unedited per the
+append-only register rule; this entry is the correction).

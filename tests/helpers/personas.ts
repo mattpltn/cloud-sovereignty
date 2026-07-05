@@ -15,10 +15,21 @@ export function loadAllPersonas(): PersonaProfile[] {
 }
 
 /**
+ * The approval-gate predicate itself, exported separately from
+ * loadApprovedPersonas so tests can exercise it against synthetic
+ * fixtures (e.g. a draft persona not present under tests/personas/)
+ * without depending on the real golden-persona set ever containing a
+ * draft to prove exclusion against.
+ */
+export function filterApproved(personas: PersonaProfile[]): PersonaProfile[] {
+  return personas.filter((p) => p.status === "approved");
+}
+
+/**
  * Loads only personas with status: approved. Per the persona ownership
  * workflow (CLAUDE.md), the test runner MUST refuse to execute engine
  * tests against any persona not marked approved — this is that gate.
  */
 export function loadApprovedPersonas(): PersonaProfile[] {
-  return loadAllPersonas().filter((p) => p.status === "approved");
+  return filterApproved(loadAllPersonas());
 }

@@ -1,21 +1,28 @@
-# Golden persona P4 — DRAFT, awaiting project-owner review.
+# Golden persona P4 — reviewed and amended by the project owner (guided review,
+# 2026-07-04; see reviews/persona-owner-review.md).
 # See P1 for the persona ownership workflow note.
 #
-# Design intent: Axis A3 — a local (in-country) commercial cloud provider,
-# IaaS, standard/typical contract terms, assessed at the restricted tier.
-# This is the "domestic commercial provider" middle case between fully
-# self-hosted (P1/P2) and foreign hyperscaler (P5/P6): provider and facility
-# are both domestic, but the government no longer owns or directly staffs
-# the infrastructure — a genuine third party now exists at most layers.
+# Design intent (owner-corrected): Axis A3 — a local (in-country) commercial
+# cloud provider, IaaS, standard terms, restricted tier. Per field
+# experience, local CSPs in the target markets typically run a FOREIGN
+# VENDOR platform (modally Huawei Cloud; Mirantis, Virtuozzo, or vanilla
+# OpenStack variants also occur). The fixture models the modal closed case:
+# provider and facility are domestic, but the platform introduces a foreign
+# technology channel. A hypothetical clean-domestic variant (no foreign
+# stack) may be added later as a differential fixture if Phase 7 wants the
+# contrast; this fixture value is test data, not hardcoded engine logic.
 
 persona_id: local-csp-iaas
-name: "P4 — Local (in-country) commercial CSP, IaaS, restricted tier"
+name: "P4 — Local (in-country) commercial CSP on a foreign vendor stack, IaaS"
 summary: >
   A3 (IaaS from a local/in-country cloud provider), standard commercial
-  terms, restricted-tier workload. Domestic provider and facility, but a
-  genuine third party now exists at most layers — tests dispositions for
-  a real commercial relationship that is nonetheless entirely in-jurisdiction.
-status: draft
+  terms, restricted-tier workload. Provider and facility are both domestic,
+  but the CSP's platform is a closed foreign vendor stack (modally Huawei
+  Cloud) — a genuine third party exists at most layers AND a foreign
+  technology channel exists beneath the domestic provider.
+status: approved
+approved_by: "Mathieu Ploton"
+approved_date: "2026-07-04"
 
 priorities:
   - local_capacity_building
@@ -27,8 +34,8 @@ priorities:
 classification_scheme: default_4_tier
 
 tiers:
-  - tier_id: restricted   # matches the persona's name/intent
-    axis_a: A3             # local in-country CSP, no Axis B — no gov-run platform layer to classify
+  - tier_id: restricted
+    axis_a: A3             # local in-country CSP — no Axis B (no gov-run platform layer)
     modifiers:
       ops_outsourced:
         outsourced: true
@@ -37,7 +44,15 @@ tiers:
       service_model: IaaS
       provider_jurisdiction: "{NATION}"
       facility_jurisdiction: "{NATION}"
-      extraterritorial_law_exposure: false   # domestic provider, domestic facility, no foreign parent modeled
+      # Owner decision (2026-07-04): the CSP's underlying platform is a
+      # closed foreign vendor stack (modal: Huawei Cloud; variants seen:
+      # Mirantis, Virtuozzo, vanilla OpenStack). New modifier — requires
+      # persona-schema addition.
+      provider_stack: closed_proprietary
+      # Exposure flows through the foreign platform's licensing/support/
+      # update channel, even though the provider entity and facility are
+      # domestic — the A3 analog of P2's technology-channel vector.
+      extraterritorial_law_exposure: true
       key_custody: provider_held   # standard/typical terms, not a strengthened contract
       contract_terms:
         audit_rights: true

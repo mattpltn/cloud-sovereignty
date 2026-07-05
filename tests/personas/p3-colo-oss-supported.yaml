@@ -1,4 +1,4 @@
-# Golden persona P3 — DRAFT, awaiting project-owner review.
+# Golden persona P3 — reviewed by the project owner (guided review, 2026-07-04; see reviews/persona-owner-review.md). Kept as drafted except key-custody convention.
 # See P1 for the persona ownership workflow note.
 #
 # Design intent: Axis A2 — government cloud hosted in a commercial
@@ -16,7 +16,9 @@ summary: >
   open-source stack with commercial support, colo operator foreign-owned.
   Tests facility-layer dependency wording/disposition when the physical
   facility is domestic but its corporate parent is not.
-status: draft
+status: approved
+approved_by: "Mathieu Ploton"
+approved_date: "2026-07-04"
 
 priorities:
   - protection_from_foreign_legal_access
@@ -45,7 +47,10 @@ tiers:
       # extraterritorial-law vector (e.g. compelled facility access) despite
       # the facility's domestic location — this is the layer P3 is built to probe.
       extraterritorial_law_exposure: true
-      key_custody: hyok
+      # Owner decision (2026-07-04): the government runs its own stack in the
+      # colo; keys live in government-operated key-management hardware per
+      # the P1 convention — no third-party key relationship exists.
+      key_custody: government_held
       contract_terms:
         audit_rights: true
         exit_reversibility: true

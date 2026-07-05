@@ -1,13 +1,13 @@
-# Golden persona P5 — DRAFT, awaiting project-owner review.
+# Golden persona P5 — reviewed and amended by the project owner (guided review,
+# 2026-07-04; see reviews/persona-owner-review.md).
 # See P1 for the persona ownership workflow note.
 #
-# Design intent: Axis A4 — a foreign hyperscaler, but with the strongest
-# contractual and technical mitigations available: hold-your-own-key (HYOK),
-# audit rights, and residency commitments. This persona is the intended
-# counterpart to P6 (same A4/IaaS-vs-SaaS-adjacent deployment, standard
-# terms) for Layer 5 differential-pair testing: strengthening modifiers
-# (HYOK, audit rights) should raise ceilings/scores relative to P6 without
-# changing Axis A itself (invariant I6 — monotonicity).
+# Design intent: Axis A4 — a foreign hyperscaler with the strongest
+# contractual and technical mitigations REALISTICALLY obtainable: HYOK,
+# audit rights, exit/reversibility and residency commitments. Counterpart to
+# P6 (same provider class, standard terms) for Layer 5 differential-pair
+# testing: strengthening modifiers should raise ceilings/scores relative to
+# P6 without changing Axis A itself (invariant I6 — monotonicity).
 
 persona_id: hyperscaler-iaas-strong-contract
 name: "P5 — Foreign hyperscaler, IaaS, HYOK + audit + residency clauses"
@@ -17,7 +17,9 @@ summary: >
   contract. Tests that strong contractual mitigations measurably raise
   achieved score/ceiling relative to standard-terms hyperscaler personas
   (P6), even though the underlying provider and jurisdiction are unchanged.
-status: draft
+status: approved
+approved_by: "Mathieu Ploton"
+approved_date: "2026-07-04"
 
 priorities:
   - protection_from_foreign_legal_access
@@ -38,7 +40,12 @@ tiers:
         jurisdiction: "foreign, non-{TRUSTED_REGION}"
       service_model: IaaS
       provider_jurisdiction: "foreign, non-{TRUSTED_REGION}"
-      facility_jurisdiction: "{TRUSTED_REGION}"   # hyperscaler region physically sits within the trusted bloc
+      # Owner note (2026-07-04): placement is country-dependent in reality —
+      # some markets have in-country hyperscaler local zones / dedicated
+      # regions, most rely on a region within the trusted bloc. The fixture
+      # keeps the general case; the in-country local-zone variant is a
+      # runtime modifier choice for real assessments, not a separate fixture.
+      facility_jurisdiction: "{TRUSTED_REGION}"
       # HYOK reduces the provider's practical ability to comply with a
       # foreign access order without government knowledge, but does not
       # remove the corporate entity's legal exposure to its home
@@ -50,4 +57,10 @@ tiers:
         audit_rights: true
         exit_reversibility: true
         residency_commitment: true
-        escrow: true
+        # Owner decision (2026-07-04), research-backed: source-code escrow
+        # is not realistically obtainable for a hyperscaler PLATFORM — the
+        # escrow market (DORA/NIS2-driven) serves ISV/SaaS applications and
+        # closed-vendor stacks. Escrow clauses belong in P2-type vendor
+        # deals and SaaS-vendor contracts (see Phase 6 clause library), not
+        # here. Even a best-case hyperscaler contract: false.
+        escrow: false

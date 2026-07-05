@@ -108,7 +108,12 @@
         },
         "key_custody": {
           "type": "string",
-          "enum": ["provider_held", "hyok", "external_hsm"]
+          "enum": ["provider_held", "hyok", "external_hsm", "government_held"]
+        },
+        "provider_stack": {
+          "type": "string",
+          "description": "Owner-review addition (D-025): the underlying platform stack beneath a third-party provider (e.g. Axis A3's local CSP), when it differs from the provider entity/facility jurisdiction — same value set as axis_b since it's the same kind of stack distinction, just one layer down the supply chain.",
+          "enum": ["vanilla_oss", "oss_commercial_support", "closed_proprietary"]
         },
         "contract_terms": {
           "type": "object",
