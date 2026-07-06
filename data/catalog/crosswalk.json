@@ -15,8 +15,8 @@
       "source_framework": "ECSF",
       "target_id": "csat-sov1-03-c2",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "{NATION} variant of the same effective-control requirement."
+      "relation": "partially_covers",
+      "justification": "{NATION} variant of the same effective-control theme, but a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from -c1 (D-032 fix: an equivalent link to both localization tiers of the same criterion incorrectly merges them into one requirement, losing the C1/C2 distinction)."
     },
     {
       "id": "xw-0003",
@@ -114,8 +114,8 @@
       "source_framework": "ECSF",
       "target_id": "csat-sov1-01-c2",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "{NATION} variant of the same jurisdiction-of-operations requirement."
+      "relation": "partially_covers",
+      "justification": "{NATION} variant of the same jurisdiction theme, but a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from -c1 (D-032 fix, same over-merge pattern as sov1-03 above)."
     },
     {
       "id": "xw-0014",
@@ -202,28 +202,28 @@
       "id": "xw-0023",
       "source_id": "csat-sov3-ecsf-03",
       "source_framework": "ECSF",
-      "target_id": "csat-sov3-01-c1",
+      "target_id": "csat-sov3-01-c3",
       "target_framework": "C3A",
       "relation": "equivalent",
-      "justification": "Customer-side visibility into data storage/processing location is the same data-residency concern."
+      "justification": "ECSF's 'strict confinement of storage/processing to {TRUSTED_REGION}, no fallback' is the literal match for c3's customer-data-in-{TRUSTED_REGION} claim."
     },
     {
       "id": "xw-0024",
       "source_id": "csat-sov3-ecsf-03",
       "source_framework": "ECSF",
-      "target_id": "csat-sov3-01-c2",
+      "target_id": "csat-sov3-01-c1",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "Derived-data/account-data residency variant of the same requirement."
+      "relation": "partially_covers",
+      "justification": "c1 is a transparency/check-where-stored mechanism, not itself a residency guarantee — a related but distinct, weaker claim than ECSF's confinement requirement (D-032 fix: previously tagged equivalent to all five sov3-01 variants at once, incorrectly merging five distinct requirements into one catalog entry)."
     },
     {
       "id": "xw-0025",
       "source_id": "csat-sov3-ecsf-03",
       "source_framework": "ECSF",
-      "target_id": "csat-sov3-01-c3",
+      "target_id": "csat-sov3-01-c2",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "Customer-data residency ({TRUSTED_REGION}) variant of the same requirement."
+      "relation": "partially_covers",
+      "justification": "c2 covers derived/account data specifically (not customer data), a related but distinct data category from ECSF's general confinement claim (D-032 fix)."
     },
     {
       "id": "xw-0026",
@@ -231,8 +231,8 @@
       "source_framework": "ECSF",
       "target_id": "csat-sov3-01-c4",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "Customer-data residency ({NATION}) variant of the same requirement."
+      "relation": "partially_covers",
+      "justification": "c4 is the {NATION} (C2) variant of the same residency theme as c3, a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from c3 (D-032 fix, same over-merge pattern as sov1-01/sov1-03/sov4-01)."
     },
     {
       "id": "xw-0027",
@@ -240,8 +240,8 @@
       "source_framework": "ECSF",
       "target_id": "csat-sov3-01-c5",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "Provider-data residency variant of the same requirement."
+      "relation": "partially_covers",
+      "justification": "c5 covers provider data specifically (not customer data), a related but distinct data category from ECSF's general confinement claim (D-032 fix)."
     },
     {
       "id": "xw-0028",
@@ -294,8 +294,8 @@
       "source_framework": "ECSF",
       "target_id": "csat-sov4-01-c2",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "{NATION} residency variant of the same talent-pool requirement."
+      "relation": "partially_covers",
+      "justification": "{NATION} variant of the same talent-pool theme, but a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from -c1 (D-032 fix, same over-merge pattern as sov1-01/sov1-03/sov3-01)."
     },
     {
       "id": "xw-0034",
@@ -303,8 +303,8 @@
       "source_framework": "ECSF",
       "target_id": "csat-sov4-01-c3",
       "target_framework": "C3A",
-      "relation": "equivalent",
-      "justification": "Standalone-{TRUSTED_REGION}-organization requirement reinforces the same talent-pool/independence concern."
+      "relation": "partially_covers",
+      "justification": "Standalone-{TRUSTED_REGION}-organization is a related but genuinely distinct requirement (organizational independence, not personnel citizenship) — not the same claim as -c1/-c2, so not equivalent (D-032 fix: previously merged all three sov4-01 variants into one catalog entry)."
     },
     {
       "id": "xw-0035",
@@ -490,10 +490,10 @@
       "id": "xw-0055",
       "source_id": "csat-sov3-cada-ua1-c",
       "source_framework": "CADA",
-      "target_id": "csat-sov3-01-c1",
+      "target_id": "csat-sov3-01-c3",
       "target_framework": "C3A",
       "relation": "equivalent",
-      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim C3A's SOV-3-01 makes."
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim C3A's SOV-3-01-C3 makes (D-032 fix: previously mistargeted at c1, the transparency/check-where-stored criterion, not the residency-guarantee criterion CADA's text actually matches)."
     },
     {
       "id": "xw-0056",
@@ -553,10 +553,10 @@
       "id": "xw-0062",
       "source_id": "csat-sov3-cada-ua2-c",
       "source_framework": "CADA",
-      "target_id": "csat-sov3-01-c1",
+      "target_id": "csat-sov3-01-c3",
       "target_framework": "C3A",
       "relation": "equivalent",
-      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim."
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim (D-032 fix: previously mistargeted at c1; see UA1_MAP's identical fix). Note (catalog-fix review N-1): UA-4's instance of this criterion is narrower than UA-2/UA-3's — it applies only to data identified as sensitive following a risk assessment, not all customer data — but is still the same underlying residency requirement at a stricter assurance tier; the narrower scope is preserved via this record's own assurance_level (UA-4) rather than a different C3A target."
     },
     {
       "id": "xw-0063",
@@ -652,10 +652,10 @@
       "id": "xw-0073",
       "source_id": "csat-sov3-cada-ua3-c",
       "source_framework": "CADA",
-      "target_id": "csat-sov3-01-c1",
+      "target_id": "csat-sov3-01-c3",
       "target_framework": "C3A",
       "relation": "equivalent",
-      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim."
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim (D-032 fix: previously mistargeted at c1; see UA1_MAP's identical fix). Note (catalog-fix review N-1): UA-4's instance of this criterion is narrower than UA-2/UA-3's — it applies only to data identified as sensitive following a risk assessment, not all customer data — but is still the same underlying residency requirement at a stricter assurance tier; the narrower scope is preserved via this record's own assurance_level (UA-4) rather than a different C3A target."
     },
     {
       "id": "xw-0074",
@@ -751,10 +751,10 @@
       "id": "xw-0084",
       "source_id": "csat-sov3-cada-ua4-c",
       "source_framework": "CADA",
-      "target_id": "csat-sov3-01-c1",
+      "target_id": "csat-sov3-01-c3",
       "target_framework": "C3A",
       "relation": "equivalent",
-      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim."
+      "justification": "Customer data remaining exclusively in the trusted region is the core data-residency claim (D-032 fix: previously mistargeted at c1; see UA1_MAP's identical fix). Note (catalog-fix review N-1): UA-4's instance of this criterion is narrower than UA-2/UA-3's — it applies only to data identified as sensitive following a risk assessment, not all customer data — but is still the same underlying residency requirement at a stricter assurance tier; the narrower scope is preserved via this record's own assurance_level (UA-4) rather than a different C3A target."
     },
     {
       "id": "xw-0085",

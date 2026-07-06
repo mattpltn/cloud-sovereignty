@@ -1375,3 +1375,114 @@ Annex III criterion E (`data/extracted/cada-evidence.json`, section
 "Annex III, audit criterion E — European cybersecurity certification
 scheme adopted under Regulation 2019/881").
 **Status:** Resolved — no data changes; confirmation only.
+
+---
+
+## D-032 — Catalog over-merge bug: C1/C2 localization tiers incorrectly bridged in 4 entries; permanent validator invariant added
+
+**Date:** 2026-07-05
+**Decision:** Fixed four master-catalog entries that incorrectly bridged
+two *different* C3A localization tiers (C1/{TRUSTED_REGION} vs.
+C2/{NATION}) of the same underlying criterion into one catalog entry,
+via a crosswalk link tagging a single ECSF (or, in one case, CADA)
+record `equivalent` to *both* localization variants at once. Fixed by
+downgrading the non-primary variant's relation to `partially_covers`
+(which does not trigger union-find merging), consistently keeping the
+C1 (or, for the SOV-3-01 cluster, the literal-text-match) variant as
+the `equivalent` anchor:
+- **`cat-0001`** (`csat-sov1-01-c1`/`-c2`, provider jurisdiction):
+  `csat-sov2-ecsf-01`'s link to `-c2` downgraded.
+- **`cat-0004`→ now `cat-0005`/`cat-0006`** (`csat-sov1-03-c1`/`-c2`,
+  effective control): `csat-sov1-ecsf-01`'s link to `-c2` downgraded.
+- **`cat-0024`→ now 5 entries** (`csat-sov3-01-c1..c5`, data residency):
+  the deepest instance of this bug — `csat-sov3-ecsf-03` was tagged
+  `equivalent` to **all five** SOV-3-01 variants simultaneously, which
+  are five genuinely distinct requirements, not five localization
+  tiers of one requirement: `c1` (customer's ability to *check* where
+  data is stored — a transparency mechanism), `c2` (derived/account
+  data residency), `c3` (customer data in {TRUSTED_REGION} — C1), `c4`
+  (customer data in {NATION} — C2, the true localization pair with
+  `c3`), `c5` (provider data residency). Fixed by keeping only `c3` as
+  `equivalent` (the literal textual match for ECSF's "strict
+  confinement... no fallback" claim) and downgrading `c1`/`c2`/`c4`/`c5`
+  to `partially_covers`. A second, independent bug in the same cluster
+  was also fixed: the CADA UA-1..4 "customer data remain exclusively
+  within {TRUSTED_REGION}" criteria (`UA1_MAP`/`UA_SHARED_MAP` letter
+  `c` in `scripts/build_crosswalk.py`) were mistargeted at `c1`
+  (transparency) instead of `c3` (the actual residency-guarantee
+  match) — retargeted to `c3`.
+- **`cat-0036`→ now `cat-0042`/`cat-0043`/`cat-0044`** (`csat-sov4-01-
+  c1/c2/c3`, personnel citizenship): `csat-sov4-ecsf-03` was tagged
+  `equivalent` to all three variants; `c3` ("standalone {TRUSTED_REGION}
+  organization") is a genuinely distinct requirement (organizational
+  independence, not personnel citizenship) from `c1`/`c2`, and `c2` is
+  `c1`'s C2/{NATION} counterpart. Downgraded both `c2` and `c3` to
+  `partially_covers`, kept `c1` as `equivalent`.
+
+Catalog entry count: 90 → 98 (8 new entries from splitting the 4
+over-merged clusters into their correct constituent requirements).
+
+**Precedent:** this is the identical bug class self-caught and fixed
+once already during Phase 3 for `csat-sov4-ecsf-04` (documented in
+`docs/phases/phase-3-report.md`): a single external factor tagged
+`equivalent` to two or more C3A criteria that are not themselves
+equivalent to each other, which union-find then incorrectly bridges
+together. That fix was applied only to the one instance found by
+manual cluster-size inspection at the time; these four additional
+instances (all involving C1/C2 localization pairs specifically, plus
+one five-way merge) were not caught by that inspection since manual
+review doesn't scale to guarantee completeness — hence the permanent
+validator invariant added below.
+
+**Cross-UA-level merges verified intentional, not a bug:** five catalog
+entries (`cat-0003`, `cat-0005`, `cat-0028`, `cat-0040`, `cat-0042`)
+merge CADA Annex II criteria with *differing* `assurance_level`
+(UA-1/2/3/4, or UA-2/3/4) into one entry. This is by design and is
+NOT the bug being fixed here: UA-1 through UA-4 are the SAME underlying
+requirement at cumulative, increasing audit-strictness tiers (per
+CADA's own text: "a higher level's provider must also meet every lower
+level's criteria" — `control-record.schema.json`'s `assurance_level`
+field description). The requirement's identity doesn't change across
+UA levels the way it genuinely changes across C1/C2 localization tiers
+(different satisfying jurisdiction). The distinction survives entirely
+via each member's own `assurance_level` field — Phase 4's disposition
+engine can select the applicable UA tier from the resolved control's
+members without needing separate catalog entries per level, exactly as
+the original Phase 3 design intended.
+
+**New permanent validator invariant (`check_catalog()`):** no catalog
+entry may contain C3A members with more than one distinct
+`localization_level` value. This makes the C1/C2 over-merge bug class
+structurally impossible going forward, the same way the verbatim-leak
+check guards against a different class of regression. Verified the
+check fires correctly against a reintroduced instance of the bug
+(temporarily re-merging `cat-0001`/`cat-0002`) before confirming clean
+on the corrected data.
+
+**Alternatives considered:** (a) leave the four merges as-is and have
+Phase 4's engine work around a merged control_id by inspecting each
+member's own `localization_level` at resolution time — rejected: this
+would require every consumer of the catalog to re-derive the C1/C2
+split themselves, defeating the catalog's purpose of being the single
+place identity/dedup decisions live, and would silently produce wrong
+results for any consumer (e.g. Milestone 4a's Layer-2 test P5-2) that
+reasonably assumes one catalog entry is one addressable, independently
+disposable requirement. (b) A weaker invariant checking only exact
+catalog-entry-count regressions — rejected in favor of the structural,
+semantically-precise check (localization_level divergence specifically)
+since it catches the bug class directly rather than as a side effect.
+**Rationale:** The master catalog's entire value is that "one entry =
+one distinct, independently assessable requirement" (CLAUDE.md's Phase
+3 catalog description). A merge that erases the C1/C2 distinction
+directly contradicts C3A's own two-tier localization design (CLAUDE.md:
+"Localization levels C1 (EU) / C2 (Germany)") and breaks any downstream
+consumer — engine, tests, or scoring — that needs to treat "met the
+regional bar" and "met the national bar" as different, independently
+verifiable facts.
+**Framework anchor:** C3A v1.0 localization-level design (C1/C2);
+`docs/phases/phase-3-report.md`'s documented `csat-sov4-ecsf-04` fix
+(the precedent this bug class was already known from); this project's
+own crosswalk relation-type definitions (`schema/crosswalk.schema.json`:
+`equivalent` vs. `partially_covers`).
+**Status:** Resolved — 98 catalog entries (was 90); permanent
+invariant added; verified against a reintroduced instance of the bug.

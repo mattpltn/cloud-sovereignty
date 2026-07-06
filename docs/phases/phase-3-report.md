@@ -140,3 +140,36 @@ No Phase 4 work, no disposition-rule engine, no persona status changes,
 no merge to `main`. `placeholders_used` remains unpopulated (deferred
 since Phase 2d-i). The 13 remaining `needs_review` flags stay open for
 a future phase.
+
+## Addendum (2026-07-05, branch `fix/catalog-c1c2-overmerge`) — C1/C2 over-merge bug found and fixed
+
+Milestone 4a of Phase 4 (converting the Layer-2 spec into executable
+tests) surfaced a defect in this phase's own catalog: 4 entries
+(`cat-0001`, `cat-0004`, `cat-0024`, `cat-0036`) incorrectly bridged
+two different C3A localization tiers (C1 vs. C2) of the same criterion
+— and, in `cat-0024`'s case, bridged five genuinely distinct SOV-3-01
+requirements — into a single catalog entry, via the exact same
+crosswalk over-merge pattern already caught once for
+`csat-sov4-ecsf-04` during this phase (see above) but not caught
+everywhere it recurred. Full detail in **D-032**
+(`docs/DECISIONS.md`). Fixed on branch `fix/catalog-c1c2-overmerge`
+(off `main`, merging as its own reviewed unit per the standing git
+discipline — not folded into this branch's history):
+- Crosswalk: 6 relations downgraded from `equivalent` to
+  `partially_covers`; 8 CADA links retargeted from a mistargeted id
+  (`csat-sov3-01-c1`) to the correct one (`csat-sov3-01-c3`).
+- Catalog: 90 → **98** entries (8 new entries from the 4 corrected
+  clusters).
+- Cross-UA-level merges (CADA UA-1..4 variants of the same criterion
+  sharing one catalog entry) were reviewed and confirmed intentional —
+  not the same bug class, since assurance_level (audit strictness)
+  differs, not localization_level (satisfying jurisdiction).
+- A new **permanent validator invariant** in `check_catalog()`: no
+  catalog entry may contain C3A members with more than one distinct
+  `localization_level`. Verified it fires against a reintroduced
+  instance of the bug before confirming clean on the corrected data.
+
+This addendum is a pointer, not a rewrite — `docs/phases/phase-3-report.md`'s
+own statistics table above reflects the *original* Phase 3 catalog
+(90 entries); the corrected count (98) takes effect once
+`fix/catalog-c1c2-overmerge` merges to `main`.

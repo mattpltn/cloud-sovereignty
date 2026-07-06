@@ -775,6 +775,22 @@ def check_catalog() -> list[str]:
     for oid in sorted(orphans):
         errors.append(f"data/catalog/catalog.json: record {oid!r} is an orphan — not in any catalog entry and not tagged out-of-scope")
 
+    # D-032: no catalog entry may bridge two different localization_level
+    # tiers (C1 vs C2) of the same underlying criterion. This is distinct
+    # from, and does NOT flag, members sharing an entry with different
+    # assurance_level (CADA UA-1..4 audit-strictness variants of the SAME
+    # localization tier are intentionally merged — see D-032's DECISIONS
+    # entry) — only localization_level divergence indicates the C1/C2
+    # over-merge bug class the crosswalk builder can otherwise reintroduce.
+    c3a_records = {r["id"]: r for r in json.loads((EXTRACTED_DIR / "c3a.json").read_text())}
+    for entry in data.get("entries", []):
+        eid = entry.get("id", "?")
+        locs = {c3a_records[mid]["localization_level"]
+                for mid in entry.get("member_ids", [])
+                if mid in c3a_records and c3a_records[mid].get("localization_level")}
+        if len(locs) > 1:
+            errors.append(f"data/catalog/catalog.json: entry {eid!r} bridges differing localization_level tiers {sorted(locs)} across its members — C1/C2 must stay separate catalog entries")
+
     return errors
 
 

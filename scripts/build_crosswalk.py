@@ -31,8 +31,8 @@ def link(source_id, source_fw, target_id, target_fw, relation, justification):
 # SOV-1
 link("csat-sov1-ecsf-01", "ECSF", "csat-sov1-03-c1", "C3A", "equivalent",
      "Both require decisive authority/effective control to sit with {TRUSTED_REGION}-based entities.")
-link("csat-sov1-ecsf-01", "ECSF", "csat-sov1-03-c2", "C3A", "equivalent",
-     "{NATION} variant of the same effective-control requirement.")
+link("csat-sov1-ecsf-01", "ECSF", "csat-sov1-03-c2", "C3A", "partially_covers",
+     "{NATION} variant of the same effective-control theme, but a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from -c1 (D-032 fix: an equivalent link to both localization tiers of the same criterion incorrectly merges them into one requirement, losing the C1/C2 distinction).")
 link("csat-sov1-ecsf-01", "ECSF", "csat-sov1-01-c1", "C3A", "related",
      "Jurisdiction/contract-governance is a narrower, adjacent concept to 'decisive authority location', not the same claim.")
 link("csat-sov1-ecsf-01", "ECSF", "csat-sov1-01-c2", "C3A", "related",
@@ -58,8 +58,8 @@ link("csat-sov1-ecsf-06", "ECSF", "csat-sov6-02-c", "C3A", "related",
 # SOV-2
 link("csat-sov2-ecsf-01", "ECSF", "csat-sov1-01-c1", "C3A", "equivalent",
      "Both require the provider's operations/contracts to be governed by {TRUSTED_REGION} law.")
-link("csat-sov2-ecsf-01", "ECSF", "csat-sov1-01-c2", "C3A", "equivalent",
-     "{NATION} variant of the same jurisdiction-of-operations requirement.")
+link("csat-sov2-ecsf-01", "ECSF", "csat-sov1-01-c2", "C3A", "partially_covers",
+     "{NATION} variant of the same jurisdiction theme, but a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from -c1 (D-032 fix, same over-merge pattern as sov1-03 above).")
 
 link("csat-sov2-ecsf-02", "ECSF", "csat-sov2-01-c", "C3A", "equivalent",
      "Both require identifying/assessing exposure to laws from outside the trusted region with cross-border reach.")
@@ -86,16 +86,16 @@ link("csat-sov3-ecsf-02", "ECSF", "csat-sov3-04-ac1", "C3A", "partially_covers",
 link("csat-sov3-ecsf-02", "ECSF", "csat-sov3-04-ac2", "C3A", "partially_covers",
      "Granular filtering is part of the covered visibility aspect only.")
 
-link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c1", "C3A", "equivalent",
-     "Customer-side visibility into data storage/processing location is the same data-residency concern.")
-link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c2", "C3A", "equivalent",
-     "Derived-data/account-data residency variant of the same requirement.")
 link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c3", "C3A", "equivalent",
-     "Customer-data residency ({TRUSTED_REGION}) variant of the same requirement.")
-link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c4", "C3A", "equivalent",
-     "Customer-data residency ({NATION}) variant of the same requirement.")
-link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c5", "C3A", "equivalent",
-     "Provider-data residency variant of the same requirement.")
+     "ECSF's 'strict confinement of storage/processing to {TRUSTED_REGION}, no fallback' is the literal match for c3's customer-data-in-{TRUSTED_REGION} claim.")
+link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c1", "C3A", "partially_covers",
+     "c1 is a transparency/check-where-stored mechanism, not itself a residency guarantee — a related but distinct, weaker claim than ECSF's confinement requirement (D-032 fix: previously tagged equivalent to all five sov3-01 variants at once, incorrectly merging five distinct requirements into one catalog entry).")
+link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c2", "C3A", "partially_covers",
+     "c2 covers derived/account data specifically (not customer data), a related but distinct data category from ECSF's general confinement claim (D-032 fix).")
+link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c4", "C3A", "partially_covers",
+     "c4 is the {NATION} (C2) variant of the same residency theme as c3, a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from c3 (D-032 fix, same over-merge pattern as sov1-01/sov1-03/sov4-01).")
+link("csat-sov3-ecsf-03", "ECSF", "csat-sov3-01-c5", "C3A", "partially_covers",
+     "c5 covers provider data specifically (not customer data), a related but distinct data category from ECSF's general confinement claim (D-032 fix).")
 
 link("csat-sov3-ecsf-04", "ECSF", None, None, "no_counterpart",
      "C3A predates AI-specific criteria entirely; no criterion addresses AI model/pipeline governance or non-EU technology-stack dependency for AI.")
@@ -111,10 +111,10 @@ link("csat-sov4-ecsf-02", "ECSF", "csat-sov4-02-c1", "C3A", "partially_covers",
 
 link("csat-sov4-ecsf-03", "ECSF", "csat-sov4-01-c1", "C3A", "equivalent",
      "Requiring {TRUSTED_REGION}-citizen, {TRUSTED_REGION}-resident personnel directly ensures an {TRUSTED_REGION}-based talent pool.")
-link("csat-sov4-ecsf-03", "ECSF", "csat-sov4-01-c2", "C3A", "equivalent",
-     "{NATION} residency variant of the same talent-pool requirement.")
-link("csat-sov4-ecsf-03", "ECSF", "csat-sov4-01-c3", "C3A", "equivalent",
-     "Standalone-{TRUSTED_REGION}-organization requirement reinforces the same talent-pool/independence concern.")
+link("csat-sov4-ecsf-03", "ECSF", "csat-sov4-01-c2", "C3A", "partially_covers",
+     "{NATION} variant of the same talent-pool theme, but a stricter, distinct localization tier ECSF's own text doesn't specifically demand — kept a separate catalog entry from -c1 (D-032 fix, same over-merge pattern as sov1-01/sov1-03/sov3-01).")
+link("csat-sov4-ecsf-03", "ECSF", "csat-sov4-01-c3", "C3A", "partially_covers",
+     "Standalone-{TRUSTED_REGION}-organization is a related but genuinely distinct requirement (organizational independence, not personnel citizenship) — not the same claim as -c1/-c2, so not equivalent (D-032 fix: previously merged all three sov4-01 variants into one catalog entry).")
 
 link("csat-sov4-ecsf-04", "ECSF", "csat-sov4-01-c1", "C3A", "partially_covers",
      "Personnel-location requirement covers part of 'support delivered from within the trusted region', combined with a second, distinct C3A criterion (sov4-02) for the admin-access half — neither alone is equivalent to ECSF's combined claim.")
@@ -175,7 +175,7 @@ link("csat-sov6-ecsf-04", "ECSF", "csat-sov5-02-c", "C3A", "partially_covers",
 UA1_MAP = {
     "a": ("csat-sov1-02-c1", "equivalent", "Provider established in the trusted region is a direct match for a registered head office there."),
     "b": (None, "no_counterpart", "No C3A criterion requires general infrastructure/asset residency as a standalone claim (C3A's residency criteria are data-specific, SOV-3-01)."),
-    "c": ("csat-sov3-01-c1", "equivalent", "Customer data remaining exclusively in the trusted region is the core data-residency claim C3A's SOV-3-01 makes."),
+    "c": ("csat-sov3-01-c3", "equivalent", "Customer data remaining exclusively in the trusted region is the core data-residency claim C3A's SOV-3-01-C3 makes (D-032 fix: previously mistargeted at c1, the transparency/check-where-stored criterion, not the residency-guarantee criterion CADA's text actually matches)."),
     "d": ("csat-sov4-06-c", "partially_covers", "Third-party software risk analysis addresses part of the outsourcing-governance concern, but not operational-support outsourcing generally."),
     "e": (None, "no_counterpart", "C3A extracts no explicit cybersecurity-certification criterion; this routes to SOV-7, inheritance-only per CLAUDE.md."),
     "f": (None, "no_counterpart", "No C3A criterion requires subcontractor transparency/due-diligence/oversight as its own standalone claim."),
@@ -185,7 +185,7 @@ UA1_MAP = {
 UA_SHARED_MAP = {
     "a": ("csat-sov1-02-c1", "equivalent", "Provider/subcontractor establishment in the trusted region is a direct match for registered head office there."),
     "b": ("csat-sov4-01-c1", "partially_covers", "The personnel-location component matches C3A's citizen/resident requirement; the infrastructure/assets component has no C3A analog."),
-    "c": ("csat-sov3-01-c1", "equivalent", "Customer data remaining exclusively in the trusted region is the core data-residency claim."),
+    "c": ("csat-sov3-01-c3", "equivalent", "Customer data remaining exclusively in the trusted region is the core data-residency claim (D-032 fix: previously mistargeted at c1; see UA1_MAP's identical fix). Note (catalog-fix review N-1): UA-4's instance of this criterion is narrower than UA-2/UA-3's — it applies only to data identified as sensitive following a risk assessment, not all customer data — but is still the same underlying residency requirement at a stricter assurance tier; the narrower scope is preserved via this record's own assurance_level (UA-4) rather than a different C3A target."),
     "d": ("csat-sov4-01-c1", "equivalent", "Personnel citizenship/residency is the same core requirement; CADA's UA levels add a security-clearance nuance C3A doesn't have."),
     "e": (None, "no_counterpart", "C3A extracts no explicit cybersecurity-certification criterion; routes to SOV-7, inheritance-only per CLAUDE.md."),
     "f": (None, "no_counterpart", "C3A predates AI-specific criteria entirely; no criterion restricts AI training on customer-derived data."),
