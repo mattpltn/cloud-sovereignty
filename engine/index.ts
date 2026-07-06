@@ -7,15 +7,16 @@
 
 export * from "./types.js";
 
-import type { PersonaProfile, ResolvedControl } from "./types.js";
+import type { EngineResult, PersonaProfile } from "./types.js";
 
 /**
- * Builds the responsibility map and resolves a disposition for every
- * catalog control, for one persona tier. Not implemented until Phase 4.
+ * Builds the responsibility map, resolves a disposition for every master
+ * catalog control, and computes per-domain ceilings, for one persona tier.
+ * Public API defined in Milestone 4a (types only); implemented in
+ * Milestone 4d. See tests/assertions/layer2-spec.yaml (the owner-authored
+ * Layer-2 specification this function must satisfy) and
+ * tests/assertions/conversion-table.md.
  */
-export function resolveDispositions(
-  _persona: PersonaProfile,
-  _tierId: string,
-): ResolvedControl[] {
-  throw new Error("resolveDispositions is not implemented until Phase 4");
+export function resolve(_persona: PersonaProfile, _tierId: string): EngineResult {
+  throw new Error("resolve() is not implemented until Milestone 4d");
 }

@@ -7,6 +7,23 @@ import type { PersonaProfile } from "../../engine/types.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PERSONAS_DIR = join(__dirname, "..", "personas");
 
+export type PersonaShorthand = "P1" | "P2" | "P3" | "P4" | "P5" | "P6" | "P7" | "P8";
+
+/**
+ * Loads a golden persona by its P1-P8 shorthand (tests/assertions/layer2-spec.yaml's
+ * group keys), via the tests/personas/p<N>-<slug>.yaml filename convention —
+ * the same convention scripts/validate.py's check_layer2_spec() uses, so the
+ * two never drift independently.
+ */
+export function loadPersonaByShorthand(shorthand: PersonaShorthand): PersonaProfile {
+  const n = shorthand.slice(1);
+  const files = readdirSync(PERSONAS_DIR).filter((f) => f.startsWith(`p${n}-`));
+  if (files.length !== 1) {
+    throw new Error(`Expected exactly one persona fixture matching p${n}-*, found ${files.length}`);
+  }
+  return yaml.load(readFileSync(join(PERSONAS_DIR, files[0]), "utf8")) as PersonaProfile;
+}
+
 /** Loads every persona fixture, draft or approved. */
 export function loadAllPersonas(): PersonaProfile[] {
   return readdirSync(PERSONAS_DIR)
