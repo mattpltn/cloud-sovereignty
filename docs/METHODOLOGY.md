@@ -1217,3 +1217,176 @@ Full validator green (9 schemas, 8 draft personas, 129 extracted
 control records, plus the new crosswalk/catalog/ladders checks); `npm
 test` (2 passing, 7 todo) and `npm run typecheck` unaffected — no
 engine/TypeScript changes this phase.
+
+## Phase 4 — Responsibility-map builder and disposition engine
+
+Phase 4 builds the TypeScript engine (`/engine`) that turns a persona
+tier's posture into resolved dispositions and ceilings. Per CLAUDE.md's
+one-engine-one-language principle (D-001), there is no parallel Python
+implementation — `/engine` is the only place this logic lives, and the
+exact same build runs in CI and in the browser.
+
+### Milestone 4a — tests before the engine
+
+Test-first, literally: the 54-assertion owner-authored Layer-2
+specification (`tests/assertions/layer2-spec.yaml`,
+`reviews/layer2-assertions-owner-review.md`) was converted into
+executable vitest tests, invariants I1-I7 were made executable (no
+longer `it.todo` stubs), the X-series (9 of the 54 assertions) became
+Layer-5 differential tests, and a Layer-3 snapshot harness was built —
+all before `engine/index.ts#resolve()` has a real implementation. Every
+new test is marked `it.fails` (vitest's expected-failure modifier):
+the suite is genuinely green in CI right now, while every individual
+assertion is red, because each one's body throws (via `resolve()`'s
+"not implemented until Milestone 4d" stub) rather than passing. This
+is deliberate, not accidental red — `it.fails` inverts pass/fail, so a
+test that unexpectedly stops throwing (e.g. because someone
+implemented just enough to accidentally satisfy it) would itself
+become a CI failure, which is exactly the signal Milestone 4d needs:
+remove `.fails` only once an assertion is genuinely, deliberately
+satisfied.
+
+### Public API (types only this milestone)
+
+`engine/types.ts` gained the Phase 4 API surface: `WordingVariant`
+(the wording-KEY the responsibility map selects — `self` / `provider` /
+`integrator` / `colo_operator` / `saas` / `partner`; question prose
+itself is Phase 6), `EvidenceQuality` (mirrors
+`control-record.schema.json`'s tiers), `SovDomain`, `DispositionEntry`,
+`AutoAnswer`, and `EngineResult` (`{ dispositions, auto_answers,
+ceilings, negotiation_flags, question_set }`). `engine/index.ts`
+exports `resolve(persona, tierId): EngineResult`, replacing the
+Phase 1 placeholder `resolveDispositions`/`ResolvedControl` shape
+(nothing depended on the old shape yet, so it was cleanly replaced
+rather than kept alongside the new one).
+
+Two persona-schema gaps surfaced while wiring types against the
+approved personas and were fixed in the same commit as straightforward
+sync bugs (not editorial decisions): `KeyCustody` was missing
+`government_held` (added to the persona schema by D-025/owner review,
+but never mirrored into `engine/types.ts`), and `Modifiers` was
+missing `provider_stack` (same D-025 addition).
+
+**Ceiling semantics, fixed by this milestone's own instructions:**
+`Ceilings` is `Partial<Record<SovDomain, number>>`, an ordinal 0-4
+maturity band per domain (SEAL-consistent semantics, matching
+`tests/assertions/layer2-spec.yaml`'s own `meta.ceiling_scale` and
+Phase 3's `data/catalog/ladders.json`), computed structurally — NOT a
+0-100 weighted score. Achieved scores, outcome-derived weights, and
+evidence-quality math are explicitly Phase 5's job, not this phase's.
+This created a genuine scope-split for two Phase-1-era invariants (I4,
+I6) that were originally worded against a 0-100 achieved/ceiling model
+— documented below, not silently adapted.
+
+### Blocking discovery: the catalog C1/C2 over-merge bug (D-032)
+
+While binding the spec's control-class prose (e.g. P5-2's
+"data-residency controls... met at `{TRUSTED_REGION}`... not-met at
+`{NATION}`") to concrete master-catalog `primary_id`s — the step that
+makes an assertion genuinely executable rather than a vague prose
+paraphrase — four master-catalog entries (Phase 3's `catalog.json`)
+turned out to incorrectly bridge two different C3A localization tiers
+(C1/C2) of the same criterion into one catalog entry, making the very
+distinction P5-2 needs to test structurally unavailable. Per this
+milestone's own "if anything conflicts with the catalog... STOP and
+report" rule, this halted Milestone 4a's progress until the catalog
+itself was fixed (D-032, on a dedicated `fix/catalog-c1c2-overmerge`
+branch, reviewed and merged to `main` before Milestone 4a resumed —
+full detail in `docs/DECISIONS.md`'s D-032 and
+`docs/phases/phase-3-report.md`'s addendum, not repeated here). The
+practical effect for Milestone 4a: `CONTROL_REFS.DATA_RESIDENCY_TRUSTED_REGION`
+(`csat-sov3-01-c3`) and `DATA_RESIDENCY_NATION` (`csat-sov3-01-c4`) are
+independently addressable catalog entries specifically because of this
+fix — P5-2 would not have been convertible into a real assertion
+otherwise.
+
+### Test-helper design
+
+- `tests/helpers/catalog.ts` — loads `data/catalog/catalog.json`,
+  joined with each entry's primary member's metadata (`layer`,
+  `criterion_type`, `disposition_default`, `localization_level`,
+  `assurance_level`, `addressed_party`) from `c3a.json`/`ecsf.json`/
+  `cada.json`/`cada-act.json`. `control_id` throughout the engine API
+  is a catalog `primary_id` (e.g. `csat-sov4-01-c1`) — one catalog
+  entry is one distinct, independently disposable requirement, which
+  D-032 made true again for the C1/C2 cases.
+- `tests/helpers/control-refs.ts` — the "interpretation record" binding
+  the spec's prose control-class references to concrete `primary_id`s,
+  cross-referenced by `tests/assertions/conversion-table.md`.
+- `tests/helpers/engine-assertions.ts` — shared query helpers
+  (`overallCeiling`, `ceiling`, `questionCount`, `negotiationCount`,
+  `dispositionOf`, `autoAnswerOf`) so every test applies the same
+  interpretation (e.g. `overallCeiling`'s equal-weighted mean over
+  SOV-1..6) rather than re-deriving it per file.
+- `tests/helpers/personas.ts` gained `loadPersonaByShorthand("P1".."P8")`,
+  resolving the Layer-2 spec's persona shorthand via the same
+  `tests/personas/p<N>-*.yaml` filename convention
+  `scripts/validate.py#check_layer2_spec()` already uses, so the two
+  never drift independently.
+
+### I2's API-shape refinement
+
+I2 ("no rendered question references an absent party/layer") is
+Milestone 4a's clearest case of "refined for API shape, never
+weakened": the Milestone 4a API exposes a `wording_variant` KEY per
+disposition, not the full responsibility map (that's Milestone 4b's
+internal structure, not part of the public API). The test checks a
+necessary — though not yet sufficient — condition derivable purely
+from `axis_a`/`service_model` without needing the map builder to exist:
+`colo_operator` wording requires Axis A2, `partner` requires Axis A5,
+`saas` requires `service_model=SaaS`. Milestone 4b/4d should extend
+this once the full map is available; documented here rather than
+silently left as the final form of I2.
+
+### I4/I5/I6 scope splits (achieved scores are Phase 5, clause text is Phase 6)
+
+Each of these three invariants was originally worded against
+machinery that doesn't exist until a later phase:
+- **I4** (`0 <= achieved <= ceiling <= 100`, weight renormalization):
+  checked now only for `0 <= ceiling <= 4`; the achieved/renormalization
+  half stays `it.todo` until Phase 5.
+- **I5** (auto_answer rationale+citation; negotiation_opportunity has
+  clause text): the rationale+`rule_id` half is fully checked now;
+  clause TEXT is Phase 6's clause library — `negotiation_flags` in the
+  Milestone 4a API is only a list of `control_id`s, with no text field
+  to check yet, so that half stays `it.todo`.
+- **I6** (monotonicity of achieved/ceiling under modifier strengthening):
+  checked now only on ceiling (toggling `key_custody`
+  `provider_held`→`hyok`, or any `contract_terms` flag `false`→`true`,
+  for every persona/tier where that toggle is meaningful).
+
+None of these are a weakening of the original invariant — each is
+exactly the sub-claim the current API can express, with the deferred
+half kept visible as `it.todo` rather than silently dropped, per this
+milestone's own explicit statement that Phase 5 owns achieved
+scores/weights/evidence math.
+
+### Layer 3 harness (no baselines yet)
+
+`tests/snapshots/harness.ts` exports `buildSnapshot(persona)` (full
+`EngineResult` per tier) and `serializeSnapshot()` (canonical JSON).
+No baseline files are committed this milestone — Milestone 4d generates
+and commits the first baselines once `resolve()` is real, and per
+CLAUDE.md's Layer 3 discipline, that initial generation is itself
+flagged for external review (not just any subsequent re-baseline).
+
+### Statistics
+
+| Metric | Count |
+|---|---|
+| Layer-2 spec assertions converted to executable tests | 54 (9 cross-persona/Layer-5 + 45 per-persona/Layer-2) |
+| Invariants made executable | 7 (I1-I7; I4/I5 each retain one `it.todo` sub-case, scope-split to Phase 5/6) |
+| New test files | 18 (7 invariants rewritten in place, 9 assertion files + conversion table, 1 snapshot harness + smoke test) |
+| Total new/updated vitest tests | 149 (3 pre-existing pass, 143 expected-fail, 3 todo) |
+| `CONTROL_REFS` bindings (interpretation record entries) | 9 |
+| Catalog bug found and fixed as a precondition (D-032) | 4 entries corrected, 90→98 catalog entries |
+
+### Validation
+
+Full validator green (9 schemas, 8 approved personas, 129 extracted
+control records). `npm test`: 18 test files, 149 tests (3 passing, 143
+expected-fail, 3 todo) — all expected-fail tests are the Milestone 4a
+conversions, deliberately red pending Milestone 4d, with the suite
+itself green throughout. `npm run typecheck` passes — every test
+compiles against the Milestone 4a `EngineResult`/`PersonaProfile`
+types even though `resolve()` itself is unimplemented.
